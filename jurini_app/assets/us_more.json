@@ -1,0 +1,524 @@
+{
+ "meta": {
+  "asof": "2026-11-12",
+  "nasdaq100": [
+   "AAPL",
+   "ABNB",
+   "ADBE",
+   "ADI",
+   "ADP",
+   "ADSK",
+   "AEP",
+   "ALAB",
+   "ALNY",
+   "AMAT",
+   "AMD",
+   "AMGN",
+   "AMZN",
+   "APP",
+   "ARM",
+   "ASML",
+   "AVGO",
+   "AXON",
+   "BKNG",
+   "BKR",
+   "CCEP",
+   "CDNS",
+   "CEG",
+   "CMCSA",
+   "COST",
+   "CPRT",
+   "CRWD",
+   "CRWV",
+   "CSCO",
+   "CSX",
+   "CTAS",
+   "DASH",
+   "DDOG",
+   "DXCM",
+   "EXC",
+   "FANG",
+   "FAST",
+   "FER",
+   "FTNT",
+   "GEHC",
+   "GILD",
+   "GOOG",
+   "GOOGL",
+   "HON",
+   "HONA",
+   "IDXX",
+   "INTC",
+   "INTU",
+   "ISRG",
+   "KDP",
+   "KLAC",
+   "LIN",
+   "LITE",
+   "LRCX",
+   "MAR",
+   "MCHP",
+   "MDLZ",
+   "MELI",
+   "META",
+   "MNST",
+   "MPWR",
+   "MRNA",
+   "MRVL",
+   "MSFT",
+   "MSTR",
+   "MU",
+   "NBIS",
+   "NFLX",
+   "NVDA",
+   "NXPI",
+   "ODFL",
+   "ORLY",
+   "PANW",
+   "PAYX",
+   "PCAR",
+   "PDD",
+   "PEP",
+   "PLTR",
+   "PYPL",
+   "QCOM",
+   "REGN",
+   "RKLB",
+   "ROP",
+   "ROST",
+   "SBUX",
+   "SHOP",
+   "SNDK",
+   "SNPS",
+   "SPCX",
+   "STX",
+   "TER",
+   "TMUS",
+   "TRI",
+   "TSLA",
+   "TTWO",
+   "TXN",
+   "VRTX",
+   "WDAY",
+   "WDC",
+   "WMT",
+   "XEL"
+  ],
+  "source": "SEC EDGAR XBRL 공시 자동 추출, 나스닥 100 목록은 나스닥"
+ },
+ "companies": [
+  {
+   "id": "asml",
+   "ticker": "ASML",
+   "name_ko": "ASML",
+   "name_en": "ASML Holding N.V. New York Registry Shares",
+   "sector": "정보기술",
+   "one_liner": "반도체를 새기는 최첨단 노광 장비(EUV)를 세계에서 유일하게 만드는 네덜란드 회사",
+   "financials": [],
+   "balance": {
+    "asof": null,
+    "cash": null,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "mstr",
+   "ticker": "MSTR",
+   "name_ko": "스트래티지",
+   "name_en": "Strategy Inc Common Stock Class A",
+   "sector": "정보기술",
+   "one_liner": "기업용 분석 소프트웨어를 팔면서 회사 돈 대부분을 비트코인에 투자하는 회사",
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 496,
+     "operating_income": -115,
+     "net_income": 429,
+     "capex": 3,
+     "free_cash_flow": 10,
+     "operating_margin_pct": -23.2
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 463,
+     "operating_income": -1853,
+     "net_income": -1167,
+     "capex": 3,
+     "free_cash_flow": -56,
+     "operating_margin_pct": -399.8
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 477,
+     "operating_income": -5444,
+     "net_income": -3848,
+     "capex": 8,
+     "free_cash_flow": -75,
+     "operating_margin_pct": -1140.8
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash": 2501,
+    "long_term_debt": 6715
+   }
+  },
+  {
+   "id": "alny",
+   "ticker": "ALNY",
+   "name_ko": "앨나일람 파마슈티컬스",
+   "name_en": "Alnylam Pharmaceuticals, Inc. Common Stock",
+   "sector": "헬스케어",
+   "one_liner": "병을 일으키는 유전자 신호를 꺼서 치료하는 RNA 치료제를 만드는 회사",
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 1828,
+     "operating_income": -282,
+     "net_income": -440,
+     "capex": 62,
+     "free_cash_flow": 42,
+     "operating_margin_pct": -15.4
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 2248,
+     "operating_income": -177,
+     "net_income": -278,
+     "capex": 34,
+     "free_cash_flow": -43,
+     "operating_margin_pct": -7.9
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 3714,
+     "operating_income": 502,
+     "net_income": 314,
+     "capex": 59,
+     "free_cash_flow": 465,
+     "operating_margin_pct": 13.5
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash": 1754,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "meli",
+   "ticker": "MELI",
+   "name_ko": "메르카도리브레",
+   "name_en": "MercadoLibre, Inc. Common Stock",
+   "sector": "임의소비재",
+   "one_liner": "중남미 최대 온라인 쇼핑몰이자 간편결제(메르카도파고) 회사",
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 15107,
+     "operating_income": 2207,
+     "net_income": 987,
+     "capex": 509,
+     "free_cash_flow": 4631,
+     "operating_margin_pct": 14.6
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 20777,
+     "operating_income": 2631,
+     "net_income": 1911,
+     "capex": 860,
+     "free_cash_flow": 7058,
+     "operating_margin_pct": 12.7
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 28893,
+     "operating_income": 3201,
+     "net_income": 1997,
+     "capex": 1343,
+     "free_cash_flow": 10773,
+     "operating_margin_pct": 11.1
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash": 4162,
+    "long_term_debt": 13190
+   }
+  },
+  {
+   "id": "nbis",
+   "ticker": "NBIS",
+   "name_ko": "네비우스 그룹",
+   "name_en": "Nebius Group N.V. Class A Ordinary Shares",
+   "sector": "정보기술",
+   "one_liner": "AI 학습용 GPU 클라우드를 빌려주는 네덜란드 회사",
+   "financials": [],
+   "balance": {
+    "asof": null,
+    "cash": null,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "shop",
+   "ticker": "SHOP",
+   "name_ko": "쇼피파이",
+   "name_en": "Shopify Inc. Class A Subordinate Voting Shares",
+   "sector": "정보기술",
+   "one_liner": "누구나 온라인 쇼핑몰을 쉽게 열 수 있게 해 주는 캐나다 소프트웨어 회사",
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 7060,
+     "operating_income": -1418,
+     "net_income": 132,
+     "capex": 39,
+     "free_cash_flow": 905,
+     "operating_margin_pct": -20.1
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 8880,
+     "operating_income": 1075,
+     "net_income": 2019,
+     "capex": 19,
+     "free_cash_flow": 1597,
+     "operating_margin_pct": 12.1
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 11556,
+     "operating_income": 1468,
+     "net_income": 1231,
+     "capex": 26,
+     "free_cash_flow": 2007,
+     "operating_margin_pct": 12.7
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash": 1868,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "ccep",
+   "ticker": "CCEP",
+   "name_ko": "코카콜라 유로퍼시픽 파트너스",
+   "name_en": "Coca-Cola Europacific Partners plc Ordinary Shares",
+   "sector": "필수소비재",
+   "one_liner": "유럽·호주 등에서 코카콜라를 병에 담아 파는 세계 최대 병입 회사",
+   "financials": [],
+   "balance": {
+    "asof": null,
+    "cash": null,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "pdd",
+   "ticker": "PDD",
+   "name_ko": "PDD 홀딩스",
+   "name_en": "PDD Holdings Inc. American Depositary Shares",
+   "sector": "임의소비재",
+   "one_liner": "중국 쇼핑앱 '핀둬둬'와 해외 쇼핑앱 '테무'를 운영하는 회사",
+   "financials": [],
+   "balance": {
+    "asof": null,
+    "cash": null,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "rklb",
+   "ticker": "RKLB",
+   "name_ko": "로켓랩",
+   "name_en": "Rocket Lab Corporation Common Stock",
+   "sector": "산업재",
+   "one_liner": "작은 위성을 우주로 쏘는 로켓과 위성 부품을 만드는 회사",
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 245,
+     "operating_income": -178,
+     "net_income": -183,
+     "capex": 55,
+     "free_cash_flow": -154,
+     "operating_margin_pct": -72.7
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 436,
+     "operating_income": -190,
+     "net_income": -190,
+     "capex": 67,
+     "free_cash_flow": -116,
+     "operating_margin_pct": -43.5
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 602,
+     "operating_income": -229,
+     "net_income": -198,
+     "capex": 156,
+     "free_cash_flow": -322,
+     "operating_margin_pct": -38.0
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash": 4448,
+    "long_term_debt": 1
+   }
+  },
+  {
+   "id": "arm",
+   "ticker": "ARM",
+   "name_ko": "ARM",
+   "name_en": "Arm Holdings plc American Depositary Shares",
+   "sector": "정보기술",
+   "one_liner": "스마트폰 칩 대부분에 쓰이는 반도체 설계도를 만들고 사용료를 받는 영국 회사",
+   "financials": [],
+   "balance": {
+    "asof": null,
+    "cash": null,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "tri",
+   "ticker": "TRI",
+   "name_ko": "톰슨로이터",
+   "name_en": "Thomson Reuters Corporation Common Shares",
+   "sector": "산업재",
+   "one_liner": "로이터 통신과 법률·세무 전문가용 정보 서비스를 파는 캐나다 회사",
+   "financials": [],
+   "balance": {
+    "asof": null,
+    "cash": null,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "fer",
+   "ticker": "FER",
+   "name_ko": "페로비알",
+   "name_en": "Ferrovial N.V. Ordinary Shares",
+   "sector": "산업재",
+   "one_liner": "도로·공항을 짓고 통행료·이용료를 받아 운영하는 스페인 인프라 회사",
+   "financials": [],
+   "balance": {
+    "asof": null,
+    "cash": null,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "alab",
+   "ticker": "ALAB",
+   "name_ko": "아스테라 랩스",
+   "name_en": "Astera Labs, Inc. Common Stock",
+   "sector": "정보기술",
+   "one_liner": "AI 서버 안에서 칩끼리 데이터를 빠르게 주고받게 해 주는 연결 칩 회사",
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 116,
+     "operating_income": -29,
+     "net_income": -26,
+     "capex": 3,
+     "free_cash_flow": -15,
+     "operating_margin_pct": -25.5
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 396,
+     "operating_income": -116,
+     "net_income": -83,
+     "capex": 34,
+     "free_cash_flow": 102,
+     "operating_margin_pct": -29.3
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 853,
+     "operating_income": 173,
+     "net_income": 219,
+     "capex": 38,
+     "free_cash_flow": 282,
+     "operating_margin_pct": 20.3
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash": 209,
+    "long_term_debt": null
+   }
+  },
+  {
+   "id": "crwv",
+   "ticker": "CRWV",
+   "name_ko": "코어위브",
+   "name_en": "CoreWeave, Inc. Class A Common Stock",
+   "sector": "정보기술",
+   "one_liner": "엔비디아 GPU를 대량으로 갖추고 AI 회사에 빌려주는 클라우드 회사",
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 229,
+     "operating_income": -14,
+     "net_income": -594,
+     "capex": 2943,
+     "free_cash_flow": -1110,
+     "operating_margin_pct": -6.1
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 1915,
+     "operating_income": 324,
+     "net_income": -863,
+     "capex": 8702,
+     "free_cash_flow": -5953,
+     "operating_margin_pct": 16.9
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 5131,
+     "operating_income": -46,
+     "net_income": -1167,
+     "capex": 10309,
+     "free_cash_flow": -7251,
+     "operating_margin_pct": -0.9
+    }
+   ],
+   "balance": {
+    "asof": "2026-06-30",
+    "cash": 5524,
+    "long_term_debt": 24859
+   }
+  }
+ ]
+}

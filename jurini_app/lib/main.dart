@@ -9,7 +9,8 @@ import 'package:flutter/services.dart';
 
 typedef J = Map<String, dynamic>;
 
-late J data, sp500, news, kr;
+late J data, sp500, news, kr, usMore;
+Set<String> ndx = {}; // 나스닥 100 티커
 late List<dynamic> companies, terms;
 late Map<String, dynamic> G;
 
@@ -22,9 +23,11 @@ Future<void> main() async {
   sp500 = jsonDecode(await rootBundle.loadString('assets/sp500.json'));
   news = jsonDecode(await rootBundle.loadString('assets/news.json'));
   kr = jsonDecode(await rootBundle.loadString('assets/kr.json'));
+  usMore = jsonDecode(await rootBundle.loadString('assets/us_more.json'));
+  ndx = {...usMore['meta']['nasdaq100']};
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
-  companies = mergeCompanies(data['companies'], sp500['companies']);
+  companies = mergeCompanies(data['companies'], [...sp500['companies'], ...usMore['companies']]);
   runApp(const App());
   loadLive();
 }
@@ -583,7 +586,7 @@ class _HomeState extends State<HomePage> {
               Text(
                   korea
                       ? '코스피·코스닥 · ${kr['meta']['asof']} 상장 목록 기준'
-                      : 'S&P 500 · 시가총액 ${live.value ?? data['meta']['market_cap_asof']}${live.value == null ? '' : ' 종가'} 기준',
+                      : 'S&P 500·나스닥 100 · 시가총액 ${live.value ?? data['meta']['market_cap_asof']}${live.value == null ? '' : ' 종가'} 기준',
                   style: const TextStyle(color: Colors.white60, fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: .3)),
               txt(korea ? '한국 상장 기업,\n무슨 일을 할까요?' : '미국 대표 기업,\n무슨 일을 할까요?',
                   const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w800, height: 1.25, letterSpacing: -0.6)),
@@ -688,6 +691,7 @@ Widget companyRow(BuildContext context, P p, J c, [bool first = true, bool last 
             Text.rich(TextSpan(children: [
               TextSpan(text: c['name_ko'], style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: -0.2)),
               TextSpan(text: '  ${c['ticker']}', style: sub(p, 12)),
+              if (ndx.contains(c['ticker'])) TextSpan(text: '  나스닥100', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: p.accent)),
             ])),
             if ((c['one_liner'] ?? '') != '')
               Text(kt(c['one_liner']), maxLines: 2, overflow: TextOverflow.ellipsis, style: sub(p, 13)),

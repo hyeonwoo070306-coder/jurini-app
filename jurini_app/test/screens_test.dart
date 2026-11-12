@@ -15,7 +15,8 @@ void main() {
     news = read('news.json');
     kr = read('kr.json');
     G = {for (final t in terms) t['id'] as String: t};
-    companies = mergeCompanies(data['companies'], sp500['companies']);
+    final usMore = read('us_more.json');
+    companies = mergeCompanies(data['companies'], [...sp500['companies'], ...usMore['companies']]);
   });
 
   testWidgets('자세한 기업 50곳: 모든 탭과 실적 지표가 열린다', (tester) async {
@@ -44,7 +45,7 @@ void main() {
   });
 
   testWidgets('기본 카드 기업도 열린다', (tester) async {
-    for (final c in companies.where((c) => !isFull(c)).take(60)) {
+    for (final c in [...companies.where((c) => !isFull(c)).take(60), ...companies.where((c) => ['ASML', 'MELI', 'CRWV'].contains(c['ticker']))]) {
       await tester.pumpWidget(MaterialApp(home: DetailPage(c, key: ValueKey(c['id']))));
       expect(tester.takeException(), isNull, reason: c['ticker']);
     }
