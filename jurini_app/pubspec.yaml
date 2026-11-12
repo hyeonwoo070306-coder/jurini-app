@@ -21,6 +21,7 @@ flutter:
     - assets/glossary.json
     - assets/sp500.json
     - assets/news.json
+    - assets/kr.json
     - assets/fonts/OFL.txt
   fonts:
     - family: Pretendard

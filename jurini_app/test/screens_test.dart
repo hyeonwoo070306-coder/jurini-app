@@ -13,6 +13,7 @@ void main() {
     sp500 = read('sp500.json');
     terms = read('glossary.json')['terms'];
     news = read('news.json');
+    kr = read('kr.json');
     G = {for (final t in terms) t['id'] as String: t};
     companies = mergeCompanies(data['companies'], sp500['companies']);
   });
@@ -61,5 +62,14 @@ void main() {
     await tester.tap(find.text('소비자물가지수(CPI)'));
     await tester.pumpAndSettle();
     expect(find.text('시장에 주는 영향'), findsOneWidget);
+  });
+
+  testWidgets('한국 회사 기본 카드도 열린다', (tester) async {
+    final List ks = kr['companies'];
+    expect(ks.length, greaterThan(2000));
+    for (final c in [...ks.take(30), ...ks.where((c) => c['name_ko'] == '삼성전자')]) {
+      await tester.pumpWidget(MaterialApp(home: DetailPage(c, key: ValueKey(c['id']))));
+      expect(tester.takeException(), isNull, reason: c['name_ko']);
+    }
   });
 }

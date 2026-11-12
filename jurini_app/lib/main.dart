@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 
 typedef J = Map<String, dynamic>;
 
-late J data, sp500, news;
+late J data, sp500, news, kr;
 late List<dynamic> companies, terms;
 late Map<String, dynamic> G;
 
@@ -21,6 +21,7 @@ Future<void> main() async {
   data = jsonDecode(await rootBundle.loadString('assets/companies.json'));
   sp500 = jsonDecode(await rootBundle.loadString('assets/sp500.json'));
   news = jsonDecode(await rootBundle.loadString('assets/news.json'));
+  kr = jsonDecode(await rootBundle.loadString('assets/kr.json'));
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
   companies = mergeCompanies(data['companies'], sp500['companies']);
@@ -84,6 +85,7 @@ List<dynamic> mergeCompanies(List detailed, List basic) {
 }
 
 bool isFull(J c) => c['business'] != null;
+bool isKr(J c) => c['market'] != null; // 한국 회사(코스피·코스닥)
 
 // ---------- 숫자·글자 포맷 ----------
 const disclaimer = '투자 공부용 정보이며 매수·매도 추천이 아닙니다.';
@@ -322,7 +324,7 @@ Widget logo(J c, [double size = 44, Color? bg]) {
     height: size,
     alignment: Alignment.center,
     decoration: BoxDecoration(color: bg ?? brandColor(c), borderRadius: BorderRadius.circular(size * .3)),
-    child: Text(tk.substring(0, min(4, tk.length)),
+    child: Text(isKr(c) ? (c['name_ko'] as String).characters.take(2).toString() : tk.substring(0, min(4, tk.length)),
         style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: size * .29)),
   );
 }
@@ -547,13 +549,15 @@ class HomePage extends StatefulWidget {
 class _HomeState extends State<HomePage> {
   String q = '';
   String? sector;
+  bool korea = false;
 
   @override
   Widget build(BuildContext context) {
     final p = P.of(context);
     final query = q.trim().toLowerCase();
     final sectors = {for (final c in companies) c['group']}.whereType<String>().toList()..sort();
-    final list = companies.where((c) {
+    final List src = korea ? kr['companies'] : companies;
+    final list = src.where((c) {
       if (sector != null && c['group'] != sector) return false;
       return query.isEmpty || '${c['name_ko']} ${c['name_en']} ${c['ticker']}'.toLowerCase().contains(query);
     }).toList();
@@ -570,23 +574,48 @@ class _HomeState extends State<HomePage> {
                 gradient: const LinearGradient(
                     begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF2B3A7A), Color(0xFF131A33)])),
             child: col(14, [
-              Text('S&P 500 · 시가총액 ${live.value ?? data['meta']['market_cap_asof']}${live.value == null ? '' : ' 종가'} 기준',
+              Text(
+                  korea
+                      ? '코스피·코스닥 · ${kr['meta']['asof']} 상장 목록 기준'
+                      : 'S&P 500 · 시가총액 ${live.value ?? data['meta']['market_cap_asof']}${live.value == null ? '' : ' 종가'} 기준',
                   style: const TextStyle(color: Colors.white60, fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: .3)),
-              txt('미국 대표 기업,\n무슨 일을 할까요?',
+              txt(korea ? '한국 상장 기업,\n무슨 일을 할까요?' : '미국 대표 기업,\n무슨 일을 할까요?',
                   const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w800, height: 1.25, letterSpacing: -0.6)),
-              txt('회사를 누르면 중학생도 읽을 수 있게 풀어 쓴 기업 노트가 열려요.', const TextStyle(color: Colors.white70, fontSize: 14)),
+              txt(korea ? '회사를 누르면 업종과 주요 제품을 볼 수 있어요. 자세한 노트와 재무 숫자는 준비 중이에요.' : '회사를 누르면 중학생도 읽을 수 있게 풀어 쓴 기업 노트가 열려요.',
+                  const TextStyle(color: Colors.white70, fontSize: 14)),
               Container(height: 1, color: Colors.white12),
               Row(children: [
-                stat('${companies.length}', '회사'),
-                stat('${companies.where((c) => isFull(c)).length}', '자세한 노트'),
-                stat('${terms.length}', '경제용어'),
+                stat('${src.length}', '회사'),
+                if (korea) ...[
+                  stat('${src.where((c) => c['market'] == '코스피').length}', '코스피'),
+                  stat('${src.where((c) => c['market'] == '코스닥').length}', '코스닥'),
+                ] else ...[
+                  stat('${companies.where((c) => isFull(c)).length}', '자세한 노트'),
+                  stat('${terms.length}', '경제용어'),
+                ],
               ]),
             ]),
           ),
+          SegmentedButton<bool>(
+            segments: const [
+              ButtonSegment(value: false, label: Text('미국')),
+              ButtonSegment(value: true, label: Text('한국')),
+            ],
+            selected: {korea},
+            showSelectedIcon: false,
+            onSelectionChanged: (v) => setState(() {
+              korea = v.first;
+              sector = null;
+            }),
+          ),
           TextField(
             onChanged: (v) => setState(() => q = v),
-            decoration: const InputDecoration(hintText: '회사 이름이나 티커 검색 (예: 애플, KO)', prefixIcon: Icon(Icons.search)),
+            decoration: InputDecoration(
+                hintText: korea ? '회사 이름이나 종목코드 검색 (예: 삼성, 005930)' : '회사 이름이나 티커 검색 (예: 애플, KO)',
+                prefixIcon: const Icon(Icons.search)),
           ),
+          // shortcut: 한국은 업종이 150가지가 넘어 칩으로 못 보여줌. 큰 분류로 묶는 표가 생기면 칩을 붙인다.
+          if (!korea)
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: [
@@ -732,7 +761,7 @@ class _DetailState extends State<DetailPage> {
                 Expanded(
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Text(c['name_ko'], style: h(26).copyWith(color: Colors.white)),
-                  Text([c['ticker'], c['exchange'], c['sector']].whereType<String>().join(' · '), style: w70),
+                  Text([c['ticker'], c['exchange'] ?? c['market'], c['sector']].whereType<String>().join(' · '), style: w70),
                 ])),
               ]),
               if ((c['one_liner'] ?? '') != '')
@@ -750,7 +779,9 @@ class _DetailState extends State<DetailPage> {
             padding: pad,
             child: col(14, [
           if (!full)
-            explain(p, txt('이 회사의 자세한 설명(투자 포인트, 사업, 리스크)은 준비 중이에요. 지금은 미국 SEC 공시에서 가져온 숫자만 보여드려요.',
+            explain(p, txt(isKr(c)
+                ? '이 회사의 자세한 설명과 재무 숫자는 준비 중이에요. 지금은 한국거래소에 등록된 업종·주요제품만 보여드려요. (${c['market']}, ${c['listed']} 상장)'
+                : '이 회사의 자세한 설명(투자 포인트, 사업, 리스크)은 준비 중이에요. 지금은 미국 SEC 공시에서 가져온 숫자만 보여드려요.',
                 const TextStyle(fontSize: 13.5))),
           if (full) ...[
           if ((news['companies'][c['ticker']] as List?)?.isNotEmpty ?? false) newsCard(p, news['companies'][c['ticker']]),
@@ -788,7 +819,9 @@ class _DetailState extends State<DetailPage> {
           txt(
               full
                   ? '출처: ${(c['sources'] as List).join(' · ')}\n시가총액 ${c['market_cap_asof']}, 주가 지표 ${c['valuation']['asof']} 기준. $disclaimer'
-                  : '출처: ${sp500['meta']['source']} (${sp500['meta']['asof']} 수집). 자동으로 뽑은 숫자라 회사 공시와 다를 수 있어요. $disclaimer',
+                  : isKr(c)
+                      ? '출처: ${kr['meta']['source']} (${kr['meta']['asof']} 수집). $disclaimer'
+                      : '출처: ${sp500['meta']['source']} (${sp500['meta']['asof']} 수집). 자동으로 뽑은 숫자라 회사 공시와 다를 수 있어요. $disclaimer',
               sub(p, 11.5)),
             ]),
           ),
