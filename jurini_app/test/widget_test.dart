@@ -46,6 +46,8 @@ void main() {
     expect(companies.map((c) => c['ticker']), ['B', 'A', 'C']);
     final a = companies[1];
     expect(a['valuation']['per'], 8.0);
+    expect(a['valuation'], isA<J>()); // 화면 코드가 J 타입으로 읽으므로 타입이 바뀌면 안 됨
+    expect(a['shareholder_return'], isA<J>());
     expect(a['valuation']['comment'], 'c');
     expect(a['valuation']['asof'], '2026-11-11');
     expect(a['shareholder_return']['dividend_yield'], 1.25);

@@ -1,0 +1,218 @@
+{
+ "asof": "2026-11-12",
+ "note": "회사 발표·언론 보도를 쉽게 요약한 것. type: good=호재, bad=악재, watch=지켜볼 일",
+ "companies": {
+  "AAPL": [
+   {"date": "2026-11-02", "type": "good", "title": "7~9월 분기 매출 1,145억 달러, 순이익 307억 달러", "impact": "아이폰과 서비스가 잘 팔리고 있다는 뜻이에요. 꾸준히 돈을 버는 힘이 유지되고 있어요.", "source": "MacRumors", "url": "https://macrumors.com/2026/11/02/apple-4q-2026-earnings"},
+   {"date": "2026-11-06", "type": "good", "title": "첫 터치스크린 맥북 프로 등 신제품 출시, 11월 13일 스마트홈 기기 '홈뷰' 출시 예정", "impact": "연말 쇼핑 시즌에 팔 새 제품이 많아져 4분기 매출에 도움이 될 수 있어요.", "source": "MacRumors", "url": "https://macrumors.com/2026/11/02/apple-isnt-done-with-2026-heres-whats-still-coming/"},
+   {"date": "2026-11", "type": "bad", "title": "미국 법무부 반독점 소송 계속 진행 중", "impact": "애플이 지면 앱스토어 규칙이나 구글과의 검색 계약을 바꿔야 할 수 있어요. 그러면 서비스 매출이 줄 수 있어요.", "source": "The Mac Observer", "url": "https://www.macobserver.com/news/"}
+  ],
+  "NVDA": [
+   {"date": "2026-10-27", "type": "good", "title": "오라클과 차세대 AI 시스템 '베라 루빈' 공급을 대규모로 늘리기로", "impact": "큰 고객이 더 많이 사겠다는 뜻이라 앞으로의 데이터센터 매출에 도움이 돼요.", "source": "NVIDIA 발표", "url": "https://mfn.se/all/a/nvidia/nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-and-bring-nvidia-vera-cpu-to-oracle-cloud-infrastructure-8e9b8932"},
+   {"date": "2026-11-05", "type": "bad", "title": "AI 관련 주식이 한꺼번에 크게 흔들림", "impact": "AI에 돈을 너무 많이 쓰는 것 아니냐는 걱정이 커지면, 엔비디아 칩 주문이 줄어들까 봐 시장이 불안해해요.", "source": "Stock Titan", "url": "https://www.stocktitan.net/overview/NVDA/"},
+   {"date": "2026-11-17", "type": "watch", "title": "11월 17일(미국 시간) 3분기 실적 발표", "impact": "AI 칩 수요가 여전히 강한지 확인할 수 있는 날이에요.", "source": "NVIDIA", "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873"}
+  ],
+  "MSFT": [
+   {"date": "2026-10-28", "type": "good", "title": "7~9월 매출 923억 달러(+19%), 클라우드 애저 +48%", "impact": "AI를 쓰려는 기업들이 마이크로소프트 클라우드를 많이 빌린다는 뜻이에요. 핵심 사업이 빠르게 크고 있어요.", "source": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/30/microsoft-revenue-jumps-as-azure-and-ai-demand--fuel-growth.aspx"},
+   {"date": "2026-10-28", "type": "bad", "title": "AI 데이터센터 투자 급증, 2026년 설비투자 약 1,700억 달러 예상", "impact": "돈을 많이 쓰면 당장 남는 현금이 줄어요. 투자한 만큼 돈을 벌 수 있을지 시장이 지켜보고 있어요.", "source": "Zacks", "url": "https://www.zacks.com/stock/news/3018768/microsoft-q1-earnings-beat-estimates-as-cloud-accelerates"}
+  ],
+  "GOOGL": [
+   {"date": "2026-10-28", "type": "good", "title": "7~9월 매출 1,276억 달러(+25%), 클라우드 급성장, 제미나이 앱 사용자 10억 명", "impact": "검색 말고도 클라우드·AI가 새 수입원으로 자리 잡고 있어요.", "source": "9to5Google", "url": "https://9to5google.com/2026/10/28/alphabet-q3-2"},
+   {"date": "2026-10-28", "type": "bad", "title": "AI 지출이 늘어 순이익 감소, 2026년 투자 계획 1,950~2,050억 달러로 상향", "impact": "버는 돈이 늘어도 쓰는 돈이 더 빨리 늘면 이익이 줄어요.", "source": "NewsBytes", "url": "https://www.newsbytesapp.com/news/business/alphabet-shares-fall-6-amid-search-slowdown-ai-costs-departures/tldr"},
+   {"date": "2026-11", "type": "good", "title": "20억 달러가 넘는 개인정보 소송, 법원이 기각", "impact": "큰 벌금 걱정 하나가 줄었어요.", "source": "rallies.ai", "url": "https://rallies.ai/news/googles-legal-victories-shield-2b-privacy-claims-and-guard-ai-trade-secrets"}
+  ],
+  "AMZN": [
+   {"date": "2026-10-29", "type": "good", "title": "클라우드 AWS 매출 460억 달러(+39%), 회사 영업이익률 사상 최고(13.9%)", "impact": "가장 돈을 많이 버는 AWS의 성장이 다시 빨라졌어요.", "source": "Amazon 발표", "url": "https://aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report"},
+   {"date": "2026-10-29", "type": "bad", "title": "2026년 설비투자 약 2,200억 달러 예상, 광고 매출 성장 둔화(+11%)", "impact": "투자에 돈을 많이 써서 남는 현금이 줄어요. 광고가 덜 빨리 크는 것도 지켜봐야 해요.", "source": "Constellation Research", "url": "https://www.constellationr.com/insights/news/aws-q3-revenue-growth-surges-39-capex-stings-amazons-cash-flow"},
+   {"date": "2026-11-27", "type": "watch", "title": "11월 27일 블랙프라이데이, 30일 사이버먼데이", "impact": "1년 중 가장 큰 쇼핑 시즌이라 4분기 매출을 좌우해요.", "source": "Amazon", "url": "https://www.aboutamazon.com/newsfeed"}
+  ],
+  "SPCX": [
+   {"date": "2026-11", "type": "good", "title": "3분기 흑자 전환, 위성 인터넷 스타링크가 이끌어", "impact": "적자 회사가 이익을 내기 시작했다는 건 큰 변화예요.", "source": "RTTNews", "url": "https://www.rttnews.com/3700949/spacex-shares-climb-as-q3-turns-to-profit-on-connectivity-si-strength.aspx"},
+   {"date": "2026-11-04", "type": "bad", "title": "중간선거 뒤 정부 계약·AI 규제가 강해질 수 있다는 걱정", "impact": "스페이스X는 나사·국방부 같은 정부 일감이 많아서 정치 변화에 민감해요.", "source": "Gotrade", "url": "https://www.heygotrade.com/en/news/spacex-spcx-stock-news-november-5-2026/"},
+   {"date": "2026-11", "type": "watch", "title": "에코스타와 휴대폰 통신사 '부스트 모바일' 인수 논의 보도", "impact": "성사되면 휴대폰 통신 사업으로 넓힐 수 있지만, 큰돈이 들어요.", "source": "Stocktwits", "url": "https://stocktwits.com/news-articles/markets/equity/spacex-wireless-ai-riches-rocketlab-100-launches-whats-moving-space-stocks/cNG1e6TR9EK"}
+  ],
+  "META": [
+   {"date": "2026-10", "type": "good", "title": "7~9월 매출 646억 달러(+26%), 사상 최대", "impact": "광고 사업이 여전히 빠르게 크고 있어요.", "source": "MarketBeat", "url": "https://www.marketbeat.com/instant-alerts/transcript-meta-platforms-q3-earnings-call-highlights-2026-10-21/"},
+   {"date": "2026-10-21", "type": "bad", "title": "뉴멕시코 법원, 250억 달러 벌금 판결 (메타는 항소 예정)", "impact": "확정되면 큰돈이 나가요. 청소년 보호와 관련된 소송이 계속 늘고 있어요.", "source": "PPC Land", "url": "https://ppc.land/meta-books-reserve-for-25bn-new-mexico-penalty-quarterly-filing-shows/"},
+   {"date": "2026-10", "type": "bad", "title": "소송 합의 비용 등으로 영업이익 37% 감소", "impact": "매출은 늘었지만 비용이 더 크게 늘었어요.", "source": "MarketBeat", "url": "https://www.marketbeat.com/instant-alerts/transcript-meta-platforms-q3-earnings-call-highlights-2026-10-21/"}
+  ],
+  "AVGO": [
+   {"date": "2026", "type": "good", "title": "CEO \"앤트로픽이 가장 큰 맞춤형 AI 칩 고객이 될 것\", 구글 TPU 주문도 급증", "impact": "큰 AI 회사들이 브로드컴 맞춤 칩을 더 많이 쓴다는 뜻이에요.", "source": "Webull", "url": "https://www.webull.com/news/15513120997254144"},
+   {"date": "2026-12-09", "type": "watch", "title": "12월 9일 4분기·연간 실적 발표", "impact": "AI 반도체 매출이 얼마나 늘었는지 확인하는 날이에요.", "source": "Broadcom", "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"}
+  ],
+  "TSLA": [
+   {"date": "2026-11-09", "type": "good", "title": "운전자 없는 로보택시, 포트워스(11/2)·샌안토니오(11/9)로 확대", "impact": "자율주행 사업이 실제 도시로 넓어지고 있어요. 자리 잡으면 새 수입원이 돼요.", "source": "Drive Tesla", "url": "https://driveteslacanada.ca/news/drive-tesla-download-november-2-8/"},
+   {"date": "2026-11", "type": "good", "title": "베를린에 연구소 4곳·실험실 30개를 합친 엔지니어링 센터 개설", "impact": "유럽에서 직접 차를 개발하는 힘이 커져요.", "source": "Teslarati", "url": "https://teslarati.com/tesla-berlin-btec-engineering-center"},
+   {"date": "2026-11", "type": "watch", "title": "스페이스X와 합칠 수 있다는 이야기가 계속 나옴 (확정 아님)", "impact": "실제로 합치면 회사 구조가 크게 바뀌어요. 아직은 소문이에요.", "source": "Teslarati", "url": "https://www.teslarati.com/spacex-tesla-gwynne-shotwell-x-follow/"}
+  ],
+  "LLY": [
+   {"date": "2026-10-29", "type": "good", "title": "7~9월 매출 244억 달러(+39%), 연간 매출 전망 910~920억 달러로 상향", "impact": "비만·당뇨약 마운자로·젭바운드가 아주 잘 팔리고 있어요.", "source": "Eli Lilly 발표", "url": "https://investor.lilly.com/node/55191/pdf"},
+   {"date": "2026-10-29", "type": "good", "title": "차세대 비만약 레타트루타이드, 오젬픽과의 맞대결 3상에서 좋은 결과", "impact": "다음 대표 약이 될 후보가 성공에 한 걸음 가까워졌어요.", "source": "Eli Lilly 발표", "url": "https://investor.lilly.com/node/55191/pdf"},
+   {"date": "2026-11", "type": "bad", "title": "약값 인하 압박으로 성장 속도가 느려질 수 있다고 CEO가 언급", "impact": "많이 팔려도 한 개당 받는 돈이 줄면 매출 증가가 둔해져요.", "source": "Newsquawk", "url": "https://www.newsquawk.com/headlines/eli-lillys-lly-ceo-says-that-the-number-of-people-engaging-with-the-lilly-direct-has-increased-to-over-1mln-patients-in-2025"}
+  ],
+  "BRK.B": [
+   {"date": "2026-11-07", "type": "bad", "title": "3분기 영업이익 6% 감소, 자동차보험 가이코 이익 45% 줄어", "impact": "가장 큰 사업인 보험에서 사고 비용이 늘었어요.", "source": "AP", "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/07/berkshire-hathaway-buys-back-96-billion-of-its-own-stock-but-its-profits-declined"},
+   {"date": "2026-11-07", "type": "good", "title": "자사주 96억 달러어치 매입", "impact": "주식 수가 줄어 1주당 몫이 커져요. 회사가 자기 주식이 싸다고 본다는 신호로 받아들여지기도 해요.", "source": "AP", "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/07/berkshire-hathaway-buys-back-96-billion-of-its-own-stock-but-its-profits-declined"},
+   {"date": "2026-11-07", "type": "good", "title": "철도회사 BNSF 이익 17억 달러로 증가", "impact": "보험이 약할 때 다른 사업이 받쳐 주고 있어요.", "source": "Business Insurance", "url": "https://www.businessinsurance.com/berkshire-hathaway-speeds-up-stock-buybacks-though-profit-falls/"}
+  ],
+  "WMT": [
+   {"date": "2026-11-12", "type": "watch", "title": "블랙프라이데이 할인 행사 시작(11/12~)", "impact": "연말 쇼핑 대목 매출이 회사의 1년 실적에 크게 영향을 줘요.", "source": "Webull", "url": "https://www.webull.com/news/15814223406682112"}
+  ],
+  "JPM": [
+   {"date": "2026-10-13", "type": "good", "title": "3분기 순이익 153억 달러, 매출 8% 증가", "impact": "미국 최대 은행이 여전히 돈을 잘 벌고 있어요.", "source": "Pulse 2.0", "url": "https://pulse2.com/jpmorgan-chase-q3-2026-results"},
+   {"date": "2026-10-13", "type": "bad", "title": "비용 12% 증가, 자사주 매입은 줄이기로", "impact": "주주에게 돌려주는 돈이 줄 수 있어요.", "source": "Pulse 2.0", "url": "https://pulse2.com/jpmorgan-chase-q3-2026-results"}
+  ],
+  "AMD": [
+   {"date": "2026-11-03", "type": "good", "title": "데이터센터 매출 85억 달러(+97%), 4분기 매출 약 170억 달러 전망", "impact": "AI 칩 사업이 1년 만에 거의 두 배가 됐어요.", "source": "Constellation Research", "url": "https://www.constellationr.com/insights/news/amd-q3-shines-data-center-revenue-nearly-doubles"},
+   {"date": "2026-11-03", "type": "bad", "title": "PC·게임 매출 8% 감소", "impact": "AI 말고 기존 사업은 약해지고 있어요.", "source": "Constellation Research", "url": "https://www.constellationr.com/insights/news/amd-q3-shines-data-center-revenue-nearly-doubles"}
+  ],
+  "MU": [
+   {"date": "2026-09-30", "type": "good", "title": "분기 매출 542억 달러 사상 최대, 다음 분기 약 615억 달러 전망", "impact": "AI용 메모리(HBM) 수요가 매우 강해서 메모리 값이 오르고 있어요.", "source": "Pulse 2.0", "url": "https://pulse2.com/micron-reports-record-fiscal-q4-revenue-of-54-23-billion-and-fy2026-revenue-of-133-19-billion/"},
+   {"date": "2026-08-12", "type": "watch", "title": "HBM4E부터 고객 맞춤형 메모리 시대 시작", "impact": "한번 고객을 잡으면 오래 거래할 수 있지만, 삼성·SK하이닉스와의 경쟁도 치열해요.", "source": "TrendForce", "url": "https://www.trendforce.com/news/2026/08/12/news-micron-flags-hbm4e-as-start-of-custom-hbm-era-hbm-market-could-tilt-toward-dual-or-single-suppliers/"}
+  ],
+  "V": [
+   {"date": "2026-10-27", "type": "good", "title": "2026 회계연도 순매출 460억 달러(+15%)", "impact": "사람들이 카드를 계속 더 많이 쓰고 있어요.", "source": "Visa 발표", "url": "https://investor.visa.com/news/news-details/2026/Visa-Fiscal-Fourth-Quarter-and-Full-Year-2026-Financial-Results/default.aspx"},
+   {"date": "2026-10-27", "type": "bad", "title": "2027 회계연도 성장 전망은 10%대 초반으로 둔화", "impact": "계속 크지만 성장 속도는 조금 느려질 거라는 뜻이에요.", "source": "Earnings Whispers", "url": "https://www.earningswhispers.com/article/V/r508"}
+  ],
+  "JNJ": [
+   {"date": "2026-10-13", "type": "good", "title": "3분기 매출 254억 달러(+5.9%), 연간 전망 상향, 건선약 트렘피어 +68%", "impact": "특허가 끝난 약(스텔라라)의 빈자리를 새 약이 채우고 있어요.", "source": "J&J 발표", "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance"},
+   {"date": "2026-10-13", "type": "bad", "title": "의료기기 성장 부진, 활석(탈크) 소송 합의 비용 반영", "impact": "의료기기 사업이 기대보다 약했고, 소송으로 큰돈이 나갔어요.", "source": "MD+DI", "url": "https://www.mddionline.com/business/j-j-inches-closer-to-100-billion-will-a-medtech-stumble-cloud-the-story-"},
+   {"date": "2026-12-08", "type": "watch", "title": "12월 8일 투자자 행사: 2027년 전망과 정형외과 사업 분리 계획 발표", "impact": "회사를 어떻게 나누고 키울지 구체적인 계획을 알 수 있어요.", "source": "J&J 발표", "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance"}
+  ],
+  "XOM": [
+   {"date": "2026-10-30", "type": "good", "title": "3분기 이익 154억 달러, 1년 전의 두 배 (정유 마진 급등)", "impact": "중동 분쟁 등으로 기름 공급이 불안해지자 휘발유·경유를 만드는 사업이 많이 벌었어요.", "source": "Oil & Gas Journal", "url": "https://www.ogj.com/general-interest/companies/news/55415606/exxonmobil-third-quarter-profit-doubles-as-refining-margins-surge"},
+   {"date": "2026-10-30", "type": "good", "title": "2027년 자사주 200억 달러 매입 계획, 분기 배당 1.07달러로 인상", "impact": "주주에게 돌려주는 돈이 늘어요.", "source": "ExxonMobil 발표", "url": "https://investor.exxonmobil.com/company-information/press-releases/detail/1213/exxonmobil-announces-third-quarter-2026-results"},
+   {"date": "2026-10-30", "type": "bad", "title": "원유값 하락으로 원유 생산·화학 부문 이익 감소", "impact": "기름값이 내려가면 원유를 캐는 사업의 이익이 줄어요.", "source": "Oil & Gas Journal", "url": "https://www.ogj.com/general-interest/companies/news/55415606/exxonmobil-third-quarter-profit-doubles-as-refining-margins-surge"}
+  ],
+  "MA": [
+   {"date": "2026-10-29", "type": "good", "title": "3분기 순매출 98억 달러(+14%), 부가서비스 +19%", "impact": "결제 수수료 말고 데이터·보안 같은 서비스도 빠르게 크고 있어요.", "source": "Mastercard 발표", "url": "https://www.sec.gov/Archives/edgar/data/0001141391/000114139126000122/ma09302026-exx991xearnings.htm"},
+   {"date": "2026-10-29", "type": "bad", "title": "유럽 안 해외결제 성장 둔화 (EU 새 통관 수수료 등)", "impact": "수수료가 높은 해외결제가 느려지면 이익 성장에 부담이에요.", "source": "FXC Intelligence", "url": "https://www.fxcintel.com/research/analysis/ct-mastercard-q3-2026-earnings"}
+  ],
+  "ABBV": [
+   {"date": "2026-10-30", "type": "good", "title": "3분기 매출 174억 달러(+10%), 스카이리지 +23%·린버크 +24%, 연간 전망 상향", "impact": "특허가 끝난 휴미라의 빈자리를 새 면역질환 약들이 잘 채우고 있어요.", "source": "AbbVie 발표", "url": "https://news.abbvie.com/2026-10-30-AbbVie-Reports-Third-Quarter-2026-Financial-Results"},
+   {"date": "2026-10-30", "type": "good", "title": "스카이리지, 크론병 피하주사 치료로 FDA 승인", "impact": "환자가 쓰기 편해져 더 많이 팔릴 수 있어요.", "source": "AbbVie 발표", "url": "https://news.abbvie.com/2026-10-30-AbbVie-Reports-Third-Quarter-2026-Financial-Results"}
+  ],
+  "COST": [
+   {"date": "2026-11-04", "type": "good", "title": "10월 매출 245억 달러(+12.6%), 온라인 매출 +22.5%", "impact": "회원들이 꾸준히 와서 많이 사고 있어요.", "source": "Costco 발표", "url": "https://www.globenewswire.com/news-release/2026/11/04/3395861/0/en/index.html"}
+  ],
+  "CVX": [
+   {"date": "2026-10-30", "type": "good", "title": "3분기 순이익 99억 달러 (1년 전 35억 달러)", "impact": "정유 마진과 원유값이 좋아서 크게 벌었어요.", "source": "Egypt Oil & Gas", "url": "https://egyptoil-gas.com/news/chevron-reports-9-9-bn-profit-in-3q-as-refining-margins-improve/"},
+   {"date": "2026-10-30", "type": "good", "title": "빚 35억 달러 더 갚고, 분기 배당 1.78달러 유지", "impact": "재무가 튼튼해지고 배당도 꾸준해요.", "source": "Finviz", "url": "https://finviz.com/news/412404/chevron-reports-third-quarter-2026-results"},
+   {"date": "2026-10-30", "type": "bad", "title": "하루 생산량 약 11만 배럴 감소 (중동 분쟁 영향 등)", "impact": "파는 양이 줄면 기름값이 좋아도 이익이 덜 늘어요.", "source": "Finviz", "url": "https://finviz.com/news/412404/chevron-reports-third-quarter-2026-results"}
+  ],
+  "KO": [
+   {"date": "2026-10-27", "type": "good", "title": "3분기 매출 134억 달러(+7%), 판매량 +5%, 연간 전망 상향", "impact": "인도·중국·멕시코·브라질에서 많이 팔리고 있어요.", "source": "Coca-Cola 발표", "url": "https://www.coca-colacompany.com/media-center/coca-cola-reports-third-quarter-2026-results"},
+   {"date": "2026-10-27", "type": "bad", "title": "북미 판매량 제자리 (물·스포츠음료·커피 감소)", "impact": "가장 큰 시장인 미국에서는 성장이 멈췄어요.", "source": "AJC", "url": "https://www.ajc.com/business/2026/10/coca-cola-third-quarter-revenue-growth/"}
+  ],
+  "PLTR": [
+   {"date": "2026-11-02", "type": "good", "title": "3분기 매출 23억 달러(+96%), 연간 전망 상향", "impact": "AI 소프트웨어를 쓰려는 고객이 빠르게 늘고 있어요.", "source": "Palantir 발표", "url": "https://www.sec.gov/Archives/edgar/data/0001321655/000132165526000045/a2026q3ex991pressrelease.htm"},
+   {"date": "2026-11-02", "type": "good", "title": "처음으로 미국 기업 고객 매출이 미국 정부 매출을 넘어섬", "impact": "정부에만 기대지 않고 돈 버는 곳이 넓어지고 있어요.", "source": "Palantir 발표", "url": "https://www.sec.gov/Archives/edgar/data/0001321655/000132165526000045/a2026q3ex991pressrelease.htm"}
+  ],
+  "PG": [
+   {"date": "2026-10-22", "type": "good", "title": "1분기 매출 233억 달러(+4%), 10개 제품군·6개 지역 모두 성장", "impact": "생활필수품이라 경기와 상관없이 꾸준히 팔리고 있어요.", "source": "P&G 발표", "url": "https://us.pg.com/newsroom/news-releases/PG-Announces-Fiscal-Year-2027-First-Quarter-Results/"},
+   {"date": "2026-10-22", "type": "bad", "title": "원자재·유가 상승으로 이익률 하락, 하반기 비용 부담 예상", "impact": "만드는 비용이 오르면 같은 양을 팔아도 남는 돈이 줄어요.", "source": "Benzinga", "url": "https://www.benzinga.com/node/62520617"}
+  ],
+  "CSCO": [
+   {"date": "2026-11-12", "type": "watch", "title": "11월 12일(미국 시간) 1분기 실적 발표", "impact": "AI 네트워크 장비 주문이 계속 느는지 볼 수 있어요.", "source": "Cisco", "url": "https://investor.cisco.com/news/news-details/2026/Cisco-Schedules-Conference-Call-for-Q1-Fiscal-Year-2027-Financial-Results/default.aspx"},
+   {"date": "2026-08", "type": "good", "title": "2026 회계연도에 대형 클라우드 회사들로부터 AI 장비 주문 93억 달러", "impact": "AI 데이터센터를 연결하는 장비가 새 성장 동력이 됐어요.", "source": "ITdaily", "url": "https://itdaily.com/news/business/cisco-posts-record-year-in-2026-with-strong-growth-and-ai-momentum/"},
+   {"date": "2026-08", "type": "bad", "title": "메모리 칩 값 상승 등으로 이익률 하락", "impact": "장비에 들어가는 부품값이 오르면 남는 돈이 줄어요.", "source": "Nasdaq", "url": "https://www.nasdaq.com/articles/cisco-systems-q4-earnings-call-highlights"}
+  ],
+  "MRK": [
+   {"date": "2026-10-29", "type": "good", "title": "3분기 매출 181억 달러(+5%), 키트루다 +6%, 연간 이익 전망 상향", "impact": "대표 항암제 키트루다가 여전히 잘 팔려요.", "source": "Finimize", "url": "https://finimize.com/content/mercks-keytruda-and-gardasil-powered-a-strong-q3-beat"},
+   {"date": "2026-10-29", "type": "good", "title": "피하주사형 '키트루다 큐렉스' 8.3억 달러, 예상보다 많이 팔림", "impact": "특허가 끝나는 키트루다 매출을 지키는 데 도움이 될 수 있어요.", "source": "MarketBeat", "url": "https://www.marketbeat.com/instant-alerts/transcript-merck-co-inc-q3-earnings-call-highlights-2026-10-30/"},
+   {"date": "2026-10-29", "type": "bad", "title": "키트루다 미국 특허 2028년 만료, 큐렉스 관련 특허 판결에 불복 중", "impact": "특허가 끝나면 값싼 복제약이 나와 매출이 크게 줄 수 있어요.", "source": "MarketBeat", "url": "https://www.marketbeat.com/instant-alerts/transcript-merck-co-inc-q3-earnings-call-highlights-2026-10-30/"}
+  ],
+  "ORCL": [
+   {"date": "2026-10-27", "type": "good", "title": "엔비디아와 차세대 AI 시스템 대규모 도입 확대", "impact": "AI 클라우드 용량을 늘려 더 많은 고객을 받을 수 있어요.", "source": "NVIDIA 발표", "url": "https://mfn.se/all/a/nvidia/nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-and-bring-nvidia-vera-cpu-to-oracle-cloud-infrastructure-8e9b8932"},
+   {"date": "2026", "type": "bad", "title": "데이터센터 투자로 현금이 모자라 빚·새 주식으로 450~500억 달러 조달", "impact": "빚이 늘면 이자 부담이 커지고, 새 주식을 찍으면 기존 주주의 몫이 줄어요(희석).", "source": "Constellation Research", "url": "https://www.constellationr.com/insights/news/oracle-raise-45-billion-50-billion-debt-equity-data-center-buildout"}
+  ],
+  "UNH": [
+   {"date": "2026-10-13", "type": "good", "title": "3분기 순이익 41억 달러 (1년 전 23.5억 달러), 연간 전망 상향", "impact": "의료비 부담이 줄면서 보험 사업 이익이 회복되고 있어요.", "source": "Fierce Healthcare", "url": "https://www.fiercehealthcare.com/payers/unitedhealth-group-beats-street-41b-profit-q3"},
+   {"date": "2026-10-13", "type": "bad", "title": "보험 가입자 180만 명 감소", "impact": "보험료를 올리고 일부 지역에서 빠져서 이익은 좋아졌지만 덩치는 줄었어요.", "source": "Healthcare Finance", "url": "https://www.healthcarefinancenews.com/news/unitedhealth-targets-growth-q3-profit-rises"}
+  ],
+  "HD": [
+   {"date": "2026-11-17", "type": "watch", "title": "11월 17일 3분기 실적 발표", "impact": "집수리 수요가 살아나는지 볼 수 있어요. 지난해 같은 때는 태풍이 적어 매출이 기대보다 약했어요.", "source": "Home Depot", "url": "https://corporate.homedepot.com/node/1926"}
+  ],
+  "BAC": [
+   {"date": "2026-10-14", "type": "good", "title": "3분기 매출 약 300억 달러(+3%), 이자수익 +8%, 대출 10분기 연속 증가", "impact": "은행의 기본 수입인 이자 장사가 잘되고 있어요.", "source": "Bank of America 발표", "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/10/bank-of-america-reports-third-quarter-2026-financial-results.html"},
+   {"date": "2026-10-13", "type": "bad", "title": "감독당국 제재와 관련해 12억 달러 일회성 비용", "impact": "규정 문제로 돈이 나갔어요. 비슷한 일이 반복되지 않는지 봐야 해요.", "source": "Bank of America 발표", "url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/10/bank-of-america-reports-third-quarter-2026-financial-results.html"}
+  ],
+  "GE": [
+   {"date": "2026-10-20", "type": "good", "title": "3분기 주문 +49%, 매출 +16%, 연간 전망 상향", "impact": "비행기 엔진과 정비 수요가 매우 강해요.", "source": "GE Aerospace 발표", "url": "https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-third-quarter-2026-results"},
+   {"date": "2026-10-20", "type": "bad", "title": "잉여현금흐름 14% 감소", "impact": "팔았지만 아직 받지 못한 돈이 늘었어요.", "source": "finsee.ai", "url": "https://finsee.ai/earnings/ge/2026/q3/en/"},
+   {"date": "2026-10-20", "type": "watch", "title": "GE9X 엔진 매출은 연말 인증을 받은 뒤 반영 예정", "impact": "인증이 늦어지면 매출 반영도 늦어져요.", "source": "GE Aerospace", "url": "https://www.geaerospace.com/news/investor-relations/ir-updates/ge-aerospace-releases-its-3q26-results"}
+  ],
+  "INTC": [
+   {"date": "2026-10-29", "type": "good", "title": "3분기 매출 165억 달러(+21%), 파운드리 매출 +58%", "impact": "오래 부진하던 회사가 다시 성장하고 있어요.", "source": "Intel 발표", "url": "https://www.intc.com/news-events/press-releases/detail/1786/intel-reports-third-quarter-2026-financial-results"},
+   {"date": "2026-10", "type": "good", "title": "18A 공정 수율 크게 개선, 14A 설계 도구 배포", "impact": "칩을 만들 때 불량이 줄어 비용이 내려가요.", "source": "Quartr", "url": "https://quartr.com/events/intel-intc-q3-2026_3sbE6kpM"},
+   {"date": "2026-10", "type": "watch", "title": "14A 공정에 외부 고객을 잡을 수 있을지가 관건", "impact": "다른 회사 칩을 대신 만들어 줘야 파운드리 사업이 돈을 벌 수 있어요.", "source": "Global American", "url": "https://globalamericaninc.com/intel-q3-profitability-turnaround-or-blip/"}
+  ],
+  "PM": [
+   {"date": "2026-10-21", "type": "good", "title": "3분기 매출 114억 달러 분기 사상 최대, 배당 8.8% 인상", "impact": "가격을 올려도 잘 팔리고, 주주에게 돌려주는 돈도 늘었어요.", "source": "Finviz", "url": "https://finviz.com/news/405122/philip-morris-international-reports-2026-third-quarter-first-nine-months-results-and-updates-2026-full-year-adjusted-diluted-eps-forecast-for-currency-only"},
+   {"date": "2026-10-21", "type": "bad", "title": "환율 때문에 연간 이익 전망 소폭 하향, 미국은 ZYN 마케팅 비용 증가", "impact": "달러로 바꾼 해외 이익이 줄고, 새 제품 홍보에 돈을 많이 쓰고 있어요.", "source": "Finviz", "url": "https://finviz.com/news/405122/philip-morris-international-reports-2026-third-quarter-first-nine-months-results-and-updates-2026-full-year-adjusted-diluted-eps-forecast-for-currency-only"}
+  ],
+  "AMAT": [
+   {"date": "2026-10-21", "type": "good", "title": "램리서치 \"2027년 반도체 장비 시장 2,000억 달러 넘을 것\" (업계 뉴스)", "impact": "반도체 장비 업계 전체에 좋은 신호예요.", "source": "MarketBeat", "url": "https://www.marketbeat.com/instant-alerts/transcript-lam-research-q1-earnings-call-highlights-2026-10-21/"},
+   {"date": "2025-11", "type": "bad", "title": "미국의 중국 수출 규제로 중국 매출 비중이 40% 가까이에서 20%대로 감소", "impact": "큰 고객이던 중국에 팔 수 있는 장비가 줄었어요.", "source": "Yahoo Finance", "url": "https://finance.yahoo.com/news/applied-materials-forecasts-strong-quarterly-210625673.html"}
+  ],
+  "MS": [
+   {"date": "2026-10-14", "type": "good", "title": "3분기 매출 203억 달러, 주식 트레이딩 +41%, 자산관리 매출 사상 최대", "impact": "주식시장이 활발해서 중개·자산관리로 많이 벌었어요.", "source": "Morgan Stanley 발표", "url": "https://www.morganstanley.com/press-releases/morgan-stanley-reports-third-quarter-2026"},
+   {"date": "2026-10-14", "type": "bad", "title": "채권 트레이딩 매출 7% 감소", "impact": "모든 사업이 다 좋은 건 아니에요.", "source": "Kaohoon", "url": "https://www.kaohooninternational.com/?p=592720"}
+  ],
+  "LRCX": [
+   {"date": "2026-10-21", "type": "good", "title": "분기 매출 82억 달러, 처음으로 영업이익률 40% 넘어, \"2027년 장비 시장 2,000억 달러 이상\" 전망", "impact": "AI용 반도체 공장 투자가 몇 년 이어질 거라고 봐요.", "source": "MarketBeat", "url": "https://www.marketbeat.com/instant-alerts/transcript-lam-research-q1-earnings-call-highlights-2026-10-21/"},
+   {"date": "2026-10-21", "type": "bad", "title": "D램 기술 방향을 둘러싼 논쟁으로 투자자 걱정", "impact": "메모리 회사들이 어떤 방식으로 공장을 바꾸느냐에 따라 장비 주문이 달라질 수 있어요.", "source": "MarketBeat", "url": "https://www.marketbeat.com/articles/lam-researchs-earnings-beat-wasnt-the-real-storyits-2027-outlook-was/"}
+  ],
+  "CAT": [
+   {"date": "2026-10-29", "type": "good", "title": "3분기 매출 207억 달러(+17%), 주문잔고 사상 최대 781억 달러", "impact": "데이터센터용 발전기 등 앞으로 만들 주문이 많이 쌓였어요.", "source": "Caterpillar 발표", "url": "https://www.sec.gov/Archives/edgar/data/0000018230/000001823026000052/ex991toformcat3q2026earnin.htm"},
+   {"date": "2026-10-29", "type": "bad", "title": "관세 비용 4분기에만 약 6억 달러 예상", "impact": "부품을 들여올 때 세금이 붙어 이익이 줄어요.", "source": "Quartr", "url": "https://quartr.com/events/caterpillar-cat-q3-2026_oj6aOoYF"}
+  ],
+  "PANW": [
+   {"date": "2026-08", "type": "good", "title": "2026 회계연도 4분기 매출 34.1억 달러(+34%)", "impact": "보안 수요가 강해 성장이 빨라졌어요.", "source": "Palo Alto Networks 발표", "url": "https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-reports-fiscal-fourth-quarter-and-fiscal-year-2026-financial-results"},
+   {"date": "2026-11", "type": "watch", "title": "11월 중하순 1분기 실적 발표 예정 (매출 33억 달러 전망)", "impact": "회사가 내놓은 전망을 지켰는지 볼 수 있어요.", "source": "Earnings Whispers", "url": "https://www.earningswhispers.com/d/PANW"}
+  ],
+  "TXN": [
+   {"date": "2026-10-21", "type": "good", "title": "3분기 매출 60.6억 달러(+28%), 영업이익 +73%, 4분기 전망도 예상보다 좋음", "impact": "산업·자동차·데이터센터용 칩 수요가 살아나고 있어요.", "source": "Finviz", "url": "https://finviz.com/news/405783/ti-reports-third-quarter-2026-financial-results-and-shareholder-returns"},
+   {"date": "2026-10-21", "type": "watch", "title": "자사주 매입은 크게 줄임 (분기 4,800만 달러)", "impact": "새 공장에 돈을 쓰는 중이라 배당은 유지하고 자사주 매입은 줄였어요.", "source": "Finviz", "url": "https://finviz.com/news/405783/ti-reports-third-quarter-2026-financial-results-and-shareholder-returns"}
+  ],
+  "TMO": [
+   {"date": "2026-10-21", "type": "good", "title": "3분기 매출 121억 달러(+9%), 이익 예상보다 좋음", "impact": "제약회사들의 실험·생산 수요가 회복되고 있어요.", "source": "RTTNews", "url": "https://www.rttnews.com/3701088/thermo-fisher-q3-net-income-rises-6-2-as-revenue-climbs-9.aspx"},
+   {"date": "2026-10-21", "type": "bad", "title": "특수 진단 부문 매출 감소 (미생물 사업 매각 영향)", "impact": "사업 하나를 팔아서 그만큼 매출이 빠졌어요.", "source": "Thermo Fisher 발표", "url": "https://www.sec.gov/Archives/edgar/data/0000097745/000009774526000173/q32026earnings8kex99_1.htm"}
+  ],
+  "RTX": [
+   {"date": "2026-10-20", "type": "good", "title": "3분기 매출 250억 달러(+11%), 주문잔고 3,400억 달러, 연간 전망 상향", "impact": "비행기 부품과 미사일 주문이 몇 년 치 쌓여 있어요.", "source": "RTX 발표", "url": "https://rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results"},
+   {"date": "2026-10-20", "type": "bad", "title": "고객사 파산으로 엔진 사업(프랫앤휘트니)에 3.6억 달러 손실", "impact": "받을 돈을 못 받게 돼 이익이 줄었어요.", "source": "RTX 발표", "url": "https://rtx.com/news/news-center/2026/10/20/rtx-reports-q3-2026-results"}
+  ],
+  "NFLX": [
+   {"date": "2026-10-20", "type": "good", "title": "3분기 영업이익 +37%, 자사주 48억 달러 매입 (분기 사상 최대)", "impact": "벌어들인 돈이 늘고, 주주에게 많이 돌려주고 있어요.", "source": "Inven Global", "url": "https://www.invenglobal.com/articles/27431/netflix-posts-129bn-q3-revenue-points-to-gta-vi-tie-up-with-take-two"},
+   {"date": "2026-10-20", "type": "bad", "title": "미국·캐나다 성장 둔화, 올해 광고 매출 전망 30억→27억 달러로 낮춤", "impact": "가장 큰 시장의 성장이 느려지고, 새 수입원인 광고도 기대보다 약해요.", "source": "24/7 Wall St.", "url": "https://247wallst.com/cards/netflix-q3-2026-earnings-nflx-01m5deq0f119rjb4fjrht5sjde"},
+   {"date": "2026-10", "type": "bad", "title": "직원 약 1,000명(6%) 감원, 콘텐츠 책임자 교체", "impact": "비용은 줄지만, 회사 방향이 흔들리는 건 아닌지 지켜봐야 해요.", "source": "NBC", "url": "https://www.nbcnewyork.com/entertainment/entertainment-news/netflix-investors-recent-shake-ups-layoffs/6561336/"}
+  ],
+  "GS": [
+   {"date": "2026-10-13", "type": "good", "title": "3분기 매출 187억 달러(+23%), 주식 트레이딩 +72%", "impact": "주식시장이 활발해서 투자은행 사업이 크게 벌었어요.", "source": "Goldman Sachs 발표", "url": "https://www.sec.gov/Archives/edgar/data/0000886982/000088698226000529/a3q26gsearningsresults.htm"}
+  ],
+  "WFC": [
+   {"date": "2026-10-13", "type": "good", "title": "3분기 순이익 60억 달러(+6%), 대출·예금 각각 11% 증가", "impact": "은행 덩치가 커지면서 이자 수입도 늘 수 있어요.", "source": "Wells Fargo 발표", "url": "https://www.sec.gov/Archives/edgar/data/0000072971/000007297126000318/wfc3qer10-13x26ex991xrelea.htm"},
+   {"date": "2026-10-13", "type": "bad", "title": "못 받을 돈에 대비해 쌓은 돈(대손충당금) 51% 증가", "impact": "빌려준 돈을 못 받을 걱정이 늘었다는 뜻이에요.", "source": "VZ", "url": "https://www.vermoegenszentrum.ch/en/stock-exchange-and-markets/news/wells-fargo-q3-2026-net-income-rises-6-usd-595-billion-eps-climbs"}
+  ],
+  "AMGN": [
+   {"date": "2026-11-03", "type": "good", "title": "3분기 매출 104억 달러(+8%), 연간 이익 전망 상향", "impact": "주력 약들이 꾸준히 팔리고 있어요.", "source": "Amgen 발표", "url": "https://www.amgen.com/newsroom/press-releases/2026/11/amgen-reports-third-quarter-2026-financial-results"},
+   {"date": "2026-11-03", "type": "watch", "title": "비만약 '마리타이드' 3상 시험 진행 중, 4분기에 당뇨 3상 2건 추가 시작", "impact": "성공하면 릴리·노보와 비만약 시장에서 경쟁할 수 있어요.", "source": "Amgen 발표", "url": "https://www.amgen.com/newsroom/press-releases/2026/11/amgen-reports-third-quarter-2026-financial-results"}
+  ],
+  "LIN": [
+   {"date": "2026-10-29", "type": "good", "title": "3분기 매출 94억 달러 분기 사상 최대, 반도체용 가스 +15%", "impact": "AI 반도체 공장이 늘수록 산업용 가스도 많이 필요해요.", "source": "Indian Chemical News", "url": "https://www.indianchemicalnews.com/gas/linde-posts-record-94-billion-quarterly-sales-32464"},
+   {"date": "2026-10-29", "type": "bad", "title": "구조조정 비용으로 순이익 12% 감소", "impact": "일회성 비용이라 본업 실력과는 따로 봐야 해요.", "source": "finsee.ai", "url": "https://finsee.ai/earnings/lin/2026/q3/en/"}
+  ],
+  "ANET": [
+   {"date": "2026-11-03", "type": "good", "title": "3분기 매출 36.6억 달러(+58.5%), 상장 이후 가장 빠른 성장", "impact": "AI 데이터센터를 연결하는 장비 수요가 폭발적이에요.", "source": "24/7 Wall St.", "url": "https://247wallst.com/cards/arista-networks-q3-2026-earnings-anet-01m6hm6v5atgmt0qczy1xw4ymp"},
+   {"date": "2026-11-03", "type": "bad", "title": "관세·수출 규제·부품 부족이 위험 요인으로 꼽힘", "impact": "부품을 제때 못 구하거나 비용이 오르면 이익률이 떨어질 수 있어요.", "source": "Morningstar", "url": "https://www.morningstar.com/news/business-wire/20261103862513/arista-networks-inc-reports-third-quarter-2026-financial-results"}
+  ],
+  "CRWD": [
+   {"date": "2026-11-03", "type": "good", "title": "AI 보안 테스트 회사 '드레드노드' 인수 계약, AI 에이전트 보안 기능 출시", "impact": "AI를 쓰는 기업이 늘수록 필요한 새 보안 시장을 먼저 잡으려는 거예요.", "source": "CrowdStrike 발표", "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-to-acquire-dreadnode-advance-ai-trust/"}
+  ],
+  "IBM": [
+   {"date": "2026-10-21", "type": "good", "title": "3분기 매출 171억 달러(+5%), 레드햇·하이브리드 클라우드 +11%", "impact": "소프트웨어 사업이 꾸준히 크고 있어요.", "source": "Constellation Research", "url": "https://www.constellationr.com/insights/news/ibm-delivers-strong-q3-sees-4-5-revenue-growth-2026"},
+   {"date": "2026-10-21", "type": "bad", "title": "메인프레임(IBM Z) 매출 20% 감소", "impact": "큰 계약이 들어오는 시기에 따라 분기마다 출렁이는 사업이에요.", "source": "Constellation Research", "url": "https://www.constellationr.com/insights/news/ibm-delivers-strong-q3-sees-4-5-revenue-growth-2026"}
+  ]
+ }
+}

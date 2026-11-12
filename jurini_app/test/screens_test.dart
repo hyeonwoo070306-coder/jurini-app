@@ -12,6 +12,7 @@ void main() {
     data = read('companies.json');
     sp500 = read('sp500.json');
     terms = read('glossary.json')['terms'];
+    news = read('news.json');
     G = {for (final t in terms) t['id'] as String: t};
     companies = mergeCompanies(data['companies'], sp500['companies']);
   });
@@ -22,8 +23,10 @@ void main() {
     addTearDown(tester.view.reset);
     final full = companies.where((c) => isFull(c)).toList();
     expect(full.length, 50);
+    expect(full.where((c) => news['companies'][c['ticker']] == null), isEmpty); // 50곳 모두 뉴스가 있어야 함
     for (final c in full) {
       await tester.pumpWidget(MaterialApp(home: DetailPage(c, key: ValueKey(c['id']))));
+      expect(find.text('최근 뉴스'), findsOneWidget, reason: c['ticker']);
       for (final t in tabs.values) {
         await tester.ensureVisible(find.text(t));
         await tester.tap(find.text(t));

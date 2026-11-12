@@ -9,7 +9,7 @@ import 'package:flutter/services.dart';
 
 typedef J = Map<String, dynamic>;
 
-late J data, sp500;
+late J data, sp500, news;
 late List<dynamic> companies, terms;
 late Map<String, dynamic> G;
 
@@ -20,6 +20,7 @@ Future<void> main() async {
   });
   data = jsonDecode(await rootBundle.loadString('assets/companies.json'));
   sp500 = jsonDecode(await rootBundle.loadString('assets/sp500.json'));
+  news = jsonDecode(await rootBundle.loadString('assets/news.json'));
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
   companies = mergeCompanies(data['companies'], sp500['companies']);
@@ -29,18 +30,29 @@ Future<void> main() async {
 
 // ---------- 매일 종가 기준 지표 (GitHub Actions가 매일 만드는 docs/valuation.json) ----------
 // 깃허브 저장소를 만든 뒤 주소를 넣는다. 비어 있으면 앱에 든 숫자만 쓴다.
-const liveUrl = 'https://raw.githubusercontent.com/hyeonwoo070306-coder/jurini-app/main/docs/valuation.json';
+const liveBase = 'https://raw.githubusercontent.com/hyeonwoo070306-coder/jurini-app/main/docs/';
 final live = ValueNotifier<String?>(null); // 받아온 종가 기준일
+final redraw = ValueNotifier(0);
+
+Future<J?> getJson(String file) async {
+  try {
+    final req = await HttpClient().getUrl(Uri.parse(liveBase + file)).timeout(const Duration(seconds: 8));
+    final res = await req.close().timeout(const Duration(seconds: 8));
+    if (res.statusCode != 200) return null;
+    return jsonDecode(await res.transform(utf8.decoder).join());
+  } catch (_) {
+    return null; // 인터넷이 없거나 파일이 이상하면 앱에 들어 있는 것을 그대로 쓴다.
+  }
+}
 
 Future<void> loadLive() async {
-  if (liveUrl.isEmpty) return;
-  try {
-    final req = await HttpClient().getUrl(Uri.parse(liveUrl)).timeout(const Duration(seconds: 8));
-    final res = await req.close().timeout(const Duration(seconds: 8));
-    if (res.statusCode != 200) return;
-    applyLive(jsonDecode(await res.transform(utf8.decoder).join()));
-  } catch (_) {
-    // 인터넷이 없거나 파일이 이상하면 앱에 들어 있는 숫자를 그대로 쓴다.
+  final n = await getJson('news.json');
+  if (n != null && n['companies'] is Map) news = n;
+  final v = await getJson('valuation.json');
+  if (v != null) {
+    applyLive(v);
+  } else if (n != null) {
+    redraw.value++; // 뉴스만 바뀌어도 화면을 다시 그린다
   }
 }
 
@@ -54,8 +66,8 @@ void applyLive(J j) {
     c['market_cap_usd_b'] = v['market_cap_usd_b'];
     c['market_cap_asof'] = asof;
     c['rank'] = v['rank'];
-    c['valuation'] = {...c['valuation'], 'per': v['per'], 'forward_per': v['forward_per'], 'pbr': v['pbr'], 'asof': asof};
-    c['shareholder_return'] = {...c['shareholder_return'], 'dividend_yield': v['dividend_yield']};
+    c['valuation'] = <String, dynamic>{...c['valuation'], 'per': v['per'], 'forward_per': v['forward_per'], 'pbr': v['pbr'], 'asof': asof};
+    c['shareholder_return'] = <String, dynamic>{...c['shareholder_return'], 'dividend_yield': v['dividend_yield']};
   }
   final full = companies.where((c) => isFull(c)).toList()..sort((a, b) => (a['rank'] as int).compareTo(b['rank']));
   companies = [...full, ...companies.where((c) => !isFull(c))];
@@ -195,6 +207,52 @@ Widget groupRow(P p, bool first, bool last, VoidCallback onTap, Widget child) =>
           child: Container(
               decoration: BoxDecoration(border: last ? null : Border(bottom: BorderSide(color: p.line))), child: child)),
     );
+
+const newsKinds = {'good': ('호재', '좋은 소식'), 'bad': ('악재', '걱정되는 소식'), 'watch': ('지켜볼 일', '앞으로 있을 일')};
+
+Widget newsCard(P p, List items) {
+  Color colorOf(String t) => t == 'good' ? p.good : t == 'bad' ? p.warn : p.accent;
+  return Container(
+    padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(20),
+      border: Border.all(color: p.accent.withValues(alpha: .7), width: 1.5),
+      gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [p.accentSoft, p.surface]),
+      boxShadow: [BoxShadow(color: p.accent.withValues(alpha: .18), blurRadius: 24, offset: const Offset(0, 8))],
+    ),
+    child: col(14, [
+      Row(children: [
+        Container(
+            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+            decoration: BoxDecoration(color: p.accent, borderRadius: BorderRadius.circular(6)),
+            child: const Text('NEW', style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: .5))),
+        const SizedBox(width: 8),
+        Expanded(child: Text('최근 뉴스', style: h(19))),
+        Text('${news['asof']} 정리', style: sub(p, 11.5)),
+      ]),
+      for (final (i, n) in items.indexed) ...[
+        if (i > 0) Container(height: 1, color: p.line),
+        col(6, [
+          Row(children: [
+            Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(color: colorOf(n['type']).withValues(alpha: .16), borderRadius: BorderRadius.circular(999)),
+                child: Text(newsKinds[n['type']]?.$1 ?? '', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: colorOf(n['type'])))),
+            const SizedBox(width: 8),
+            Text(n['date'] ?? '', style: sub(p, 12)),
+          ]),
+          txt(n['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
+          rich([
+            TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(n['type']))),
+            s(n['impact']),
+          ], const TextStyle(fontSize: 14, height: 1.5)),
+          Text('출처: ${n['source']}', style: sub(p, 11.5)),
+        ]),
+      ],
+      txt('호재·악재는 뉴스 내용을 쉽게 나눈 것이에요. 주가가 어떻게 움직일지는 아무도 몰라요.', sub(p, 11.5)),
+    ]),
+  );
+}
 
 Widget pointCard(P p, IconData icon, String title, Color color, Color soft, List items) => box(
     p,
@@ -445,9 +503,9 @@ class App extends StatelessWidget {
   const App({super.key});
 
   @override
-  Widget build(BuildContext context) => ValueListenableBuilder(
-      valueListenable: live,
-      builder: (_, __, ___) => MaterialApp(
+  Widget build(BuildContext context) => ListenableBuilder(
+      listenable: Listenable.merge([live, redraw]),
+      builder: (_, __) => MaterialApp(
             title: '주린이 기업 노트',
             debugShowCheckedModeBanner: false,
             theme: theme(P.light, Brightness.light),
@@ -695,6 +753,7 @@ class _DetailState extends State<DetailPage> {
             explain(p, txt('이 회사의 자세한 설명(투자 포인트, 사업, 리스크)은 준비 중이에요. 지금은 미국 SEC 공시에서 가져온 숫자만 보여드려요.',
                 const TextStyle(fontSize: 13.5))),
           if (full) ...[
+          if ((news['companies'][c['ticker']] as List?)?.isNotEmpty ?? false) newsCard(p, news['companies'][c['ticker']]),
           pointCard(p, Icons.trending_up_rounded, '투자 포인트', p.good, p.goodSoft, c['invest_points']),
           pointCard(p, Icons.error_outline_rounded, '주의할 점', p.warn, p.warnSoft, c['cautions']),
           SingleChildScrollView(
