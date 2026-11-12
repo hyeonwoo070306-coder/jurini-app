@@ -78,4 +78,14 @@ void main() {
       expect(tester.takeException(), isNull, reason: c['name_ko']);
     }
   });
+
+  testWidgets('뉴스 탭: 받은 뉴스를 최신순으로 보여주고, 없으면 안내', (tester) async {
+    feed = null;
+    await tester.pumpWidget(const MaterialApp(home: NewsPage()));
+    expect(find.textContaining(kt('인터넷에 연결하면')), findsOneWidget);
+    feed = jsonDecode(File('../docs/feed.json').readAsStringSync());
+    await tester.pumpWidget(const MaterialApp(home: NewsPage(key: ValueKey(2))));
+    expect(find.textContaining(kt('인터넷에 연결하면')), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
 }

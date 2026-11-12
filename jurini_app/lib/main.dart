@@ -6,11 +6,13 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 typedef J = Map<String, dynamic>;
 
 late J data, sp500, news, kr, usMore;
 Set<String> ndx = {}; // 나스닥 100 티커
+J? feed; // 뉴스 탭: 매시간 깃허브가 모으는 회사별 최신 뉴스 제목 (인터넷에서만 받음)
 late List<dynamic> companies, terms;
 late Map<String, dynamic> G;
 
@@ -81,7 +83,28 @@ bool validValuation(J j) {
   return true;
 }
 
+bool validFeed(J f) {
+  final cs = f['companies'];
+  if (f['asof'] is! String || cs is! Map) return false;
+  for (final c in cs.values) {
+    if (c is! Map || c['name'] is! String || c['items'] is! List) return false;
+    for (final x in c['items']) {
+      if (x is! Map || x['t'] is! String || x['url'] is! String || x['date'] is! String) return false;
+    }
+  }
+  return true;
+}
+
+Future<void> loadFeed() async {
+  final f = await getJson('feed.json');
+  if (f != null && validFeed(f)) {
+    feed = f;
+    redraw.value++;
+  }
+}
+
 Future<void> loadLive() async {
+  loadFeed();
   final raw = await getJson('news.json');
   final n = raw == null ? null : validNews(raw);
   if (n != null) news = n;
@@ -142,6 +165,17 @@ String won(num m) {
   final jo = m * 1e6 * 1400 / 1e12;
   return jo >= 1 ? '약 ${jo.toStringAsFixed(jo >= 100 ? 0 : 1)}조 원' : '약 ${comma((jo * 10000).round())}억 원';
 }
+// "3시간 전" 같은 표시. now는 테스트에서 넣을 수 있게
+String ago(String iso, [DateTime? now]) {
+  final t = DateTime.tryParse(iso);
+  if (t == null) return '';
+  final d = (now ?? DateTime.now()).toUtc().difference(t.toUtc());
+  if (d.inMinutes < 1) return '방금';
+  if (d.inHours < 1) return '${d.inMinutes}분 전';
+  if (d.inDays < 1) return '${d.inHours}시간 전';
+  return '${d.inDays}일 전';
+}
+
 String nf(num x) => x == x.roundToDouble() ? x.round().toString() : x.toString();
 String opt(num? x, String unit) => x == null ? '-' : '${nf(x)}$unit';
 String period(String label) => label.replaceAll('최근 12개월(TTM)', '최근 12개월');
@@ -360,7 +394,33 @@ Color brandColor(J c) {
 const tabular = [FontFeature.tabularFigures()];
 const ink = Color(0xFF191F28);
 
+// shortcut: 로고 이미지는 FMP(financialmodelingprep.com)의 공개 로고 주소를 쓴다. 로고는 각 회사의 상표라
+//           광고를 붙여 출시하기 전에 이용 조건을 확인하고, 필요하면 로고 사용 허락을 받은 서비스로 바꾼다.
+String logoUrl(J c) {
+  final String tk = c['ticker'];
+  final code = isKr(c) ? '$tk.${c['market'] == '코스닥' ? 'KQ' : 'KS'}' : tk.replaceAll('.', '-');
+  return 'https://financialmodelingprep.com/image-stock/$code.png';
+}
+
 Widget logo(J c, [double size = 44, Color? bg]) {
+  final badge = logoBadge(c, size, bg);
+  return ClipRRect(
+    borderRadius: BorderRadius.circular(size * .3),
+    child: Image.network(
+      logoUrl(c),
+      width: size,
+      height: size,
+      fit: BoxFit.contain,
+      // 투명 배경 로고가 어두운 화면에서도 보이게 흰 바탕 위에 그린다
+      frameBuilder: (_, child, frame, __) => frame == null
+          ? badge
+          : Container(width: size, height: size, color: Colors.white, padding: EdgeInsets.all(size * .12), child: child),
+      errorBuilder: (_, __, ___) => badge,
+    ),
+  );
+}
+
+Widget logoBadge(J c, double size, Color? bg) {
   final String tk = c['ticker'];
   return Container(
     width: size,
@@ -577,13 +637,14 @@ class _ShellState extends State<Shell> {
         // live/redraw가 바뀌면 화면을 새로 만들어 받은 숫자가 바로 보이게 한다
         body: ListenableBuilder(
             listenable: Listenable.merge([live, redraw]),
-            builder: (_, __) => IndexedStack(index: i, children: [HomePage(key: homeKey), const TermsPage()])),
+            builder: (_, __) => IndexedStack(index: i, children: [HomePage(key: homeKey), const TermsPage(), const NewsPage()])),
         bottomNavigationBar: NavigationBar(
           selectedIndex: i,
           onDestinationSelected: (v) => setState(() => i = v),
           destinations: const [
             NavigationDestination(icon: Icon(Icons.bar_chart_rounded), label: '기업'),
             NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: '용어사전'),
+            NavigationDestination(icon: Icon(Icons.newspaper_rounded), label: '뉴스'),
           ],
         ),
       );
@@ -1105,6 +1166,100 @@ class _TermsState extends State<TermsPage> {
               padding: const EdgeInsets.only(top: 20),
               child: Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5))),
         ],
+      ),
+    );
+  }
+}
+
+// ---------- 뉴스 탭: 회사별 최신 뉴스 제목 (매시간 갱신, 누르면 원문)
+class NewsPage extends StatefulWidget {
+  const NewsPage({super.key});
+  @override
+  State<NewsPage> createState() => _NewsState();
+}
+
+class _NewsState extends State<NewsPage> {
+  String market = '전체';
+  String q = '';
+
+  // 뉴스의 회사(티커) → 앱 안의 회사 데이터 (로고·상세 화면용)
+  J? companyOf(String tk) {
+    for (final c in [...companies, ...kr['companies']]) {
+      if (c['ticker'] == tk) return c;
+    }
+    return null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = P.of(context);
+    final J? f = feed;
+    final query = q.trim().toLowerCase();
+    final rows = <(String, J, J)>[]; // (티커, 회사 정보, 뉴스 한 개)
+    if (f != null) {
+      for (final e in (f['companies'] as Map).entries) {
+        final J c = e.value;
+        if (market != '전체' && c['market'] != market) continue;
+        if (query.isNotEmpty && !'${c['name']} ${e.key}'.toLowerCase().contains(query)) continue;
+        for (final x in c['items']) {
+          rows.add((e.key as String, c, x as J));
+        }
+      }
+    }
+    rows.sort((a, b) => (b.$3['date'] as String).compareTo(a.$3['date']));
+    return Scaffold(
+      appBar: topBar(context, '실시간 뉴스', f == null ? '' : '${ago(f['asof'])} 업데이트'),
+      body: RefreshIndicator(
+        onRefresh: loadFeed,
+        child: ListView(
+          padding: pad,
+          children: [
+            txt('회사별 최신 뉴스 제목을 1시간마다 모아요. 누르면 언론사 원문이 열려요. 아래로 당기면 새로고침돼요.', sub(p, 13)),
+            const SizedBox(height: 12),
+            SegmentedButton<String>(
+              segments: const [
+                ButtonSegment(value: '전체', label: Text('전체')),
+                ButtonSegment(value: '미국', label: Text('미국')),
+                ButtonSegment(value: '한국', label: Text('한국')),
+              ],
+              selected: {market},
+              showSelectedIcon: false,
+              onSelectionChanged: (v) => setState(() => market = v.first),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              onChanged: (v) => setState(() => q = v),
+              decoration: const InputDecoration(hintText: '회사 이름으로 찾기 (예: 엔비디아, 삼성)', prefixIcon: Icon(Icons.search)),
+            ),
+            const SizedBox(height: 16),
+            if (f == null)
+              explain(p, txt('인터넷에 연결하면 최신 뉴스를 볼 수 있어요. 연결한 뒤 아래로 당겨 새로고침해 주세요.', const TextStyle(fontSize: 14)))
+            else if (rows.isEmpty)
+              Text('찾는 뉴스가 없어요.', style: sub(p)),
+            for (final (i, (tk, c, x)) in rows.indexed)
+              groupRow(
+                p,
+                i == 0,
+                i == rows.length - 1,
+                () => launchUrl(Uri.parse(x['url']), mode: LaunchMode.externalApplication),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
+                  child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                    if (companyOf(tk) case final J co) ...[logo(co, 34), const SizedBox(width: 12)],
+                    Expanded(
+                      child: col(4, [
+                        Text('${c['name']} · ${ago(x['date'])}${(x['src'] ?? '') == '' ? '' : ' · ${x['src']}'}',
+                            style: sub(p, 12).copyWith(fontWeight: FontWeight.w600)),
+                        txt(x['t'], const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, height: 1.45)),
+                      ]),
+                    ),
+                  ]),
+                ),
+              ),
+            const SizedBox(height: 16),
+            txt('뉴스 제목과 내용은 각 언론사의 것이에요. $disclaimer', sub(p, 11.5)),
+          ],
+        ),
       ),
     );
   }

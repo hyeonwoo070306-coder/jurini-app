@@ -1,4 +1,4 @@
-package com.example.jurini
+package io.github.hyeonwoo070306coder.jurini
 
 import io.flutter.embedding.android.FlutterActivity
 

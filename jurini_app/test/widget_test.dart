@@ -75,4 +75,15 @@ void main() {
     expect(validValuation({'asof': 'x', 'companies': {'A': {'market_cap_usd_b': 1, 'rank': 1, 'per': 'NaN'}}}), false);
     expect(validValuation({'asof': 'x', 'companies': {'A': {'market_cap_usd_b': 1, 'rank': 1, 'per': null}}}), true);
   });
+
+  test('뉴스 시간 표시와 파일 검사', () {
+    final now = DateTime.utc(2026, 11, 12, 12);
+    expect(ago('2026-11-12T11:59:40Z', now), '방금');
+    expect(ago('2026-11-12T11:15:00Z', now), '45분 전');
+    expect(ago('2026-11-12T09:00:00Z', now), '3시간 전');
+    expect(ago('2026-11-10T12:00:00Z', now), '2일 전');
+    expect(ago('이상한 값', now), '');
+    expect(validFeed({'asof': 'x', 'companies': {'A': {'name': 'a', 'items': [{'t': 't', 'url': 'u', 'date': 'd'}]}}}), true);
+    expect(validFeed({'asof': 'x', 'companies': {'A': {'name': 'a', 'items': [{'t': 1, 'url': 'u', 'date': 'd'}]}}}), false);
+  });
 }
