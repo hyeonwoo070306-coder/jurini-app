@@ -105,4 +105,12 @@ void main() {
       expect(q.prompt.contains('○○'), true);
     }
   });
+
+  test('증권사 예측 표시 도우미', () {
+    expect(qLabel('2026-09'), '2026년 9월 분기');
+    expect(usd(2.05), '\$2.05');
+    expect(usd(-0.5), '−\$0.50');
+    expect(validSurprise({'asof': 'x', 'companies': {'A': {'rows': [{'q': '2026-09', 'eps': 1, 'est': 1.1}]}}}), true);
+    expect(validSurprise({'asof': 'x', 'companies': {'A': {'rows': [{'q': '2026-09', 'eps': '1', 'est': 1.1}]}}}), false);
+  });
 }

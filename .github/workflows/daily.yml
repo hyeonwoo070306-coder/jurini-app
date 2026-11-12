@@ -1,4 +1,5 @@
-# 평일 미국 장 마감 뒤(21:30 UTC = 한국 시간 다음 날 06:30) PER·PBR·배당수익률을 새 종가로 다시 계산해 올린다.
+# 평일 미국 장 마감 뒤(21:30 UTC = 한국 시간 다음 날 06:30) PER·PBR·배당수익률을 새 종가로 다시 계산하고,
+# 증권사 예측 EPS vs 실제 EPS도 새로 받아 올린다.
 name: daily-valuation
 on:
   schedule:
@@ -17,8 +18,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: python build_valuation.py
+      - run: python build_surprise.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/valuation.json
+          git add docs/valuation.json docs/surprise.json jurini_app/assets/surprise.json
           git diff --cached --quiet || (git commit -m "매일 종가 기준 지표 갱신" && git pull --rebase && git push)

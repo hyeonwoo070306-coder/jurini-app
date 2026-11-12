@@ -13,6 +13,7 @@ void main() {
     sp500 = read('sp500.json');
     terms = read('glossary.json')['terms'];
     news = read('news.json');
+    surprise = read('surprise.json');
     kr = read('kr.json');
     G = {for (final t in terms) t['id'] as String: t};
     final usMore = read('us_more.json');

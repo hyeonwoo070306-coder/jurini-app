@@ -1,6 +1,6 @@
 # 경제용어 사전 (분야별)
 
-총 93개
+총 96개
 
 
 ## 주식 기본
@@ -15,11 +15,13 @@
 
 | 용어 | 쉬운 설명 | 예시 | 시장에 주는 영향 | 등장 기업 |
 |---|---|---|---|---|
+| EPS(주당순이익) | 순이익을 주식 수로 나눈 값. 주식 1주가 1년(또는 한 분기) 동안 번 돈. | 순이익 100억 원, 주식 1억 주 → EPS 100원 |  |  |
 | 매출 | 물건이나 서비스를 팔아서 들어온 돈 전체. 비용을 빼기 전 금액. | 커피 100잔 × 5,000원 = 매출 50만 원 |  | AAPL, NVDA, MSFT, GOOGL, AMZN, SPCX, META, AVGO, TSLA, LLY, BRK.B, WMT, JPM, AMD, MU, V, JNJ, XOM, MA, ABBV, COST, CVX, KO, PLTR, PG, CSCO, MRK, ORCL, UNH, HD, BAC, GE, INTC, PM, AMAT, MS, LRCX, CAT, PANW, TXN, TMO, RTX, NFLX, GS, WFC, AMGN, LIN, ANET, CRWD, IBM |
 | 설비투자(CapEx) | 공장, 데이터센터, 장비처럼 오래 쓸 자산을 사는 데 쓴 돈. | AI 데이터센터 건설비 |  | AAPL, NVDA, MSFT, GOOGL, AMZN, SPCX, META, AVGO, TSLA, LLY, AMD, MU, XOM, CVX, ORCL, INTC, TXN |
 | 순부채 | 빚이 보유 현금보다 많은 상태. 부채 - 현금이 플러스. | 현금 40억, 부채 100억 → 순부채 60억 |  | AMZN, META, AVGO, LLY, ORCL |
 | 순이익 | 영업이익에서 이자, 세금, 투자 손익 등을 모두 반영하고 최종적으로 남은 이익. | 주주 몫으로 남는 최종 이익 |  | AAPL, NVDA, MSFT, GOOGL, AMZN, SPCX, META, AVGO, TSLA, LLY, BRK.B, WMT, JPM, AMD, MU, V, JNJ, XOM, MA, ABBV, COST, CVX, KO, PLTR, PG, CSCO, MRK, ORCL, UNH, HD, BAC, GE, INTC, PM, AMAT, MS, LRCX, CAT, PANW, TXN, TMO, RTX, NFLX, GS, WFC, AMGN, LIN, ANET, CRWD, IBM |
 | 순현금 | 보유 현금이 빚보다 많은 상태. 현금 - 부채가 플러스. | 현금 100억, 부채 40억 → 순현금 60억 |  | GOOGL, SPCX, TSLA, ANET |
+| 어닝 서프라이즈·쇼크 | 실제 실적이 예상(컨센서스)보다 좋으면 서프라이즈, 나쁘면 쇼크라고 불러요. | 예상 EPS 2.0달러, 실제 2.2달러 → 10% 서프라이즈 |  |  |
 | 영업이익 | 매출에서 원가, 인건비, 마케팅비 등 본업에 든 비용을 뺀 돈. 회사의 '본업 실력'. | 매출 50만 원 - 재료비·월세·월급 40만 원 = 영업이익 10만 원 |  | AAPL, GOOGL, AMZN, SPCX, META, TSLA, LLY, BRK.B, WMT, JPM, AMD, MU, V, JNJ, XOM, MA, ABBV, COST, CVX, KO, PLTR, PG, CSCO, MRK, ORCL, UNH, HD, BAC, GE, INTC, PM, AMAT, MS, LRCX, CAT, PANW, TXN, TMO, RTX, NFLX, GS, WFC, AMGN, LIN, ANET, CRWD, IBM |
 | 영업이익률 | 매출 중 영업이익이 차지하는 비율. 높을수록 장사를 효율적으로 한다는 뜻. | 매출 100, 영업이익 30 → 영업이익률 30% |  | AAPL, NVDA, MSFT, GOOGL, AMZN, META, AVGO, TSLA, LLY, BRK.B, WMT, JPM, AMD, MU, V, JNJ, XOM, MA, ABBV, COST, CVX, KO, PLTR, PG, CSCO, MRK, ORCL, UNH, HD, BAC, GE, INTC, PM, AMAT, MS, LRCX, CAT, PANW, TXN, TMO, RTX, NFLX, GS, WFC, AMGN, LIN, ANET, CRWD, IBM |
 | 영업현금흐름 | 본업으로 실제 회사 통장에 들어온 현금. 장부상 이익과 다를 수 있음. | 외상으로 팔면 매출은 있어도 현금은 아직 안 들어옴 |  | AAPL, MSFT, GOOGL, AMZN, SPCX, META, AVGO, TSLA, LLY |
@@ -27,6 +29,7 @@
 | 일회성 이익 | 본업과 관계없이 한 번만 생긴 이익. 보유 주식 가치 상승, 자산 매각 등. 순이익을 일시적으로 부풀림. | 알파벳이 보유한 투자 지분 가치가 올라 순이익이 영업이익보다 커짐 |  | GOOGL |
 | 잉여현금흐름(FCF) | 영업현금흐름 - 설비투자. 회사가 자유롭게 쓸 수 있는 '진짜 남는 현금'. 배당·자사주 매입의 재원. | 통장에 들어온 현금 100 - 시설 투자 30 = 잉여현금 70 |  | AAPL, NVDA, MSFT, GOOGL, AMZN, SPCX, META, AVGO, TSLA, LLY, BRK.B, WMT, JPM, AMD, MU, V, JNJ, XOM, MA, ABBV, COST, CVX, KO, PLTR, PG, CSCO, MRK, ORCL, UNH, HD, BAC, GE, INTC, PM, AMAT, MS, LRCX, CAT, PANW, TXN, TMO, RTX, NFLX, GS, WFC, AMGN, LIN, ANET, CRWD, IBM |
 | 최근 12개월(TTM) | 가장 최근 4개 분기를 합친 실적. 회계연도보다 최신 흐름을 보여줌. | 2026년 9월까지 최근 12개월 매출 |  | NVDA, MSFT, GOOGL, AMZN, SPCX, META, AVGO, TSLA, LLY |
+| 컨센서스(증권사 예측 평균) | 여러 증권사 분석가들이 예상한 실적의 평균값. | 분석가 10명이 EPS를 1.9~2.1달러로 예상 → 컨센서스 약 2.0달러 |  |  |
 | 회계연도(FY) | 회사가 1년 실적을 계산하는 기간. 1~12월이 아닌 회사도 많음. | 애플 FY2026 = 2025년 10월 ~ 2026년 9월 |  | AAPL, NVDA, MSFT, AVGO, V, PG, HD |
 
 ## 주가 수준

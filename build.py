@@ -541,14 +541,18 @@ with open(f"{OUT}/companies.json", "w", encoding="utf-8") as f:
     json.dump({"meta": meta, "companies": companies}, f, ensure_ascii=False, indent=2)
 
 from glossary_macro import CATS, MACRO
+from glossary_why import EXTRA, EXTRA_CATS, WHY
 glossary.update({k: v[:3] for k, v in MACRO.items()})
-used = {t for c in companies for t in c["terms"]} | set(MACRO)
-cat_of = {k: cat for cat, ks in CATS.items() for k in ks}
+glossary.update(EXTRA)
+used = {t for c in companies for t in c["terms"]} | set(MACRO) | set(EXTRA)
+cat_of = {k: cat for cat, ks in CATS.items() for k in ks} | EXTRA_CATS
 assert used <= set(cat_of), sorted(used - set(cat_of))  # 새 용어는 glossary_macro.CATS에 분야를 정해 줘야 함
+assert not (used - set(MACRO) - set(WHY)), sorted(used - set(MACRO) - set(WHY))  # 새 용어는 glossary_why.WHY에 '주가에 왜 중요한지'를 써야 함
 order = list(CATS)
 used = sorted(used, key=lambda k: (order.index(cat_of[k]), glossary[k][0]))
 gl = [{"id": k, "category": cat_of[k], "term": glossary[k][0], "definition": glossary[k][1], "example": glossary[k][2],
        **({"market_effect": MACRO[k][3]} if k in MACRO else {}),
+       **({"why": WHY[k]} if k in WHY else {}),
        "used_by": [c["ticker"] for c in companies if k in c["terms"]]} for k in used]
 with open(f"{OUT}/glossary.json", "w", encoding="utf-8") as f:
     json.dump({"meta": {"title": "경제용어 사전 (분야별)", "count": len(gl), "categories": order}, "terms": gl}, f, ensure_ascii=False, indent=2)

@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 typedef J = Map<String, dynamic>;
 
-late J data, sp500, news, kr, usMore;
+late J data, sp500, news, kr, usMore, surprise;
 Set<String> ndx = {}; // 나스닥 100 티커
 J? feed; // 뉴스 탭: 매시간 깃허브가 모으는 회사별 최신 뉴스 제목 (인터넷에서만 받음)
 late List<dynamic> companies, terms;
@@ -26,6 +26,7 @@ Future<void> main() async {
   news = jsonDecode(await rootBundle.loadString('assets/news.json'));
   kr = jsonDecode(await rootBundle.loadString('assets/kr.json'));
   usMore = jsonDecode(await rootBundle.loadString('assets/us_more.json'));
+  surprise = jsonDecode(await rootBundle.loadString('assets/surprise.json'));
   ndx = {...usMore['meta']['nasdaq100']};
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
@@ -103,8 +104,26 @@ Future<void> loadFeed() async {
   }
 }
 
+bool validSurprise(J j) {
+  final cs = j['companies'];
+  if (j['asof'] is! String || cs is! Map) return false;
+  for (final c in cs.values) {
+    if (c is! Map || c['rows'] is! List) return false;
+    for (final r in c['rows']) {
+      if (r is! Map || r['q'] is! String || r['eps'] is! num || r['est'] is! num) return false;
+    }
+  }
+  return true;
+}
+
 Future<void> loadLive() async {
   loadFeed();
+  getJson('surprise.json').then((j) {
+    if (j != null && validSurprise(j)) {
+      surprise = j;
+      redraw.value++;
+    }
+  });
   final raw = await getJson('news.json');
   final n = raw == null ? null : validNews(raw);
   if (n != null) news = n;
@@ -329,6 +348,50 @@ Widget newsCard(P p, List items) {
         ]),
       ],
       txt('호재·악재는 뉴스 내용을 쉽게 나눈 것이에요. 주가가 어떻게 움직일지는 아무도 몰라요.', sub(p, 11.5)),
+    ]),
+  );
+}
+
+// "2026-09" → "2026년 9월 분기"
+String qLabel(String q) => '${q.substring(0, 4)}년 ${int.parse(q.substring(5))}월 분기';
+String usd(num x) => '${x < 0 ? '−' : ''}\$${x.abs().toStringAsFixed(2)}';
+
+// 증권사 예측 평균(컨센서스) EPS vs 실제 EPS. 차이 2% 미만은 '예상 수준'
+Widget surpriseCard(BuildContext ctx, P p, J data) {
+  final List rows = data['rows'];
+  final J? next = data['next'];
+  (String, Color) tag(num? pct) => pct == null
+      ? ('비교 불가', p.muted)
+      : pct >= 2
+          ? ('예상보다 좋음 +${nf(pct)}%', p.good)
+          : pct <= -2
+              ? ('예상보다 나쁨 ${nf(pct)}%', p.warn)
+              : ('예상 수준 ${pct >= 0 ? '+' : ''}${nf(pct)}%', p.muted);
+  return Container(
+    padding: const EdgeInsets.all(14),
+    decoration: BoxDecoration(color: p.sunken, borderRadius: BorderRadius.circular(14)),
+    child: col(10, [
+      rich([s('증권사 예측과 비교 ('), term(ctx, 'eps', 'EPS'), s(')')], h(15)),
+      rich([term(ctx, 'consensus', '증권사 예측 평균'), s('과 실제 실적을 비교해요. 차이가 크면 '), term(ctx, 'earnings_surprise', '어닝 서프라이즈·쇼크'), s('라고 해요.')],
+          sub(p, 12.5)),
+      for (final r in rows)
+        Row(children: [
+          Expanded(
+              child: col(2, [
+            Text(qLabel(r['q']), style: const TextStyle(fontSize: 13.5, fontWeight: FontWeight.w700)),
+            Text('예측 ${usd(r['est'])} → 실제 ${usd(r['eps'])}', style: sub(p, 12.5).copyWith(fontFeatures: tabular)),
+          ])),
+          () {
+            final (label, color) = tag(r['pct']);
+            return Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(color: color.withValues(alpha: .16), borderRadius: BorderRadius.circular(999)),
+                child: Text(label, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: color)));
+          }(),
+        ]),
+      if (next != null)
+        txt('다음 ${qLabel(next['q'])} 예측 EPS: ${usd(next['est'])}${next['n'] == null ? '' : ' (분석가 ${next['n']}명 평균)'}', sub(p, 12.5)),
+      txt('출처: 나스닥 (${surprise['asof']} 기준). 매출·영업이익 예측은 유료 데이터라 아직 보여드리지 못해요.', sub(p, 11.5)),
     ]),
   );
 }
@@ -583,6 +646,11 @@ void openTerm(BuildContext ctx, String id) {
           txt(t['term'], h(20)),
           txt(t['definition'], const TextStyle(fontSize: 15)),
           explain(p, col(2, [Text('예시', style: sub(p, 12)), txt(t['example'], const TextStyle(fontSize: 14))])),
+          if (t['why'] != null)
+            explain(p, col(2, [
+              Text('주가에 왜 중요할까?', style: sub(p, 12).copyWith(fontWeight: FontWeight.w700, color: p.accent)),
+              txt(t['why'], const TextStyle(fontSize: 14, height: 1.5)),
+            ])),
           if (t['market_effect'] != null) ...[
             explain(p, col(2, [Text('시장에 주는 영향', style: sub(p, 12)), txt(t['market_effect'], const TextStyle(fontSize: 14))])),
             txt('일반적인 경향이며, 항상 이렇게 움직이지는 않아요.', sub(p)),
@@ -1038,6 +1106,8 @@ class _DetailState extends State<DetailPage> {
                 TextSpan(text: '${b['asof']} 기준', style: sub(p)),
               ], const TextStyle(fontSize: 13.5))),
           if ((c['financial_note'] ?? '') != '') txt('※ ${c['financial_note']}', sub(p)),
+          if ((surprise['companies'][c['ticker']]?['rows'] as List?)?.isNotEmpty ?? false)
+            surpriseCard(ctx, p, surprise['companies'][c['ticker']]),
           if (isKr(c) && c['fs'] != null) txt('${c['fs']} 재무제표 기준이에요. 연결은 자회사까지 합친 숫자예요.', sub(p)),
           if (last['revenue'] != null && !isKr(c))
             txt('1억 달러는 환율 1,400원 기준 약 1,400억 원이에요. 최근 매출 ${eok(last['revenue'])} ≈ ${won(last['revenue'])}.', sub(p)),

@@ -28,6 +28,8 @@
 - `build_more_us.py` → `jurini_app/assets/us_more.json`: 나스닥 100 중 S&P 500에 없는 회사(14개) 기본 카드와 나스닥 100 전체 티커 목록(앱이 '나스닥100' 표시). 목록은 나스닥 API, CIK는 SEC 검색, 재무는 `build_sp500.financials`. 해외 공시(20-F) 회사는 재무가 비어 있다. 새 회사가 들어오면 `KO`에 한글 이름·설명을 추가한다.
 - `build_feed.py` → `docs/feed.json`: 뉴스 탭용 회사별 최신 뉴스 제목(미국 50 + 한국 매출 상위 30, 구글 뉴스 RSS 한국어). `.github/workflows/feed.yml`이 매시간 실행. 주가 숫자·목표가·매수/매도가 들어간 제목은 거른다. 앱은 켤 때와 당겨서 새로고침할 때 받는다(앱 안에 복사본 없음). 출시 전에 상업 사용이 허용된 뉴스 API(네이버 검색 API 등)로 `fetch_news()`만 바꾼다.
 - 로고: 앱이 `logoUrl()`(FMP 공개 로고 주소, 한국은 .KS/.KQ)에서 받고, 없거나 오프라인이면 글자 배지. 로고는 각 회사 상표라 출시 전에 이용 조건을 확인한다.
+- `glossary_why.py`: 용어마다 "주가에 왜 중요할까?" 설명(`WHY`)과 새 용어(`EXTRA`: EPS·컨센서스·어닝 서프라이즈). 새 용어를 넣으면 여기에 설명을 써야 `build.py`가 돈다(금리·물가 용어는 `MACRO`의 '시장에 주는 영향'이 대신함).
+- `build_surprise.py` → `docs/surprise.json`(+ `jurini_app/assets/surprise.json`): 미국 50개 회사의 증권사 예측 평균 EPS vs 실제 EPS(최근 4분기)와 다음 분기 예측(나스닥). 매일 `daily.yml`에서 실행, 앱 실적 탭에 표시. 매출·영업이익 예측은 유료 데이터라 없음.
 - `build_kr.py` → `jurini_app/assets/kr.json`: 한국 상장회사(코스피·코스닥, 스팩 제외) 기본 카드. 한국거래소 KIND 상장법인목록(회사명·종목코드·업종·주요제품·상장일) + DART 오픈API 최근 3년 연간 재무(연결 우선, 억 원). DART 키는 `dart_key.txt`(깃 제외)에 있다. 시가총액은 아직 없어서 매출 순으로 정렬. 앱 기업 탭의 '미국/한국' 버튼으로 전환.
 - `jurini_app/`: Flutter 안드로이드 앱 (예시화면을 옮긴 것, 화면 코드는 `lib/main.dart` 한 파일). 데이터는 `jurini_app/assets/`에 복사본이 들어 있으니 `build.py`로 JSON을 다시 만들면 거기로도 복사한다.
 
