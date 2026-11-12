@@ -95,6 +95,12 @@ String comma(int n) => n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d
 String krw(num b) => b >= 1000 ? '${(b / 1000).toStringAsFixed(2)}조 달러' : '${comma((b * 10).round())}억 달러';
 // 재무: 백만 달러 단위
 String eok(num? m) => m == null ? '-' : '${comma((m / 100).round())}억 달러';
+// 한국 회사: 억 원 단위 숫자 → "33.4조 원" / "1,234억 원"
+String wonEok(num? m) => m == null
+    ? '-'
+    : m.abs() >= 10000
+        ? '${(m / 10000).toStringAsFixed(1)}조 원'
+        : '${comma(m.round())}억 원';
 String won(num m) {
   final jo = m * 1e6 * 1400 / 1e12;
   return jo >= 1 ? '약 ${jo.toStringAsFixed(jo >= 100 ? 0 : 1)}조 원' : '약 ${comma((jo * 10000).round())}억 원';
@@ -383,7 +389,7 @@ Widget mix(P p, List rows) => col(10, [
       ]),
     ]);
 
-Widget barRow(P p, String label, num? x, num mx, bool latest) => Row(children: [
+Widget barRow(P p, String label, num? x, num mx, bool latest, [String Function(num?) fmt = eok]) => Row(children: [
       SizedBox(width: 76, child: txt(label, sub(p).copyWith(height: 1.25))),
       const SizedBox(width: 10),
       Expanded(
@@ -407,7 +413,7 @@ Widget barRow(P p, String label, num? x, num mx, bool latest) => Row(children: [
                     child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 1),
                         decoration: BoxDecoration(color: p.surface, borderRadius: BorderRadius.circular(6)),
-                        child: Text(x == null ? '공시 없음' : '${x < 0 ? '−' : ''}${eok(x.abs())}',
+                        child: Text(x == null ? '공시 없음' : '${x < 0 ? '−' : ''}${fmt(x.abs())}',
                             style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700)))),
               ]))),
     ]);
@@ -581,7 +587,7 @@ class _HomeState extends State<HomePage> {
                   style: const TextStyle(color: Colors.white60, fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: .3)),
               txt(korea ? '한국 상장 기업,\n무슨 일을 할까요?' : '미국 대표 기업,\n무슨 일을 할까요?',
                   const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w800, height: 1.25, letterSpacing: -0.6)),
-              txt(korea ? '회사를 누르면 업종과 주요 제품을 볼 수 있어요. 자세한 노트와 재무 숫자는 준비 중이에요.' : '회사를 누르면 중학생도 읽을 수 있게 풀어 쓴 기업 노트가 열려요.',
+              txt(korea ? '회사를 누르면 업종·주요 제품과 금융감독원 공시 재무 숫자를 볼 수 있어요. 매출이 큰 회사부터 보여드려요.' : '회사를 누르면 중학생도 읽을 수 있게 풀어 쓴 기업 노트가 열려요.',
                   const TextStyle(color: Colors.white70, fontSize: 14)),
               Container(height: 1, color: Colors.white12),
               Row(children: [
@@ -686,6 +692,14 @@ Widget companyRow(BuildContext context, P p, J c, [bool first = true, bool last 
             if ((c['one_liner'] ?? '') != '')
               Text(kt(c['one_liner']), maxLines: 2, overflow: TextOverflow.ellipsis, style: sub(p, 13)),
           ])),
+          if (isKr(c) && (c['financials'] as List?)?.isNotEmpty == true && c['financials'].last['revenue'] != null) ...[
+            const SizedBox(width: 12),
+            Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
+              Text(wonEok(c['financials'].last['revenue']).replaceAll(' 원', ''),
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.w800, fontFeatures: tabular)),
+              Text('원 매출', style: sub(p, 11)),
+            ]),
+          ],
           if (c['market_cap_usd_b'] != null) ...[
             const SizedBox(width: 12),
             Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
@@ -771,7 +785,7 @@ class _DetailState extends State<DetailPage> {
                   heroFact(rich([term(context, 'market_cap', '시가총액')], onMark), krw(c['market_cap_usd_b'])),
                 if (latest?['revenue'] != null)
                   heroFact(rich([s('1년 ', w70), term(context, 'revenue', '매출'), s(' (${period(latest!['label'])})', w70)], onMark),
-                      eok(latest['revenue'])),
+                      (isKr(c) ? wonEok : eok)(latest['revenue'])),
               ]),
             ]),
           ),
@@ -780,7 +794,7 @@ class _DetailState extends State<DetailPage> {
             child: col(14, [
           if (!full)
             explain(p, txt(isKr(c)
-                ? '이 회사의 자세한 설명과 재무 숫자는 준비 중이에요. 지금은 한국거래소에 등록된 업종·주요제품만 보여드려요. (${c['market']}, ${c['listed']} 상장)'
+                ? '이 회사의 자세한 설명은 준비 중이에요. 지금은 한국거래소에 등록된 업종·주요제품과 금융감독원 DART 사업보고서 숫자만 보여드려요. (${c['market']}, ${c['listed']} 상장)'
                 : '이 회사의 자세한 설명(투자 포인트, 사업, 리스크)은 준비 중이에요. 지금은 미국 SEC 공시에서 가져온 숫자만 보여드려요.',
                 const TextStyle(fontSize: 13.5))),
           if (full) ...[
@@ -860,6 +874,7 @@ class _DetailState extends State<DetailPage> {
         final mx = fin.map((f) => (f[metric] as num? ?? 0).abs()).fold<num>(1, max);
         final J last = fin.last;
         final num? nc = b['net_cash'];
+        final money = isKr(c) ? wonEok : eok;
         return [
           h3('실적은 늘고 있나요?'),
           Container(
@@ -867,6 +882,7 @@ class _DetailState extends State<DetailPage> {
             decoration: BoxDecoration(color: p.sunken, borderRadius: BorderRadius.circular(12)),
             child: Row(children: [
               for (final e in metrics.entries)
+                if (!(isKr(c) && e.key == 'free_cash_flow')) // 한국 DART 요약엔 현금흐름이 없다
                 Expanded(
                   child: GestureDetector(
                     behavior: HitTestBehavior.opaque,
@@ -884,12 +900,17 @@ class _DetailState extends State<DetailPage> {
           ),
           rich([term(ctx, tid, label), s(': $help')], sub(p)),
           col(10, [
-            for (var i = 0; i < fin.length; i++) barRow(p, period(fin[i]['label']), fin[i][metric], mx, i == fin.length - 1)
+            for (var i = 0; i < fin.length; i++) barRow(p, period(fin[i]['label']), fin[i][metric], mx, i == fin.length - 1, money)
           ]),
           grid([
             fact(p, rich([term(ctx, 'operating_margin', '영업이익률')], sub(p, 12)), opt(last['operating_margin_pct'], '%')),
-            fact(p, rich([term(ctx, 'capex', '설비투자')], sub(p, 12)), eok(last['capex'])),
-            if (b.containsKey('cash')) ...[
+            if (!isKr(c)) fact(p, rich([term(ctx, 'capex', '설비투자')], sub(p, 12)), eok(last['capex'])),
+            if (b.containsKey('equity')) ...[
+              // 한국 DART 카드: 자산·부채·자본 총계
+              fact(p, Text('자산총계', style: sub(p, 12)), money(b['total_assets'])),
+              fact(p, Text('부채총계', style: sub(p, 12)), money(b['total_debt'])),
+              fact(p, Text('자본총계', style: sub(p, 12)), money(b['equity'])),
+            ] else if (b.containsKey('cash')) ...[
               // SEC 기본 카드: 유가증권이 빠진 현금, 장기부채만 있다
               fact(p, Text('현금성 자산', style: sub(p, 12)), eok(b['cash'])),
               fact(p, Text('장기부채', style: sub(p, 12)), eok(b['long_term_debt'])),
@@ -898,7 +919,7 @@ class _DetailState extends State<DetailPage> {
               fact(p, Text('총부채', style: sub(p, 12)), eok(b['total_debt'])),
             ],
           ]),
-          if (b['asof'] != null) txt('현금·부채는 ${b['asof']} 기준이에요.', sub(p)),
+          if (b['asof'] != null) txt('${isKr(c) ? '자산·부채' : '현금·부채'}는 ${b['asof']} 기준이에요.', sub(p)),
           if (nc != null)
           explain(
               p,
@@ -909,7 +930,8 @@ class _DetailState extends State<DetailPage> {
                 TextSpan(text: '${b['asof']} 기준', style: sub(p)),
               ], const TextStyle(fontSize: 13.5))),
           if ((c['financial_note'] ?? '') != '') txt('※ ${c['financial_note']}', sub(p)),
-          if (last['revenue'] != null)
+          if (isKr(c) && c['fs'] != null) txt('${c['fs']} 재무제표 기준이에요. 연결은 자회사까지 합친 숫자예요.', sub(p)),
+          if (last['revenue'] != null && !isKr(c))
             txt('1억 달러는 환율 1,400원 기준 약 1,400억 원이에요. 최근 매출 ${eok(last['revenue'])} ≈ ${won(last['revenue'])}.', sub(p)),
         ];
       case 'value':

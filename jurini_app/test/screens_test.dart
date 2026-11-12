@@ -69,6 +69,11 @@ void main() {
     expect(ks.length, greaterThan(2000));
     for (final c in [...ks.take(30), ...ks.where((c) => c['name_ko'] == '삼성전자')]) {
       await tester.pumpWidget(MaterialApp(home: DetailPage(c, key: ValueKey(c['id']))));
+      for (final m in metrics.values) {
+        if (find.text(m.$1).evaluate().isEmpty) break; // 재무가 없는 회사
+        await tester.tap(find.text(m.$1).first);
+        await tester.pump();
+      }
       expect(tester.takeException(), isNull, reason: c['name_ko']);
     }
   });

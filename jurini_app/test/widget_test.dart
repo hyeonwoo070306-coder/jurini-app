@@ -7,6 +7,9 @@ void main() {
     expect(eok(478834), '4,788억 달러'); // 백만 달러 → 억 달러
     expect(krw(5094), '5.09조 달러');
     expect(krw(850), '8,500억 달러'); // 십억 달러 → 억 달러
+    expect(wonEok(3336059.4), '333.6조 원'); // 억 원 → 조 원
+    expect(wonEok(1234.5), '1,235억 원');
+    expect(wonEok(-500), '-500억 원');
     expect(won(478834), '약 670조 원');
     expect(won(50), '약 700억 원');
     expect(nf(21.0), '21');
