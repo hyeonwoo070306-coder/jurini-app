@@ -32,9 +32,34 @@ def parse(page):
     return rows
 
 
+# 한국 업종(158가지) → 앱의 큰 분야 버튼. 위에서부터 먼저 맞는 것.
+GROUPS = [
+    ("2차전지·전기장비", ("이차전지", "전동기", "기타 전기장비", "절연선")),
+    ("반도체·전자", ("반도체", "전자부품", "통신 및 방송 장비", "영상 및 음향", "컴퓨터 및 주변", "사진장비", "측정, 시험", "마그네틱", "전구")),
+    ("소프트웨어·인터넷·게임", ("소프트웨어", "컴퓨터 프로그래밍", "정보 서비스", "자료처리", "포털")),
+    ("미디어·통신·엔터", ("영화", "방송", "오디오물", "광고", "전기 통신", "출판", "창작", "영상·오디오물", "기록매체")),
+    ("바이오·헬스케어", ("의약", "의료", "자연과학", "기타 과학기술")),
+    ("자동차", ("자동차",)),
+    ("조선·기계·방산·항공", ("기계", "선박", "항공기", "무기", "구조용 금속", "운송장비")),
+    ("금융", ("금융", "보험", "은행", "신탁", "연금", "상품 중개")),
+    ("건설·부동산", ("건설", "공사업", "부동산", "엔지니어링", "건축")),
+    ("화학·소재·철강", ("화학", "플라스틱", "철강", "금속", "시멘트", "유리", "고무", "광물", "종이", "펄프", "판지", "섬유", "비료", "요업", "목재", "나무", "재생", "방적", "직물")),
+    ("소비재·유통", ("식품", "음료", "담배", "의복", "소매", "도매", "가구", "가정용", "가죽", "신발", "유지", "도축", "수산물", "곡물", "과실", "사료", "빵", "도시락", "귀금속", "악기", "운동", "숙박", "여행", "오락", "스포츠", "교육", "학원", "판매업")),
+    ("운송·에너지", ("운송", "석유", "가스", "전기업", "증기", "연료")),
+    ("지주회사", ("회사 본부",)),
+]
+
+
+def group_of(sector):
+    for name, keys in GROUPS:
+        if any(k in sector for k in keys):
+            return name
+    return "기타"
+
+
 def card(cells, market):
     name, _, code, sector, product, listed, fy = cells[:7]
-    return {"id": "kr_" + code, "ticker": code, "name_ko": name, "market": market, "sector": sector,
+    return {"id": "kr_" + code, "ticker": code, "name_ko": name, "market": market, "sector": sector, "group": group_of(sector),
             "one_liner": product.rstrip(" 등") if product else sector, "listed": listed, "fiscal_month": fy}
 
 
@@ -105,11 +130,19 @@ def add_financials(cards, key, year):
         print(y, "년 사업보고서 반영 후 남은 회사", len(todo))
 
 
+def selfcheck_groups():
+    assert group_of("일차전지 및 이차전지 제조업") == "2차전지·전기장비"
+    assert group_of("자동차 신품 부품 제조업") == "자동차" and group_of("자동차 부품 및 내장품 판매업") == "자동차"
+    assert group_of("기초 의약물질 제조업") == "바이오·헬스케어" and group_of("은행 및 저축기관") == "금융"
+    assert group_of("선박 및 보트 건조업") == "조선·기계·방산·항공" and group_of("석유 정제품 제조업") == "운송·에너지"
+
+
 def selfcheck():
+    selfcheck_groups()
     page = "<tr><th>회사명</th></tr><tr><td>삼성전자</td><td>유가</td><td>005930</td><td>통신 및 방송 장비 제조업</td><td>휴대폰, 반도체 등</td><td>1975-06-11</td><td>12월</td></tr>"
     rows = parse(page)
     assert card(rows[0], "코스피") == {"id": "kr_005930", "ticker": "005930", "name_ko": "삼성전자", "market": "코스피",
-                                      "sector": "통신 및 방송 장비 제조업", "one_liner": "휴대폰, 반도체", "listed": "1975-06-11",
+                                      "sector": "통신 및 방송 장비 제조업", "group": "반도체·전자", "one_liner": "휴대폰, 반도체", "listed": "1975-06-11",
                                       "fiscal_month": "12월"}, rows
     rows = [{"fs_div": "OFS", "account_nm": "매출액", "thstrm_amount": "300,000,000,000", "frmtrm_amount": "200,000,000,000", "bfefrmtrm_amount": "-"},
             {"fs_div": "CFS", "account_nm": "매출액", "thstrm_amount": "500,000,000,000", "frmtrm_amount": "400,000,000,000", "bfefrmtrm_amount": ""},

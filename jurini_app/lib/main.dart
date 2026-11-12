@@ -735,8 +735,8 @@ class _HomeState extends State<HomePage> {
   Widget build(BuildContext context) {
     final p = P.of(context);
     final query = q.trim().toLowerCase();
-    final sectors = {for (final c in companies) c['group']}.whereType<String>().toList()..sort();
     final List src = korea ? kr['companies'] : companies;
+    final sectors = {for (final c in src) c['group']}.whereType<String>().toList()..sort();
     final list = src.where((c) {
       if (sector != null && c['group'] != sector) return false;
       return query.isEmpty || '${c['name_ko']} ${c['name_en']} ${c['ticker']}'.toLowerCase().contains(query);
@@ -795,8 +795,6 @@ class _HomeState extends State<HomePage> {
                 hintText: korea ? '회사 이름이나 종목코드 검색 (예: 삼성, 005930)' : '회사 이름이나 티커 검색 (예: 애플, KO)',
                 prefixIcon: const Icon(Icons.search)),
           ),
-          // shortcut: 한국은 업종이 150가지가 넘어 칩으로 못 보여줌. 큰 분류로 묶는 표가 생기면 칩을 붙인다.
-          if (!korea)
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: [
