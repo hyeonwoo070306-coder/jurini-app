@@ -56,4 +56,23 @@ void main() {
     expect(a['shareholder_return']['dividend_yield'], 1.25);
     expect(live.value, '2026-11-11');
   });
+
+  test('인터넷에서 받은 파일이 이상하면 거른다', () {
+    final n = validNews({
+      'asof': '2026-11-12',
+      'companies': {
+        'A': [
+          {'type': 'good', 'title': 't', 'impact': 'i', 'source': 's'},
+          {'type': 'good', 'title': null, 'impact': 'i', 'source': 's'}, // 제목 없음 → 버림
+          {'type': 'great', 'title': 't', 'impact': 'i', 'source': 's'}, // 모르는 종류 → 버림
+        ],
+        'B': 'oops',
+      }
+    })!;
+    expect((n['companies']['A'] as List).length, 1);
+    expect(n['companies'].containsKey('B'), false);
+    expect(validNews({'companies': []}), isNull);
+    expect(validValuation({'asof': 'x', 'companies': {'A': {'market_cap_usd_b': 1, 'rank': 1, 'per': 'NaN'}}}), false);
+    expect(validValuation({'asof': 'x', 'companies': {'A': {'market_cap_usd_b': 1, 'rank': 1, 'per': null}}}), true);
+  });
 }

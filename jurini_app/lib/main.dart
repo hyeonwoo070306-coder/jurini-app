@@ -39,21 +39,54 @@ final live = ValueNotifier<String?>(null); // 받아온 종가 기준일
 final redraw = ValueNotifier(0);
 
 Future<J?> getJson(String file) async {
+  final client = HttpClient();
   try {
-    final req = await HttpClient().getUrl(Uri.parse(liveBase + file)).timeout(const Duration(seconds: 8));
+    final req = await client.getUrl(Uri.parse(liveBase + file)).timeout(const Duration(seconds: 8));
     final res = await req.close().timeout(const Duration(seconds: 8));
     if (res.statusCode != 200) return null;
-    return jsonDecode(await res.transform(utf8.decoder).join());
+    final j = jsonDecode(await res.transform(utf8.decoder).join());
+    return j is J ? j : null;
   } catch (_) {
     return null; // 인터넷이 없거나 파일이 이상하면 앱에 들어 있는 것을 그대로 쓴다.
+  } finally {
+    client.close();
   }
 }
 
+// 인터넷에서 받은 뉴스 파일: 형식이 맞는 뉴스만 남긴다. 하나라도 이상하면 그 뉴스만 버린다.
+J? validNews(J n) {
+  final cs = n['companies'];
+  if (n['asof'] is! String || cs is! Map) return null;
+  bool ok(dynamic x) =>
+      x is Map && x['title'] is String && x['impact'] is String && x['source'] is String && newsKinds.containsKey(x['type']);
+  return {
+    ...n,
+    'companies': <String, dynamic>{
+      for (final e in cs.entries)
+        if (e.value is List) e.key as String: [for (final x in e.value as List) if (ok(x)) x]
+    },
+  };
+}
+
+// 인터넷에서 받은 지표 파일: 숫자 칸이 숫자(또는 비어 있음)인지 확인
+bool validValuation(J j) {
+  final cs = j['companies'];
+  if (j['asof'] is! String || cs is! Map) return false;
+  for (final v in cs.values) {
+    if (v is! Map || v['market_cap_usd_b'] is! num || v['rank'] is! int) return false;
+    for (final k in ['per', 'forward_per', 'pbr', 'dividend_yield']) {
+      if (v[k] != null && v[k] is! num) return false;
+    }
+  }
+  return true;
+}
+
 Future<void> loadLive() async {
-  final n = await getJson('news.json');
-  if (n != null && n['companies'] is Map) news = n;
+  final raw = await getJson('news.json');
+  final n = raw == null ? null : validNews(raw);
+  if (n != null) news = n;
   final v = await getJson('valuation.json');
-  if (v != null) {
+  if (v != null && validValuation(v)) {
     applyLive(v);
   } else if (n != null) {
     redraw.value++; // 뉴스만 바뀌어도 화면을 다시 그린다
@@ -68,9 +101,10 @@ void applyLive(J j) {
     final J? v = byTk[c['ticker']];
     if (v == null || !isFull(c)) continue;
     c['market_cap_usd_b'] = v['market_cap_usd_b'];
-    c['market_cap_asof'] = asof;
+    final String day = v['asof'] is String ? v['asof'] : asof;
+    c['market_cap_asof'] = day;
     c['rank'] = v['rank'];
-    c['valuation'] = <String, dynamic>{...c['valuation'], 'per': v['per'], 'forward_per': v['forward_per'], 'pbr': v['pbr'], 'asof': asof};
+    c['valuation'] = <String, dynamic>{...c['valuation'], 'per': v['per'], 'forward_per': v['forward_per'], 'pbr': v['pbr'], 'asof': day};
     c['shareholder_return'] = <String, dynamic>{...c['shareholder_return'], 'dividend_yield': v['dividend_yield']};
   }
   final full = companies.where((c) => isFull(c)).toList()..sort((a, b) => (a['rank'] as int).compareTo(b['rank']));
@@ -494,6 +528,7 @@ void openTerm(BuildContext ctx, String id) {
             txt('일반적인 경향이며, 항상 이렇게 움직이지는 않아요.', sub(p)),
           ],
           if (names.isNotEmpty) txt('이 용어가 나오는 회사: ${names.join(', ')}', sub(p)),
+          Text(disclaimer, style: sub(p, 11.5)),
           FilledButton(
             style: FilledButton.styleFrom(
                 backgroundColor: p.fg,
@@ -526,6 +561,8 @@ class App extends StatelessWidget {
           ));
 }
 
+final homeKey = GlobalKey();
+
 class Shell extends StatefulWidget {
   const Shell({super.key});
   @override
@@ -537,7 +574,10 @@ class _ShellState extends State<Shell> {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: IndexedStack(index: i, children: const [HomePage(), TermsPage()]),
+        // live/redraw가 바뀌면 화면을 새로 만들어 받은 숫자가 바로 보이게 한다
+        body: ListenableBuilder(
+            listenable: Listenable.merge([live, redraw]),
+            builder: (_, __) => IndexedStack(index: i, children: [HomePage(key: homeKey), const TermsPage()])),
         bottomNavigationBar: NavigationBar(
           selectedIndex: i,
           onDestinationSelected: (v) => setState(() => i = v),
@@ -592,6 +632,7 @@ class _HomeState extends State<HomePage> {
                   const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w800, height: 1.25, letterSpacing: -0.6)),
               txt(korea ? '회사를 누르면 업종·주요 제품과 금융감독원 공시 재무 숫자를 볼 수 있어요. 매출이 큰 회사부터 보여드려요.' : '회사를 누르면 중학생도 읽을 수 있게 풀어 쓴 기업 노트가 열려요.',
                   const TextStyle(color: Colors.white70, fontSize: 14)),
+              Text(disclaimer, style: const TextStyle(color: Colors.white54, fontSize: 11.5)),
               Container(height: 1, color: Colors.white12),
               Row(children: [
                 stat('${src.length}', '회사'),
@@ -943,14 +984,15 @@ class _DetailState extends State<DetailPage> {
         final verdict = per == null
             ? '적자라 PER을 계산할 수 없어요'
             : per < 15
-                ? '이익에 비해 싼 편'
+                ? '시장 평균보다 낮은 편'
                 : per <= 28
                     ? '시장 평균 근처'
                     : per <= 45
-                        ? '비싼 편'
-                        : '아주 비싼 편';
+                        ? '시장 평균보다 높은 편'
+                        : '시장 평균보다 훨씬 높은 편';
         return [
-          h3('지금 주가, 비싼 편일까요?'),
+          h3('지금 주가 수준은 어느 정도일까요?'),
+          if (per != null && per > 100) txt('이익이 아주 작으면 PER이 지나치게 커져서 숫자의 의미가 줄어요.', sub(p)),
           rich([
             term(ctx, 'per', 'PER'),
             s(' ${per == null ? '-' : '${per.toStringAsFixed(1)}배'} · '),
