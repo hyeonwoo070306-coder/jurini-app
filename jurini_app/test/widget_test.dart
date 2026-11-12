@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:jurini/main.dart';
 
@@ -85,5 +87,22 @@ void main() {
     expect(ago('이상한 값', now), '');
     expect(validFeed({'asof': 'x', 'companies': {'A': {'name': 'a', 'items': [{'t': 't', 'url': 'u', 'date': 'd'}]}}}), true);
     expect(validFeed({'asof': 'x', 'companies': {'A': {'name': 'a', 'items': [{'t': 1, 'url': 'u', 'date': 'd'}]}}}), false);
+  });
+
+  test('퀴즈 문제 만들기: 보기 4개, 정답 포함, 겹치지 않음, 뜻에서 정답 가리기', () {
+    final all = [
+      for (var k = 0; k < 12; k++)
+        {'id': 't$k', 'term': '용어$k(T$k)', 'definition': '용어$k은 뜻$k이에요. T$k라고도 해요.', 'category': k < 6 ? 'A' : 'B', 'example': 'e'}
+    ];
+    final qs = makeQuiz(all, Random(1), cat: 'A', n: 10);
+    expect(qs.length, 6); // A 분야는 6개뿐
+    expect(qs.map((q) => q.answer['id']).toSet().length, 6);
+    for (final q in qs) {
+      expect(q.options.length, 4);
+      expect(q.options.map((o) => o['id']).toSet().length, 4);
+      expect(q.options.any((o) => o['id'] == q.answer['id']), true);
+      expect(q.prompt.contains(termName(q.answer)), false);
+      expect(q.prompt.contains('○○'), true);
+    }
   });
 }

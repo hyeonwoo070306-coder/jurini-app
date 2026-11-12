@@ -88,4 +88,23 @@ void main() {
     expect(find.textContaining(kt('인터넷에 연결하면')), findsNothing);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('퀴즈: 시작 → 보기 선택 → 다음 → 결과까지', (tester) async {
+    tester.view.physicalSize = const Size(1080, 8000); // 한 화면에 문제 전체가 보이게
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(const MaterialApp(home: QuizPage()));
+    await tester.tap(find.text('시작하기'));
+    await tester.pump();
+    for (var k = 0; k < 10; k++) {
+      expect(find.text('${k + 1} / 10'), findsOneWidget);
+      await tester.tap(find.byType(InkWell).first); // 첫 번째 보기 고르기
+      await tester.pump();
+      final next = find.text(k < 9 ? '다음 문제' : '결과 보기');
+      await tester.ensureVisible(next);
+      await tester.tap(next);
+      await tester.pump();
+    }
+    expect(find.textContaining('10문제 중'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
 }

@@ -637,7 +637,8 @@ class _ShellState extends State<Shell> {
         // live/redraw가 바뀌면 화면을 새로 만들어 받은 숫자가 바로 보이게 한다
         body: ListenableBuilder(
             listenable: Listenable.merge([live, redraw]),
-            builder: (_, __) => IndexedStack(index: i, children: [HomePage(key: homeKey), const TermsPage(), const NewsPage()])),
+            builder: (_, __) =>
+                IndexedStack(index: i, children: [HomePage(key: homeKey), const TermsPage(), const NewsPage(), const QuizPage()])),
         bottomNavigationBar: NavigationBar(
           selectedIndex: i,
           onDestinationSelected: (v) => setState(() => i = v),
@@ -645,6 +646,7 @@ class _ShellState extends State<Shell> {
             NavigationDestination(icon: Icon(Icons.bar_chart_rounded), label: '기업'),
             NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: '용어사전'),
             NavigationDestination(icon: Icon(Icons.newspaper_rounded), label: '뉴스'),
+            NavigationDestination(icon: Icon(Icons.quiz_outlined), label: '퀴즈'),
           ],
         ),
       );
@@ -1261,6 +1263,154 @@ class _NewsState extends State<NewsPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+// ---------- 퀴즈: 뜻을 보고 맞는 용어 고르기
+typedef Question = ({J answer, List<J> options, String prompt});
+
+String termName(J t) => (t['term'] as String).replaceAll(RegExp(r'\(.*?\)'), '').trim();
+
+// 뜻 안에 정답 이름이 그대로 들어 있으면 가린다 (예: "PER은 ..." → "○○은 ...")
+String maskTerm(String text, J t) {
+  var out = text;
+  for (final name in {termName(t), t['term'] as String, ...RegExp(r'\((.*?)\)').allMatches(t['term']).map((m) => m[1]!)}) {
+    if (name.length >= 2) out = out.replaceAll(name, '○○');
+  }
+  return out;
+}
+
+// n문제: 정답은 서로 다르게, 오답 3개는 같은 분야에서 먼저 고른다
+List<Question> makeQuiz(List all, Random rnd, {String? cat, int n = 10}) {
+  final pool = [for (final J t in all) if (cat == null || t['category'] == cat) t]..shuffle(rnd);
+  return [
+    for (final J a in pool.take(n))
+      () {
+        final same = [for (final J t in all) if (t['id'] != a['id'] && t['category'] == a['category']) t]..shuffle(rnd);
+        final other = [for (final J t in all) if (t['id'] != a['id'] && t['category'] != a['category']) t]..shuffle(rnd);
+        final opts = [a, ...[...same, ...other].take(3)]..shuffle(rnd);
+        return (answer: a, options: opts, prompt: maskTerm(a['definition'], a));
+      }()
+  ];
+}
+
+class QuizPage extends StatefulWidget {
+  const QuizPage({super.key});
+  @override
+  State<QuizPage> createState() => _QuizState();
+}
+
+class _QuizState extends State<QuizPage> {
+  final rnd = Random();
+  String? cat;
+  List<Question> qs = [];
+  int i = 0, score = 0;
+  J? picked;
+  final wrong = <J>[];
+
+  void start() => setState(() {
+        qs = makeQuiz(terms, rnd, cat: cat);
+        i = score = 0;
+        picked = null;
+        wrong.clear();
+      });
+
+  void pick(J t) {
+    if (picked != null) return;
+    setState(() {
+      picked = t;
+      if (t['id'] == qs[i].answer['id']) {
+        score++;
+      } else {
+        wrong.add(qs[i].answer);
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = P.of(context);
+    final cats = [for (final t in terms) t['category'] as String].toSet();
+    final List<Widget> body;
+    if (qs.isEmpty) {
+      // 시작 화면
+      body = [
+        txt('뜻을 읽고 맞는 경제용어를 골라 보세요. 한 번에 10문제예요.', sub(p, 14)),
+        Text('어떤 분야를 풀까요?', style: h(16)),
+        Wrap(spacing: 6, runSpacing: 6, children: [
+          for (final c in [null, ...cats])
+            ChoiceChip(label: Text(c ?? '전체'), selected: cat == c, showCheckmark: false, onSelected: (_) => setState(() => cat = c)),
+        ]),
+        FilledButton(onPressed: start, child: const Padding(padding: EdgeInsets.all(12), child: Text('시작하기', style: bold))),
+      ];
+    } else if (i >= qs.length) {
+      // 결과 화면
+      body = [
+        box(p, col(8, [
+          Text('${qs.length}문제 중 $score개 맞혔어요', style: h(22)),
+          txt(score == qs.length ? '완벽해요! 다른 분야도 도전해 보세요.' : score >= qs.length * .7 ? '잘했어요! 틀린 용어만 한 번 더 볼까요?' : '괜찮아요. 틀린 용어를 눌러 다시 읽어 보세요.', sub(p, 14)),
+        ])),
+        if (wrong.isNotEmpty) ...[
+          Text('다시 볼 용어', style: h(16)),
+          Wrap(spacing: 6, runSpacing: 6, children: [for (final t in wrong) chip(p, t['term'], () => openTerm(context, t['id']))]),
+        ],
+        FilledButton(onPressed: start, child: const Padding(padding: EdgeInsets.all(12), child: Text('다시 풀기', style: bold))),
+        OutlinedButton(onPressed: () => setState(() => qs = []), child: const Padding(padding: EdgeInsets.all(12), child: Text('분야 바꾸기'))),
+      ];
+    } else {
+      // 문제 화면
+      final q = qs[i];
+      final done = picked != null;
+      Color? colorOf(J t) => !done ? null : t['id'] == q.answer['id'] ? p.good : t['id'] == picked!['id'] ? p.warn : null;
+      body = [
+        Row(children: [
+          Text('${i + 1} / ${qs.length}', style: h(16)),
+          const Spacer(),
+          Text('맞힌 문제 $score', style: sub(p, 13)),
+        ]),
+        LinearProgressIndicator(value: (i + (done ? 1 : 0)) / qs.length, borderRadius: BorderRadius.circular(4)),
+        box(p, col(8, [
+          Text('다음 설명에 맞는 용어는?', style: sub(p, 13).copyWith(fontWeight: FontWeight.w700)),
+          txt(q.prompt, const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.5)),
+        ])),
+        for (final o in q.options)
+          Material(
+            color: colorOf(o)?.withValues(alpha: .18) ?? p.surface,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14), side: BorderSide(color: colorOf(o) ?? Colors.transparent, width: 1.5)),
+            clipBehavior: Clip.antiAlias,
+            child: InkWell(
+              onTap: () => pick(o),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                child: Row(children: [
+                  Expanded(child: Text(o['term'], style: const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600))),
+                  if (done && o['id'] == q.answer['id']) Icon(Icons.check_circle_rounded, color: p.good),
+                  if (done && o['id'] == picked!['id'] && o['id'] != q.answer['id']) Icon(Icons.cancel_rounded, color: p.warn),
+                ]),
+              ),
+            ),
+          ),
+        if (done) ...[
+          explain(p, col(4, [
+            Text(picked!['id'] == q.answer['id'] ? '정답이에요!' : '정답은 "${q.answer['term']}"이에요.',
+                style: TextStyle(fontWeight: FontWeight.w800, color: picked!['id'] == q.answer['id'] ? p.good : p.warn)),
+            txt('예시: ${q.answer['example']}', const TextStyle(fontSize: 14)),
+          ])),
+          FilledButton(
+            onPressed: () => setState(() {
+              i++;
+              picked = null;
+            }),
+            child: Padding(padding: const EdgeInsets.all(12), child: Text(i + 1 < qs.length ? '다음 문제' : '결과 보기', style: bold)),
+          ),
+        ],
+      ];
+    }
+    return Scaffold(
+      appBar: topBar(context, '용어 퀴즈', cat ?? '전체'),
+      body: ListView(padding: pad, children: spaced(12, [...body, Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5))])),
     );
   }
 }
