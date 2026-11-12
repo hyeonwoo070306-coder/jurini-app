@@ -1,0 +1,2360 @@
+{
+ "asof": "2026-11-11",
+ "companies": {
+  "BRK.B": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 364482,
+     "operating_income": null,
+     "net_income": 96223,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 371433,
+     "operating_income": null,
+     "net_income": 88995,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 371444,
+     "operating_income": null,
+     "net_income": 66968,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 395362,
+     "operating_income": null,
+     "net_income": 77084,
+     "ocf": null,
+     "capex": null
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": null,
+    "total_debt": null
+   },
+   "market_cap_usd_b": 1269,
+   "valuation": {
+    "per": 16.5,
+    "forward_per": null,
+    "pbr": 1.7,
+    "roe": 10.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 575.12
+  },
+  "WMT": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-01-31",
+     "revenue": 648125,
+     "operating_income": 27012,
+     "net_income": 15511,
+     "ocf": 35726,
+     "capex": 20606
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-01-31",
+     "revenue": 680985,
+     "operating_income": 29348,
+     "net_income": 19436,
+     "ocf": 36443,
+     "capex": 23783
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-01-31",
+     "revenue": 713163,
+     "operating_income": 29825,
+     "net_income": 21893,
+     "ocf": 41565,
+     "capex": 26642
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-07-31",
+     "revenue": 735840,
+     "operating_income": 32280,
+     "net_income": 22076,
+     "ocf": 42923,
+     "capex": 29414
+    }
+   ],
+   "balance": {
+    "asof": "2026-07-31",
+    "cash_and_investments": 11529,
+    "total_debt": 48645
+   },
+   "market_cap_usd_b": 997,
+   "valuation": {
+    "per": 45.2,
+    "forward_per": null,
+    "pbr": 10.1,
+    "roe": 22.5
+   },
+   "shareholder_return": {
+    "dividend_per_share": 0.99,
+    "dividend_yield": 0.79,
+    "payout_ratio": 35.6,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 125.66
+  },
+  "JPM": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 158104,
+     "operating_income": null,
+     "net_income": 49552,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 177556,
+     "operating_income": null,
+     "net_income": 58471,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 182447,
+     "operating_income": null,
+     "net_income": 57048,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 203153,
+     "operating_income": null,
+     "net_income": 65979,
+     "ocf": null,
+     "capex": null
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": null,
+    "total_debt": null
+   },
+   "market_cap_usd_b": 909,
+   "valuation": {
+    "per": 13.8,
+    "forward_per": null,
+    "pbr": 2.4,
+    "roe": 17.7
+   },
+   "shareholder_return": {
+    "dividend_per_share": 6.6,
+    "dividend_yield": 1.93,
+    "payout_ratio": 26.6,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 342.11
+  },
+  "AMD": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-30",
+     "revenue": 22680,
+     "operating_income": 401,
+     "net_income": 854,
+     "ocf": 1667,
+     "capex": 546
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-28",
+     "revenue": 25785,
+     "operating_income": 1900,
+     "net_income": 1641,
+     "ocf": 3041,
+     "capex": 636
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-27",
+     "revenue": 34639,
+     "operating_income": 3694,
+     "net_income": 4335,
+     "ocf": 7709,
+     "capex": 974
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-26",
+     "revenue": 45436,
+     "operating_income": 8050,
+     "net_income": 7619,
+     "ocf": 9123,
+     "capex": 2067
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-26",
+    "cash_and_investments": 15776,
+    "total_debt": 7953
+   },
+   "market_cap_usd_b": 834,
+   "valuation": {
+    "per": 109.5,
+    "forward_per": null,
+    "pbr": 12.2,
+    "roe": 11.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 508.58
+  },
+  "MU": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-08-29",
+     "revenue": 25111,
+     "operating_income": 1304,
+     "net_income": 778,
+     "ocf": 8507,
+     "capex": 8386
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-08-28",
+     "revenue": 37378,
+     "operating_income": 9770,
+     "net_income": 8539,
+     "ocf": 17525,
+     "capex": 15857
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-09-03",
+     "revenue": 133188,
+     "operating_income": 99340,
+     "net_income": 84969,
+     "ocf": 89675,
+     "capex": 30712
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-03",
+    "cash_and_investments": 73453,
+    "total_debt": 2792
+   },
+   "market_cap_usd_b": 830,
+   "valuation": {
+    "per": 9.8,
+    "forward_per": null,
+    "pbr": 6.0,
+    "roe": 61.4
+   },
+   "shareholder_return": {
+    "dividend_per_share": 0.6,
+    "dividend_yield": 0.08,
+    "payout_ratio": 0.8,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 733.15
+  },
+  "V": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-09-30",
+     "revenue": 35926,
+     "operating_income": 23595,
+     "net_income": 19743,
+     "ocf": 19950,
+     "capex": 1257
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-09-30",
+     "revenue": 40000,
+     "operating_income": 23994,
+     "net_income": 20058,
+     "ocf": 23059,
+     "capex": 1482
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-09-30",
+     "revenue": 45903,
+     "operating_income": 28110,
+     "net_income": 23504,
+     "ocf": 23728,
+     "capex": 1671
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 12938,
+    "total_debt": 22071
+   },
+   "market_cap_usd_b": 762,
+   "valuation": {
+    "per": 32.4,
+    "forward_per": null,
+    "pbr": 21.1,
+    "roe": 65.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": 3.12,
+    "dividend_yield": 0.74,
+    "payout_ratio": 23.9,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 422.42
+  },
+  "JNJ": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 85159,
+     "operating_income": null,
+     "net_income": 35153,
+     "ocf": 22791,
+     "capex": 4543
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-29",
+     "revenue": 88821,
+     "operating_income": null,
+     "net_income": 14066,
+     "ocf": 24266,
+     "capex": 4424
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-28",
+     "revenue": 94193,
+     "operating_income": null,
+     "net_income": 26804,
+     "ocf": 24530,
+     "capex": 4832
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-27",
+     "revenue": 99335,
+     "operating_income": null,
+     "net_income": 16095,
+     "ocf": 26159,
+     "capex": 5569
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-27",
+    "cash_and_investments": 17228,
+    "total_debt": 50290
+   },
+   "market_cap_usd_b": 679,
+   "valuation": {
+    "per": 42.2,
+    "forward_per": null,
+    "pbr": 8.3,
+    "roe": 19.7
+   },
+   "shareholder_return": {
+    "dividend_per_share": 5.36,
+    "dividend_yield": 1.9,
+    "payout_ratio": 80.2,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 282.11
+  },
+  "XOM": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 344582,
+     "operating_income": null,
+     "net_income": 36010,
+     "ocf": 55369,
+     "capex": 21919
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 349585,
+     "operating_income": null,
+     "net_income": 33680,
+     "ocf": 55022,
+     "capex": 24306
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 332238,
+     "operating_income": null,
+     "net_income": 28844,
+     "ocf": 51970,
+     "capex": 28358
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 396627,
+     "operating_income": null,
+     "net_income": 40622,
+     "ocf": 70589,
+     "capex": 27625
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 12153,
+    "total_debt": 38986
+   },
+   "market_cap_usd_b": 672,
+   "valuation": {
+    "per": 16.5,
+    "forward_per": null,
+    "pbr": 2.5,
+    "roe": 15.3
+   },
+   "shareholder_return": {
+    "dividend_per_share": 4.12,
+    "dividend_yield": 2.5,
+    "payout_ratio": 41.4,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 164.77
+  },
+  "MA": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 25098,
+     "operating_income": 14008,
+     "net_income": 11195,
+     "ocf": 11980,
+     "capex": 371
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 28167,
+     "operating_income": 15582,
+     "net_income": 12874,
+     "ocf": 14780,
+     "capex": 474
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 32791,
+     "operating_income": 18897,
+     "net_income": 14968,
+     "ocf": 17648,
+     "capex": 489
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 36288,
+     "operating_income": 21266,
+     "net_income": 16958,
+     "ocf": 16861,
+     "capex": 779
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 10147,
+    "total_debt": 23938
+   },
+   "market_cap_usd_b": 571,
+   "valuation": {
+    "per": 33.7,
+    "forward_per": null,
+    "pbr": 84.6,
+    "roe": 251.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": 3.48,
+    "dividend_yield": 0.53,
+    "payout_ratio": 17.9,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 655.98
+  },
+  "ABBV": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 54318,
+     "operating_income": 12757,
+     "net_income": 4863,
+     "ocf": 22839,
+     "capex": 777
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 56334,
+     "operating_income": 9137,
+     "net_income": 4278,
+     "ocf": 18806,
+     "capex": 974
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 61160,
+     "operating_income": 15075,
+     "net_income": 4226,
+     "ocf": 19030,
+     "capex": 1214
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 66014,
+     "operating_income": 21233,
+     "net_income": 10342,
+     "ocf": 20089,
+     "capex": 1217
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 10802,
+    "total_debt": 64503
+   },
+   "market_cap_usd_b": 519,
+   "valuation": {
+    "per": 50.1,
+    "forward_per": null,
+    "pbr": null,
+    "roe": null
+   },
+   "shareholder_return": {
+    "dividend_per_share": 6.92,
+    "dividend_yield": 2.36,
+    "payout_ratio": 118.3,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 293.34
+  },
+  "COST": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-09-01",
+     "revenue": 254453,
+     "operating_income": 9285,
+     "net_income": 7367,
+     "ocf": 11339,
+     "capex": 4710
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-08-31",
+     "revenue": 275235,
+     "operating_income": 10383,
+     "net_income": 8099,
+     "ocf": 13335,
+     "capex": 5498
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-08-30",
+     "revenue": 303154,
+     "operating_income": 11685,
+     "net_income": 9226,
+     "ocf": 15817,
+     "capex": 6435
+    }
+   ],
+   "balance": {
+    "asof": "2026-08-30",
+    "cash_and_investments": 21301,
+    "total_debt": 6162
+   },
+   "market_cap_usd_b": 472,
+   "valuation": {
+    "per": 51.2,
+    "forward_per": null,
+    "pbr": 13.2,
+    "roe": 25.8
+   },
+   "shareholder_return": {
+    "dividend_per_share": 5.88,
+    "dividend_yield": 0.55,
+    "payout_ratio": 28.2,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 1066.18
+  },
+  "CVX": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 200949,
+     "operating_income": null,
+     "net_income": 21369,
+     "ocf": 35609,
+     "capex": 15829
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 202792,
+     "operating_income": null,
+     "net_income": 17661,
+     "ocf": 31492,
+     "capex": 16448
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 189031,
+     "operating_income": null,
+     "net_income": 12299,
+     "ocf": 33939,
+     "capex": 17347
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 233333,
+     "operating_income": null,
+     "net_income": 26976,
+     "ocf": 51950,
+     "capex": 17876
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 13919,
+    "total_debt": 42857
+   },
+   "market_cap_usd_b": 414,
+   "valuation": {
+    "per": 15.4,
+    "forward_per": null,
+    "pbr": 2.1,
+    "roe": 13.9
+   },
+   "shareholder_return": {
+    "dividend_per_share": 7.12,
+    "dividend_yield": 3.38,
+    "payout_ratio": 51.9,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 210.79
+  },
+  "KO": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 45754,
+     "operating_income": 11311,
+     "net_income": 10714,
+     "ocf": 11599,
+     "capex": 1852
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 47061,
+     "operating_income": 9992,
+     "net_income": 10631,
+     "ocf": 6805,
+     "capex": 2064
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 47941,
+     "operating_income": 13762,
+     "net_income": 13107,
+     "ocf": 7408,
+     "capex": 2112
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-10-02",
+     "revenue": 51054,
+     "operating_income": 15337,
+     "net_income": 14629,
+     "ocf": 16227,
+     "capex": 1945
+    }
+   ],
+   "balance": {
+    "asof": "2026-10-02",
+    "cash_and_investments": 13454,
+    "total_debt": 41796
+   },
+   "market_cap_usd_b": 413,
+   "valuation": {
+    "per": 28.2,
+    "forward_per": null,
+    "pbr": 11.1,
+    "roe": 39.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": 2.12,
+    "dividend_yield": 2.21,
+    "payout_ratio": 62.3,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 96.025
+  },
+  "PLTR": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 2225,
+     "operating_income": 120,
+     "net_income": 210,
+     "ocf": 712,
+     "capex": 15
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 2866,
+     "operating_income": 310,
+     "net_income": 462,
+     "ocf": 1154,
+     "capex": 13
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 4475,
+     "operating_income": 1414,
+     "net_income": 1625,
+     "ocf": 2134,
+     "capex": 34
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 7288,
+     "operating_income": 3326,
+     "net_income": 3669,
+     "ocf": 4097,
+     "capex": 43
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 10562,
+    "total_debt": 0
+   },
+   "market_cap_usd_b": 408,
+   "valuation": {
+    "per": 111.1,
+    "forward_per": null,
+    "pbr": 36.3,
+    "roe": 32.7
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 169.2
+  },
+  "PG": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-06-30",
+     "revenue": 84039,
+     "operating_income": 18545,
+     "net_income": 14879,
+     "ocf": 19846,
+     "capex": 3322
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-06-30",
+     "revenue": 84284,
+     "operating_income": 20451,
+     "net_income": 15974,
+     "ocf": 17817,
+     "capex": 3773
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-06-30",
+     "revenue": 87032,
+     "operating_income": 19748,
+     "net_income": 16046,
+     "ocf": 19556,
+     "capex": 4409
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 87922,
+     "operating_income": 19829,
+     "net_income": 16027,
+     "ocf": 19915,
+     "capex": 4575
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 15365,
+    "total_debt": 33191
+   },
+   "market_cap_usd_b": 390,
+   "valuation": {
+    "per": 24.3,
+    "forward_per": null,
+    "pbr": 7.0,
+    "roe": 29.0
+   },
+   "shareholder_return": {
+    "dividend_per_share": 4.36,
+    "dividend_yield": 2.59,
+    "payout_ratio": 63.1,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 168.3
+  },
+  "CSCO": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-07-27",
+     "revenue": 53803,
+     "operating_income": 12181,
+     "net_income": 10320,
+     "ocf": 10880,
+     "capex": 670
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-07-26",
+     "revenue": 56654,
+     "operating_income": 11760,
+     "net_income": 10180,
+     "ocf": 14193,
+     "capex": 905
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-07-25",
+     "revenue": 63325,
+     "operating_income": 15368,
+     "net_income": 13267,
+     "ocf": 14177,
+     "capex": 1410
+    }
+   ],
+   "balance": {
+    "asof": "2026-07-25",
+    "cash_and_investments": 15918,
+    "total_debt": 22872
+   },
+   "market_cap_usd_b": 389,
+   "valuation": {
+    "per": 29.3,
+    "forward_per": null,
+    "pbr": 7.7,
+    "roe": 26.4
+   },
+   "shareholder_return": {
+    "dividend_per_share": 1.68,
+    "dividend_yield": 1.7,
+    "payout_ratio": 49.9,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 98.65
+  },
+  "MRK": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 60115,
+     "operating_income": null,
+     "net_income": 365,
+     "ocf": 13006,
+     "capex": 3863
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 64168,
+     "operating_income": null,
+     "net_income": 17117,
+     "ocf": 21468,
+     "capex": 3372
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 65011,
+     "operating_income": null,
+     "net_income": 18254,
+     "ocf": 16472,
+     "capex": 4112
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 67378,
+     "operating_income": null,
+     "net_income": 2453,
+     "ocf": 18703,
+     "capex": 3957
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 11253,
+    "total_debt": 51989
+   },
+   "market_cap_usd_b": 367,
+   "valuation": {
+    "per": 149.5,
+    "forward_per": null,
+    "pbr": 8.2,
+    "roe": 5.5
+   },
+   "shareholder_return": {
+    "dividend_per_share": 3.4,
+    "dividend_yield": 2.29,
+    "payout_ratio": 341.7,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 148.74
+  },
+  "ORCL": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-05-31",
+     "revenue": 52961,
+     "operating_income": 15353,
+     "net_income": 10467,
+     "ocf": 18673,
+     "capex": 6866
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-05-31",
+     "revenue": 57399,
+     "operating_income": 17678,
+     "net_income": 12443,
+     "ocf": 20821,
+     "capex": 21215
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-05-31",
+     "revenue": 67357,
+     "operating_income": 20606,
+     "net_income": 17087,
+     "ocf": 31977,
+     "capex": 55663
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-08-31",
+     "revenue": 71776,
+     "operating_income": 23057,
+     "net_income": 18920,
+     "ocf": 46940,
+     "capex": 75660
+    }
+   ],
+   "balance": {
+    "asof": "2026-08-31",
+    "cash_and_investments": 37077,
+    "total_debt": 129967
+   },
+   "market_cap_usd_b": 362,
+   "valuation": {
+    "per": 19.1,
+    "forward_per": null,
+    "pbr": 5.4,
+    "roe": 28.3
+   },
+   "shareholder_return": {
+    "dividend_per_share": 2.0,
+    "dividend_yield": 1.67,
+    "payout_ratio": 32.0,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 119.78
+  },
+  "UNH": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 371622,
+     "operating_income": 32358,
+     "net_income": 22381,
+     "ocf": 29068,
+     "capex": 3386
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 400278,
+     "operating_income": 32287,
+     "net_income": 14405,
+     "ocf": 24204,
+     "capex": 3499
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 447567,
+     "operating_income": 18964,
+     "net_income": 12056,
+     "ocf": 19697,
+     "capex": 3622
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 449662,
+     "operating_income": 23924,
+     "net_income": 15884,
+     "ocf": 26195,
+     "capex": 3369
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 28549,
+    "total_debt": 68714
+   },
+   "market_cap_usd_b": 356,
+   "valuation": {
+    "per": 22.4,
+    "forward_per": null,
+    "pbr": 3.4,
+    "roe": 15.3
+   },
+   "shareholder_return": {
+    "dividend_per_share": 9.28,
+    "dividend_yield": 2.33,
+    "payout_ratio": 52.3,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 397.52
+  },
+  "HD": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-01-28",
+     "revenue": 152669,
+     "operating_income": 21689,
+     "net_income": 15143,
+     "ocf": 21172,
+     "capex": 3226
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-02-02",
+     "revenue": 159514,
+     "operating_income": 21526,
+     "net_income": 14806,
+     "ocf": 19810,
+     "capex": 3485
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-02-01",
+     "revenue": 164683,
+     "operating_income": 20890,
+     "net_income": 14156,
+     "ocf": 16325,
+     "capex": 3679
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-08-02",
+     "revenue": 169176,
+     "operating_income": 21022,
+     "net_income": 14227,
+     "ocf": 18779,
+     "capex": 3680
+    }
+   ],
+   "balance": {
+    "asof": "2026-08-02",
+    "cash_and_investments": 2085,
+    "total_debt": 53645
+   },
+   "market_cap_usd_b": 353,
+   "valuation": {
+    "per": 24.8,
+    "forward_per": null,
+    "pbr": 21.2,
+    "roe": 85.6
+   },
+   "shareholder_return": {
+    "dividend_per_share": 9.32,
+    "dividend_yield": 2.64,
+    "payout_ratio": 65.4,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 353.37
+  },
+  "BAC": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 102769,
+     "operating_income": null,
+     "net_income": 26305,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 105856,
+     "operating_income": null,
+     "net_income": 26973,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 113097,
+     "operating_income": null,
+     "net_income": 30509,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 120155,
+     "operating_income": null,
+     "net_income": 32238,
+     "ocf": null,
+     "capex": null
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": null,
+    "total_debt": null
+   },
+   "market_cap_usd_b": 349,
+   "valuation": {
+    "per": 10.8,
+    "forward_per": null,
+    "pbr": 1.2,
+    "roe": 10.9
+   },
+   "shareholder_return": {
+    "dividend_per_share": 1.28,
+    "dividend_yield": 2.53,
+    "payout_ratio": 27.4,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 50.57
+  },
+  "GE": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 35348,
+     "operating_income": null,
+     "net_income": 9482,
+     "ocf": 5189,
+     "capex": 862
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 38702,
+     "operating_income": null,
+     "net_income": 6556,
+     "ocf": 4710,
+     "capex": 1032
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 45855,
+     "operating_income": null,
+     "net_income": 8704,
+     "ocf": 8537,
+     "capex": 1273
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 52576,
+     "operating_income": null,
+     "net_income": 9103,
+     "ocf": 9451,
+     "capex": 1433
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 8764,
+    "total_debt": 20949
+   },
+   "market_cap_usd_b": 347,
+   "valuation": {
+    "per": 38.1,
+    "forward_per": null,
+    "pbr": 19.8,
+    "roe": 52.0
+   },
+   "shareholder_return": {
+    "dividend_per_share": 1.88,
+    "dividend_yield": 0.56,
+    "payout_ratio": 21.3,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 335.58
+  },
+  "INTC": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-30",
+     "revenue": 54228,
+     "operating_income": 93,
+     "net_income": 1689,
+     "ocf": 11471,
+     "capex": 25750
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-28",
+     "revenue": 53101,
+     "operating_income": -11678,
+     "net_income": -18756,
+     "ocf": 8288,
+     "capex": 23944
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-27",
+     "revenue": 52853,
+     "operating_income": -2214,
+     "net_income": -267,
+     "ocf": 9697,
+     "capex": 14646
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-26",
+     "revenue": 59892,
+     "operating_income": 1762,
+     "net_income": -12032,
+     "ocf": 17472,
+     "capex": 13704
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-26",
+    "cash_and_investments": 54005,
+    "total_debt": 46585
+   },
+   "market_cap_usd_b": 316,
+   "valuation": {
+    "per": null,
+    "forward_per": null,
+    "pbr": 2.7,
+    "roe": -10.5
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 59.37
+  },
+  "PM": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 35174,
+     "operating_income": 11556,
+     "net_income": 7813,
+     "ocf": 9204,
+     "capex": 1321
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 37878,
+     "operating_income": 13402,
+     "net_income": 7057,
+     "ocf": 12217,
+     "capex": 1444
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 40648,
+     "operating_income": 14892,
+     "net_income": 11348,
+     "ocf": 12233,
+     "capex": 1569
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 43138,
+     "operating_income": 16662,
+     "net_income": 10709,
+     "ocf": 15154,
+     "capex": 1559
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 6683,
+    "total_debt": 47562
+   },
+   "market_cap_usd_b": 301,
+   "valuation": {
+    "per": 28.1,
+    "forward_per": null,
+    "pbr": null,
+    "roe": null
+   },
+   "shareholder_return": {
+    "dividend_per_share": 6.4,
+    "dividend_yield": 3.31,
+    "payout_ratio": 93.1,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 193.13
+  },
+  "AMAT": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-10-29",
+     "revenue": 26517,
+     "operating_income": 7654,
+     "net_income": 6856,
+     "ocf": 8700,
+     "capex": 1106
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-10-27",
+     "revenue": 27176,
+     "operating_income": 7867,
+     "net_income": 7177,
+     "ocf": 8677,
+     "capex": 1190
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-10-26",
+     "revenue": 28368,
+     "operating_income": 8289,
+     "net_income": 6998,
+     "ocf": 7958,
+     "capex": 2260
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-07-26",
+     "revenue": 30837,
+     "operating_income": 9141,
+     "net_income": 9267,
+     "ocf": 8396,
+     "capex": 2773
+    }
+   ],
+   "balance": {
+    "asof": "2026-07-26",
+    "cash_and_investments": 9233,
+    "total_debt": 7743
+   },
+   "market_cap_usd_b": 294,
+   "valuation": {
+    "per": 31.7,
+    "forward_per": null,
+    "pbr": 11.5,
+    "roe": 36.2
+   },
+   "shareholder_return": {
+    "dividend_per_share": 2.12,
+    "dividend_yield": 0.57,
+    "payout_ratio": 18.2,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 370.55
+  },
+  "MS": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 54143,
+     "operating_income": null,
+     "net_income": 9087,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 61761,
+     "operating_income": null,
+     "net_income": 13390,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 70645,
+     "operating_income": null,
+     "net_income": 16861,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 80156,
+     "operating_income": null,
+     "net_income": 20454,
+     "ocf": null,
+     "capex": null
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": null,
+    "total_debt": null
+   },
+   "market_cap_usd_b": 292,
+   "valuation": {
+    "per": 14.3,
+    "forward_per": null,
+    "pbr": 2.5,
+    "roe": 17.5
+   },
+   "shareholder_return": {
+    "dividend_per_share": 4.6,
+    "dividend_yield": 2.46,
+    "payout_ratio": 35.2,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 187.13
+  },
+  "LRCX": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-06-30",
+     "revenue": 14905,
+     "operating_income": 4264,
+     "net_income": 3828,
+     "ocf": 4652,
+     "capex": 397
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-06-29",
+     "revenue": 18436,
+     "operating_income": 5901,
+     "net_income": 5358,
+     "ocf": 6173,
+     "capex": 759
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-06-28",
+     "revenue": 23233,
+     "operating_income": 8200,
+     "net_income": 7265,
+     "ocf": 5858,
+     "capex": 966
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-27",
+     "revenue": 26128,
+     "operating_income": 9654,
+     "net_income": 8450,
+     "ocf": 7576,
+     "capex": 1039
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-27",
+    "cash_and_investments": 7437,
+    "total_debt": 3722
+   },
+   "market_cap_usd_b": 276,
+   "valuation": {
+    "per": 32.7,
+    "forward_per": null,
+    "pbr": 19.9,
+    "roe": 60.8
+   },
+   "shareholder_return": {
+    "dividend_per_share": 1.32,
+    "dividend_yield": 0.6,
+    "payout_ratio": 19.5,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 221.31
+  },
+  "CAT": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 67060,
+     "operating_income": 12966,
+     "net_income": 10332,
+     "ocf": 12885,
+     "capex": 1597
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 64809,
+     "operating_income": 13072,
+     "net_income": 10788,
+     "ocf": 12035,
+     "capex": 1988
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 67589,
+     "operating_income": 11151,
+     "net_income": 8882,
+     "ocf": 11739,
+     "capex": 2821
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 77773,
+     "operating_income": 14254,
+     "net_income": 11828,
+     "ocf": 14184,
+     "capex": 2910
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 7929,
+    "total_debt": 36210
+   },
+   "market_cap_usd_b": 274,
+   "valuation": {
+    "per": 23.2,
+    "forward_per": null,
+    "pbr": 12.8,
+    "roe": 55.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": 6.52,
+    "dividend_yield": 1.09,
+    "payout_ratio": 25.2,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 598.89
+  },
+  "PANW": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-07-31",
+     "revenue": 8027,
+     "operating_income": 684,
+     "net_income": 2578,
+     "ocf": 3258,
+     "capex": 157
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-07-31",
+     "revenue": 9221,
+     "operating_income": 1243,
+     "net_income": 1134,
+     "ocf": 3716,
+     "capex": 247
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-07-31",
+     "revenue": 11480,
+     "operating_income": 695,
+     "net_income": 307,
+     "ocf": 4553,
+     "capex": 440
+    }
+   ],
+   "balance": {
+    "asof": "2026-07-31",
+    "cash_and_investments": 3071,
+    "total_debt": 0
+   },
+   "market_cap_usd_b": 271,
+   "valuation": {
+    "per": 882.1,
+    "forward_per": null,
+    "pbr": 9.9,
+    "roe": 1.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 330.89
+  },
+  "TXN": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 17519,
+     "operating_income": 7331,
+     "net_income": 6510,
+     "ocf": 6420,
+     "capex": 5071
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 15641,
+     "operating_income": 5465,
+     "net_income": 4799,
+     "ocf": 6318,
+     "capex": 4820
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 17682,
+     "operating_income": 6023,
+     "net_income": 5001,
+     "ocf": 7153,
+     "capex": 4550
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 20766,
+     "operating_income": 8465,
+     "net_income": 7113,
+     "ocf": 9896,
+     "capex": 2578
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 8142,
+    "total_debt": 13555
+   },
+   "market_cap_usd_b": 270,
+   "valuation": {
+    "per": 38.0,
+    "forward_per": null,
+    "pbr": 14.1,
+    "roe": 37.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": 6.08,
+    "dividend_yield": 2.06,
+    "payout_ratio": 78.1,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 295.73
+  },
+  "TMO": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 42857,
+     "operating_income": 6859,
+     "net_income": 5995,
+     "ocf": 8406,
+     "capex": 1479
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 42879,
+     "operating_income": 7337,
+     "net_income": 6335,
+     "ocf": 8667,
+     "capex": 1400
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 44556,
+     "operating_income": 7746,
+     "net_income": 6704,
+     "ocf": 7818,
+     "capex": 1525
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-26",
+     "revenue": 47351,
+     "operating_income": 8468,
+     "net_income": 7072,
+     "ocf": 9324,
+     "capex": 1728
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-26",
+    "cash_and_investments": 6061,
+    "total_debt": 41108
+   },
+   "market_cap_usd_b": 267,
+   "valuation": {
+    "per": 37.8,
+    "forward_per": null,
+    "pbr": 4.9,
+    "roe": 12.9
+   },
+   "shareholder_return": {
+    "dividend_per_share": 1.88,
+    "dividend_yield": 0.26,
+    "payout_ratio": 9.8,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 721.64
+  },
+  "RTX": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 68920,
+     "operating_income": 3561,
+     "net_income": 3195,
+     "ocf": 7883,
+     "capex": 2415
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 80738,
+     "operating_income": 6538,
+     "net_income": 4774,
+     "ocf": 7159,
+     "capex": 2625
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 88603,
+     "operating_income": 9300,
+     "net_income": 6732,
+     "ocf": 10567,
+     "capex": 2627
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 95987,
+     "operating_income": 11299,
+     "net_income": 8403,
+     "ocf": 12435,
+     "capex": 2934
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 9880,
+    "total_debt": 37169
+   },
+   "market_cap_usd_b": 265,
+   "valuation": {
+    "per": 31.5,
+    "forward_per": null,
+    "pbr": 3.8,
+    "roe": 12.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": 2.92,
+    "dividend_yield": 1.49,
+    "payout_ratio": 46.9,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 196.32
+  },
+  "NFLX": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 33723,
+     "operating_income": 6954,
+     "net_income": 5408,
+     "ocf": 7274,
+     "capex": 349
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 39001,
+     "operating_income": 10418,
+     "net_income": 8712,
+     "ocf": 7361,
+     "capex": 440
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 45183,
+     "operating_income": 13327,
+     "net_income": 10981,
+     "ocf": 10149,
+     "capex": 688
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 49735,
+     "operating_income": 15565,
+     "net_income": 14767,
+     "ocf": 12308,
+     "capex": 933
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 8223,
+    "total_debt": 15132
+   },
+   "market_cap_usd_b": 263,
+   "valuation": {
+    "per": 17.8,
+    "forward_per": null,
+    "pbr": 9.0,
+    "roe": 50.4
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 63.95
+  },
+  "GS": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 46254,
+     "operating_income": null,
+     "net_income": 8516,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 53512,
+     "operating_income": null,
+     "net_income": 14276,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 58283,
+     "operating_income": null,
+     "net_income": 17176,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 69698,
+     "operating_income": null,
+     "net_income": 22169,
+     "ocf": null,
+     "capex": null
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": null,
+    "total_debt": null
+   },
+   "market_cap_usd_b": 262,
+   "valuation": {
+    "per": 11.8,
+    "forward_per": null,
+    "pbr": 2.1,
+    "roe": 17.7
+   },
+   "shareholder_return": {
+    "dividend_per_share": 20.0,
+    "dividend_yield": 2.21,
+    "payout_ratio": 26.0,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 906.65
+  },
+  "WFC": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 82597,
+     "operating_income": null,
+     "net_income": 19142,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 82296,
+     "operating_income": null,
+     "net_income": 19722,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 83699,
+     "operating_income": null,
+     "net_income": 21338,
+     "ocf": null,
+     "capex": null
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 87230,
+     "operating_income": null,
+     "net_income": 22972,
+     "ocf": null,
+     "capex": null
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": null,
+    "total_debt": null
+   },
+   "market_cap_usd_b": 257,
+   "valuation": {
+    "per": 11.2,
+    "forward_per": null,
+    "pbr": 1.5,
+    "roe": 13.1
+   },
+   "shareholder_return": {
+    "dividend_per_share": 2.0,
+    "dividend_yield": 2.34,
+    "payout_ratio": 26.1,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 85.49
+  },
+  "AMGN": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 28190,
+     "operating_income": 7897,
+     "net_income": 6717,
+     "ocf": 8471,
+     "capex": 1112
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 33424,
+     "operating_income": 7258,
+     "net_income": 4090,
+     "ocf": 11490,
+     "capex": 1096
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 36751,
+     "operating_income": 9080,
+     "net_income": 7711,
+     "ocf": 9958,
+     "capex": 1858
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 38903,
+     "operating_income": 12610,
+     "net_income": 9391,
+     "ocf": 12035,
+     "capex": 2454
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 13190,
+    "total_debt": 54007
+   },
+   "market_cap_usd_b": 252,
+   "valuation": {
+    "per": 26.8,
+    "forward_per": null,
+    "pbr": 17.5,
+    "roe": 65.4
+   },
+   "shareholder_return": {
+    "dividend_per_share": 10.08,
+    "dividend_yield": 2.17,
+    "payout_ratio": 58.1,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 465.23
+  },
+  "LIN": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 32854,
+     "operating_income": 8024,
+     "net_income": 6199,
+     "ocf": 9305,
+     "capex": 3787
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 33005,
+     "operating_income": 8635,
+     "net_income": 6565,
+     "ocf": 9423,
+     "capex": 4497
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 33986,
+     "operating_income": 8923,
+     "net_income": 6898,
+     "ocf": 10350,
+     "capex": 5261
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 36238,
+     "operating_income": 9161,
+     "net_income": 7007,
+     "ocf": 10710,
+     "capex": 5630
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 3947,
+    "total_debt": 26378
+   },
+   "market_cap_usd_b": 239,
+   "valuation": {
+    "per": 34.1,
+    "forward_per": null,
+    "pbr": 6.1,
+    "roe": 17.8
+   },
+   "shareholder_return": {
+    "dividend_per_share": 6.4,
+    "dividend_yield": 1.23,
+    "payout_ratio": 41.9,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 520.33
+  },
+  "ANET": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 5860,
+     "operating_income": 2257,
+     "net_income": 2087,
+     "ocf": 2034,
+     "capex": 34
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 7003,
+     "operating_income": 2945,
+     "net_income": 2852,
+     "ocf": 3708,
+     "capex": 32
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 9006,
+     "operating_income": 3856,
+     "net_income": 3511,
+     "ocf": 4372,
+     "capex": 120
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 11890,
+     "operating_income": 5211,
+     "net_income": 4752,
+     "ocf": 5239,
+     "capex": 222
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 14359,
+    "total_debt": 0
+   },
+   "market_cap_usd_b": 235,
+   "valuation": {
+    "per": 49.5,
+    "forward_per": null,
+    "pbr": 14.3,
+    "roe": 28.9
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 186.23
+  },
+  "CRWD": {
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-01-31",
+     "revenue": 3056,
+     "operating_income": -19,
+     "net_income": 72,
+     "ocf": 1166,
+     "capex": 177
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-01-31",
+     "revenue": 3954,
+     "operating_income": -116,
+     "net_income": -15,
+     "ocf": 1382,
+     "capex": 255
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-01-31",
+     "revenue": 4812,
+     "operating_income": -293,
+     "net_income": -163,
+     "ocf": 1612,
+     "capex": 302
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-07-31",
+     "revenue": 5396,
+     "operating_income": -133,
+     "net_income": 45,
+     "ocf": 2017,
+     "capex": 408
+    }
+   ],
+   "balance": {
+    "asof": "2026-07-31",
+    "cash_and_investments": 5014,
+    "total_debt": 746
+   },
+   "market_cap_usd_b": 234,
+   "valuation": {
+    "per": 5201.1,
+    "forward_per": null,
+    "pbr": 45.9,
+    "roe": 0.9
+   },
+   "shareholder_return": {
+    "dividend_per_share": null,
+    "dividend_yield": null,
+    "payout_ratio": null,
+    "dividend_growth_years": null,
+    "frequency": null
+   },
+   "price": 228.58
+  },
+  "IBM": {
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 61860,
+     "operating_income": null,
+     "net_income": 7502,
+     "ocf": 13931,
+     "capex": 1245
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 62753,
+     "operating_income": null,
+     "net_income": 6023,
+     "ocf": 13445,
+     "capex": 1048
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 67535,
+     "operating_income": null,
+     "net_income": 10593,
+     "ocf": 13193,
+     "capex": 1091
+    },
+    {
+     "label": "최근 12개월(TTM)",
+     "end_date": "2026-09-30",
+     "revenue": 69868,
+     "operating_income": null,
+     "net_income": 11171,
+     "ocf": 15831,
+     "capex": 1175
+    }
+   ],
+   "balance": {
+    "asof": "2026-09-30",
+    "cash_and_investments": 9233,
+    "total_debt": 70826
+   },
+   "market_cap_usd_b": 233,
+   "valuation": {
+    "per": 20.8,
+    "forward_per": null,
+    "pbr": 6.5,
+    "roe": 31.4
+   },
+   "shareholder_return": {
+    "dividend_per_share": 6.76,
+    "dividend_yield": 2.75,
+    "payout_ratio": 57.2,
+    "dividend_growth_years": null,
+    "frequency": "분기"
+   },
+   "price": 246.13
+  }
+ }
+}

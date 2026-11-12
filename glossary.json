@@ -1,0 +1,648 @@
+{
+  "meta": {
+    "title": "경제용어 사전 (미국 Top 10에서 사용된 용어)",
+    "count": 54
+  },
+  "terms": [
+    {
+      "id": "asic",
+      "term": "ASIC(맞춤형 반도체)",
+      "definition": "특정 용도·특정 고객만을 위해 설계한 칩. 범용 칩보다 효율이 높음.",
+      "example": "구글 TPU(브로드컴과 공동 설계)",
+      "used_by": [
+        "AVGO"
+      ]
+    },
+    {
+      "id": "glp1",
+      "term": "GLP-1 치료제",
+      "definition": "식욕을 줄이고 혈당을 낮추는 호르몬을 흉내 낸 약. 당뇨와 비만 치료에 사용.",
+      "example": "마운자로, 젭바운드, 위고비",
+      "used_by": [
+        "LLY"
+      ]
+    },
+    {
+      "id": "gpu",
+      "term": "GPU(그래픽처리장치)",
+      "definition": "원래 게임 그래픽용 칩이지만, 많은 계산을 동시에 처리할 수 있어 AI 학습에 핵심이 된 반도체.",
+      "example": "엔비디아 블랙웰",
+      "used_by": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "ipo",
+      "term": "IPO(기업공개)",
+      "definition": "비상장 회사가 처음으로 주식을 증권시장에 상장해 일반 투자자에게 파는 것.",
+      "example": "스페이스X 2026년 6월 나스닥 상장",
+      "used_by": [
+        "SPCX"
+      ]
+    },
+    {
+      "id": "pbr",
+      "term": "PBR(주가순자산비율)",
+      "definition": "주가가 회사 순자산(자산 - 부채)의 몇 배인지. 1배보다 낮으면 장부 가치보다 싸게 거래된다는 뜻.",
+      "example": "자사주를 많이 사면 순자산이 줄어 PBR이 커짐",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "per",
+      "term": "PER(주가수익비율)",
+      "definition": "주가가 1년 순이익의 몇 배인지. 시가총액 ÷ 순이익. 낮을수록 이익 대비 싸다는 뜻이지만 성장성도 함께 봐야 함.",
+      "example": "PER 20배 = 지금 이익이 그대로면 투자금 회수에 20년",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "psr",
+      "term": "PSR(주가매출비율)",
+      "definition": "시가총액이 매출의 몇 배인지. 적자라서 PER을 못 쓸 때 주로 사용.",
+      "example": "시총 600, 매출 10 → PSR 60배",
+      "used_by": [
+        "SPCX"
+      ]
+    },
+    {
+      "id": "roe",
+      "term": "ROE(자기자본이익률)",
+      "definition": "주주가 맡긴 돈(자기자본)으로 1년에 얼마나 벌었는지. 순이익 ÷ 자기자본.",
+      "example": "ROE 20% = 자본 100으로 1년에 20을 범",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "customer_concentration",
+      "term": "고객 집중(의존도)",
+      "definition": "매출의 많은 부분이 소수 고객이나 소수 제품에서 나오는 것. 그 고객·제품이 흔들리면 실적도 흔들림.",
+      "example": "AI 칩 매출 대부분이 빅테크 몇 곳",
+      "used_by": [
+        "NVDA",
+        "AVGO",
+        "LLY"
+      ]
+    },
+    {
+      "id": "advertising_revenue",
+      "term": "광고 매출",
+      "definition": "서비스를 무료로 제공하고 광고주에게 광고를 팔아 버는 돈.",
+      "example": "구글 검색 광고, 인스타그램 광고",
+      "used_by": [
+        "GOOGL",
+        "AMZN",
+        "META"
+      ]
+    },
+    {
+      "id": "subscription",
+      "term": "구독 모델",
+      "definition": "매달·매년 정해진 요금을 받는 판매 방식. 매출이 안정적이고 예측하기 쉬움.",
+      "example": "오피스365, 넷플릭스, 프라임 멤버십",
+      "used_by": [
+        "MSFT",
+        "AMZN"
+      ]
+    },
+    {
+      "id": "economies_of_scale",
+      "term": "규모의 경제",
+      "definition": "많이 생산·판매할수록 하나당 비용이 낮아지는 효과.",
+      "example": "아마존 물류센터가 많을수록 배송비 단가 하락",
+      "used_by": [
+        "AMZN"
+      ]
+    },
+    {
+      "id": "network_effect",
+      "term": "네트워크 효과",
+      "definition": "사용자가 많아질수록 서비스 가치가 더 커지는 현상.",
+      "example": "친구들이 다 인스타그램을 써서 나도 써야 함",
+      "used_by": [
+        "META"
+      ]
+    },
+    {
+      "id": "data_center",
+      "term": "데이터센터",
+      "definition": "수많은 서버 컴퓨터를 모아 놓은 거대한 건물. 클라우드와 AI 서비스가 여기서 돌아감.",
+      "example": "AI 학습용 GPU 수만 개가 들어간 시설",
+      "used_by": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "revenue",
+      "term": "매출",
+      "definition": "물건이나 서비스를 팔아서 들어온 돈 전체. 비용을 빼기 전 금액.",
+      "example": "커피 100잔 × 5,000원 = 매출 50만 원",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "semiconductor",
+      "term": "반도체",
+      "definition": "전기를 통하게도, 막게도 할 수 있는 물질로 만든 칩. 모든 전자기기의 두뇌와 기억장치.",
+      "example": "CPU, GPU, 메모리",
+      "used_by": [
+        "NVDA",
+        "AVGO"
+      ]
+    },
+    {
+      "id": "antitrust",
+      "term": "반독점 규제",
+      "definition": "한 회사가 시장을 독차지해 경쟁을 막는 것을 정부가 제재하는 것.",
+      "example": "미국 법무부의 구글 검색 독점 소송",
+      "used_by": [
+        "AAPL",
+        "GOOGL",
+        "AMZN",
+        "META"
+      ]
+    },
+    {
+      "id": "dividend_growth_stock",
+      "term": "배당성장주",
+      "definition": "배당금을 여러 해 연속으로 늘려 온 주식.",
+      "example": "마이크로소프트 20년 연속 배당 증가",
+      "used_by": [
+        "MSFT",
+        "AVGO"
+      ]
+    },
+    {
+      "id": "payout_ratio",
+      "term": "배당성향",
+      "definition": "순이익 중 배당으로 나눠준 비율.",
+      "example": "순이익 100 중 30을 배당 → 30%",
+      "used_by": [
+        "AAPL",
+        "MSFT",
+        "AVGO",
+        "LLY"
+      ]
+    },
+    {
+      "id": "dividend_yield",
+      "term": "배당수익률",
+      "definition": "주가 대비 1년 배당금 비율. 은행 이자율과 비슷한 개념.",
+      "example": "주가 100달러, 배당 3달러 → 3%",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "META",
+        "AVGO",
+        "LLY"
+      ]
+    },
+    {
+      "id": "valuation",
+      "term": "밸류에이션",
+      "definition": "회사의 가치를 평가하는 것. 주가가 비싼지 싼지 판단하는 과정.",
+      "example": "PER, PBR 등을 비교",
+      "used_by": [
+        "TSLA"
+      ]
+    },
+    {
+      "id": "ecosystem",
+      "term": "생태계",
+      "definition": "여러 제품과 서비스가 서로 연결돼 함께 쓸수록 편해지는 구조.",
+      "example": "아이폰-맥-에어팟-아이클라우드",
+      "used_by": [
+        "AAPL"
+      ]
+    },
+    {
+      "id": "services_revenue",
+      "term": "서비스 매출",
+      "definition": "기기 판매가 아니라 앱, 구독, 결제 수수료 등에서 나오는 매출. 반복적이고 이익률이 높음.",
+      "example": "앱스토어 수수료, 아이클라우드 요금",
+      "used_by": [
+        "AAPL"
+      ]
+    },
+    {
+      "id": "forward_per",
+      "term": "선행 PER",
+      "definition": "현재 이익 대신 앞으로 1년 예상 이익으로 계산한 PER. 예상이 틀릴 수 있음.",
+      "example": "이익이 2배 될 걸로 예상되면 선행 PER은 현재 PER의 절반",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "capex",
+      "term": "설비투자(CapEx)",
+      "definition": "공장, 데이터센터, 장비처럼 오래 쓸 자산을 사는 데 쓴 돈.",
+      "example": "AI 데이터센터 건설비",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "export_control",
+      "term": "수출 규제",
+      "definition": "정부가 특정 국가로 특정 제품을 팔지 못하게 막는 것.",
+      "example": "미국의 대중국 첨단 AI 칩 수출 제한",
+      "used_by": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "net_debt",
+      "term": "순부채",
+      "definition": "빚이 보유 현금보다 많은 상태. 부채 - 현금이 플러스.",
+      "example": "현금 40억, 부채 100억 → 순부채 60억",
+      "used_by": [
+        "AMZN",
+        "META",
+        "AVGO",
+        "LLY"
+      ]
+    },
+    {
+      "id": "net_income",
+      "term": "순이익",
+      "definition": "영업이익에서 이자, 세금, 투자 손익 등을 모두 반영하고 최종적으로 남은 이익.",
+      "example": "주주 몫으로 남는 최종 이익",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "net_cash",
+      "term": "순현금",
+      "definition": "보유 현금이 빚보다 많은 상태. 현금 - 부채가 플러스.",
+      "example": "현금 100억, 부채 40억 → 순현금 60억",
+      "used_by": [
+        "GOOGL",
+        "SPCX",
+        "TSLA"
+      ]
+    },
+    {
+      "id": "market_cap",
+      "term": "시가총액",
+      "definition": "회사 전체의 가격. 주가 × 발행 주식 수. 회사를 통째로 사려면 드는 돈이라고 생각하면 됨.",
+      "example": "애플 시가총액 약 5조 달러 = 애플 주식을 전부 사는 데 드는 돈",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "energy_storage",
+      "term": "에너지 저장장치(ESS)",
+      "definition": "전기를 대용량 배터리에 저장했다가 필요할 때 쓰는 장치.",
+      "example": "테슬라 메가팩",
+      "used_by": [
+        "TSLA"
+      ]
+    },
+    {
+      "id": "operating_income",
+      "term": "영업이익",
+      "definition": "매출에서 원가, 인건비, 마케팅비 등 본업에 든 비용을 뺀 돈. 회사의 '본업 실력'.",
+      "example": "매출 50만 원 - 재료비·월세·월급 40만 원 = 영업이익 10만 원",
+      "used_by": [
+        "AAPL",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "operating_margin",
+      "term": "영업이익률",
+      "definition": "매출 중 영업이익이 차지하는 비율. 높을수록 장사를 효율적으로 한다는 뜻.",
+      "example": "매출 100, 영업이익 30 → 영업이익률 30%",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "operating_cash_flow",
+      "term": "영업현금흐름",
+      "definition": "본업으로 실제 회사 통장에 들어온 현금. 장부상 이익과 다를 수 있음.",
+      "example": "외상으로 팔면 매출은 있어도 현금은 아직 안 들어옴",
+      "used_by": [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "satellite_internet",
+      "term": "위성 인터넷",
+      "definition": "지상 케이블 대신 우주의 위성으로 인터넷을 연결하는 서비스. 산간·바다·비행기에서도 사용 가능.",
+      "example": "스타링크",
+      "used_by": [
+        "SPCX"
+      ]
+    },
+    {
+      "id": "mna",
+      "term": "인수합병(M&A)",
+      "definition": "다른 회사를 사거나 합치는 것. 빠른 성장 수단이지만 부채가 늘 수 있음.",
+      "example": "브로드컴의 VM웨어 인수(약 690억 달러)",
+      "used_by": [
+        "AVGO"
+      ]
+    },
+    {
+      "id": "one_time_gain",
+      "term": "일회성 이익",
+      "definition": "본업과 관계없이 한 번만 생긴 이익. 보유 주식 가치 상승, 자산 매각 등. 순이익을 일시적으로 부풀림.",
+      "example": "알파벳이 보유한 투자 지분 가치가 올라 순이익이 영업이익보다 커짐",
+      "used_by": [
+        "GOOGL"
+      ]
+    },
+    {
+      "id": "fcf",
+      "term": "잉여현금흐름(FCF)",
+      "definition": "영업현금흐름 - 설비투자. 회사가 자유롭게 쓸 수 있는 '진짜 남는 현금'. 배당·자사주 매입의 재원.",
+      "example": "통장에 들어온 현금 100 - 시설 투자 30 = 잉여현금 70",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "buyback",
+      "term": "자사주 매입",
+      "definition": "회사가 자기 주식을 시장에서 사들이는 것. 주식 수가 줄어 남은 주주의 지분 가치가 커짐.",
+      "example": "애플은 매년 수백억 달러 규모로 자사주 매입",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "META",
+        "LLY"
+      ]
+    },
+    {
+      "id": "ev",
+      "term": "전기차(EV)",
+      "definition": "휘발유 대신 배터리 전기로 모터를 돌려 달리는 자동차.",
+      "example": "테슬라 모델Y",
+      "used_by": [
+        "TSLA"
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "term": "전자상거래(이커머스)",
+      "definition": "인터넷으로 물건을 사고파는 것.",
+      "example": "아마존, 쿠팡",
+      "used_by": [
+        "AMZN"
+      ]
+    },
+    {
+      "id": "switching_cost",
+      "term": "전환비용",
+      "definition": "다른 회사 제품으로 바꿀 때 드는 비용과 불편함. 클수록 고객이 떠나기 어려움.",
+      "example": "아이폰 사진·앱·애플워치를 다 옮겨야 하는 번거로움",
+      "used_by": [
+        "AAPL",
+        "MSFT"
+      ]
+    },
+    {
+      "id": "dilution",
+      "term": "주식 희석",
+      "definition": "새 주식 발행(직원 보상 등)으로 주식 수가 늘어 기존 주주의 지분 비율이 줄어드는 것.",
+      "example": "주식 수 1% 증가 → 내 지분 가치 약간 감소",
+      "used_by": [
+        "GOOGL",
+        "AMZN",
+        "AVGO",
+        "TSLA"
+      ]
+    },
+    {
+      "id": "ttm",
+      "term": "최근 12개월(TTM)",
+      "definition": "가장 최근 4개 분기를 합친 실적. 회계연도보다 최신 흐름을 보여줌.",
+      "example": "2026년 9월까지 최근 12개월 매출",
+      "used_by": [
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "AVGO",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "cloud",
+      "term": "클라우드",
+      "definition": "회사가 직접 서버를 사지 않고 인터넷으로 컴퓨터 자원을 빌려 쓰는 서비스.",
+      "example": "AWS, 애저, 구글 클라우드",
+      "used_by": [
+        "MSFT",
+        "GOOGL",
+        "AMZN"
+      ]
+    },
+    {
+      "id": "carbon_credit",
+      "term": "탄소배출권",
+      "definition": "온실가스를 배출할 수 있는 권리. 전기차 회사는 남는 권리를 다른 자동차 회사에 팔 수 있음.",
+      "example": "테슬라의 규제 크레딧 매출",
+      "used_by": [
+        "TSLA"
+      ]
+    },
+    {
+      "id": "patent",
+      "term": "특허",
+      "definition": "발명을 일정 기간(보통 20년) 독점적으로 사용할 수 있는 권리. 만료되면 복제약이 나옴.",
+      "example": "신약 특허 만료 → 매출 급감(특허 절벽)",
+      "used_by": [
+        "LLY"
+      ]
+    },
+    {
+      "id": "ticker",
+      "term": "티커",
+      "definition": "주식시장에서 회사를 부르는 짧은 영어 약칭.",
+      "example": "애플 = AAPL, 엔비디아 = NVDA",
+      "used_by": [
+        "AAPL"
+      ]
+    },
+    {
+      "id": "pipeline",
+      "term": "파이프라인(신약)",
+      "definition": "개발 중인 신약 후보 목록. 제약회사의 미래 매출원.",
+      "example": "임상 3상 중인 먹는 비만약",
+      "used_by": [
+        "LLY"
+      ]
+    },
+    {
+      "id": "fabless",
+      "term": "팹리스",
+      "definition": "반도체 공장 없이 설계만 하고 생산은 위탁하는 회사.",
+      "example": "엔비디아, 브로드컴 → 생산은 TSMC",
+      "used_by": [
+        "NVDA"
+      ]
+    },
+    {
+      "id": "merger",
+      "term": "합병",
+      "definition": "두 회사가 하나로 합쳐지는 것.",
+      "example": "스페이스X와 xAI 합병",
+      "used_by": [
+        "SPCX"
+      ]
+    },
+    {
+      "id": "moat",
+      "term": "해자(경제적 해자)",
+      "definition": "경쟁자가 쉽게 따라오지 못하게 막는 회사만의 강점. 성을 둘러싼 물길에서 나온 말.",
+      "example": "브랜드, 특허, 네트워크 효과, 전환비용",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "SPCX",
+        "META",
+        "TSLA",
+        "LLY"
+      ]
+    },
+    {
+      "id": "key_person_risk",
+      "term": "핵심 인물 리스크",
+      "definition": "회사가 특정 한 사람(주로 CEO)에게 크게 의존해 그 사람의 결정·건강·평판이 주가를 흔드는 위험.",
+      "example": "일론 머스크",
+      "used_by": [
+        "SPCX",
+        "TSLA"
+      ]
+    },
+    {
+      "id": "fiscal_year",
+      "term": "회계연도(FY)",
+      "definition": "회사가 1년 실적을 계산하는 기간. 1~12월이 아닌 회사도 많음.",
+      "example": "애플 FY2026 = 2025년 10월 ~ 2026년 9월",
+      "used_by": [
+        "AAPL",
+        "NVDA",
+        "MSFT",
+        "AVGO"
+      ]
+    }
+  ]
+}

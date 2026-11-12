@@ -1,0 +1,406 @@
+{
+ "asof": "2026-11-11",
+ "source": "나스닥 종가 기준 시가총액으로 계산",
+ "companies": {
+  "AAPL": {
+   "market_cap_usd_b": 5065,
+   "per": 37.9,
+   "forward_per": 36.2,
+   "pbr": 44.1,
+   "dividend_yield": 0.31,
+   "rank": 1
+  },
+  "NVDA": {
+   "market_cap_usd_b": 4068,
+   "per": 22.3,
+   "forward_per": 14.5,
+   "pbr": 18.6,
+   "dividend_yield": 0.59,
+   "rank": 2
+  },
+  "MSFT": {
+   "market_cap_usd_b": 3959,
+   "per": 27.9,
+   "forward_per": 25.7,
+   "pbr": 8.4,
+   "dividend_yield": 0.74,
+   "rank": 3
+  },
+  "GOOGL": {
+   "market_cap_usd_b": 3533,
+   "per": 14.9,
+   "forward_per": 20.6,
+   "pbr": 5.3,
+   "dividend_yield": 0.31,
+   "rank": 4
+  },
+  "AMZN": {
+   "market_cap_usd_b": 2929,
+   "per": 21.3,
+   "forward_per": 26.6,
+   "pbr": 4.7,
+   "dividend_yield": null,
+   "rank": 5
+  },
+  "SPCX": {
+   "market_cap_usd_b": 1943,
+   "per": null,
+   "forward_per": null,
+   "pbr": null,
+   "dividend_yield": null,
+   "rank": 6
+  },
+  "META": {
+   "market_cap_usd_b": 1640,
+   "per": 20.8,
+   "forward_per": 18.5,
+   "pbr": 5.7,
+   "dividend_yield": 0.33,
+   "rank": 7
+  },
+  "AVGO": {
+   "market_cap_usd_b": 1585,
+   "per": 39.0,
+   "forward_per": 17.6,
+   "pbr": 14.7,
+   "dividend_yield": 0.78,
+   "rank": 8
+  },
+  "TSLA": {
+   "market_cap_usd_b": 1501,
+   "per": 395.8,
+   "forward_per": 168.5,
+   "pbr": 16.0,
+   "dividend_yield": null,
+   "rank": 9
+  },
+  "LLY": {
+   "market_cap_usd_b": 1349,
+   "per": 44.5,
+   "forward_per": 29.3,
+   "pbr": 30.4,
+   "dividend_yield": 0.48,
+   "rank": 10
+  },
+  "BRK.B": {
+   "market_cap_usd_b": 1288,
+   "per": 16.7,
+   "forward_per": null,
+   "pbr": 1.7,
+   "dividend_yield": null,
+   "rank": 11
+  },
+  "WMT": {
+   "market_cap_usd_b": 996,
+   "per": 45.2,
+   "forward_per": null,
+   "pbr": 10.1,
+   "dividend_yield": 0.79,
+   "rank": 12
+  },
+  "JPM": {
+   "market_cap_usd_b": 909,
+   "per": 13.8,
+   "forward_per": null,
+   "pbr": 2.4,
+   "dividend_yield": 1.93,
+   "rank": 13
+  },
+  "AMD": {
+   "market_cap_usd_b": 845,
+   "per": 110.9,
+   "forward_per": null,
+   "pbr": 12.4,
+   "dividend_yield": null,
+   "rank": 14
+  },
+  "MU": {
+   "market_cap_usd_b": 820,
+   "per": 9.7,
+   "forward_per": null,
+   "pbr": 5.9,
+   "dividend_yield": 0.08,
+   "rank": 15
+  },
+  "V": {
+   "market_cap_usd_b": 763,
+   "per": 32.4,
+   "forward_per": null,
+   "pbr": 21.1,
+   "dividend_yield": 0.74,
+   "rank": 16
+  },
+  "JNJ": {
+   "market_cap_usd_b": 676,
+   "per": 42.0,
+   "forward_per": null,
+   "pbr": 8.3,
+   "dividend_yield": 1.91,
+   "rank": 17
+  },
+  "XOM": {
+   "market_cap_usd_b": 671,
+   "per": 16.5,
+   "forward_per": null,
+   "pbr": 2.5,
+   "dividend_yield": 2.51,
+   "rank": 18
+  },
+  "MA": {
+   "market_cap_usd_b": 574,
+   "per": 33.9,
+   "forward_per": null,
+   "pbr": 85.1,
+   "dividend_yield": 0.53,
+   "rank": 19
+  },
+  "ABBV": {
+   "market_cap_usd_b": 520,
+   "per": 50.2,
+   "forward_per": null,
+   "pbr": null,
+   "dividend_yield": 2.35,
+   "rank": 20
+  },
+  "COST": {
+   "market_cap_usd_b": 472,
+   "per": 51.2,
+   "forward_per": null,
+   "pbr": 13.2,
+   "dividend_yield": 0.55,
+   "rank": 21
+  },
+  "CVX": {
+   "market_cap_usd_b": 415,
+   "per": 15.4,
+   "forward_per": null,
+   "pbr": 2.1,
+   "dividend_yield": 3.37,
+   "rank": 23
+  },
+  "KO": {
+   "market_cap_usd_b": 417,
+   "per": 28.5,
+   "forward_per": null,
+   "pbr": 11.2,
+   "dividend_yield": 2.19,
+   "rank": 22
+  },
+  "PLTR": {
+   "market_cap_usd_b": 407,
+   "per": 110.8,
+   "forward_per": null,
+   "pbr": 36.2,
+   "dividend_yield": null,
+   "rank": 24
+  },
+  "PG": {
+   "market_cap_usd_b": 391,
+   "per": 24.4,
+   "forward_per": null,
+   "pbr": 7.0,
+   "dividend_yield": 2.59,
+   "rank": 25
+  },
+  "CSCO": {
+   "market_cap_usd_b": 387,
+   "per": 29.1,
+   "forward_per": null,
+   "pbr": 7.7,
+   "dividend_yield": 1.71,
+   "rank": 26
+  },
+  "MRK": {
+   "market_cap_usd_b": 365,
+   "per": 148.7,
+   "forward_per": null,
+   "pbr": 8.2,
+   "dividend_yield": 2.3,
+   "rank": 27
+  },
+  "ORCL": {
+   "market_cap_usd_b": 357,
+   "per": 18.8,
+   "forward_per": null,
+   "pbr": 5.3,
+   "dividend_yield": 1.7,
+   "rank": 29
+  },
+  "UNH": {
+   "market_cap_usd_b": 363,
+   "per": 22.8,
+   "forward_per": null,
+   "pbr": 3.5,
+   "dividend_yield": 2.29,
+   "rank": 28
+  },
+  "HD": {
+   "market_cap_usd_b": 350,
+   "per": 24.6,
+   "forward_per": null,
+   "pbr": 21.0,
+   "dividend_yield": 2.65,
+   "rank": 30
+  },
+  "BAC": {
+   "market_cap_usd_b": 350,
+   "per": 10.8,
+   "forward_per": null,
+   "pbr": 1.2,
+   "dividend_yield": 2.53,
+   "rank": 31
+  },
+  "GE": {
+   "market_cap_usd_b": 349,
+   "per": 38.4,
+   "forward_per": null,
+   "pbr": 19.9,
+   "dividend_yield": 0.56,
+   "rank": 32
+  },
+  "INTC": {
+   "market_cap_usd_b": 309,
+   "per": null,
+   "forward_per": null,
+   "pbr": 2.6,
+   "dividend_yield": null,
+   "rank": 33
+  },
+  "PM": {
+   "market_cap_usd_b": 303,
+   "per": 28.3,
+   "forward_per": null,
+   "pbr": null,
+   "dividend_yield": 3.29,
+   "rank": 34
+  },
+  "AMAT": {
+   "market_cap_usd_b": 296,
+   "per": 31.9,
+   "forward_per": null,
+   "pbr": 11.6,
+   "dividend_yield": 0.57,
+   "rank": 35
+  },
+  "MS": {
+   "market_cap_usd_b": 294,
+   "per": 14.4,
+   "forward_per": null,
+   "pbr": 2.5,
+   "dividend_yield": 2.45,
+   "rank": 36
+  },
+  "LRCX": {
+   "market_cap_usd_b": 278,
+   "per": 32.9,
+   "forward_per": null,
+   "pbr": 20.0,
+   "dividend_yield": 0.59,
+   "rank": 37
+  },
+  "CAT": {
+   "market_cap_usd_b": 267,
+   "per": 22.6,
+   "forward_per": null,
+   "pbr": 12.5,
+   "dividend_yield": 1.12,
+   "rank": 40
+  },
+  "PANW": {
+   "market_cap_usd_b": 267,
+   "per": 869.4,
+   "forward_per": null,
+   "pbr": 9.8,
+   "dividend_yield": null,
+   "rank": 41
+  },
+  "TXN": {
+   "market_cap_usd_b": 275,
+   "per": 38.6,
+   "forward_per": null,
+   "pbr": 14.3,
+   "dividend_yield": 2.02,
+   "rank": 38
+  },
+  "TMO": {
+   "market_cap_usd_b": 266,
+   "per": 37.7,
+   "forward_per": null,
+   "pbr": 4.9,
+   "dividend_yield": 0.26,
+   "rank": 42
+  },
+  "RTX": {
+   "market_cap_usd_b": 270,
+   "per": 32.1,
+   "forward_per": null,
+   "pbr": 3.9,
+   "dividend_yield": 1.46,
+   "rank": 39
+  },
+  "NFLX": {
+   "market_cap_usd_b": 260,
+   "per": 17.6,
+   "forward_per": null,
+   "pbr": 8.9,
+   "dividend_yield": null,
+   "rank": 44
+  },
+  "GS": {
+   "market_cap_usd_b": 263,
+   "per": 11.8,
+   "forward_per": null,
+   "pbr": 2.1,
+   "dividend_yield": 2.2,
+   "rank": 43
+  },
+  "WFC": {
+   "market_cap_usd_b": 257,
+   "per": 11.2,
+   "forward_per": null,
+   "pbr": 1.5,
+   "dividend_yield": 2.33,
+   "rank": 45
+  },
+  "AMGN": {
+   "market_cap_usd_b": 252,
+   "per": 26.8,
+   "forward_per": null,
+   "pbr": 17.5,
+   "dividend_yield": 2.17,
+   "rank": 46
+  },
+  "LIN": {
+   "market_cap_usd_b": 240,
+   "per": 34.2,
+   "forward_per": null,
+   "pbr": 6.1,
+   "dividend_yield": 1.23,
+   "rank": 47
+  },
+  "ANET": {
+   "market_cap_usd_b": 234,
+   "per": 49.3,
+   "forward_per": null,
+   "pbr": 14.2,
+   "dividend_yield": null,
+   "rank": 48
+  },
+  "CRWD": {
+   "market_cap_usd_b": 231,
+   "per": 5138.1,
+   "forward_per": null,
+   "pbr": 45.3,
+   "dividend_yield": null,
+   "rank": 49
+  },
+  "IBM": {
+   "market_cap_usd_b": 231,
+   "per": 20.6,
+   "forward_per": null,
+   "pbr": 6.4,
+   "dividend_yield": 2.76,
+   "rank": 50
+  }
+ }
+}
