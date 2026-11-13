@@ -14,6 +14,7 @@ void main() {
     terms = read('glossary.json')['terms'];
     news = read('news.json');
     surprise = read('surprise.json');
+    links = read('links.json');
     kr = read('kr.json');
     G = {for (final t in terms) t['id'] as String: t};
     final usMore = read('us_more.json');
@@ -107,5 +108,31 @@ void main() {
     }
     expect(find.textContaining('10문제 중'), findsOneWidget);
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('연결: 회사 고르기 → 둘레 회사 누르기 → 다른 회사로 바꾸기', (tester) async {
+    tester.view.physicalSize = const Size(1080, 6000);
+    addTearDown(tester.view.reset);
+    await tester.pumpWidget(const MaterialApp(home: LinksPage()));
+    final ids = linkedIds();
+    expect(find.textContaining('이어진 회사 ${linksOf(ids.first).length}곳'), findsOneWidget);
+    await tester.tap(find.byType(GestureDetector).first);
+    await tester.pump();
+    for (final id in ids.skip(1).take(6)) {
+      await tester.ensureVisible(find.widgetWithText(ChoiceChip, nodeName(id)));
+      await tester.tap(find.widgetWithText(ChoiceChip, nodeName(id)));
+      await tester.pump();
+      expect(find.textContaining('이어진 회사 ${linksOf(id).length}곳'), findsOneWidget);
+    }
+    expect(tester.takeException(), isNull);
+  });
+
+  test('연결 데이터: 모든 회사 id를 찾을 수 있고, 각 연결에 출처 주소가 있다', () {
+    for (final J l in links['links']) {
+      for (final id in [l['from'], l['to']]) {
+        expect(appCompany(id) != null || links['nodes'][id] != null, true, reason: id);
+      }
+      expect((l['url'] as String).startsWith('https://'), true);
+    }
   });
 }

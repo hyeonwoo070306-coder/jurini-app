@@ -1,0 +1,562 @@
+{
+ "nodes": {
+  "TSM": {
+   "ko": "TSMC",
+   "en": "Taiwan Semiconductor",
+   "note": "세계 최대 반도체 위탁생산 회사"
+  },
+  "000660": {
+   "ko": "SK하이닉스",
+   "en": "SK hynix",
+   "note": "AI 칩에 들어가는 메모리를 만드는 한국 회사"
+  },
+  "AMD": {
+   "ko": "AMD",
+   "en": "Advanced Micro Devices",
+   "note": "컴퓨터·AI 칩을 만드는 미국 회사"
+  },
+  "INTC": {
+   "ko": "인텔",
+   "en": "Intel",
+   "note": "컴퓨터 CPU를 만드는 미국 반도체 회사"
+  },
+  "OPENAI": {
+   "ko": "오픈AI",
+   "en": "OpenAI",
+   "note": "챗GPT를 만든 AI 회사 (비상장)"
+  },
+  "ANTHROPIC": {
+   "ko": "앤트로픽",
+   "en": "Anthropic",
+   "note": "AI 클로드를 만든 회사 (비상장)"
+  },
+  "SCALEAI": {
+   "ko": "스케일AI",
+   "en": "Scale AI",
+   "note": "AI 학습용 데이터를 만드는 회사 (비상장)"
+  },
+  "SATS": {
+   "ko": "에코스타",
+   "en": "EchoStar",
+   "note": "위성·통신 사업을 하는 미국 회사"
+  },
+  "6752.T": {
+   "ko": "파나소닉",
+   "en": "Panasonic",
+   "note": "전기차 배터리를 만드는 일본 회사"
+  },
+  "300750.SZ": {
+   "ko": "CATL",
+   "en": "Contemporary Amperex Technology",
+   "note": "세계 최대 전기차 배터리 회사(중국)"
+  },
+  "005930": {
+   "ko": "삼성전자",
+   "en": "Samsung Electronics",
+   "note": "메모리·반도체·스마트폰을 만드는 한국 회사"
+  },
+  "MCK": {
+   "ko": "맥케슨",
+   "en": "McKesson",
+   "note": "미국 최대 의약품 도매 회사"
+  },
+  "COR": {
+   "ko": "센코라",
+   "en": "Cencora",
+   "note": "미국 대형 의약품 도매 회사"
+  },
+  "CAH": {
+   "ko": "카디널 헬스",
+   "en": "Cardinal Health",
+   "note": "미국 대형 의약품 도매 회사"
+  },
+  "AXP": {
+   "ko": "아메리칸 익스프레스",
+   "en": "American Express",
+   "note": "신용카드 회사"
+  },
+  "BAC": {
+   "ko": "뱅크오브아메리카",
+   "en": "Bank of America",
+   "note": "미국 대형 은행"
+  },
+  "KO": {
+   "ko": "코카콜라",
+   "en": "Coca-Cola",
+   "note": "음료 회사"
+  },
+  "CVX": {
+   "ko": "셰브론",
+   "en": "Chevron",
+   "note": "미국 대형 석유 회사"
+  },
+  "OXY": {
+   "ko": "옥시덴탈",
+   "en": "Occidental Petroleum",
+   "note": "미국 석유 회사"
+  },
+  "PG": {
+   "ko": "P&G",
+   "en": "Procter & Gamble",
+   "note": "세제·기저귀·면도기 등 생활용품 회사"
+  },
+  "UNNAMED": {
+   "ko": "이름 비공개 고객",
+   "en": "Unnamed customer",
+   "note": "공시에서 이름을 밝히지 않은 큰 고객"
+  }
+ },
+ "links": [
+  {
+   "from": "GOOGL",
+   "to": "AAPL",
+   "kind": "partner",
+   "what": "아이폰 기본 검색 계약",
+   "if_from": "구글 검색 계약이 바뀌거나 막히면 애플이 받는 라이선스 수입이 줄 수 있어요.",
+   "if_to": "아이폰에서 구글 검색이 덜 쓰이면 구글 광고가 나올 자리가 줄어요.",
+   "share": null,
+   "source": "Apple 10-K (회계연도 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000026/aapl-20260926.htm"
+  },
+  {
+   "from": "GOOGL",
+   "to": "AAPL",
+   "kind": "supply",
+   "what": "시리용 제미나이 AI",
+   "if_from": "구글 AI에 문제가 생기면 애플의 새 시리와 AI 기능이 늦어질 수 있어요.",
+   "if_to": "애플이 다른 AI로 바꾸면 구글은 큰 고객 하나를 잃어요.",
+   "share": null,
+   "source": "Google·Apple 공동 발표 (2026-01-12)",
+   "url": "https://blog.google/company-news/inside-google/company-announcements/joint-statement-google-apple/"
+  },
+  {
+   "from": "AVGO",
+   "to": "AAPL",
+   "kind": "supply",
+   "what": "아이폰 통신 부품",
+   "if_from": "브로드컴 공장에 문제가 생기면 아이폰 통신 부품 공급이 늦어질 수 있어요.",
+   "if_to": "아이폰이 덜 팔리면 브로드컴이 파는 부품도 줄어요.",
+   "share": null,
+   "source": "Apple 공식 발표 (2023-05-23)",
+   "url": "https://www.apple.com/newsroom/2023/05/apple-announces-multibillion-dollar-deal-with-broadcom/"
+  },
+  {
+   "from": "JPM",
+   "to": "AAPL",
+   "kind": "partner",
+   "what": "애플카드 새 발급사",
+   "if_from": "JP모건에 문제가 생기면 애플카드 서비스 운영이 흔들릴 수 있어요.",
+   "if_to": "애플카드 이용이 줄면 JP모건이 사들이는 카드 사업의 수익이 줄어요.",
+   "share": null,
+   "source": "JPMorgan Chase 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026008131/jpm-20251231.htm"
+  },
+  {
+   "from": "BRK.B",
+   "to": "AAPL",
+   "kind": "partner",
+   "what": "버크셔의 큰 보유 주식",
+   "if_from": "버크셔가 애플 주식을 많이 팔면 시장에서 애플을 보는 눈이 달라질 수 있어요.",
+   "if_to": "애플 회사 가치가 떨어지면 버크셔가 가진 투자 자산도 줄어요.",
+   "share": "5대 보유 주식(아멕스·애플·BofA·코카콜라·셰브론)이 주식 투자액의 약 65%",
+   "source": "Berkshire Hathaway 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+  },
+  {
+   "from": "TSM",
+   "to": "NVDA",
+   "kind": "supply",
+   "what": "엔비디아 칩 생산",
+   "if_from": "TSMC 공장에 문제가 생기면 엔비디아는 칩을 제때 못 만들어 팔 물건이 줄어요.",
+   "if_to": "엔비디아 주문이 줄면 TSMC의 큰 일감 하나가 줄어요.",
+   "share": null,
+   "source": "NVIDIA 10-K (회계연도 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+  },
+  {
+   "from": "000660",
+   "to": "NVDA",
+   "kind": "supply",
+   "what": "AI 칩용 메모리",
+   "if_from": "SK하이닉스 메모리 공급이 막히면 엔비디아 AI 칩 생산이 늦어질 수 있어요. (마이크론·삼성전자도 공급)",
+   "if_to": "엔비디아 주문이 줄면 SK하이닉스의 고급 메모리 판매가 줄어요.",
+   "share": null,
+   "source": "NVIDIA 10-K (회계연도 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+  },
+  {
+   "from": "NVDA",
+   "to": "UNNAMED",
+   "kind": "supply",
+   "what": "AI 칩 대량 구매",
+   "if_from": "엔비디아 칩 공급이 막히면 이 고객들은 AI 데이터센터를 늦게 지어요.",
+   "if_to": "이 고객들이 주문을 줄이면 엔비디아 매출이 크게 줄 수 있어요.",
+   "share": "엔비디아 매출의 22%(1위 직접 고객)와 14%(2위)",
+   "source": "NVIDIA 10-K (회계연도 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+  },
+  {
+   "from": "NVDA",
+   "to": "OPENAI",
+   "kind": "partner",
+   "what": "AI 데이터센터 보증",
+   "if_from": "엔비디아가 흔들리면 오픈AI의 데이터센터 계획도 늦어질 수 있어요.",
+   "if_to": "오픈AI가 임대료를 못 내면 엔비디아가 정해진 한도까지 대신 책임질 수 있어요.",
+   "share": "보증 한도 최대 1,050억 달러",
+   "source": "NVIDIA 10-Q (회계연도 2027 2분기)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm"
+  },
+  {
+   "from": "NVDA",
+   "to": "INTC",
+   "kind": "partner",
+   "what": "50억 달러 투자·공동개발",
+   "if_from": "엔비디아 사업이 흔들리면 인텔과 함께 만드는 칩 계획도 늦어질 수 있어요.",
+   "if_to": "인텔이 흔들리면 엔비디아가 투자한 돈의 가치가 줄어요.",
+   "share": "인텔 주식 50억 달러 투자",
+   "source": "NVIDIA 공식 발표 (2025-09-18)",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-and-intel-to-develop-ai-infrastructure-and-personal-computing-products"
+  },
+  {
+   "from": "NVDA",
+   "to": "AMD",
+   "kind": "compete",
+   "what": "AI 칩 경쟁",
+   "if_from": "엔비디아 칩이 부족하면 고객이 AMD 칩을 더 살 수 있어요.",
+   "if_to": "AMD 칩이 좋아지면 엔비디아가 값을 내려야 할 수 있어요.",
+   "share": null,
+   "source": "NVIDIA 10-K (회계연도 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+  },
+  {
+   "from": "MSFT",
+   "to": "OPENAI",
+   "kind": "partner",
+   "what": "장기 AI 협력·지분",
+   "if_from": "마이크로소프트 클라우드가 흔들리면 오픈AI가 쓸 컴퓨터 자원이 부족해져요.",
+   "if_to": "오픈AI가 흔들리면 마이크로소프트의 매출과 투자 가치가 함께 줄어요.",
+   "share": "마이크로소프트 매출의 약 7%(241억 달러)가 오픈AI 거래, 지분 약 25%",
+   "source": "Microsoft 10-K (회계연도 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+  },
+  {
+   "from": "MSFT",
+   "to": "ANTHROPIC",
+   "kind": "partner",
+   "what": "투자·클라우드 계약",
+   "if_from": "마이크로소프트 클라우드에 문제가 생기면 앤트로픽의 AI 운영이 늦어질 수 있어요.",
+   "if_to": "앤트로픽이 흔들리면 마이크로소프트의 투자금과 클라우드 매출이 줄어요.",
+   "share": "최대 50억 달러 투자, 앤트로픽이 300억 달러어치 클라우드 사용 약속",
+   "source": "Microsoft 공식 발표 (2025-11-18)",
+   "url": "https://blogs.microsoft.com/blog/2025/11/18/microsoft-nvidia-and-anthropic-announce-strategic-partnerships/"
+  },
+  {
+   "from": "GOOGL",
+   "to": "ANTHROPIC",
+   "kind": "supply",
+   "what": "AI 칩(TPU) 대여",
+   "if_from": "구글 클라우드에 문제가 생기면 앤트로픽은 AI를 학습시킬 컴퓨터가 부족해져요.",
+   "if_to": "앤트로픽이 덜 쓰면 구글 클라우드의 큰 매출이 줄어요.",
+   "share": "TPU 최대 100만 개 사용",
+   "source": "Anthropic·Google Cloud 공식 발표 (2025-10-23)",
+   "url": "https://www.anthropic.com/news/expanding-our-use-of-google-cloud-tpus-and-services"
+  },
+  {
+   "from": "AMZN",
+   "to": "ANTHROPIC",
+   "kind": "partner",
+   "what": "80억 달러 투자",
+   "if_from": "아마존이 흔들리면 앤트로픽의 주요 클라우드 지원이 약해질 수 있어요.",
+   "if_to": "앤트로픽 가치가 떨어지면 아마존의 투자 이익이 줄어요.",
+   "share": "전환사채 투자 약 80억 달러 (2023~2025)",
+   "source": "Amazon 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm"
+  },
+  {
+   "from": "AMZN",
+   "to": "OPENAI",
+   "kind": "partner",
+   "what": "투자·클라우드 계약",
+   "if_from": "아마존 클라우드에 문제가 생기면 오픈AI의 컴퓨터 자원 계획이 늦어져요.",
+   "if_to": "오픈AI가 흔들리면 아마존의 투자금과 클라우드 매출이 줄어요.",
+   "share": "최대 500억 달러 투자, 클라우드 계약 380억+1,000억 달러",
+   "source": "Amazon 공식 발표 (2026-02-27)",
+   "url": "https://www.aboutamazon.com/news/aws/amazon-open-ai-strategic-partnership-investment"
+  },
+  {
+   "from": "SPCX",
+   "to": "UNNAMED",
+   "kind": "supply",
+   "what": "AI 사업 큰 고객",
+   "if_from": "스페이스X 서비스에 문제가 생기면 이 고객의 사업이 흔들려요.",
+   "if_to": "이 고객이 계약을 줄이면 스페이스X 매출의 4분의 1가량이 흔들려요.",
+   "share": "스페이스X 매출의 24.2% (2026년 1~9월, 고객 B)",
+   "source": "SpaceX 10-Q (2026년 3분기)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+  },
+  {
+   "from": "SPCX",
+   "to": "UNNAMED",
+   "kind": "supply",
+   "what": "여러 사업 큰 고객",
+   "if_from": "스페이스X에 문제가 생기면 이 고객이 받는 서비스가 늦어져요.",
+   "if_to": "이 고객이 주문을 줄이면 스페이스X 매출이 크게 줄어요.",
+   "share": "스페이스X 매출의 17.3% (2026년 1~9월, 고객 A)",
+   "source": "SpaceX 10-Q (2026년 3분기)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+  },
+  {
+   "from": "TSLA",
+   "to": "SPCX",
+   "kind": "supply",
+   "what": "대형 배터리(메가팩)",
+   "if_from": "테슬라 공급이 늦어지면 스페이스X 시설에 쓸 전력 저장 장치가 부족해져요.",
+   "if_to": "스페이스X가 덜 사면 테슬라 에너지 사업 매출이 조금 줄어요.",
+   "share": "2026년 1~9월 4.8억 달러어치 구매",
+   "source": "SpaceX 10-Q (2026년 3분기)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+  },
+  {
+   "from": "TSLA",
+   "to": "SPCX",
+   "kind": "partner",
+   "what": "스페이스X 지분 보유",
+   "if_from": "테슬라가 흔들려도 스페이스X에 주는 영향은 작아요(지분 1% 미만).",
+   "if_to": "스페이스X 가치가 떨어지면 테슬라의 투자 자산도 줄어요.",
+   "share": "20억 달러 투자, 지분 1% 미만",
+   "source": "Tesla 10-Q (2026년 3분기)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026066775/tsla-20260930.htm"
+  },
+  {
+   "from": "SATS",
+   "to": "SPCX",
+   "kind": "partner",
+   "what": "통신 주파수 매입",
+   "if_from": "에코스타 쪽 절차가 늦어지면 스페이스X가 산 주파수를 쓰는 일이 늦어질 수 있어요.",
+   "if_to": "스페이스X가 흔들리면 에코스타가 받을 돈이 늦어질 수 있어요.",
+   "share": null,
+   "source": "SpaceX 10-Q (2026년 3분기)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1181412/000162828026066880/spcx-20260930.htm"
+  },
+  {
+   "from": "NVDA",
+   "to": "META",
+   "kind": "supply",
+   "what": "AI 칩 수백만 개",
+   "if_from": "엔비디아 공급이 늦어지면 메타의 AI 데이터센터 건설이 늦어져요.",
+   "if_to": "메타가 AI 투자를 줄이면 엔비디아의 큰 주문이 줄어요.",
+   "share": null,
+   "source": "NVIDIA 공식 발표 (2026-02-17)",
+   "url": "https://nvidianews.nvidia.com/news/meta-builds-ai-infrastructure-with-nvidia"
+  },
+  {
+   "from": "META",
+   "to": "SCALEAI",
+   "kind": "partner",
+   "what": "138억 달러 투자",
+   "if_from": "메타가 흔들리면 스케일AI의 가장 큰 후원자가 약해져요.",
+   "if_to": "스케일AI가 흔들리면 메타의 투자 가치가 줄어요.",
+   "share": "투자액 138억 달러",
+   "source": "Meta 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+  },
+  {
+   "from": "META",
+   "to": "AAPL",
+   "kind": "compete",
+   "what": "광고 추적 규칙·경쟁 앱",
+   "if_from": "애플은 아이폰 규칙을 바꿔 메타 광고 효과를 떨어뜨릴 수 있어요.",
+   "if_to": "메타가 약해지면 애플 자체 서비스가 더 쓰일 수 있어요.",
+   "share": null,
+   "source": "Meta 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+  },
+  {
+   "from": "META",
+   "to": "GOOGL",
+   "kind": "compete",
+   "what": "광고·안드로이드 경쟁",
+   "if_from": "구글은 안드로이드·크롬 규칙을 바꿔 메타 광고에 영향을 줄 수 있어요.",
+   "if_to": "메타 광고가 약해지면 광고주가 구글로 옮겨 갈 수 있어요.",
+   "share": null,
+   "source": "Meta 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+  },
+  {
+   "from": "TSM",
+   "to": "AVGO",
+   "kind": "supply",
+   "what": "칩 웨이퍼 생산",
+   "if_from": "TSMC에 문제가 생기면 브로드컴은 칩 대부분을 만들 수 없어요.",
+   "if_to": "브로드컴 주문이 줄면 TSMC 생산량의 의미 있는 부분이 줄어요.",
+   "share": "브로드컴 웨이퍼의 약 95%를 TSMC가 생산",
+   "source": "Broadcom 10-K (회계연도 2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm"
+  },
+  {
+   "from": "AVGO",
+   "to": "UNNAMED",
+   "kind": "supply",
+   "what": "최대 고객",
+   "if_from": "브로드컴 공급에 문제가 생기면 이 고객의 제품 생산이 늦어져요.",
+   "if_to": "이 고객이 주문을 줄이면 브로드컴 매출의 3분의 1가량이 흔들려요.",
+   "share": "브로드컴 매출의 32% (회계연도 2025)",
+   "source": "Broadcom 10-K (회계연도 2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016825000121/avgo-20251102.htm"
+  },
+  {
+   "from": "AVGO",
+   "to": "OPENAI",
+   "kind": "partner",
+   "what": "맞춤형 AI 칩 공동개발",
+   "if_from": "브로드컴이 흔들리면 오픈AI 자체 AI 칩 계획이 늦어져요.",
+   "if_to": "오픈AI 계획이 줄면 브로드컴의 큰 미래 주문이 줄어요.",
+   "share": "10기가와트 규모, 2026~2029년 설치",
+   "source": "Broadcom·OpenAI 공동 발표 (2025-10-13)",
+   "url": "https://openai.com/index/openai-and-broadcom-announce-strategic-collaboration/"
+  },
+  {
+   "from": "6752.T",
+   "to": "TSLA",
+   "kind": "supply",
+   "what": "전기차 배터리 셀",
+   "if_from": "파나소닉 공급이 막히면 테슬라는 차를 덜 만들 수밖에 없어요.",
+   "if_to": "테슬라 판매가 줄면 파나소닉 배터리 주문도 줄어요.",
+   "share": null,
+   "source": "Tesla 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+  },
+  {
+   "from": "300750.SZ",
+   "to": "TSLA",
+   "kind": "supply",
+   "what": "배터리 셀",
+   "if_from": "CATL 공급이 막히면 테슬라 차·에너지 저장 장치 생산이 줄어요.",
+   "if_to": "테슬라 주문이 줄면 CATL 판매가 줄어요.",
+   "share": null,
+   "source": "Tesla 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+  },
+  {
+   "from": "005930",
+   "to": "TSLA",
+   "kind": "supply",
+   "what": "AI 칩 생산 협력",
+   "if_from": "삼성 공장에 문제가 생기면 테슬라 AI 칩 계획이 늦어져요.",
+   "if_to": "테슬라 주문이 줄면 삼성 위탁생산 일감이 줄어요.",
+   "share": null,
+   "source": "Tesla 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+  },
+  {
+   "from": "LLY",
+   "to": "MCK",
+   "kind": "supply",
+   "what": "의약품 도매 유통",
+   "if_from": "일라이릴리 약 공급이 줄면 맥케슨이 팔 약이 줄어요.",
+   "if_to": "맥케슨에 문제가 생기면 릴리 약이 약국에 제때 못 갈 수 있어요.",
+   "share": "3대 도매사가 각각 릴리 매출의 16~24% (2025)",
+   "source": "Eli Lilly 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000013/lly-20251231.htm"
+  },
+  {
+   "from": "LLY",
+   "to": "COR",
+   "kind": "supply",
+   "what": "의약품 도매 유통",
+   "if_from": "일라이릴리 약 공급이 줄면 센코라가 팔 약이 줄어요.",
+   "if_to": "센코라에 문제가 생기면 릴리 약 유통과 돈 받기가 늦어질 수 있어요.",
+   "share": "3대 도매사가 각각 릴리 매출의 16~24% (2025)",
+   "source": "Eli Lilly 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000013/lly-20251231.htm"
+  },
+  {
+   "from": "LLY",
+   "to": "CAH",
+   "kind": "supply",
+   "what": "의약품 도매 유통",
+   "if_from": "일라이릴리 약 공급이 줄면 카디널 헬스가 팔 약이 줄어요.",
+   "if_to": "카디널 헬스에 문제가 생기면 릴리 약 유통이 흔들릴 수 있어요.",
+   "share": "3대 도매사가 각각 릴리 매출의 16~24% (2025)",
+   "source": "Eli Lilly 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/59478/000005947826000013/lly-20251231.htm"
+  },
+  {
+   "from": "BRK.B",
+   "to": "AXP",
+   "kind": "partner",
+   "what": "5대 보유 주식",
+   "if_from": "버크셔가 주식을 많이 팔면 시장의 관심이 흔들릴 수 있어요.",
+   "if_to": "아멕스 가치가 떨어지면 버크셔 투자 자산이 줄어요.",
+   "share": "5대 보유 주식(아멕스·애플·BofA·코카콜라·셰브론)이 주식 투자액의 약 65%",
+   "source": "Berkshire Hathaway 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+  },
+  {
+   "from": "BRK.B",
+   "to": "BAC",
+   "kind": "partner",
+   "what": "5대 보유 주식",
+   "if_from": "버크셔가 주식을 많이 팔면 시장의 관심이 흔들릴 수 있어요.",
+   "if_to": "뱅크오브아메리카 가치가 떨어지면 버크셔 투자 자산이 줄어요.",
+   "share": "5대 보유 주식(아멕스·애플·BofA·코카콜라·셰브론)이 주식 투자액의 약 65%",
+   "source": "Berkshire Hathaway 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+  },
+  {
+   "from": "BRK.B",
+   "to": "KO",
+   "kind": "partner",
+   "what": "5대 보유 주식",
+   "if_from": "버크셔가 주식을 많이 팔면 시장의 관심이 흔들릴 수 있어요.",
+   "if_to": "코카콜라 가치가 떨어지면 버크셔 투자 자산이 줄어요.",
+   "share": "5대 보유 주식(아멕스·애플·BofA·코카콜라·셰브론)이 주식 투자액의 약 65%",
+   "source": "Berkshire Hathaway 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+  },
+  {
+   "from": "BRK.B",
+   "to": "CVX",
+   "kind": "partner",
+   "what": "5대 보유 주식",
+   "if_from": "버크셔가 주식을 많이 팔면 시장의 관심이 흔들릴 수 있어요.",
+   "if_to": "셰브론 가치가 떨어지면 버크셔 투자 자산이 줄어요.",
+   "share": "5대 보유 주식(아멕스·애플·BofA·코카콜라·셰브론)이 주식 투자액의 약 65%",
+   "source": "Berkshire Hathaway 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+  },
+  {
+   "from": "BRK.B",
+   "to": "OXY",
+   "kind": "partner",
+   "what": "지분 보유·화학사업 인수",
+   "if_from": "버크셔가 흔들리면 옥시덴탈의 큰 주주가 약해져요.",
+   "if_to": "옥시덴탈이 흔들리면 버크셔의 지분 가치가 줄어요.",
+   "share": "화학 사업(OxyChem)을 약 95억 달러에 인수 (2026-01)",
+   "source": "Berkshire Hathaway 10-K (2025)",
+   "url": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526083899/brka-20251231.htm"
+  },
+  {
+   "from": "PG",
+   "to": "WMT",
+   "kind": "supply",
+   "what": "생활용품 공급",
+   "if_from": "P&G 공급이 막히면 월마트 진열대의 생활용품이 부족해져요.",
+   "if_to": "월마트 판매가 줄면 P&G 매출이 크게 줄어요.",
+   "share": "P&G 매출의 약 16%가 월마트",
+   "source": "Procter & Gamble 10-K (회계연도 2026)",
+   "url": "https://www.sec.gov/Archives/edgar/data/80424/000008042426000103/pg-20260630.htm"
+  },
+  {
+   "from": "WMT",
+   "to": "OPENAI",
+   "kind": "partner",
+   "what": "챗GPT 안에서 쇼핑",
+   "if_from": "월마트가 흔들리면 챗GPT 쇼핑에서 살 물건이 줄어요.",
+   "if_to": "챗GPT 이용이 줄면 월마트의 새 온라인 판매 통로가 약해져요.",
+   "share": null,
+   "source": "Walmart 공식 발표 (2025-10-14)",
+   "url": "https://corporate.walmart.com/news/2025/10/14/walmart-partners-with-openai-to-create-ai-first-shopping-experiences"
+  }
+ ]
+}

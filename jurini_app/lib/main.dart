@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 typedef J = Map<String, dynamic>;
 
-late J data, sp500, news, kr, usMore, surprise;
+late J data, sp500, news, kr, usMore, surprise, links;
 Set<String> ndx = {}; // 나스닥 100 티커
 J? feed; // 뉴스 탭: 매시간 깃허브가 모으는 회사별 최신 뉴스 제목 (인터넷에서만 받음)
 late List<dynamic> companies, terms;
@@ -27,6 +27,7 @@ Future<void> main() async {
   kr = jsonDecode(await rootBundle.loadString('assets/kr.json'));
   usMore = jsonDecode(await rootBundle.loadString('assets/us_more.json'));
   surprise = jsonDecode(await rootBundle.loadString('assets/surprise.json'));
+  links = jsonDecode(await rootBundle.loadString('assets/links.json'));
   ndx = {...usMore['meta']['nasdaq100']};
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
@@ -706,12 +707,14 @@ class _ShellState extends State<Shell> {
         body: ListenableBuilder(
             listenable: Listenable.merge([live, redraw]),
             builder: (_, __) =>
-                IndexedStack(index: i, children: [HomePage(key: homeKey), const TermsPage(), const NewsPage(), const QuizPage()])),
+                IndexedStack(
+                index: i, children: [HomePage(key: homeKey), const LinksPage(), const TermsPage(), const NewsPage(), const QuizPage()])),
         bottomNavigationBar: NavigationBar(
           selectedIndex: i,
           onDestinationSelected: (v) => setState(() => i = v),
           destinations: const [
             NavigationDestination(icon: Icon(Icons.bar_chart_rounded), label: '기업'),
+            NavigationDestination(icon: Icon(Icons.hub_outlined), label: '연결'),
             NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: '용어사전'),
             NavigationDestination(icon: Icon(Icons.newspaper_rounded), label: '뉴스'),
             NavigationDestination(icon: Icon(Icons.quiz_outlined), label: '퀴즈'),
@@ -1481,4 +1484,212 @@ class _QuizState extends State<QuizPage> {
       body: ListView(padding: pad, children: spaced(12, [...body, Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5))])),
     );
   }
+}
+
+// ---------- 연결: 공급·협력·경쟁 관계 (assets/links.json, 회사 공시·공식 발표 기준)
+const linkKinds = {'supply': '공급', 'partner': '협력', 'compete': '경쟁'};
+
+Color linkColor(P p, String kind) => switch (kind) { 'supply' => p.accent, 'partner' => p.good, _ => p.warn };
+
+// 앱 안 회사면 그 회사 데이터, 아니면 null (links.json의 nodes는 이름·설명만 있음)
+J? appCompany(String id) {
+  for (final c in [...companies, ...kr['companies']]) {
+    if (c['ticker'] == id) return c;
+  }
+  return null;
+}
+
+String nodeName(String id) => appCompany(id)?['name_ko'] ?? links['nodes'][id]?['ko'] ?? id;
+
+// 앱 안 회사 중 연결이 있는 회사, 연결 많은 순
+List<String> linkedIds() {
+  final n = <String, int>{};
+  for (final l in links['links']) {
+    for (final x in [l['from'], l['to']]) {
+      if (appCompany(x) != null) n[x] = (n[x] ?? 0) + 1;
+    }
+  }
+  return n.keys.toList()..sort((a, b) => n[b]!.compareTo(n[a]!));
+}
+
+List<J> linksOf(String id) => [for (final J l in links['links']) if (l['from'] == id || l['to'] == id) l];
+
+class LinksPage extends StatefulWidget {
+  const LinksPage({super.key});
+  @override
+  State<LinksPage> createState() => _LinksState();
+}
+
+class _LinksState extends State<LinksPage> {
+  late final ids = linkedIds();
+  late String center = ids.first;
+  J? picked;
+
+  void go(String id) => setState(() {
+        center = id;
+        picked = null;
+      });
+
+  Widget node(P p, String id, double size, bool on) {
+    final c = appCompany(id);
+    return Column(mainAxisSize: MainAxisSize.min, children: [
+      Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(size * .3 + 3),
+            border: Border.all(color: on ? Colors.white : Colors.transparent, width: 2)),
+        padding: const EdgeInsets.all(1),
+        child: c != null
+            ? logo(c, size)
+            : Container(
+                width: size,
+                height: size,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(color: p.sunken, borderRadius: BorderRadius.circular(size * .3)),
+                child: Icon(id.startsWith('UNNAMED') ? Icons.help_outline : Icons.apartment_rounded,
+                    color: p.muted, size: size * .5)),
+      ),
+      const SizedBox(height: 3),
+      SizedBox(
+          width: 76,
+          child: Text(nodeName(id),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(fontSize: 11.5, fontWeight: FontWeight.w600))),
+    ]);
+  }
+
+  // 가운데 회사, 둘레에 이어진 회사. 선 색 = 연결 종류
+  Widget graph(P p, List<J> ls) => LayoutBuilder(builder: (_, box) {
+        final w = box.maxWidth, hgt = min(w, 340.0), cx = w / 2, cy = hgt / 2, r = min(cx, cy) - 44;
+        Offset at(int k) =>
+            Offset(cx + r * cos(-pi / 2 + 2 * pi * k / ls.length), cy + r * sin(-pi / 2 + 2 * pi * k / ls.length));
+        return SizedBox(
+          height: hgt,
+          child: Stack(children: [
+            CustomPaint(
+                size: Size(w, hgt),
+                painter: _Lines([for (final (k, l) in ls.indexed) (at(k), linkColor(p, l['kind']), identical(l, picked))],
+                    Offset(cx, cy))),
+            Positioned(left: cx - 38, top: cy - 34, child: node(p, center, 48, true)),
+            for (final (k, l) in ls.indexed)
+              Positioned(
+                left: at(k).dx - 38,
+                top: at(k).dy - 24,
+                child: GestureDetector(
+                  onTap: () => setState(() => picked = identical(picked, l) ? null : l),
+                  child: node(p, l['from'] == center ? l['to'] : l['from'], 32, identical(l, picked)),
+                ),
+              ),
+          ]),
+        );
+      });
+
+  Widget card(P p, J l) {
+    final String other = l['from'] == center ? l['to'] : l['from'];
+    final String kind = l['kind'];
+    final color = linkColor(p, kind);
+    final String a = nodeName(l['from']), b = nodeName(l['to']);
+    return box(
+      p,
+      col(8, [
+        Row(children: [
+          Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              decoration: BoxDecoration(color: color.withValues(alpha: .16), borderRadius: BorderRadius.circular(999)),
+              child: Text(linkKinds[kind]!, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: color))),
+          const SizedBox(width: 8),
+          Expanded(
+              child: txt(kind == 'supply' ? '$a → $b · ${l['what']}' : '$a · $b · ${l['what']}',
+                  const TextStyle(fontSize: 15, fontWeight: FontWeight.w700))),
+        ]),
+        explain(
+            p,
+            col(6, [
+              txt('$a 쪽이 흔들리면 → $b', sub(p, 12.5).copyWith(fontWeight: FontWeight.w700, color: p.accent)),
+              txt(l['if_from'], const TextStyle(fontSize: 14, height: 1.5)),
+              txt('$b 쪽이 흔들리면 → $a', sub(p, 12.5).copyWith(fontWeight: FontWeight.w700, color: p.accent)),
+              txt(l['if_to'], const TextStyle(fontSize: 14, height: 1.5)),
+            ])),
+        if ((l['share'] ?? '') != '') txt('공시 내용: ${l['share']}', sub(p, 12.5)),
+        Row(children: [
+          Expanded(
+              child: InkWell(
+                  onTap: () => launchUrl(Uri.parse(l['url']), mode: LaunchMode.externalApplication),
+                  child: Text('출처: ${l['source']} ↗', style: sub(p, 12).copyWith(decoration: TextDecoration.underline)))),
+          if (appCompany(other) != null && linksOf(other).length > 1)
+            TextButton(onPressed: () => go(other), child: Text('${nodeName(other)} 중심으로')),
+        ]),
+      ]),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final p = P.of(context);
+    final ls = linksOf(center);
+    final c = appCompany(center)!;
+    return Scaffold(
+      appBar: topBar(context, '기업 연결', '${links['asof']} 기준'),
+      body: ListView(padding: pad, children: [
+        txt('한 회사가 흔들리면 이어진 회사들도 같이 흔들릴 수 있어요. 회사를 고르고, 둘레의 회사를 눌러 보세요.', sub(p, 13)),
+        const SizedBox(height: 12),
+        SizedBox(
+          height: 40,
+          child: ListView(scrollDirection: Axis.horizontal, children: [
+            for (final id in ids)
+              Padding(
+                padding: const EdgeInsets.only(right: 6),
+                child: ChoiceChip(
+                    label: Text(nodeName(id)), selected: id == center, showCheckmark: false, onSelected: (_) => go(id)),
+              ),
+          ]),
+        ),
+        const SizedBox(height: 8),
+        graph(p, ls),
+        Wrap(alignment: WrapAlignment.center, spacing: 14, children: [
+          for (final e in linkKinds.entries)
+            Row(mainAxisSize: MainAxisSize.min, children: [
+              Container(width: 14, height: 3, color: linkColor(p, e.key)),
+              const SizedBox(width: 4),
+              Text(e.key == 'supply' ? '공급(물건·서비스를 대 줌)' : e.value, style: sub(p, 12)),
+            ]),
+        ]),
+        const SizedBox(height: 16),
+        Row(children: [
+          Expanded(child: Text('${c['name_ko']}와 이어진 회사 ${ls.length}곳', style: h(17))),
+          TextButton(
+              onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => DetailPage(c))),
+              child: const Text('회사 노트 보기')),
+        ]),
+        const SizedBox(height: 8),
+        ...spaced(10, [
+          for (final l in picked == null ? ls : [picked!, ...ls.where((x) => !identical(x, picked))]) card(p, l)
+        ]),
+        const SizedBox(height: 16),
+        txt('${links['note']}으로 정리했어요. 회사가 이름을 밝히지 않은 고객은 "이름 비공개 고객"으로 보여요. $disclaimer', sub(p, 11.5)),
+      ]),
+    );
+  }
+}
+
+class _Lines extends CustomPainter {
+  _Lines(this.ends, this.center);
+  final List<(Offset, Color, bool)> ends;
+  final Offset center;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final (e, color, on) in ends) {
+      canvas.drawLine(
+          center,
+          e,
+          Paint()
+            ..color = color.withValues(alpha: on ? 1 : .55)
+            ..strokeWidth = on ? 3.5 : 2);
+    }
+  }
+
+  @override
+  bool shouldRepaint(_Lines old) => true;
 }
