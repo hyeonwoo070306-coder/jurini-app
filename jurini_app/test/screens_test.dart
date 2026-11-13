@@ -84,6 +84,8 @@ void main() {
   });
 
   testWidgets('뉴스 탭: AI 요약 카드를 보여주고, 호재·악재 필터와 미국/한국 버튼이 줄여 준다', (tester) async {
+    tester.view.physicalSize = const Size(1080, 8000); // 오늘의 시장 칸 아래 회사 카드까지 보이게
+    addTearDown(tester.view.reset);
     await tester.pumpWidget(const MaterialApp(home: NewsPage()));
     int rows() => (find.byType(ListView).evaluate().single.widget as ListView).childrenDelegate.estimatedChildCount!;
     final total = [for (final l in (news['companies'] as Map).values) ...l].length;
@@ -95,7 +97,7 @@ void main() {
     await tester.pump();
     expect(rows(), lessThan(before));
     final bad = rows();
-    await tester.tap(find.text('한국'));
+    await tester.tap(find.descendant(of: find.byType(SegmentedButton<String>), matching: find.text('한국')));
     await tester.pump();
     expect(rows(), lessThan(bad));
     expect(find.text('찾는 뉴스가 없어요.'), findsNothing); // 한국 회사 악재도 있음
@@ -214,7 +216,7 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: NewsPage()));
     expect(find.text('오늘의 시장'), findsOneWidget);
     expect(find.textContaining(kt('원·달러 환율이 내렸어요')), findsOneWidget);
-    news = validNews(old)!;
+    news = validNews({...old}..remove('market'))!; // 예전 형식(시장 칸 없음) 데이터
     await tester.pumpWidget(const MaterialApp(home: NewsPage(key: ValueKey('old'))));
     expect(find.text('오늘의 시장'), findsNothing);
     expect(marketNews(), isEmpty);
