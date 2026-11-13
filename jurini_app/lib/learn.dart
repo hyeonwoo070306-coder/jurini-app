@@ -69,6 +69,39 @@ void finishLesson(Progress p, J lesson, List<String> wrongTermIds, DateTime now)
   p.days.add(dayKey(now));
 }
 
+// ---------- 매일 AI 수업 (docs/lesson_today.json, 보관함 docs/lessons_ai.json) — 사실 확인 통과분만
+J? aiToday;
+List<J> aiArchive = [];
+
+bool validAiLesson(J j) {
+  bool strs(dynamic x, int lo, int hi) => x is List && x.length >= lo && x.length <= hi && x.every((e) => e is String);
+  final quiz = j['quiz'];
+  return j['id'] is String &&
+      j['title'] is String &&
+      strs(j['terms'], 1, 6) &&
+      strs(j['cards'], 4, 5) &&
+      quiz is List &&
+      quiz.length == 3 &&
+      quiz.every((q) => q is Map && q['q'] is String && strs(q['options'], 4, 4) && q['answer'] is int && q['answer'] >= 0 && q['answer'] < 4) &&
+      j['stage'] is int &&
+      j['stage'] >= 1 &&
+      j['stage'] <= 5 &&
+      j['verified'] == true &&
+      j['sources'] is List &&
+      (j['sources'] as List).isNotEmpty;
+}
+
+// AI가 추가한 용어를 사전에 합친다. 이미 있는 id는 건드리지 않는다.
+void mergeAiGlossary(J g) {
+  for (final t in g['terms'] as List) {
+    if (t is! Map || G[t['id']] != null) continue;
+    if (![t['id'], t['term'], t['definition'], t['example'], t['category']].every((x) => x is String)) continue;
+    final J term = {...t.cast<String, dynamic>(), 'ai': true};
+    terms.add(term);
+    G[term['id']] = term;
+  }
+}
+
 // ---------- 배우기 탭 (앱 첫 화면)
 class LearnPage extends StatefulWidget {
   const LearnPage({super.key});
@@ -207,6 +240,9 @@ class _LearnState extends State<LearnPage> {
             if (next != null)
               row(p, '① 오늘의 수업 · 5분', next['title'], '$stage단계 · $stageTitle', () => openLesson(next),
                   key: const ValueKey('today-lesson'))
+            else if (aiToday != null)
+              row(p, '① 오늘의 수업 · AI 수업', aiToday!['title'], '오늘 뉴스로 만든 수업이에요', () => openLesson(aiToday!, ai: true),
+                  key: const ValueKey('today-lesson'))
             else
               row(p, '① 오늘의 수업', '오늘은 복습만 해요', '5단계 코스를 모두 끝냈어요. 새 수업은 매일 AI 수업으로 이어져요.', null,
                   key: const ValueKey('today-lesson')),
@@ -242,6 +278,20 @@ class _LearnState extends State<LearnPage> {
             ),
           ]),
         ),
+        if (aiToday != null && next != null) ...[
+          const SizedBox(height: 12),
+          Material(
+            color: p.surface,
+            borderRadius: BorderRadius.circular(16),
+            clipBehavior: Clip.antiAlias,
+            child: row(
+                p,
+                '보너스 · 오늘의 AI 수업',
+                aiToday!['title'],
+                aiToday!['stage'] > stage ? '${aiToday!['stage']}단계 내용이에요. 어려우면 나중에 봐도 돼요.' : '오늘 뉴스로 만든 수업이에요.',
+                () => openLesson(aiToday!, ai: true)),
+          ),
+        ],
         Padding(padding: const EdgeInsets.fromLTRB(4, 28, 4, 8), child: Text('5단계 코스', style: h(18))),
         Material(
           color: p.surface,
@@ -267,6 +317,29 @@ class _LearnState extends State<LearnPage> {
               ),
           ]),
         ),
+        if (aiArchive.isNotEmpty) ...[
+          const SizedBox(height: 12),
+          Material(
+            color: p.surface,
+            borderRadius: BorderRadius.circular(16),
+            clipBehavior: Clip.antiAlias,
+            child: ExpansionTile(
+              shape: const Border(),
+              title: const Text('AI 수업 보관함', style: TextStyle(fontSize: 15, fontWeight: FontWeight.w700)),
+              subtitle: Text('최근 ${aiArchive.length}개 · 매일 뉴스로 만든 수업', style: sub(p, 12)),
+              children: [
+                for (final l in aiArchive.reversed)
+                  ListTile(
+                    leading: Icon(pr.done.contains(l['id']) ? Icons.check_circle_rounded : Icons.auto_awesome_outlined,
+                        color: pr.done.contains(l['id']) ? p.good : p.muted, size: 20),
+                    title: txt(l['title'], const TextStyle(fontSize: 14.5)),
+                    subtitle: Text('${l['date']} · ${l['stage']}단계', style: sub(p, 12)),
+                    onTap: () => openLesson(l, ai: true),
+                  ),
+              ],
+            ),
+          ),
+        ],
         const SizedBox(height: 16),
         OutlinedButton(
           onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const QuizPage())),

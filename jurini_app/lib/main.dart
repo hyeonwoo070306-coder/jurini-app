@@ -108,6 +108,25 @@ bool validCalendar(J j) =>
     (j['events'] as List).every((e) => e is Map && e['date'] is String && e['title'] is String && e['type'] is String);
 
 Future<void> loadLive() async {
+  // 매일 AI 수업(사실 확인 통과분)과 AI가 추가한 용어. 없거나 형식이 틀리면 조용히 건너뜀
+  getJson('glossary_ai.json').then((j) {
+    if (j != null && j['terms'] is List) {
+      mergeAiGlossary(j);
+      redraw.value++;
+    }
+  });
+  getJson('lesson_today.json').then((j) {
+    if (j != null && validAiLesson(j)) {
+      aiToday = j;
+      redraw.value++;
+    }
+  });
+  getJson('lessons_ai.json').then((j) {
+    if (j != null && j['lessons'] is List) {
+      aiArchive = [for (final l in j['lessons'] as List) if (l is Map && validAiLesson(l.cast<String, dynamic>())) l.cast<String, dynamic>()];
+      redraw.value++;
+    }
+  });
   getJson('calendar.json').then((j) {
     if (j != null && validCalendar(j)) {
       calendar = j;
@@ -598,7 +617,7 @@ void openTerm(BuildContext ctx, String id) {
   if (t == null) return;
   final p = P.of(ctx);
   final names = [
-    for (final tk in t['used_by'])
+    for (final tk in (t['used_by'] as List?) ?? []) // AI가 추가한 용어엔 없음
       for (final c in companies)
         if (c['ticker'] == tk) c['name_ko']
   ];
@@ -613,12 +632,17 @@ void openTerm(BuildContext ctx, String id) {
       child: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
         child: col(12, [
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Container(
+          Wrap(spacing: 6, children: [
+            Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(color: p.accentSoft, borderRadius: BorderRadius.circular(999)),
+                child: Text(t['category'] ?? '경제용어', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: p.accent))),
+            if (t['ai'] == true)
+              Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  decoration: BoxDecoration(color: p.accentSoft, borderRadius: BorderRadius.circular(999)),
-                  child: Text(t['category'] ?? '경제용어', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: p.accent)))),
+                  decoration: BoxDecoration(color: p.sunken, borderRadius: BorderRadius.circular(999)),
+                  child: Text('AI가 추가한 용어', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: p.muted))),
+          ]),
           txt(t['term'], h(20)),
           txt(t['definition'], const TextStyle(fontSize: 15)),
           explain(p, col(2, [Text('예시', style: sub(p, 12)), txt(t['example'], const TextStyle(fontSize: 14))])),

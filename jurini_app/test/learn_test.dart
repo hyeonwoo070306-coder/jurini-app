@@ -156,4 +156,69 @@ void main() {
       expect(find.text('시작하기'), findsOneWidget);
     });
   });
+
+  group('AI 수업', () {
+    J ai([J extra = const {}]) => {
+          'id': 'ai-2026-11-14', 'title': '오늘 물가 뉴스 읽기', 'terms': ['cpi'], 'stage': 4, 'date': '2026-11-14',
+          'verified': true, 'sources': ['https://www.bls.gov/cpi/'],
+          'cards': ['카드1', '카드2', '카드3', '카드4'],
+          'quiz': [for (var i = 0; i < 3; i++) {'q': 'q', 'options': ['a', 'b', 'c', 'd'], 'answer': 0, 'explain': 'e'}],
+          ...extra,
+        };
+    setUp(() {
+      SharedPreferences.setMockInitialValues({});
+      aiToday = null;
+      aiArchive = [];
+      lessons = course;
+    });
+
+    test('AI 수업 검증: 확인 안 됐거나 형식이 틀리면 거절', () {
+      expect(validAiLesson(ai()), isTrue);
+      expect(validAiLesson(ai({'verified': false})), isFalse);
+      expect(validAiLesson(ai({'sources': []})), isFalse);
+      expect(validAiLesson(ai({'stage': 9})), isFalse);
+      expect(validAiLesson(ai({'cards': ['하나']})), isFalse);
+    });
+
+    test('AI 용어 합치기: 새 용어는 추가, 있는 용어는 덮어쓰지 않음', () {
+      final before = G['per'];
+      mergeAiGlossary({'terms': [
+        {'id': 'per', 'term': '가짜', 'definition': 'd', 'example': 'e', 'category': '주가 수준', 'why': 'w'},
+        {'id': 'new_term_x', 'term': '새 용어', 'definition': 'd', 'example': 'e', 'category': '주식 기본', 'why': 'w'},
+      ]});
+      expect(G['per'], same(before));
+      expect(G['new_term_x']['ai'], isTrue);
+      expect(terms.where((t) => t['id'] == 'new_term_x').length, 1);
+      mergeAiGlossary({'terms': [{'id': 'new_term_x', 'term': '새 용어', 'definition': 'd', 'example': 'e', 'category': '주식 기본', 'why': 'w'}]});
+      expect(terms.where((t) => t['id'] == 'new_term_x').length, 1); // 두 번 받아도 한 번만
+    });
+
+    testWidgets('AI 용어 팝업에 표시가 붙는다', (t) async {
+      t.view.physicalSize = const Size(1080, 6000);
+      addTearDown(t.view.reset);
+      mergeAiGlossary({'terms': [{'id': 'new_term_y', 'term': '새 용어 와이', 'definition': '뜻이에요', 'example': '예시', 'category': '주식 기본', 'why': '이유'}]});
+      await t.pumpWidget(MaterialApp(home: Builder(builder: (c) => TextButton(onPressed: () => openTerm(c, 'new_term_y'), child: const Text('열기')))));
+      await t.tap(find.text('열기'));
+      await t.pumpAndSettle();
+      expect(find.text('AI가 추가한 용어'), findsOneWidget);
+    });
+
+    testWidgets('보너스 수업: 아직 안 배운 단계면 안내, 코스를 끝냈으면 오늘의 수업 자리로', (t) async {
+      t.view.physicalSize = const Size(1080, 8000);
+      addTearDown(t.view.reset);
+      aiToday = ai();
+      await t.pumpWidget(const MaterialApp(home: LearnPage()));
+      await t.pumpAndSettle();
+      expect(find.textContaining(kt('오늘 물가 뉴스 읽기')), findsWidgets);
+      expect(find.textContaining(kt('4단계 내용이에요')), findsOneWidget);
+      final p = Progress.fromJson(null)..done.addAll(allIds());
+      SharedPreferences.setMockInitialValues({'progress_v1': p.toJson()});
+      await t.pumpWidget(const MaterialApp(home: LearnPage(key: ValueKey('done'))));
+      await t.pumpAndSettle();
+      expect(find.textContaining(kt('오늘은 복습만 해요')), findsNothing);
+      await t.tap(find.byKey(const ValueKey('today-lesson')));
+      await t.pumpAndSettle();
+      expect(find.textContaining(kt('AI가 오늘 뉴스로 만든 수업이에요')), findsOneWidget);
+    });
+  });
 }
