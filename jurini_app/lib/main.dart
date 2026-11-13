@@ -1515,6 +1515,16 @@ List<String> linkedIds() {
   return n.keys.toList()..sort((a, b) => n[b]!.compareTo(n[a]!));
 }
 
+// 업종 → 연결 있는 회사 티커 (연결 많은 순 유지)
+Map<String, List<String>> linkedBySector() {
+  final out = <String, List<String>>{};
+  for (final id in linkedIds()) {
+    final c = appCompany(id)!;
+    (out[(c['group'] ?? c['sector'] ?? '기타') as String] ??= []).add(id);
+  }
+  return out;
+}
+
 List<J> linksOf(String id) => [for (final J l in links['links']) if (l['from'] == id || l['to'] == id) l];
 
 class LinksPage extends StatefulWidget {
@@ -1525,13 +1535,18 @@ class LinksPage extends StatefulWidget {
 
 class _LinksState extends State<LinksPage> {
   late final ids = linkedIds();
+  late final sectors = linkedBySector();
   late String center = ids.first;
   J? picked;
+  String q = '';
 
   void go(String id) => setState(() {
         center = id;
         picked = null;
       });
+
+  Widget pick(String id) =>
+      ChoiceChip(label: Text(nodeName(id)), selected: id == center, showCheckmark: false, onSelected: (_) => go(id));
 
   Widget node(P p, String id, double size, bool on) {
     final c = appCompany(id);
@@ -1637,17 +1652,32 @@ class _LinksState extends State<LinksPage> {
       body: ListView(padding: pad, children: [
         txt('한 회사가 흔들리면 이어진 회사들도 같이 흔들릴 수 있어요. 회사를 고르고, 둘레의 회사를 눌러 보세요.', sub(p, 13)),
         const SizedBox(height: 12),
-        SizedBox(
-          height: 40,
-          child: ListView(scrollDirection: Axis.horizontal, children: [
-            for (final id in ids)
-              Padding(
-                padding: const EdgeInsets.only(right: 6),
-                child: ChoiceChip(
-                    label: Text(nodeName(id)), selected: id == center, showCheckmark: false, onSelected: (_) => go(id)),
-              ),
-          ]),
+        TextField(
+          onChanged: (v) => setState(() => q = v.trim().toLowerCase()),
+          decoration: const InputDecoration(hintText: '회사 이름이나 티커로 찾기', prefixIcon: Icon(Icons.search)),
         ),
+        const SizedBox(height: 8),
+        if (q.isNotEmpty)
+          Wrap(spacing: 6, runSpacing: 6, children: [
+            for (final id in ids)
+              if ('${nodeName(id)} $id ${appCompany(id)?['name_en'] ?? ''}'.toLowerCase().contains(q)) pick(id),
+          ])
+        else
+          // 업종별 묶음: 펼쳐서 회사 고르기
+          Material(
+            color: p.surface,
+            borderRadius: BorderRadius.circular(16),
+            clipBehavior: Clip.antiAlias,
+            child: Column(children: [
+              for (final e in sectors.entries)
+                ExpansionTile(
+                  title: Text('${e.key} · ${e.value.length}곳', style: const TextStyle(fontSize: 14.5, fontWeight: FontWeight.w600)),
+                  shape: const Border(),
+                  childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+                  children: [Wrap(spacing: 6, runSpacing: 6, children: [for (final id in e.value) pick(id)])],
+                ),
+            ]),
+          ),
         const SizedBox(height: 8),
         graph(p, ls),
         Wrap(alignment: WrapAlignment.center, spacing: 14, children: [

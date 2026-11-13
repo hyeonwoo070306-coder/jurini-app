@@ -129,8 +129,9 @@ void main() {
     await tester.tap(find.byType(GestureDetector).first);
     await tester.pump();
     for (final id in ids.skip(1).take(6)) {
-      await tester.ensureVisible(find.widgetWithText(ChoiceChip, nodeName(id)));
-      await tester.tap(find.widgetWithText(ChoiceChip, nodeName(id)));
+      await tester.enterText(find.byType(TextField), nodeName(id));
+      await tester.pump();
+      await tester.tap(find.widgetWithText(ChoiceChip, nodeName(id)).first);
       await tester.pump();
       expect(find.textContaining('이어진 회사 ${linksOf(id).length}곳'), findsOneWidget);
     }
@@ -175,6 +176,28 @@ void main() {
     await tester.tap(find.text('경제 지표'));
     await tester.pump();
     expect(find.textContaining(kt('엔비디아 실적 발표')), findsNothing);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('연결: 검색하면 회사가 좁혀지고 업종 묶음을 펼쳐 고른다', (tester) async {
+    tester.view.physicalSize = const Size(1080, 8000);
+    addTearDown(tester.view.reset);
+    expect(linkedBySector().values.expand((x) => x).toSet(), linkedIds().toSet());
+    await tester.pumpWidget(const MaterialApp(home: LinksPage()));
+    await tester.enterText(find.byType(TextField), '엔비');
+    await tester.pump();
+    expect(find.widgetWithText(ChoiceChip, '엔비디아'), findsOneWidget);
+    expect(find.widgetWithText(ChoiceChip, '애플'), findsNothing);
+    await tester.enterText(find.byType(TextField), '');
+    await tester.pump();
+    final tile = find.byType(ExpansionTile).first;
+    await tester.tap(tile);
+    await tester.pumpAndSettle();
+    final chip = find.descendant(of: tile, matching: find.byType(ChoiceChip)).first;
+    final name = ((tester.widget<ChoiceChip>(chip).label) as Text).data!;
+    await tester.tap(chip);
+    await tester.pump();
+    expect(find.textContaining('$name와 이어진 회사'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 }
