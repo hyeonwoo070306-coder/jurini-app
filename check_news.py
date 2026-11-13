@@ -11,7 +11,7 @@ import sys
 
 OUT, COPY = "docs/news.json", "jurini_app/assets/news.json"
 BANNED = re.compile(r"목표가|목표 주가|매수|매도|추천|사세요|파세요|사야|팔아야|급등할|폭락할|오를 것|내릴 것|오를 거|내릴 거")
-PRICE = re.compile(r"주가[^.]{0,12}\d|\d[\d,.]*\s*(달러|원)\s*(로|까지|선)\s*(올|내|떨|상승|하락)")
+PRICE = re.compile(r"주가[^.]{0,12}\d[\d,.]*\s*(원|달러|만\s*원)|\d[\d,.]*\s*(달러|원)\s*(로|까지|선)\s*(올|내|떨|상승|하락)")
 DATE = re.compile(r"^\d{4}(-\d{2}){0,2}$")  # 연도만, 연-월, 연-월-일
 
 

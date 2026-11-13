@@ -27,6 +27,7 @@ flutter:
     - assets/surprise.json
     - assets/links.json
     - assets/calendar.json
+    - assets/lessons.json
     - assets/fonts/OFL.txt
   fonts:
     - family: Pretendard
