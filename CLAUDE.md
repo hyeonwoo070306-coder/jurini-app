@@ -12,7 +12,7 @@
 
 ## 파일
 - `companies.json`: 미국 시가총액 Top 10 기업 데이터 (시총 2026-11-09, 밸류에이션 2026-11-06 기준). 재무 단위는 백만 달러.
-- `glossary.json`: 경제용어 93개, 10개 분야 (`id`, `category`, `term`, `definition`, `example`, `market_effect`(시장 흐름 용어만), `used_by`). 기업의 `terms` 배열이 이 `id`를 가리킨다.
+- `glossary.json`: 경제용어 138개, 10개 분야 (`id`, `category`, `term`, `definition`, `example`, `market_effect`(시장 흐름 용어만), `used_by`). 기업의 `terms` 배열이 이 `id`를 가리킨다.
 - `glossary_macro.py`: 용어의 분야 묶음(`CATS`)과 금리·물가·경기 용어(`MACRO`, 시장에 주는 영향 포함). 새 용어를 넣으면 여기서 분야를 정해 줘야 `build.py`가 돈다.
 - `build.py`: 시총 Top 50 상세 데이터(`jurini_app/assets/companies.json`, `glossary.json`)와 읽기용 Markdown(`us-top50.md`, `glossary.md`)을 만든다. 1~10위는 이 파일에 직접 쓴 데이터, 11~50위는 아래 두 파일을 합친다. 루트의 `companies.json`·`glossary.json`은 예전 Top 10 버전이다.
 - `companies_top50.py`: 11~50위 기업의 글(설명, 투자 포인트, 리스크, 사업 비중 등). 사업 비중(revenue_mix)은 대략치라 출시 전에 10-K와 대조한다.
@@ -29,6 +29,7 @@
 - `build_more_us.py` → `jurini_app/assets/us_more.json`: 나스닥 100 중 S&P 500에 없는 회사(14개) 기본 카드와 나스닥 100 전체 티커 목록(앱이 '나스닥100' 표시). 목록은 나스닥 API, CIK는 SEC 검색, 재무는 `build_sp500.financials`. 해외 공시(20-F) 회사는 재무가 비어 있다. 새 회사가 들어오면 `KO`에 한글 이름·설명을 추가한다.
 - `build_feed.py` → `docs/feed.json`: 회사별 최신 뉴스 제목(미국 50 + 한국 매출 상위 30, 구글 뉴스 RSS 한국어). `.github/workflows/feed.yml`이 매시간 실행. 주가 숫자·목표가·매수/매도가 들어간 제목은 거른다. 앱은 이제 feed.json을 쓰지 않는다(뉴스 탭은 `docs/news.json`의 AI 요약을 최신순으로 보여줌). 출시 전에 상업 사용이 허용된 뉴스 API(네이버 검색 API 등)로 `fetch_news()`만 바꾼다.
 - 로고: 앱이 `logoUrl()`(FMP 공개 로고 주소, 한국은 .KS/.KQ)에서 받고, 없거나 오프라인이면 글자 배지. 로고는 각 회사 상표라 출시 전에 이용 조건을 확인한다.
+- `glossary_more.py`: 회사 조사용 추가 용어(`MORE`: 용어·뜻·예시·분야·주가에 왜 중요할까 한 번에). 새 일반 용어는 여기에 넣으면 `glossary_why.py`가 합친다(기존 id와 겹치면 멈춤).
 - `glossary_why.py`: 용어마다 "주가에 왜 중요할까?" 설명(`WHY`)과 새 용어(`EXTRA`: EPS·컨센서스·어닝 서프라이즈). 새 용어를 넣으면 여기에 설명을 써야 `build.py`가 돈다(금리·물가 용어는 `MACRO`의 '시장에 주는 영향'이 대신함).
 - `build_surprise.py` → `docs/surprise.json`(+ `jurini_app/assets/surprise.json`): 미국 50개 회사의 증권사 예측 평균 EPS vs 실제 EPS(최근 4분기)와 다음 분기 예측(나스닥). 매일 `daily.yml`에서 실행, 앱 실적 탭에 표시. 매출·영업이익 예측은 유료 데이터라 없음.
 - `build_kr.py` → `jurini_app/assets/kr.json`: 한국 상장회사(코스피·코스닥, 스팩 제외) 기본 카드. 한국거래소 KIND 상장법인목록(회사명·종목코드·업종·주요제품·상장일) + DART 오픈API 최근 3년 연간 재무(연결 우선, 억 원). DART 키는 `dart_key.txt`(깃 제외)에 있다. 시가총액은 아직 없어서 매출 순으로 정렬. 앱 기업 탭의 '미국/한국' 버튼으로 전환.

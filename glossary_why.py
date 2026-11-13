@@ -106,3 +106,11 @@ WHY = {
     "consumer_staples": "경기가 나빠도 사람들이 계속 사는 물건이라 실적이 안정적이고, 불황에 주가가 덜 흔들리는 편이에요.",
     "smoke_free": "일반 담배가 줄어드는 대신 새 제품이 성장해야 회사가 커져서, 이 비중이 늘어나는 속도를 시장이 주목해요.",
 }
+
+# 회사 조사용 추가 용어 (glossary_more.py)
+from glossary_macro import MACRO  # noqa: E402
+from glossary_more import MORE  # noqa: E402
+
+for _k, (_term, _def, _ex, _cat, _why) in MORE.items():
+    assert _k not in EXTRA and _k not in WHY and _k not in MACRO, _k  # 기존 용어 덮어쓰기 방지
+    EXTRA[_k], EXTRA_CATS[_k], WHY[_k] = (_term, _def, _ex), _cat, _why
