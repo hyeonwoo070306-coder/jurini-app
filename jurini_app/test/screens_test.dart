@@ -200,4 +200,23 @@ void main() {
     expect(find.textContaining('$name와 이어진 회사'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+
+  testWidgets('뉴스: 오늘의 시장 칸, 예전 데이터도 그대로', (tester) async {
+    tester.view.physicalSize = const Size(1080, 6000);
+    addTearDown(tester.view.reset);
+    final old = news;
+    addTearDown(() => news = old);
+    J m(String t) => {'date': '2026-11-14', 'type': 'watch', 'title': t, 'impact': '영향', 'source': 'x', 'url': 'https://x.com'};
+    final withMarket = validNews({...old, 'market': [m('미국 물가가 예상보다 낮게 나왔어요'), m('원·달러 환율이 내렸어요'), {'bad': 1}]})!;
+    expect((withMarket['market'] as List).length, 2); // 형식이 틀린 항목은 버림
+    news = withMarket;
+    await tester.pumpWidget(const MaterialApp(home: NewsPage()));
+    expect(find.text('오늘의 시장'), findsOneWidget);
+    expect(find.textContaining(kt('원·달러 환율이 내렸어요')), findsOneWidget);
+    news = validNews(old)!;
+    await tester.pumpWidget(const MaterialApp(home: NewsPage(key: ValueKey('old'))));
+    expect(find.text('오늘의 시장'), findsNothing);
+    expect(marketNews(), isEmpty);
+    expect(tester.takeException(), isNull);
+  });
 }

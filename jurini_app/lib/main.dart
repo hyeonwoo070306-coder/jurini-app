@@ -65,6 +65,7 @@ J? validNews(J n) {
       x is Map && x['title'] is String && x['impact'] is String && x['source'] is String && newsKinds.containsKey(x['type']);
   return {
     ...n,
+    if (n['market'] is List) 'market': [for (final x in n['market'] as List) if (ok(x)) x],
     'companies': <String, dynamic>{
       for (final e in cs.entries)
         if (e.value is List) e.key as String: [for (final x in e.value as List) if (ok(x)) x]
@@ -1197,6 +1198,9 @@ class NewsPage extends StatefulWidget {
   State<NewsPage> createState() => _NewsState();
 }
 
+// 오늘의 시장: 금리·물가·환율 같은 시장 전체 흐름 뉴스 (예전 데이터엔 없음)
+List<J> marketNews() => [for (final x in (news['market'] as List?) ?? []) (x as Map).cast<String, dynamic>()];
+
 Future<void> reloadNews() async {
   final raw = await getJson('news.json');
   final n = raw == null ? null : validNews(raw);
@@ -1265,6 +1269,36 @@ class _NewsState extends State<NewsPage> {
             toggle,
             const SizedBox(height: 16),
             txt("AI(Claude)가 하루 두 번 회사 뉴스를 쉽게 정리해요. 누르면 회사 노트로, '원문 보기'는 언론사 기사로 가요.", sub(p, 13)),
+            if (marketNews().isNotEmpty) ...[
+              Padding(padding: const EdgeInsets.fromLTRB(4, 20, 4, 8), child: Text('오늘의 시장', style: h(18))),
+              for (final (i, x) in marketNews().indexed)
+                groupRow(
+                  p,
+                  i == 0,
+                  i == marketNews().length - 1,
+                  () {
+                    if (x['url'] is String && (x['url'] as String).startsWith('http')) {
+                      launchUrl(Uri.parse(x['url']), mode: LaunchMode.externalApplication);
+                    }
+                  },
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
+                    child: col(6, [
+                      Row(children: [
+                        Icon(Icons.public_rounded, size: 18, color: p.accent),
+                        const SizedBox(width: 8),
+                        Expanded(child: Text('${x['date'] ?? ''} · ${x['source'] ?? ''}', style: sub(p, 12))),
+                      ]),
+                      txt(x['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
+                      rich([
+                        TextSpan(text: '왜 움직였나  ', style: TextStyle(fontWeight: FontWeight.w700, color: p.accent)),
+                        s(x['impact']),
+                      ], const TextStyle(fontSize: 14, height: 1.5)),
+                    ]),
+                  ),
+                ),
+              const SizedBox(height: 8),
+            ],
             const SizedBox(height: 12),
             SegmentedButton<String>(
               segments: const [
