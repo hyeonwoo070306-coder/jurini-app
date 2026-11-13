@@ -348,7 +348,8 @@ Widget newsCard(P p, List items) {
           Text('출처: ${n['source']}', style: sub(p, 11.5)),
         ]),
       ],
-      txt('호재·악재는 뉴스 내용을 쉽게 나눈 것이에요. 주가가 어떻게 움직일지는 아무도 몰라요.', sub(p, 11.5)),
+      txt('AI(Claude)가 하루 두 번 뉴스를 모아 자동으로 정리해요. 틀릴 수 있으니 중요한 내용은 원문으로 확인하세요. 호재·악재는 뉴스 내용을 쉽게 나눈 것일 뿐, 주가가 어떻게 움직일지는 아무도 몰라요.',
+          sub(p, 11.5)),
     ]),
   );
 }
@@ -974,8 +975,8 @@ class _DetailState extends State<DetailPage> {
                 ? '이 회사의 자세한 설명은 준비 중이에요. 지금은 한국거래소에 등록된 업종·주요제품과 금융감독원 DART 사업보고서 숫자만 보여드려요. (${c['market']}, ${c['listed']} 상장)'
                 : '이 회사의 자세한 설명(투자 포인트, 사업, 리스크)은 준비 중이에요. 지금은 미국 SEC 공시에서 가져온 숫자만 보여드려요.',
                 const TextStyle(fontSize: 13.5))),
-          if (full) ...[
           if ((news['companies'][c['ticker']] as List?)?.isNotEmpty ?? false) newsCard(p, news['companies'][c['ticker']]),
+          if (full) ...[
           pointCard(p, Icons.trending_up_rounded, '투자 포인트', p.good, p.goodSoft, c['invest_points']),
           pointCard(p, Icons.error_outline_rounded, '주의할 점', p.warn, p.warnSoft, c['cautions']),
           SingleChildScrollView(
