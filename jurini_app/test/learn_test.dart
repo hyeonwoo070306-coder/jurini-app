@@ -221,4 +221,36 @@ void main() {
       expect(find.textContaining(kt('AI가 오늘 뉴스로 만든 수업이에요')), findsOneWidget);
     });
   });
+
+  group('뉴스 → 배우기', () {
+    setUp(() {
+      SharedPreferences.setMockInitialValues({});
+      lessons = course;
+    });
+
+    test('용어로 수업 찾기', () {
+      expect(lessonForTerm('per')!['id'], 's3l1');
+      expect(lessonForTerm('없는용어'), isNull);
+    });
+
+    testWidgets('관련 용어가 있는 뉴스엔 칩, 누르면 수업으로 배우기; 예전 뉴스엔 칩 없음', (t) async {
+      t.view.physicalSize = const Size(1080, 8000);
+      addTearDown(t.view.reset);
+      final old = news;
+      addTearDown(() => news = old);
+      J item(Map<String, dynamic> extra) =>
+          {'date': '2026-11-14', 'type': 'good', 'title': '엔비디아 실적이 예상보다 좋았어요', 'impact': '영향', 'source': 's', 'url': 'https://x.com', ...extra};
+      news = {'asof': '2026-11-14', 'companies': {'NVDA': [item({'terms': ['per'], 'learn': 'PER은 주가가 이익의 몇 배인지예요.'})]}};
+      await t.pumpWidget(const MaterialApp(home: NewsPage()));
+      expect(find.text('이 뉴스 이해하기'), findsOneWidget);
+      await t.tap(find.widgetWithText(ActionChip, termName(G['per'])));
+      await t.pumpAndSettle();
+      expect(find.text('수업으로 배우기'), findsOneWidget);
+      news = {'asof': '2026-11-14', 'companies': {'NVDA': [item({})]}};
+      await t.pumpWidget(const MaterialApp(home: NewsPage(key: ValueKey('old'))));
+      await t.pumpAndSettle();
+      expect(find.text('이 뉴스 이해하기'), findsNothing);
+      expect(t.takeException(), isNull);
+    });
+  });
 }

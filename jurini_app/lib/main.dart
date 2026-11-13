@@ -313,7 +313,7 @@ Widget groupRow(P p, bool first, bool last, VoidCallback onTap, Widget child) =>
 
 const newsKinds = {'good': ('호재', '좋은 소식'), 'bad': ('악재', '걱정되는 소식'), 'watch': ('지켜볼 일', '앞으로 있을 일')};
 
-Widget newsCard(P p, List items) {
+Widget newsCard(BuildContext ctx, P p, List items) {
   Color colorOf(String t) => t == 'good' ? p.good : t == 'bad' ? p.warn : p.accent;
   // 상세 화면에서 가장 먼저 눈에 띄어야 하는 칸: 장식 대신 파란 바탕 한 겹으로 구분
   return Container(
@@ -342,6 +342,7 @@ Widget newsCard(P p, List items) {
             TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(n['type']))),
             s(n['impact']),
           ], const TextStyle(fontSize: 14, height: 1.5)),
+          termChips(ctx, p, n),
           Text('출처: ${n['source']}', style: sub(p, 11.5)),
         ]),
       ],
@@ -657,6 +658,15 @@ void openTerm(BuildContext ctx, String id) {
           ],
           if (names.isNotEmpty) txt('이 용어가 나오는 회사: ${names.join(', ')}', sub(p)),
           Text(disclaimer, style: sub(p, 11.5)),
+          if (lessonForTerm(id) case final J lesson)
+            OutlinedButton(
+              style: OutlinedButton.styleFrom(minimumSize: const Size.fromHeight(48)),
+              onPressed: () {
+                Navigator.pop(sheet);
+                learnFromTerm(ctx, lesson);
+              },
+              child: const Text('수업으로 배우기', style: TextStyle(fontFamily: 'Pretendard', fontWeight: FontWeight.w700)),
+            ),
           FilledButton(
             style: FilledButton.styleFrom(
                 backgroundColor: p.fg,
@@ -954,7 +964,7 @@ class _DetailState extends State<DetailPage> {
                 ? '이 회사의 자세한 설명은 준비 중이에요. 지금은 한국거래소에 등록된 업종·주요제품과 금융감독원 DART 사업보고서 숫자만 보여드려요. (${c['market']}, ${c['listed']} 상장)'
                 : '이 회사의 자세한 설명(투자 포인트, 사업, 리스크)은 준비 중이에요. 지금은 미국 SEC 공시에서 가져온 숫자만 보여드려요.',
                 const TextStyle(fontSize: 13.5))),
-          if ((news['companies'][c['ticker']] as List?)?.isNotEmpty ?? false) newsCard(p, news['companies'][c['ticker']]),
+          if ((news['companies'][c['ticker']] as List?)?.isNotEmpty ?? false) newsCard(context, p, news['companies'][c['ticker']]),
           if (full) ...[
           pointCard(p, Icons.trending_up_rounded, '투자 포인트', p.good, p.goodSoft, c['invest_points']),
           pointCard(p, Icons.error_outline_rounded, '주의할 점', p.warn, p.warnSoft, c['cautions']),
@@ -1322,6 +1332,7 @@ class _NewsState extends State<NewsPage> {
                         TextSpan(text: '왜 움직였나  ', style: TextStyle(fontWeight: FontWeight.w700, color: p.accent)),
                         s(x['impact']),
                       ], const TextStyle(fontSize: 14, height: 1.5)),
+                      termChips(context, p, x),
                     ]),
                   ),
                 ),
@@ -1382,6 +1393,7 @@ class _NewsState extends State<NewsPage> {
                       TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(x['type']))),
                       s(x['impact']),
                     ], const TextStyle(fontSize: 14, height: 1.5)),
+                    termChips(context, p, x),
                     Row(children: [
                       Expanded(child: Text('출처: ${x['source']}', style: sub(p, 11.5))),
                       if (x['url'] is String && (x['url'] as String).startsWith('http'))

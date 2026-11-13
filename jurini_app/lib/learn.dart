@@ -102,6 +102,38 @@ void mergeAiGlossary(J g) {
   }
 }
 
+// 이 용어를 다루는 첫 코스 수업 (없으면 null)
+J? lessonForTerm(String termId) {
+  for (final l in courseLessons(lessons)) {
+    if ((l['terms'] as List).contains(termId)) return l;
+  }
+  return null;
+}
+
+// 뉴스 카드 아래 '이 뉴스 이해하기: [용어]' 칩. 관련 용어가 없는 (예전) 뉴스면 아무것도 안 그림
+Widget termChips(BuildContext ctx, P p, Map item) {
+  final ts = [for (final t in (item['terms'] as List?) ?? []) if (G[t] != null) t as String];
+  if (ts.isEmpty) return const SizedBox.shrink();
+  return Wrap(spacing: 6, runSpacing: 6, crossAxisAlignment: WrapCrossAlignment.center, children: [
+    Text('이 뉴스 이해하기', style: sub(p, 12)),
+    for (final t in ts) chip(p, termName(G[t]), () => openTerm(ctx, t)),
+  ]);
+}
+
+// 용어 팝업의 '수업으로 배우기': 수업을 끝내면 진도에 반영
+Future<void> learnFromTerm(BuildContext ctx, J lesson) async {
+  String? goal;
+  for (final st in lessons['stages']) {
+    if (st['id'] == lesson['stage']) goal = st['goal'];
+  }
+  final List<String>? wrong = await Navigator.push(ctx, MaterialPageRoute(builder: (_) => LessonPage(lesson, goal: goal)));
+  if (wrong == null) return;
+  final p = await loadProgress();
+  finishLesson(p, lesson, wrong, DateTime.now());
+  await saveProgress(p);
+  redraw.value++;
+}
+
 // ---------- 배우기 탭 (앱 첫 화면)
 class LearnPage extends StatefulWidget {
   const LearnPage({super.key});

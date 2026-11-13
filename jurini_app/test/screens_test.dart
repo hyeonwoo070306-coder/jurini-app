@@ -16,6 +16,7 @@ void main() {
     surprise = read('surprise.json');
     links = read('links.json');
     calendar = read('calendar.json');
+    lessons = read('lessons.json');
     kr = read('kr.json');
     G = {for (final t in terms) t['id'] as String: t};
     final usMore = read('us_more.json');
