@@ -32,6 +32,7 @@
 - `glossary_more.py`: 회사 조사용 추가 용어(`MORE`: 용어·뜻·예시·분야·주가에 왜 중요할까 한 번에). 새 일반 용어는 여기에 넣으면 `glossary_why.py`가 합친다(기존 id와 겹치면 멈춤).
 - `glossary_why.py`: 용어마다 "주가에 왜 중요할까?" 설명(`WHY`)과 새 용어(`EXTRA`: EPS·컨센서스·어닝 서프라이즈). 새 용어를 넣으면 여기에 설명을 써야 `build.py`가 돈다(금리·물가 용어는 `MACRO`의 '시장에 주는 영향'이 대신함).
 - `build_surprise.py` → `docs/surprise.json`(+ `jurini_app/assets/surprise.json`): 미국 50개 회사의 증권사 예측 평균 EPS vs 실제 EPS(최근 4분기)와 다음 분기 예측(나스닥). 매일 `daily.yml`에서 실행, 앱 실적 탭에 표시. 매출·영업이익 예측은 유료 데이터라 없음.
+- `build_calendar.py` → `docs/calendar.json`(+ 앱 복사본): 뉴스 탭의 '일정' 화면. 경제 지표 일정은 `calendar_macro.json`(FOMC·BLS·BEA·한국은행 공식 일정표에서 옮김, 2026-11-14 확인, 2027년 하반기와 한국 CPI 날짜는 아직 없음 — 기관이 발표하면 추가), 실적 발표일은 나스닥 예상일(매일 갱신, daily.yml). 시각은 한국 시간으로 바꿔 저장(미국 서머타임 반영).
 - `build_kr.py` → `jurini_app/assets/kr.json`: 한국 상장회사(코스피·코스닥, 스팩 제외) 기본 카드. 한국거래소 KIND 상장법인목록(회사명·종목코드·업종·주요제품·상장일) + DART 오픈API 최근 3년 연간 재무(연결 우선, 억 원). DART 키는 `dart_key.txt`(깃 제외)에 있다. 시가총액은 아직 없어서 매출 순으로 정렬. 앱 기업 탭의 '미국/한국' 버튼으로 전환.
 - `merge_links.py` → `jurini_app/assets/links.json`: 앱 "연결" 탭(회사 간 공급·협력·경쟁 관계, "A가 흔들리면 B도"). 원본은 `links_research/links_*.json`(회사 공시·공식 발표만, 링크마다 출처 URL). 출처가 홈페이지뿐인 연결은 자동으로 뺀다. 새 연결은 원본 파일에 넣고 다시 실행.
 - 회사 글(투자 포인트·주의할 점·해설)에는 그 회사의 '오늘 PER' 같은 숫자를 쓰지 않는다(매일 숫자 칸과 어긋남). 업종 평균 같은 일반 기준만 숫자로 쓴다.

@@ -10,7 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 typedef J = Map<String, dynamic>;
 
-late J data, sp500, news, kr, usMore, surprise, links;
+late J data, sp500, news, kr, usMore, surprise, links, calendar;
 Set<String> ndx = {}; // 나스닥 100 티커
 late List<dynamic> companies, terms;
 late Map<String, dynamic> G;
@@ -27,6 +27,7 @@ Future<void> main() async {
   usMore = jsonDecode(await rootBundle.loadString('assets/us_more.json'));
   surprise = jsonDecode(await rootBundle.loadString('assets/surprise.json'));
   links = jsonDecode(await rootBundle.loadString('assets/links.json'));
+  calendar = jsonDecode(await rootBundle.loadString('assets/calendar.json'));
   ndx = {...usMore['meta']['nasdaq100']};
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
@@ -96,7 +97,18 @@ bool validSurprise(J j) {
   return true;
 }
 
+bool validCalendar(J j) =>
+    j['asof'] is String &&
+    j['events'] is List &&
+    (j['events'] as List).every((e) => e is Map && e['date'] is String && e['title'] is String && e['type'] is String);
+
 Future<void> loadLive() async {
+  getJson('calendar.json').then((j) {
+    if (j != null && validCalendar(j)) {
+      calendar = j;
+      redraw.value++;
+    }
+  });
   getJson('surprise.json').then((j) {
     if (j != null && validSurprise(j)) {
       surprise = j;
@@ -1195,6 +1207,8 @@ Future<void> reloadNews() async {
 }
 
 class _NewsState extends State<NewsPage> {
+  bool cal = false; // false = 뉴스, true = 일정
+  String? calType; // null = 전체, macro, earnings
   String market = '전체';
   String? kind; // null = 전체, 아니면 good/bad/watch
   String q = '';
@@ -1225,6 +1239,22 @@ class _NewsState extends State<NewsPage> {
       if (fa != fb) return fa ? 1 : -1;
       return fa ? d(a).compareTo(d(b)) : d(b).compareTo(d(a));
     });
+    final toggle = SegmentedButton<bool>(
+      segments: const [ButtonSegment(value: false, label: Text('뉴스')), ButtonSegment(value: true, label: Text('일정'))],
+      selected: {cal},
+      showSelectedIcon: false,
+      onSelectionChanged: (v) => setState(() => cal = v.first),
+    );
+    if (cal) {
+      return Scaffold(
+        appBar: topBar(context, '일정', '${calendar['asof']} 기준'),
+        body: ListView(padding: pad, children: [
+          toggle,
+          const SizedBox(height: 16),
+          ...calendarList(context, p, calType, (t) => setState(() => calType = t)),
+        ]),
+      );
+    }
     return Scaffold(
       appBar: topBar(context, '뉴스', '${news['asof']} 정리'),
       body: RefreshIndicator(
@@ -1232,6 +1262,8 @@ class _NewsState extends State<NewsPage> {
         child: ListView(
           padding: pad,
           children: [
+            toggle,
+            const SizedBox(height: 16),
             txt("AI(Claude)가 하루 두 번 회사 뉴스를 쉽게 정리해요. 누르면 회사 노트로, '원문 보기'는 언론사 기사로 가요.", sub(p, 13)),
             const SizedBox(height: 12),
             SegmentedButton<String>(
@@ -1663,4 +1695,102 @@ class _Lines extends CustomPainter {
 
   @override
   bool shouldRepaint(_Lines old) => true;
+}
+
+// ---------- 일정: 경제 지표 발표·실적 발표 (assets/calendar.json, 매일 build_calendar.py가 갱신)
+// kind → (짧은 이름, 왜 중요한지 한 줄, 누르면 여는 용어)
+const calKinds = {
+  'fomc': ('미국 금리', '미국 기준금리를 정하는 날이에요. 금리가 바뀌면 전 세계 주식시장이 크게 움직여요.', 'fed_fomc'),
+  'us_cpi': ('미국 물가', '물가가 예상보다 높으면 금리 인하가 늦어질까 봐 시장이 걱정해요.', 'cpi'),
+  'us_jobs': ('미국 고용', '일자리가 얼마나 늘었는지 보여줘요. 경기가 튼튼한지 보는 성적표예요.', 'jobs_report'),
+  'us_pce': ('미국 물가', '미국 중앙은행(연준)이 금리를 정할 때 가장 중요하게 보는 물가 숫자예요.', 'pce'),
+  'us_gdp': ('미국 성장', '미국 경제가 지난 분기에 얼마나 컸는지 보여줘요.', 'gdp'),
+  'bok_rate': ('한국 금리', '한국 기준금리를 정하는 날이에요. 대출 이자와 한국 주식에 영향을 줘요.', 'interest_rate'),
+  'kr_cpi': ('한국 물가', '한국 물가가 오르면 한국은행이 금리를 내리기 어려워져요.', 'cpi'),
+  'earnings': ('실적', '회사가 지난 분기 성적표를 내요. 예상과 차이가 크면 주가가 크게 움직여요.', 'earnings_surprise'),
+};
+
+const _weekdays = ['월', '화', '수', '목', '금', '토', '일'];
+
+// '2026-11-17' → '오늘' / '내일' / '11월 17일 (화)'
+String calDay(String iso, [DateTime? now]) {
+  final d = DateTime.parse(iso), n = now ?? DateTime.now();
+  final diff = DateTime(d.year, d.month, d.day).difference(DateTime(n.year, n.month, n.day)).inDays;
+  if (diff == 0) return '오늘';
+  if (diff == 1) return '내일';
+  return '${d.month}월 ${d.day}일 (${_weekdays[d.weekday - 1]})';
+}
+
+// 한국 시간으로 언제 보면 되는지
+String calTime(J e) {
+  final String? kst = e['kst'];
+  if (kst != null) return kst.substring(11);
+  return switch (e['when']) { 'after' => '아침', 'before' => '밤', _ => '시간 미정' };
+}
+
+List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(String?) setType) {
+  final today = DateTime.now().toIso8601String().substring(0, 10);
+  final evs = [for (final J e in calendar['events']) if (e['date'].compareTo(today) >= 0 && (type == null || e['type'] == type)) e];
+  final days = <String, List<J>>{};
+  for (final e in evs) {
+    (days[e['date']] ??= []).add(e);
+  }
+  // 하루 안에서는 이른 시각부터 (아침 ≈ 06시, 밤 ≈ 22시, 미정은 맨 뒤)
+  String order(J e) => e['kst']?.substring(11) ?? switch (e['when']) { 'after' => '06:00', 'before' => '22:00', _ => '99' };
+  for (final l in days.values) {
+    l.sort((a, b) => order(a).compareTo(order(b)));
+  }
+  final byTk = {for (final c in companies) c['ticker']: c};
+  return [
+    txt('시장을 움직이는 경제 지표 발표와 회사 실적 발표 일정이에요. 실적 발표 날은 회사가 지난 분기 성적표를 내는 날이라, 예상과 차이가 크면 주가가 크게 움직여요. 시각은 모두 한국 시간이고, 누르면 뜻이나 회사 노트가 열려요.',
+        sub(p, 13)),
+    const SizedBox(height: 12),
+    Wrap(spacing: 6, children: [
+      for (final (t, label) in [(null, '전체'), ('macro', '경제 지표'), ('earnings', '실적 발표')])
+        ChoiceChip(label: Text(label), selected: type == t, showCheckmark: false, onSelected: (_) => setType(t)),
+    ]),
+    const SizedBox(height: 8),
+    if (evs.isEmpty)
+      Padding(padding: const EdgeInsets.only(top: 12), child: txt('앞으로 정해진 일정이 아직 없어요. 매일 새로 받아와요.', sub(p, 14))),
+    for (final MapEntry(key: day, value: list) in days.entries) ...[
+      Padding(
+          padding: const EdgeInsets.fromLTRB(4, 20, 4, 8),
+          child: Text(calDay(day), style: h(16).copyWith(color: day == today ? p.accent : p.fg))),
+      for (final (i, e) in list.indexed)
+        groupRow(p, i == 0, i == list.length - 1, () {
+          final co = byTk[e['ticker']];
+          if (e['type'] == 'earnings' && co != null) {
+            Navigator.push(ctx, MaterialPageRoute(builder: (_) => DetailPage(co)));
+          } else if (calKinds[e['kind']] case (_, _, final String term)) {
+            openTerm(ctx, term);
+          }
+        },
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+              child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                SizedBox(
+                    width: 52,
+                    child: Text(calTime(e),
+                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.muted, fontFeatures: tabular))),
+                Expanded(
+                    child: col(4, [
+                  Row(children: [
+                    if (byTk[e['ticker']] case final J co) ...[logo(co, 22), const SizedBox(width: 8)],
+                    Expanded(child: txt(e['title'], const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.35))),
+                  ]),
+                  txt(
+                      e['type'] == 'earnings'
+                          ? switch (e['when']) { 'after' => '미국 장 마감 뒤 발표', 'before' => '미국 장 시작 전 발표', _ => '발표 시각 미정' }
+                          : calKinds[e['kind']]?.$2 ?? '',
+                      sub(p, 13).copyWith(height: 1.45)),
+                ])),
+                const SizedBox(width: 8),
+                Text(calKinds[e['kind']]?.$1 ?? '',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: e['type'] == 'macro' ? p.accent : p.good)),
+              ]),
+            )),
+    ],
+    const SizedBox(height: 20),
+    txt('${calendar['note']} 실적 발표 \'아침\'은 미국 장 마감 뒤, \'밤\'은 미국 장 시작 전이에요. $disclaimer', sub(p, 11.5)),
+  ];
 }

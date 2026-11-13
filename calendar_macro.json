@@ -1,0 +1,284 @@
+{
+ "checked": "2026-11-14",
+ "events": [
+  {
+   "date": "2026-11-25",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2026-11-26",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "time": null,
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?menuNo=200755&mtgSe=A"
+  },
+  {
+   "date": "2026-12-04",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2026-12-09",
+   "kind": "fomc",
+   "title": "미국 금리 결정(FOMC)",
+   "time": "14:00 ET",
+   "source": "연준(Federal Reserve)",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "date": "2026-12-10",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2026-12-23",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-01-08",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-01-13",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-01-14",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "time": null,
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+  },
+  {
+   "date": "2027-01-27",
+   "kind": "fomc",
+   "title": "미국 금리 결정(FOMC)",
+   "time": "14:00 ET",
+   "source": "연준(Federal Reserve)",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "date": "2027-01-28",
+   "kind": "us_gdp",
+   "title": "미국 GDP 속보치",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-01-28",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-02-05",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-02-11",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-02-25",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "time": null,
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+  },
+  {
+   "date": "2027-02-25",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-03-05",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-03-10",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-03-17",
+   "kind": "fomc",
+   "title": "미국 금리 결정(FOMC)",
+   "time": "14:00 ET",
+   "source": "연준(Federal Reserve)",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "date": "2027-03-31",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-04-02",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-04-09",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "time": null,
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+  },
+  {
+   "date": "2027-04-13",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-04-28",
+   "kind": "fomc",
+   "title": "미국 금리 결정(FOMC)",
+   "time": "14:00 ET",
+   "source": "연준(Federal Reserve)",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "date": "2027-04-29",
+   "kind": "us_gdp",
+   "title": "미국 GDP 속보치",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-04-29",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-05-07",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-05-12",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-05-27",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "time": null,
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+  },
+  {
+   "date": "2027-05-27",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-06-04",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-06-09",
+   "kind": "fomc",
+   "title": "미국 금리 결정(FOMC)",
+   "time": "14:00 ET",
+   "source": "연준(Federal Reserve)",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "date": "2027-06-10",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "time": "08:30 ET",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-06-25",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "time": "08:30 ET",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  }
+ ],
+ "not_confirmed": [
+  "한국 소비자물가동향 발표일(2026-12 ~ 2027-06 전체): 국가데이터처(mods.go.kr)·KOSIS 공식 페이지에서 월 단위 예정만 보이고 정확한 일자가 없어 뺌. 참고로 2026-11-03에 10월분이 발표됐고, 2026-12-18 소비자물가지수 2025년 기준 개편 공표 예정이라는 검색 결과는 있으나 1차 페이지로 확인 못 함.",
+  "미국 GDP 속보치의 '속보치' 표기: BEA 공식 일정 JSON(apps.bea.gov/API/signup/release_dates.json)에 2027-01-28, 04-29 날짜는 있으나 속보치/수정치 구분 라벨이 없다. 2026 3분기 속보치가 10-29, 수정치가 11-25였던 패턴으로 2026 4분기 속보치=2027-01-28, 2027 1분기 속보치=2027-04-29로 넣음. 라벨은 확인 못 함. 2027-02-25, 05-27 등 나머지 GDP 날짜는 수정치라 뺌.",
+  "BEA 일정 시각: JSON은 UTC로만 제공(13:30Z/12:30Z). 미국 동부 08:30으로 변환했고 BEA 페이지 자체 표기 08:30 AM과 일치(2026년 분만 직접 확인).",
+  "한국은행 금통위 결정 시각: 공식 일정에 시각이 없어 null. 2026-12에는 통화정책방향 결정회의 없음(2027년 12월은 금융안정회의). 2027년 일정은 한국은행 2026-10-29 보도자료(공보 2026-25호) PDF에서 확인. 2026-11-26은 한국은행 결정회의 목록 페이지 기준.",
+  "FOMC 2027년 일정은 연준 페이지에 '각 회의 직전 회의에서 확정될 때까지 잠정(tentative)'이라고 적혀 있음."
+ ]
+}

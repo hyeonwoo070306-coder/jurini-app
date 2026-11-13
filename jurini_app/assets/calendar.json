@@ -1,0 +1,267 @@
+{
+ "asof": "2026-11-14",
+ "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 예상일(회사 확정 전엔 바뀔 수 있음). 시각은 한국 시간.",
+ "events": [
+  {
+   "date": "2026-11-17",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "HD",
+   "when": "before",
+   "title": "홈디포 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/hd/earnings"
+  },
+  {
+   "date": "2026-11-18",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "NVDA",
+   "when": "after",
+   "title": "엔비디아 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/nvda/earnings"
+  },
+  {
+   "date": "2026-11-19",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "WMT",
+   "when": "before",
+   "title": "월마트 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/wmt/earnings"
+  },
+  {
+   "date": "2026-11-19",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "PANW",
+   "when": "after",
+   "title": "팔로알토 네트웍스 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/panw/earnings"
+  },
+  {
+   "date": "2026-11-25",
+   "kst": "2026-11-25 22:30",
+   "type": "macro",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2026-11-26",
+   "kst": null,
+   "type": "macro",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?menuNo=200755&mtgSe=A"
+  },
+  {
+   "date": "2026-12-02",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "CRWD",
+   "when": "after",
+   "title": "크라우드스트라이크 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/crwd/earnings"
+  },
+  {
+   "date": "2026-12-04",
+   "kst": "2026-12-04 22:30",
+   "type": "macro",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2026-12-09",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "ORCL",
+   "when": null,
+   "title": "오라클 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/orcl/earnings"
+  },
+  {
+   "date": "2026-12-10",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "AVGO",
+   "when": "after",
+   "title": "브로드컴 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/avgo/earnings"
+  },
+  {
+   "date": "2026-12-10",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "COST",
+   "when": null,
+   "title": "코스트코 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/cost/earnings"
+  },
+  {
+   "date": "2026-12-10",
+   "kst": "2026-12-10 04:00",
+   "type": "macro",
+   "kind": "fomc",
+   "title": "미국 금리 결정(FOMC)",
+   "source": "연준(Federal Reserve)",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "date": "2026-12-10",
+   "kst": "2026-12-10 22:30",
+   "type": "macro",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2026-12-16",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "MU",
+   "when": null,
+   "title": "마이크론 실적 발표",
+   "source": "나스닥(예상일)",
+   "url": "https://www.nasdaq.com/market-activity/stocks/mu/earnings"
+  },
+  {
+   "date": "2026-12-23",
+   "kst": "2026-12-23 22:30",
+   "type": "macro",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-01-08",
+   "kst": "2027-01-08 22:30",
+   "type": "macro",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-01-13",
+   "kst": "2027-01-13 22:30",
+   "type": "macro",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-01-14",
+   "kst": null,
+   "type": "macro",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+  },
+  {
+   "date": "2027-01-28",
+   "kst": "2027-01-28 04:00",
+   "type": "macro",
+   "kind": "fomc",
+   "title": "미국 금리 결정(FOMC)",
+   "source": "연준(Federal Reserve)",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+  },
+  {
+   "date": "2027-01-28",
+   "kst": "2027-01-28 22:30",
+   "type": "macro",
+   "kind": "us_gdp",
+   "title": "미국 GDP 속보치",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-01-28",
+   "kst": "2027-01-28 22:30",
+   "type": "macro",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-02-05",
+   "kst": "2027-02-05 22:30",
+   "type": "macro",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-02-11",
+   "kst": "2027-02-11 22:30",
+   "type": "macro",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  },
+  {
+   "date": "2027-02-25",
+   "kst": null,
+   "type": "macro",
+   "kind": "bok_rate",
+   "title": "한국 기준금리 결정(금통위)",
+   "source": "한국은행",
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+  },
+  {
+   "date": "2027-02-25",
+   "kst": "2027-02-25 22:30",
+   "type": "macro",
+   "kind": "us_pce",
+   "title": "미국 PCE 물가",
+   "source": "미국 경제분석국(BEA)",
+   "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2027-03-05",
+   "kst": "2027-03-05 22:30",
+   "type": "macro",
+   "kind": "us_jobs",
+   "title": "미국 고용보고서",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+  },
+  {
+   "date": "2027-03-10",
+   "kst": "2027-03-10 22:30",
+   "type": "macro",
+   "kind": "us_cpi",
+   "title": "미국 소비자물가지수(CPI)",
+   "source": "미국 노동통계국(BLS)",
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+  }
+ ]
+}

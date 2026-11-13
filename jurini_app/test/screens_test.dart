@@ -15,6 +15,7 @@ void main() {
     news = read('news.json');
     surprise = read('surprise.json');
     links = read('links.json');
+    calendar = read('calendar.json');
     kr = read('kr.json');
     G = {for (final t in terms) t['id'] as String: t};
     final usMore = read('us_more.json');
@@ -143,5 +144,31 @@ void main() {
       }
       expect((l['url'] as String).startsWith('https://'), true);
     }
+  });
+
+  testWidgets('일정: 뉴스 탭에서 일정으로 바꾸고 종류를 고를 수 있다', (tester) async {
+    tester.view.physicalSize = const Size(1080, 6000);
+    addTearDown(tester.view.reset);
+    final today = DateTime.now();
+    String day(int n) => today.add(Duration(days: n)).toIso8601String().substring(0, 10);
+    calendar = {
+      'asof': day(0),
+      'note': '테스트',
+      'events': [
+        {'date': day(1), 'kst': '${day(1)} 04:00', 'type': 'macro', 'kind': 'fomc', 'title': '미국 금리 결정(FOMC)'},
+        {'date': day(3), 'kst': null, 'type': 'earnings', 'kind': 'earnings', 'ticker': 'NVDA', 'when': 'after', 'title': '엔비디아 실적 발표'},
+        {'date': day(-2), 'kst': null, 'type': 'macro', 'kind': 'us_cpi', 'title': '지난 일정'},
+      ],
+    };
+    await tester.pumpWidget(const MaterialApp(home: NewsPage()));
+    await tester.tap(find.text('일정'));
+    await tester.pump();
+    expect(find.textContaining(kt('엔비디아 실적 발표')), findsOneWidget);
+    expect(find.text('내일'), findsOneWidget);
+    expect(find.textContaining(kt('지난 일정')), findsNothing);
+    await tester.tap(find.text('경제 지표'));
+    await tester.pump();
+    expect(find.textContaining(kt('엔비디아 실적 발표')), findsNothing);
+    expect(tester.takeException(), isNull);
   });
 }

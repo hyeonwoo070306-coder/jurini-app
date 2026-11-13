@@ -19,8 +19,9 @@ jobs:
           python-version: "3.12"
       - run: python build_valuation.py
       - run: python build_surprise.py
+      - run: python build_calendar.py
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/valuation.json docs/surprise.json jurini_app/assets/surprise.json
+          git add docs/valuation.json docs/surprise.json jurini_app/assets/surprise.json docs/calendar.json jurini_app/assets/calendar.json
           git diff --cached --quiet || (git commit -m "매일 종가 기준 지표 갱신" && git pull --rebase && git push)

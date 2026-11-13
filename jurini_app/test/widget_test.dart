@@ -102,4 +102,15 @@ void main() {
     expect(validSurprise({'asof': 'x', 'companies': {'A': {'rows': [{'q': '2026-09', 'eps': 1, 'est': 1.1}]}}}), true);
     expect(validSurprise({'asof': 'x', 'companies': {'A': {'rows': [{'q': '2026-09', 'eps': '1', 'est': 1.1}]}}}), false);
   });
+
+  test('일정 날짜·시각 표시', () {
+    final now = DateTime(2026, 11, 14, 10);
+    expect(calDay('2026-11-14', now), '오늘');
+    expect(calDay('2026-11-15', now), '내일');
+    expect(calDay('2026-11-17', now), '11월 17일 (화)');
+    expect(calTime({'kst': '2026-12-10 04:00'}), '04:00');
+    expect(calTime({'kst': null, 'when': 'after'}), '아침');
+    expect(validCalendar({'asof': 'x', 'events': [{'date': '2026-11-17', 'title': 't', 'type': 'macro'}]}), true);
+    expect(validCalendar({'asof': 'x', 'events': [{'date': 1, 'title': 't', 'type': 'macro'}]}), false);
+  });
 }
