@@ -7,10 +7,13 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+part 'learn.dart';
 
 typedef J = Map<String, dynamic>;
 
-late J data, sp500, news, kr, usMore, surprise, links, calendar;
+late J data, sp500, news, kr, usMore, surprise, links, calendar, lessons;
 Set<String> ndx = {}; // 나스닥 100 티커
 late List<dynamic> companies, terms;
 late Map<String, dynamic> G;
@@ -28,6 +31,7 @@ Future<void> main() async {
   surprise = jsonDecode(await rootBundle.loadString('assets/surprise.json'));
   links = jsonDecode(await rootBundle.loadString('assets/links.json'));
   calendar = jsonDecode(await rootBundle.loadString('assets/calendar.json'));
+  lessons = jsonDecode(await rootBundle.loadString('assets/lessons.json'));
   ndx = {...usMore['meta']['nasdaq100']};
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
@@ -679,16 +683,16 @@ class _ShellState extends State<Shell> {
             listenable: Listenable.merge([live, redraw]),
             builder: (_, __) =>
                 IndexedStack(
-                index: i, children: [HomePage(key: homeKey), const LinksPage(), const TermsPage(), const NewsPage(), const QuizPage()])),
+                index: i, children: [const LearnPage(), HomePage(key: homeKey), const LinksPage(), const TermsPage(), const NewsPage()])),
         bottomNavigationBar: NavigationBar(
           selectedIndex: i,
           onDestinationSelected: (v) => setState(() => i = v),
           destinations: const [
+            NavigationDestination(icon: Icon(Icons.school_outlined), label: '배우기'),
             NavigationDestination(icon: Icon(Icons.bar_chart_rounded), label: '기업'),
             NavigationDestination(icon: Icon(Icons.hub_outlined), label: '연결'),
             NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: '용어사전'),
             NavigationDestination(icon: Icon(Icons.newspaper_rounded), label: '뉴스'),
-            NavigationDestination(icon: Icon(Icons.quiz_outlined), label: '퀴즈'),
           ],
         ),
       );
@@ -1390,8 +1394,9 @@ String maskTerm(String text, J t) {
 }
 
 // n문제: 정답은 서로 다르게, 오답 3개는 같은 분야에서 먼저 고른다
-List<Question> makeQuiz(List all, Random rnd, {String? cat, int n = 10}) {
-  final pool = [for (final J t in all) if (cat == null || t['category'] == cat) t]..shuffle(rnd);
+// only: 정답 후보를 이 용어들로만 (복습 퀴즈). 오답 보기는 전체 용어에서.
+List<Question> makeQuiz(List all, Random rnd, {String? cat, int n = 10, Set<String>? only}) {
+  final pool = [for (final J t in all) if ((cat == null || t['category'] == cat) && (only == null || only.contains(t['id']))) t]..shuffle(rnd);
   return [
     for (final J a in pool.take(n))
       () {
@@ -1404,7 +1409,10 @@ List<Question> makeQuiz(List all, Random rnd, {String? cat, int n = 10}) {
 }
 
 class QuizPage extends StatefulWidget {
-  const QuizPage({super.key});
+  // only가 있으면 그 용어들로 바로 복습 퀴즈, onAnswer로 맞힘/틀림을 알려준다
+  final Set<String>? only;
+  final void Function(String termId, bool correct)? onAnswer;
+  const QuizPage({super.key, this.only, this.onAnswer});
   @override
   State<QuizPage> createState() => _QuizState();
 }
@@ -1417,8 +1425,16 @@ class _QuizState extends State<QuizPage> {
   J? picked;
   final wrong = <J>[];
 
+  @override
+  void initState() {
+    super.initState();
+    if (widget.only != null) {
+      qs = makeQuiz(terms, rnd, only: widget.only, n: widget.only!.length);
+    }
+  }
+
   void start() => setState(() {
-        qs = makeQuiz(terms, rnd, cat: cat);
+        qs = makeQuiz(terms, rnd, cat: cat, only: widget.only, n: widget.only?.length ?? 10);
         i = score = 0;
         picked = null;
         wrong.clear();
@@ -1426,6 +1442,7 @@ class _QuizState extends State<QuizPage> {
 
   void pick(J t) {
     if (picked != null) return;
+    widget.onAnswer?.call(qs[i].answer['id'], t['id'] == qs[i].answer['id']);
     setState(() {
       picked = t;
       if (t['id'] == qs[i].answer['id']) {
@@ -1517,7 +1534,7 @@ class _QuizState extends State<QuizPage> {
       ];
     }
     return Scaffold(
-      appBar: topBar(context, '용어 퀴즈', cat ?? '전체'),
+      appBar: topBar(context, widget.only != null ? '복습 퀴즈' : '용어 퀴즈', widget.only != null ? '' : cat ?? '전체'),
       body: ListView(padding: pad, children: spaced(12, [...body, Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5))])),
     );
   }
