@@ -1698,8 +1698,8 @@ class _Lines extends CustomPainter {
 }
 
 // ---------- 일정: 경제 지표 발표·실적 발표 (assets/calendar.json, 매일 build_calendar.py가 갱신)
-// kind → (짧은 이름, 왜 중요한지 한 줄, 누르면 여는 용어)
-const calKinds = {
+// kind → (짧은 이름, 왜 중요한지 한 줄, 누르면 여는 용어). 'other'는 일정마다 why를 따로 가진다.
+const calKinds = <String, (String, String, String?)>{
   'fomc': ('미국 금리', '미국 기준금리를 정하는 날이에요. 금리가 바뀌면 전 세계 주식시장이 크게 움직여요.', 'fed_fomc'),
   'us_cpi': ('미국 물가', '물가가 예상보다 높으면 금리 인하가 늦어질까 봐 시장이 걱정해요.', 'cpi'),
   'us_jobs': ('미국 고용', '일자리가 얼마나 늘었는지 보여줘요. 경기가 튼튼한지 보는 성적표예요.', 'jobs_report'),
@@ -1707,17 +1707,19 @@ const calKinds = {
   'us_gdp': ('미국 성장', '미국 경제가 지난 분기에 얼마나 컸는지 보여줘요.', 'gdp'),
   'bok_rate': ('한국 금리', '한국 기준금리를 정하는 날이에요. 대출 이자와 한국 주식에 영향을 줘요.', 'interest_rate'),
   'kr_cpi': ('한국 물가', '한국 물가가 오르면 한국은행이 금리를 내리기 어려워져요.', 'cpi'),
+  'other': ('경제 지표', '', null),
   'earnings': ('실적', '회사가 지난 분기 성적표를 내요. 예상과 차이가 크면 주가가 크게 움직여요.', 'earnings_surprise'),
 };
 
 const _weekdays = ['월', '화', '수', '목', '금', '토', '일'];
 
-// '2026-11-17' → '오늘' / '내일' / '11월 17일 (화)'
+// '2026-11-17' → '오늘' / '내일' / '어제' / '11월 17일 (화)'
 String calDay(String iso, [DateTime? now]) {
   final d = DateTime.parse(iso), n = now ?? DateTime.now();
   final diff = DateTime(d.year, d.month, d.day).difference(DateTime(n.year, n.month, n.day)).inDays;
   if (diff == 0) return '오늘';
   if (diff == 1) return '내일';
+  if (diff == -1) return '어제';
   return '${d.month}월 ${d.day}일 (${_weekdays[d.weekday - 1]})';
 }
 
@@ -1725,72 +1727,136 @@ String calDay(String iso, [DateTime? now]) {
 String calTime(J e) {
   final String? kst = e['kst'];
   if (kst != null) return kst.substring(11);
-  return switch (e['when']) { 'after' => '아침', 'before' => '밤', _ => '시간 미정' };
+  return switch (e['when']) { 'after' => '아침', 'before' => '밤', _ => '미정' };
+}
+
+String calNote(J e) => e['type'] == 'earnings'
+    ? switch (e['when']) { 'after' => '미국 장 마감 뒤 발표', 'before' => '미국 장 시작 전 발표', _ => '발표 시각 미정' }
+    : (e['why'] as String?) ?? calKinds[e['kind']]?.$2 ?? '';
+
+// 일정 한 줄. 결과가 있으면 결과 요약을 함께 보여준다.
+Widget calRow(BuildContext ctx, P p, J e, Map byTk, {bool first = true, bool last = true, Color? bg}) {
+  final co = byTk[e['ticker']] as J?;
+  final J? r = e['result'] is Map ? (e['result'] as Map).cast<String, dynamic>() : null;
+  final row = Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+    child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      SizedBox(
+          width: 52,
+          child: Text(calTime(e), style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.muted, fontFeatures: tabular))),
+      Expanded(
+          child: col(4, [
+        Row(children: [
+          if (co != null) ...[logo(co, 22), const SizedBox(width: 8)],
+          Expanded(child: txt(e['title'], const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.35))),
+        ]),
+        if (r == null)
+          txt(calNote(e), sub(p, 13).copyWith(height: 1.45))
+        else ...[
+          txt(r['summary'], TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: p.fg, height: 1.45)),
+          rich([TextSpan(text: '의미  ', style: TextStyle(fontWeight: FontWeight.w700, color: p.accent)), s(r['impact'])],
+              sub(p, 13).copyWith(height: 1.45)),
+          Text('출처: ${r['source']}', style: sub(p, 11.5)),
+        ],
+      ])),
+      const SizedBox(width: 8),
+      Text(calKinds[e['kind']]?.$1 ?? '',
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: e['type'] == 'macro' ? p.accent : p.good)),
+    ]),
+  );
+  void open() {
+    if (e['type'] == 'earnings' && co != null) {
+      Navigator.push(ctx, MaterialPageRoute(builder: (_) => DetailPage(co)));
+    } else if (calKinds[e['kind']]?.$3 case final String term) {
+      openTerm(ctx, term);
+    }
+  }
+
+  if (bg == null) return groupRow(p, first, last, open, row);
+  return Material(color: bg, child: InkWell(onTap: open, child: row));
 }
 
 List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(String?) setType) {
   final today = DateTime.now().toIso8601String().substring(0, 10);
-  final evs = [for (final J e in calendar['events']) if (e['date'].compareTo(today) >= 0 && (type == null || e['type'] == type)) e];
-  final days = <String, List<J>>{};
-  for (final e in evs) {
-    (days[e['date']] ??= []).add(e);
-  }
   // 하루 안에서는 이른 시각부터 (아침 ≈ 06시, 밤 ≈ 22시, 미정은 맨 뒤)
   String order(J e) => e['kst']?.substring(11) ?? switch (e['when']) { 'after' => '06:00', 'before' => '22:00', _ => '99' };
-  for (final l in days.values) {
-    l.sort((a, b) => order(a).compareTo(order(b)));
+  int byTime(J a, J b) => order(a).compareTo(order(b));
+  final all = [for (final J e in calendar['events']) e];
+  final todays = all.where((e) => e['date'] == today).toList()..sort(byTime);
+  final shown = all.where((e) => type == null || e['type'] == type);
+  final days = <String, List<J>>{};
+  for (final e in shown.where((e) => e['date'].compareTo(today) > 0)) {
+    (days[e['date']] ??= []).add(e);
   }
+  for (final l in days.values) {
+    l.sort(byTime);
+  }
+  // 지난 일정 중 결과 요약이 있는 것, 최근 것부터
+  final past = (all.where((e) => e['date'].compareTo(today) < 0 && e['result'] is Map).toList()
+        ..sort((a, b) => b['date'].compareTo(a['date'])))
+      .take(6)
+      .toList();
+  final next = all.where((e) => e['date'].compareTo(today) > 0).toList()
+    ..sort((a, b) => a['date'] == b['date'] ? byTime(a, b) : a['date'].compareTo(b['date']));
   final byTk = {for (final c in companies) c['ticker']: c};
+
   return [
-    txt('시장을 움직이는 경제 지표 발표와 회사 실적 발표 일정이에요. 실적 발표 날은 회사가 지난 분기 성적표를 내는 날이라, 예상과 차이가 크면 주가가 크게 움직여요. 시각은 모두 한국 시간이고, 누르면 뜻이나 회사 노트가 열려요.',
+    // 오늘의 주요 일정: 화면에서 가장 먼저, 파란 바탕 한 겹으로 구분 (필터와 상관없이 오늘 것은 다 보임)
+    Container(
+      decoration: BoxDecoration(color: p.accentSoft, borderRadius: BorderRadius.circular(16)),
+      clipBehavior: Clip.antiAlias,
+      child: col(0, [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 6),
+          child: Row(children: [
+            Icon(Icons.today_rounded, size: 20, color: p.accent),
+            const SizedBox(width: 8),
+            Expanded(child: Text('오늘의 주요 일정', style: h(18))),
+            Text(
+                '${DateTime.now().month}월 ${DateTime.now().day}일 (${_weekdays[DateTime.now().weekday - 1]})',
+                style: sub(p, 12).copyWith(fontFeatures: tabular)),
+          ]),
+        ),
+        if (todays.isEmpty)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 4, 16, 16),
+            child: col(4, [
+              txt('오늘은 시장을 움직일 큰 발표가 없어요.', const TextStyle(fontSize: 15, fontWeight: FontWeight.w600)),
+              if (next.isNotEmpty) txt('다음 일정: ${calDay(next.first['date'])} ${calTime(next.first)} · ${next.first['title']}', sub(p, 13)),
+            ]),
+          )
+        else
+          for (final (i, e) in todays.indexed) ...[
+            if (i > 0) Container(height: 1, margin: const EdgeInsets.symmetric(horizontal: 16), color: p.accent.withValues(alpha: .18)),
+            calRow(ctx, p, e, byTk, bg: Colors.transparent),
+          ],
+      ]),
+    ),
+    Padding(padding: const EdgeInsets.fromLTRB(4, 24, 4, 4), child: Text('지난 일정 결과', style: h(18))),
+    txt('발표가 끝난 일정은 AI가 결과와 그 의미를 쉽게 정리해요.', sub(p, 13)),
+    const SizedBox(height: 8),
+    if (past.isEmpty) txt('아직 정리된 결과가 없어요. 발표가 끝나면 다음 날 아침에 정리해서 보여드려요.', sub(p, 14)),
+    for (final (i, e) in past.indexed) ...[
+      if (i == 0 || past[i - 1]['date'] != e['date'])
+        Padding(padding: const EdgeInsets.fromLTRB(4, 12, 4, 8), child: Text(calDay(e['date']), style: sub(p, 13).copyWith(fontWeight: FontWeight.w700))),
+      calRow(ctx, p, e, byTk,
+          first: i == 0 || past[i - 1]['date'] != e['date'], last: i == past.length - 1 || past[i + 1]['date'] != e['date']),
+    ],
+    Padding(padding: const EdgeInsets.fromLTRB(4, 24, 4, 4), child: Text('앞으로의 일정', style: h(18))),
+    txt('시장을 움직이는 경제 지표 발표와 회사 실적 발표예요. 실적 발표 날은 회사가 지난 분기 성적표를 내는 날이라, 예상과 차이가 크면 주가가 크게 움직여요. 시각은 모두 한국 시간이고, 누르면 뜻이나 회사 노트가 열려요.',
         sub(p, 13)),
     const SizedBox(height: 12),
     Wrap(spacing: 6, children: [
       for (final (t, label) in [(null, '전체'), ('macro', '경제 지표'), ('earnings', '실적 발표')])
         ChoiceChip(label: Text(label), selected: type == t, showCheckmark: false, onSelected: (_) => setType(t)),
     ]),
-    const SizedBox(height: 8),
-    if (evs.isEmpty)
-      Padding(padding: const EdgeInsets.only(top: 12), child: txt('앞으로 정해진 일정이 아직 없어요. 매일 새로 받아와요.', sub(p, 14))),
+    if (days.isEmpty) Padding(padding: const EdgeInsets.only(top: 16), child: txt('앞으로 정해진 일정이 아직 없어요. 매일 새로 받아와요.', sub(p, 14))),
     for (final MapEntry(key: day, value: list) in days.entries) ...[
-      Padding(
-          padding: const EdgeInsets.fromLTRB(4, 20, 4, 8),
-          child: Text(calDay(day), style: h(16).copyWith(color: day == today ? p.accent : p.fg))),
-      for (final (i, e) in list.indexed)
-        groupRow(p, i == 0, i == list.length - 1, () {
-          final co = byTk[e['ticker']];
-          if (e['type'] == 'earnings' && co != null) {
-            Navigator.push(ctx, MaterialPageRoute(builder: (_) => DetailPage(co)));
-          } else if (calKinds[e['kind']] case (_, _, final String term)) {
-            openTerm(ctx, term);
-          }
-        },
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-              child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                SizedBox(
-                    width: 52,
-                    child: Text(calTime(e),
-                        style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: p.muted, fontFeatures: tabular))),
-                Expanded(
-                    child: col(4, [
-                  Row(children: [
-                    if (byTk[e['ticker']] case final J co) ...[logo(co, 22), const SizedBox(width: 8)],
-                    Expanded(child: txt(e['title'], const TextStyle(fontSize: 15, fontWeight: FontWeight.w700, height: 1.35))),
-                  ]),
-                  txt(
-                      e['type'] == 'earnings'
-                          ? switch (e['when']) { 'after' => '미국 장 마감 뒤 발표', 'before' => '미국 장 시작 전 발표', _ => '발표 시각 미정' }
-                          : calKinds[e['kind']]?.$2 ?? '',
-                      sub(p, 13).copyWith(height: 1.45)),
-                ])),
-                const SizedBox(width: 8),
-                Text(calKinds[e['kind']]?.$1 ?? '',
-                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700, color: e['type'] == 'macro' ? p.accent : p.good)),
-              ]),
-            )),
+      Padding(padding: const EdgeInsets.fromLTRB(4, 20, 4, 8), child: Text(calDay(day), style: h(16))),
+      for (final (i, e) in list.indexed) calRow(ctx, p, e, byTk, first: i == 0, last: i == list.length - 1),
     ],
     const SizedBox(height: 20),
-    txt('${calendar['note']} 실적 발표 \'아침\'은 미국 장 마감 뒤, \'밤\'은 미국 장 시작 전이에요. $disclaimer', sub(p, 11.5)),
+    txt('${calendar['note']} 실적 발표 \'아침\'은 미국 장 마감 뒤, \'밤\'은 미국 장 시작 전이에요. 결과 요약은 AI가 정리해서 틀릴 수 있어요. $disclaimer',
+        sub(p, 11.5)),
   ];
 }

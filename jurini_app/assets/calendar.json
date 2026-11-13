@@ -11,7 +11,8 @@
    "when": "before",
    "title": "홈디포 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/hd/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/hd/earnings",
+   "id": "2026-11-17:HD"
   },
   {
    "date": "2026-11-18",
@@ -22,7 +23,8 @@
    "when": "after",
    "title": "엔비디아 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/nvda/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/nvda/earnings",
+   "id": "2026-11-18:NVDA"
   },
   {
    "date": "2026-11-19",
@@ -33,7 +35,8 @@
    "when": "before",
    "title": "월마트 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/wmt/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/wmt/earnings",
+   "id": "2026-11-19:WMT"
   },
   {
    "date": "2026-11-19",
@@ -44,7 +47,8 @@
    "when": "after",
    "title": "팔로알토 네트웍스 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/panw/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/panw/earnings",
+   "id": "2026-11-19:PANW"
   },
   {
    "date": "2026-11-25",
@@ -53,7 +57,8 @@
    "kind": "us_pce",
    "title": "미국 PCE 물가",
    "source": "미국 경제분석국(BEA)",
-   "url": "https://www.bea.gov/news/schedule"
+   "url": "https://www.bea.gov/news/schedule",
+   "id": "2026-11-25:us_pce"
   },
   {
    "date": "2026-11-26",
@@ -62,7 +67,8 @@
    "kind": "bok_rate",
    "title": "한국 기준금리 결정(금통위)",
    "source": "한국은행",
-   "url": "https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?menuNo=200755&mtgSe=A"
+   "url": "https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?menuNo=200755&mtgSe=A",
+   "id": "2026-11-26:bok_rate"
   },
   {
    "date": "2026-12-02",
@@ -73,7 +79,8 @@
    "when": "after",
    "title": "크라우드스트라이크 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/crwd/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/crwd/earnings",
+   "id": "2026-12-02:CRWD"
   },
   {
    "date": "2026-12-04",
@@ -82,7 +89,8 @@
    "kind": "us_jobs",
    "title": "미국 고용보고서",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "id": "2026-12-04:us_jobs"
   },
   {
    "date": "2026-12-09",
@@ -93,7 +101,8 @@
    "when": null,
    "title": "오라클 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/orcl/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/orcl/earnings",
+   "id": "2026-12-09:ORCL"
   },
   {
    "date": "2026-12-10",
@@ -104,7 +113,8 @@
    "when": "after",
    "title": "브로드컴 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/avgo/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/avgo/earnings",
+   "id": "2026-12-10:AVGO"
   },
   {
    "date": "2026-12-10",
@@ -115,7 +125,8 @@
    "when": null,
    "title": "코스트코 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/cost/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/cost/earnings",
+   "id": "2026-12-10:COST"
   },
   {
    "date": "2026-12-10",
@@ -124,7 +135,8 @@
    "kind": "fomc",
    "title": "미국 금리 결정(FOMC)",
    "source": "연준(Federal Reserve)",
-   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "id": "2026-12-10:fomc"
   },
   {
    "date": "2026-12-10",
@@ -133,7 +145,8 @@
    "kind": "us_cpi",
    "title": "미국 소비자물가지수(CPI)",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "id": "2026-12-10:us_cpi"
   },
   {
    "date": "2026-12-16",
@@ -144,7 +157,8 @@
    "when": null,
    "title": "마이크론 실적 발표",
    "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/mu/earnings"
+   "url": "https://www.nasdaq.com/market-activity/stocks/mu/earnings",
+   "id": "2026-12-16:MU"
   },
   {
    "date": "2026-12-23",
@@ -153,7 +167,8 @@
    "kind": "us_pce",
    "title": "미국 PCE 물가",
    "source": "미국 경제분석국(BEA)",
-   "url": "https://www.bea.gov/news/schedule"
+   "url": "https://www.bea.gov/news/schedule",
+   "id": "2026-12-23:us_pce"
   },
   {
    "date": "2027-01-08",
@@ -162,7 +177,8 @@
    "kind": "us_jobs",
    "title": "미국 고용보고서",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "id": "2027-01-08:us_jobs"
   },
   {
    "date": "2027-01-13",
@@ -171,7 +187,8 @@
    "kind": "us_cpi",
    "title": "미국 소비자물가지수(CPI)",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "id": "2027-01-13:us_cpi"
   },
   {
    "date": "2027-01-14",
@@ -180,7 +197,8 @@
    "kind": "bok_rate",
    "title": "한국 기준금리 결정(금통위)",
    "source": "한국은행",
-   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265",
+   "id": "2027-01-14:bok_rate"
   },
   {
    "date": "2027-01-28",
@@ -189,7 +207,8 @@
    "kind": "fomc",
    "title": "미국 금리 결정(FOMC)",
    "source": "연준(Federal Reserve)",
-   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+   "id": "2027-01-28:fomc"
   },
   {
    "date": "2027-01-28",
@@ -198,7 +217,8 @@
    "kind": "us_gdp",
    "title": "미국 GDP 속보치",
    "source": "미국 경제분석국(BEA)",
-   "url": "https://www.bea.gov/news/schedule"
+   "url": "https://www.bea.gov/news/schedule",
+   "id": "2027-01-28:us_gdp"
   },
   {
    "date": "2027-01-28",
@@ -207,7 +227,8 @@
    "kind": "us_pce",
    "title": "미국 PCE 물가",
    "source": "미국 경제분석국(BEA)",
-   "url": "https://www.bea.gov/news/schedule"
+   "url": "https://www.bea.gov/news/schedule",
+   "id": "2027-01-28:us_pce"
   },
   {
    "date": "2027-02-05",
@@ -216,7 +237,8 @@
    "kind": "us_jobs",
    "title": "미국 고용보고서",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "id": "2027-02-05:us_jobs"
   },
   {
    "date": "2027-02-11",
@@ -225,7 +247,8 @@
    "kind": "us_cpi",
    "title": "미국 소비자물가지수(CPI)",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "id": "2027-02-11:us_cpi"
   },
   {
    "date": "2027-02-25",
@@ -234,7 +257,8 @@
    "kind": "bok_rate",
    "title": "한국 기준금리 결정(금통위)",
    "source": "한국은행",
-   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265"
+   "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265",
+   "id": "2027-02-25:bok_rate"
   },
   {
    "date": "2027-02-25",
@@ -243,7 +267,8 @@
    "kind": "us_pce",
    "title": "미국 PCE 물가",
    "source": "미국 경제분석국(BEA)",
-   "url": "https://www.bea.gov/news/schedule"
+   "url": "https://www.bea.gov/news/schedule",
+   "id": "2027-02-25:us_pce"
   },
   {
    "date": "2027-03-05",
@@ -252,7 +277,8 @@
    "kind": "us_jobs",
    "title": "미국 고용보고서",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/empsit.htm"
+   "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
+   "id": "2027-03-05:us_jobs"
   },
   {
    "date": "2027-03-10",
@@ -261,7 +287,8 @@
    "kind": "us_cpi",
    "title": "미국 소비자물가지수(CPI)",
    "source": "미국 노동통계국(BLS)",
-   "url": "https://www.bls.gov/schedule/news_release/cpi.htm"
+   "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
+   "id": "2027-03-10:us_cpi"
   }
  ]
 }

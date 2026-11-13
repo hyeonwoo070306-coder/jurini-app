@@ -17,6 +17,8 @@ from build_sp500 import fetch
 
 OUT, COPY = "docs/calendar.json", "jurini_app/assets/calendar.json"
 MACRO = "calendar_macro.json"
+RESULTS = "calendar_results.json"  # 지난 일정 결과 요약 (AI 예약 작업이 채움, 키 = 일정 id)
+DAYS_PAST = 14
 DAYS_AHEAD = 120
 MONTHS = {m: i for i, m in enumerate(["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], 1)}
 
@@ -38,6 +40,11 @@ def to_kst(day, hhmm, zone):
     return t.astimezone(timezone(timedelta(hours=9))).strftime("%Y-%m-%d %H:%M")
 
 
+def event_id(e):
+    """일정 하나의 고유 이름 (결과 요약을 붙일 때 씀): '2026-12-10:fomc', '2026-11-18:NVDA'"""
+    return f"{e['date']}:{e.get('ticker') or e['kind']}"
+
+
 def macro_events(today, until):
     out = []
     for e in json.load(open(MACRO, encoding="utf-8"))["events"]:
@@ -48,7 +55,7 @@ def macro_events(today, until):
             hhmm, zone = e["time"].split()
             kst = to_kst(e["date"], hhmm, zone)
         out.append({"date": (kst or e["date"])[:10], "kst": kst, "type": "macro", "kind": e["kind"], "title": e["title"],
-                    "source": e["source"], "url": e["url"]})
+                    "source": e["source"], "url": e["url"], **({"why": e["why"]} if e.get("why") else {})})
     return out
 
 
@@ -71,15 +78,20 @@ def selfcheck():
     assert parse_earnings({"announcement": "Earnings announcement* for NVDA: Nov 17, 2026",
                            "reportText": "expected* to report earnings on 11/17/2026 after market close."}) == ("2026-11-17", "after")
     assert parse_earnings({"announcement": None}) is None
+    assert event_id({"date": "2026-12-10", "kind": "fomc"}) == "2026-12-10:fomc"
+    assert event_id({"date": "2026-11-18", "kind": "earnings", "ticker": "NVDA"}) == "2026-11-18:NVDA"
 
 
 def main():
     selfcheck()
     today = date.today().isoformat()
     until = (date.today() + timedelta(days=DAYS_AHEAD)).isoformat()
-    events = macro_events(today, until)
+    start = (date.today() - timedelta(days=DAYS_PAST)).isoformat()
+    events = macro_events(start, until)
     prev = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {"events": []}
     prev_earn = {e["ticker"]: e for e in prev["events"] if e["type"] == "earnings"}
+    # 이미 지난 실적 발표는 나스닥이 다음 분기 날짜로 바꿔 버리므로, 지난번 파일에서 그대로 가져온다
+    events += [e for e in prev["events"] if e["type"] == "earnings" and start <= e["date"] < today]
     cs = json.load(open("jurini_app/assets/companies.json", encoding="utf-8"))["companies"]
     failed = 0
     for c in cs:
@@ -102,7 +114,18 @@ def main():
         time.sleep(0.4)
     if failed > 25:
         sys.exit(f"절반 넘게 실패({failed}개) — 저장하지 않음")
-    events.sort(key=lambda e: (e["date"], e["kst"] or "", e["title"]))
+    results = json.load(open(RESULTS, encoding="utf-8")) if os.path.exists(RESULTS) else {}
+    seen, merged = set(), []
+    for e in events:
+        e["id"] = event_id(e)
+        if e["id"] in seen:
+            continue
+        seen.add(e["id"])
+        e.pop("result", None)
+        if e["id"] in results:
+            e["result"] = results[e["id"]]
+        merged.append(e)
+    events = sorted(merged, key=lambda e: (e["date"], e["kst"] or "", e["title"]))
     data = {"asof": today, "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 예상일(회사 확정 전엔 바뀔 수 있음). 시각은 한국 시간.",
             "events": events}
     with open(OUT, "w", encoding="utf-8") as fp:
