@@ -82,6 +82,7 @@ void main() {
     });
     setUp(() {
       SharedPreferences.setMockInitialValues({});
+      resetProgressCache();
       calendar = {'asof': 'x', 'note': 'n', 'events': []};
       news = {...news}..remove('market');
     });
@@ -142,6 +143,7 @@ void main() {
       tall(t);
       final p = Progress.fromJson(null)..done.addAll(allIds());
       SharedPreferences.setMockInitialValues({'progress_v1': p.toJson()});
+      resetProgressCache();
       await t.pumpWidget(const MaterialApp(home: LearnPage()));
       await t.pumpAndSettle();
       expect(find.textContaining(kt('오늘은 복습만 해요')), findsOneWidget);
@@ -167,6 +169,7 @@ void main() {
         };
     setUp(() {
       SharedPreferences.setMockInitialValues({});
+      resetProgressCache();
       aiToday = null;
       aiArchive = [];
       lessons = course;
@@ -213,6 +216,7 @@ void main() {
       expect(find.textContaining(kt('4단계 내용이에요')), findsOneWidget);
       final p = Progress.fromJson(null)..done.addAll(allIds());
       SharedPreferences.setMockInitialValues({'progress_v1': p.toJson()});
+      resetProgressCache();
       await t.pumpWidget(const MaterialApp(home: LearnPage(key: ValueKey('done'))));
       await t.pumpAndSettle();
       expect(find.textContaining(kt('오늘은 복습만 해요')), findsNothing);
@@ -225,6 +229,7 @@ void main() {
   group('뉴스 → 배우기', () {
     setUp(() {
       SharedPreferences.setMockInitialValues({});
+      resetProgressCache();
       lessons = course;
     });
 
@@ -251,6 +256,82 @@ void main() {
       await t.pumpAndSettle();
       expect(find.text('이 뉴스 이해하기'), findsNothing);
       expect(t.takeException(), isNull);
+    });
+  });
+
+  group('최종 검토 수정', () {
+    setUp(() {
+      SharedPreferences.setMockInitialValues({});
+      resetProgressCache();
+      lessons = course;
+      aiToday = null;
+    });
+
+    testWidgets('다른 경로(수업으로 배우기)에서 끝낸 진도가 배우기 탭 저장에 덮어써지지 않음', (t) async {
+      t.view.physicalSize = const Size(1080, 8000);
+      addTearDown(t.view.reset);
+      await t.pumpWidget(const MaterialApp(home: LearnPage()));
+      await t.pumpAndSettle();
+      // 용어 팝업 → 수업으로 배우기 경로와 같은 방식으로 진도 갱신
+      final other = await loadProgress();
+      finishLesson(other, courseLessons(course)[5], [], DateTime.now()); // s2l1
+      await saveProgress(other);
+      // 배우기 탭에서 수업 하나 끝내기
+      await t.tap(find.byKey(const ValueKey('today-lesson')));
+      await t.pumpAndSettle();
+      for (var i = 0; i < 4; i++) {
+        await t.tap(find.text('다음'));
+        await t.pumpAndSettle();
+      }
+      for (var i = 0; i < 3; i++) {
+        await t.tap(find.byKey(const ValueKey('option-0')));
+        await t.pumpAndSettle();
+        await t.tap(find.text(i < 2 ? '다음 문제' : '결과 보기'));
+        await t.pumpAndSettle();
+      }
+      await t.tap(find.text('수업 끝내기'));
+      await t.pumpAndSettle();
+      final saved = Progress.fromJson((await SharedPreferences.getInstance()).getString('progress_v1'));
+      expect(saved.done, containsAll(['s1l1', 's2l1']));
+    });
+
+    testWidgets('퀴즈 보기는 섞여 나오고, 정답은 위치가 아니라 내용으로 판정', (t) async {
+      t.view.physicalSize = const Size(1080, 6000);
+      addTearDown(t.view.reset);
+      final l = courseLessons(course)[6]; // s2l2: 정답이 대부분 두 번째 보기
+      await t.pumpWidget(MaterialApp(home: LessonPage(l, rnd: Random(3))));
+      for (var i = 0; i < (l['cards'] as List).length; i++) {
+        await t.tap(find.text('다음'));
+        await t.pumpAndSettle();
+      }
+      var moved = false;
+      for (var qi = 0; qi < 3; qi++) {
+        final q = l['quiz'][qi];
+        final correct = q['options'][q['answer']] as String;
+        final shown = [for (var k = 0; k < 4; k++) (t.widget<Text>(find.descendant(of: find.byKey(ValueKey('option-$k')), matching: find.byType(Text))).data ?? '').replaceAll('⁠', '')];
+        if (shown.indexOf(correct) != q['answer']) moved = true;
+        await t.tap(find.byKey(ValueKey('option-${shown.indexOf(correct)}')));
+        await t.pumpAndSettle();
+        expect(find.textContaining(kt('맞았어요')), findsOneWidget);
+        await t.tap(find.text(qi < 2 ? '다음 문제' : '결과 보기'));
+        await t.pumpAndSettle();
+      }
+      expect(moved, isTrue);
+      expect(find.textContaining(kt('3개 맞혔어요')), findsOneWidget);
+    });
+
+    testWidgets('복습 퀴즈 결과 화면엔 분야 바꾸기가 없음', (t) async {
+      t.view.physicalSize = const Size(1080, 8000);
+      addTearDown(t.view.reset);
+      await t.pumpWidget(const MaterialApp(home: QuizPage(only: {'per', 'pbr', 'roe'})));
+      for (var k = 0; k < 3; k++) {
+        await t.tap(find.byType(InkWell).first);
+        await t.pump();
+        await t.tap(find.text(k < 2 ? '다음 문제' : '결과 보기'));
+        await t.pump();
+      }
+      expect(find.textContaining('3문제 중'), findsOneWidget);
+      expect(find.text('분야 바꾸기'), findsNothing);
     });
   });
 }

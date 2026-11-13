@@ -1517,7 +1517,8 @@ class _QuizState extends State<QuizPage> {
           Wrap(spacing: 6, runSpacing: 6, children: [for (final t in wrong) chip(p, t['term'], () => openTerm(context, t['id']))]),
         ],
         FilledButton(onPressed: start, child: const Padding(padding: EdgeInsets.all(12), child: Text('다시 풀기', style: bold))),
-        OutlinedButton(onPressed: () => setState(() => qs = []), child: const Padding(padding: EdgeInsets.all(12), child: Text('분야 바꾸기'))),
+        if (widget.only == null) // 복습 퀴즈엔 분야 선택이 없다
+          OutlinedButton(onPressed: () => setState(() => qs = []), child: const Padding(padding: EdgeInsets.all(12), child: Text('분야 바꾸기'))),
       ];
     } else {
       // 문제 화면

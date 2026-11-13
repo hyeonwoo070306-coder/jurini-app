@@ -11,7 +11,7 @@ import sys
 
 OUT, COPY = "docs/news.json", "jurini_app/assets/news.json"
 BANNED = re.compile(r"목표가|목표 주가|매수|매도|추천|사세요|파세요|사야|팔아야|급등할|폭락할|오를 것|내릴 것|오를 거|내릴 거")
-PRICE = re.compile(r"주가[^.]{0,12}\d[\d,.]*\s*(원|달러|만\s*원)|\d[\d,.]*\s*(달러|원)\s*(로|까지|선)\s*(올|내|떨|상승|하락)")
+PRICE = re.compile(r"주가[^.]{0,12}\d|\d[\d,.]*\s*(달러|원)\s*(로|까지|선)\s*(올|내|떨|상승|하락)")
 DATE = re.compile(r"^\d{4}(-\d{2}){0,2}$")  # 연도만, 연-월, 연-월-일
 
 
@@ -80,6 +80,8 @@ def selfcheck():
     bad = {"asof": "2026-11-13", "companies": {**good["companies"], "T0": [{**item, "impact": "주가가 300달러까지 오를 것"}]}}
     assert problems(bad, known), "금지 표현을 못 잡음"
     assert problems({"asof": "2026-11-13", "companies": {"T0": [item]}}, known), "회사 수 급감을 못 잡음"
+    for bad_text in ("주가 5% 하락", "엔비디아 주가 3배", "주가가 300까지 올랐어요"):  # 뉴스엔 주가 숫자 자체 금지
+        assert PRICE.search(bad_text), bad_text
     terms = {"cpi", "per"}
     assert problems({**good, "market": [item, item]}, known, terms) == [], "market 정상인데 오류"
     assert problems({**good, "market": [item] * 5}, known, terms), "market 5개를 못 잡음"

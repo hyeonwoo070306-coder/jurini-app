@@ -24,9 +24,19 @@ class Progress {
 
 const _progressKey = 'progress_v1';
 
-Future<Progress> loadProgress() async => Progress.fromJson((await SharedPreferences.getInstance()).getString(_progressKey));
+// 진도는 앱 전체에서 한 개만 쓴다. 배우기 탭과 '수업으로 배우기'가 서로 덮어쓰지 않게.
+Progress? _progressCache;
 
-Future<void> saveProgress(Progress p) async => (await SharedPreferences.getInstance()).setString(_progressKey, p.toJson());
+@visibleForTesting
+void resetProgressCache() => _progressCache = null;
+
+Future<Progress> loadProgress() async =>
+    _progressCache ??= Progress.fromJson((await SharedPreferences.getInstance()).getString(_progressKey));
+
+Future<void> saveProgress(Progress p) async {
+  _progressCache = p;
+  await (await SharedPreferences.getInstance()).setString(_progressKey, p.toJson());
+}
 
 String dayKey(DateTime d) => '${d.year}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
 
@@ -390,14 +400,19 @@ class LessonPage extends StatefulWidget {
   final J lesson;
   final bool ai;
   final String? goal;
-  const LessonPage(this.lesson, {super.key, this.ai = false, this.goal});
+  final Random? rnd;
+  const LessonPage(this.lesson, {super.key, this.ai = false, this.goal, this.rnd});
   @override
   State<LessonPage> createState() => _LessonState();
 }
 
 class _LessonState extends State<LessonPage> {
   int step = 0, score = 0;
-  int? picked;
+  int? picked; // 고른 보기의 원래 번호
+  // 문제마다 보기 순서를 한 번 섞는다 (정답이 늘 같은 자리에 있지 않게)
+  late final List<List<int>> orders = [
+    for (final _ in widget.lesson['quiz'] as List) [0, 1, 2, 3]..shuffle(widget.rnd ?? Random())
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -427,9 +442,9 @@ class _LessonState extends State<LessonPage> {
       body = [
         Text('퀴즈 ${step - cards.length + 1} / ${quiz.length}', style: sub(p, 13).copyWith(fontWeight: FontWeight.w700)),
         txt(q['q'], const TextStyle(fontSize: 18, fontWeight: FontWeight.w700, height: 1.5)),
-        for (final (k, o) in (q['options'] as List).indexed)
+        for (final (pos, k) in orders[step - cards.length].indexed)
           Material(
-            key: ValueKey('option-$k'),
+            key: ValueKey('option-$pos'),
             color: picked == null
                 ? p.surface
                 : k == q['answer']
@@ -450,7 +465,7 @@ class _LessonState extends State<LessonPage> {
                 constraints: const BoxConstraints(minHeight: 52, minWidth: double.infinity),
                 child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                    child: txt(o, const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600))),
+                    child: txt(q['options'][k], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w600))),
               ),
             ),
           ),

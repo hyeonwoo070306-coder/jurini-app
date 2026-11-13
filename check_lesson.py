@@ -15,6 +15,9 @@ from check_news import BANNED, PRICE
 A = "jurini_app/assets/lessons.json"
 B_TODAY, B_ALL, B_TERMS = "docs/lesson_today.json", "docs/lessons_ai.json", "docs/glossary_ai.json"
 CARD_MAX = 90
+# 손으로 쓴 코스 수업은 "주가가 1년 이익의 몇 배" 같은 설명이 필요해서 단위(원·달러)가 붙은 주가 숫자만 막는다.
+# AI 수업은 뉴스로 쓰므로 뉴스와 같은 엄격한 규칙(주가 근처 숫자 금지)을 쓴다.
+COURSE_PRICE = re.compile(r"주가[^.]{0,12}\d[\d,.]*\s*(원|달러|만\s*원)|\d[\d,.]*\s*(달러|원)\s*(로|까지|선)\s*(올|내|떨|상승|하락)")
 
 
 def lesson_problems(lesson, term_ids, ai=False):
@@ -44,7 +47,8 @@ def lesson_problems(lesson, term_ids, ai=False):
                 and len(set(opts)) == 4 and isinstance(q.get("answer"), int) and 0 <= q["answer"] < 4):
             out.append(f"{w}: 퀴즈는 질문·보기 4개(서로 다름)·정답 번호 0~3·설명")
         texts += [str(q.get("q")), str(q.get("explain")), *map(str, opts or [])]
-    if any(BANNED.search(t) or PRICE.search(t) for t in texts):  # 문장마다 따로 (이어 붙이면 엉뚱하게 걸림)
+    price = PRICE if ai else COURSE_PRICE
+    if any(BANNED.search(t) or price.search(t) for t in texts):  # 문장마다 따로 (이어 붙이면 엉뚱하게 걸림)
         out.append(f"{w}: 투자 권유·주가 숫자 표현 금지")
     if ai:
         if lesson.get("stage") not in (1, 2, 3, 4, 5):
@@ -86,6 +90,8 @@ def selfcheck():
     assert lesson_problems({**ok, "cards": ok["cards"][:3] + ["주가가 오를 것 같아요."]}, ids), "금지 표현을 못 잡음"
     ai = {**ok, "stage": 4, "date": "2026-11-14", "verified": True, "sources": ["https://bls.gov"]}
     assert lesson_problems(ai, ids, ai=True) == []
+    assert lesson_problems({**ok, "cards": ok["cards"][:3] + ["PER은 주가가 1년 이익의 몇 배인지예요."]}, ids) == [], "코스 수업의 '주가가 1년'은 통과"
+    assert lesson_problems({**ai, "cards": ai["cards"][:3] + ["엔비디아 주가 5% 하락했어요."]}, ids, ai=True), "AI 수업의 주가 숫자를 못 잡음"
     assert lesson_problems({**ai, "verified": False}, ids, ai=True), "확인 안 된 AI 수업을 못 잡음"
     assert lesson_problems({**ai, "sources": []}, ids, ai=True), "출처 없는 AI 수업을 못 잡음"
     assert lesson_problems({**ai, "stage": 6}, ids, ai=True), "단계 6을 못 잡음"
