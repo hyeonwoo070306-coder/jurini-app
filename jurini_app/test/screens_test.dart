@@ -81,13 +81,22 @@ void main() {
     }
   });
 
-  testWidgets('뉴스 탭: 받은 뉴스를 최신순으로 보여주고, 없으면 안내', (tester) async {
-    feed = null;
+  testWidgets('뉴스 탭: AI 요약 카드를 보여주고, 호재·악재 필터와 미국/한국 버튼이 줄여 준다', (tester) async {
     await tester.pumpWidget(const MaterialApp(home: NewsPage()));
-    expect(find.textContaining(kt('인터넷에 연결하면')), findsOneWidget);
-    feed = jsonDecode(File('../docs/feed.json').readAsStringSync());
-    await tester.pumpWidget(const MaterialApp(home: NewsPage(key: ValueKey(2))));
-    expect(find.textContaining(kt('인터넷에 연결하면')), findsNothing);
+    int rows() => (find.byType(ListView).evaluate().single.widget as ListView).childrenDelegate.estimatedChildCount!;
+    final total = [for (final l in (news['companies'] as Map).values) ...l].length;
+    expect(find.text('${news['asof']} 정리'), findsOneWidget);
+    expect(find.textContaining('회사에 주는 영향'), findsWidgets);
+    expect(rows(), greaterThan(total)); // 모든 회사 뉴스가 한 목록에
+    final before = rows();
+    await tester.tap(find.widgetWithText(ChoiceChip, '악재'));
+    await tester.pump();
+    expect(rows(), lessThan(before));
+    final bad = rows();
+    await tester.tap(find.text('한국'));
+    await tester.pump();
+    expect(rows(), lessThan(bad));
+    expect(find.text('찾는 뉴스가 없어요.'), findsNothing); // 한국 회사 악재도 있음
     expect(tester.takeException(), isNull);
   });
 

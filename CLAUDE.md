@@ -27,7 +27,7 @@
 - `docs/news.json`: 50개 회사의 최근 뉴스(2~3개씩, type: good=호재/bad=악재/watch=지켜볼 일, 회사에 주는 영향, 출처). 앱은 켤 때 깃허브에서 최신본을 받고, 못 받으면 `jurini_app/assets/news.json`(복사본)을 쓴다. 기업 상세에서 회사 소개 바로 아래 가장 눈에 띄는 칸으로 보여준다. 지금은 손으로 정리하므로 주기적으로 새로 써야 한다. 주가 숫자는 뉴스에도 쓰지 않는다.
 - `check_news.py`: `docs/news.json` 검사기(형식, 투자 권유·주가 숫자 금지, 회사 수 급감 차단). 통과하면 앱 복사본도 갱신. Claude Code 예약 작업(클라우드, 하루 2번: 한국 07:00·19:00)이 `docs/feed.json` 제목을 보고 `docs/news.json`을 새로 정리한 뒤 이 검사를 통과해야 커밋한다. 한국 회사도 뉴스 카드가 나온다.
 - `build_more_us.py` → `jurini_app/assets/us_more.json`: 나스닥 100 중 S&P 500에 없는 회사(14개) 기본 카드와 나스닥 100 전체 티커 목록(앱이 '나스닥100' 표시). 목록은 나스닥 API, CIK는 SEC 검색, 재무는 `build_sp500.financials`. 해외 공시(20-F) 회사는 재무가 비어 있다. 새 회사가 들어오면 `KO`에 한글 이름·설명을 추가한다.
-- `build_feed.py` → `docs/feed.json`: 뉴스 탭용 회사별 최신 뉴스 제목(미국 50 + 한국 매출 상위 30, 구글 뉴스 RSS 한국어). `.github/workflows/feed.yml`이 매시간 실행. 주가 숫자·목표가·매수/매도가 들어간 제목은 거른다. 앱은 켤 때와 당겨서 새로고침할 때 받는다(앱 안에 복사본 없음). 출시 전에 상업 사용이 허용된 뉴스 API(네이버 검색 API 등)로 `fetch_news()`만 바꾼다.
+- `build_feed.py` → `docs/feed.json`: 회사별 최신 뉴스 제목(미국 50 + 한국 매출 상위 30, 구글 뉴스 RSS 한국어). `.github/workflows/feed.yml`이 매시간 실행. 주가 숫자·목표가·매수/매도가 들어간 제목은 거른다. 앱은 이제 feed.json을 쓰지 않는다(뉴스 탭은 `docs/news.json`의 AI 요약을 최신순으로 보여줌). 출시 전에 상업 사용이 허용된 뉴스 API(네이버 검색 API 등)로 `fetch_news()`만 바꾼다.
 - 로고: 앱이 `logoUrl()`(FMP 공개 로고 주소, 한국은 .KS/.KQ)에서 받고, 없거나 오프라인이면 글자 배지. 로고는 각 회사 상표라 출시 전에 이용 조건을 확인한다.
 - `glossary_why.py`: 용어마다 "주가에 왜 중요할까?" 설명(`WHY`)과 새 용어(`EXTRA`: EPS·컨센서스·어닝 서프라이즈). 새 용어를 넣으면 여기에 설명을 써야 `build.py`가 돈다(금리·물가 용어는 `MACRO`의 '시장에 주는 영향'이 대신함).
 - `build_surprise.py` → `docs/surprise.json`(+ `jurini_app/assets/surprise.json`): 미국 50개 회사의 증권사 예측 평균 EPS vs 실제 EPS(최근 4분기)와 다음 분기 예측(나스닥). 매일 `daily.yml`에서 실행, 앱 실적 탭에 표시. 매출·영업이익 예측은 유료 데이터라 없음.

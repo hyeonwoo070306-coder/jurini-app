@@ -12,7 +12,6 @@ typedef J = Map<String, dynamic>;
 
 late J data, sp500, news, kr, usMore, surprise, links;
 Set<String> ndx = {}; // 나스닥 100 티커
-J? feed; // 뉴스 탭: 매시간 깃허브가 모으는 회사별 최신 뉴스 제목 (인터넷에서만 받음)
 late List<dynamic> companies, terms;
 late Map<String, dynamic> G;
 
@@ -85,26 +84,6 @@ bool validValuation(J j) {
   return true;
 }
 
-bool validFeed(J f) {
-  final cs = f['companies'];
-  if (f['asof'] is! String || cs is! Map) return false;
-  for (final c in cs.values) {
-    if (c is! Map || c['name'] is! String || c['items'] is! List) return false;
-    for (final x in c['items']) {
-      if (x is! Map || x['t'] is! String || x['url'] is! String || x['date'] is! String) return false;
-    }
-  }
-  return true;
-}
-
-Future<void> loadFeed() async {
-  final f = await getJson('feed.json');
-  if (f != null && validFeed(f)) {
-    feed = f;
-    redraw.value++;
-  }
-}
-
 bool validSurprise(J j) {
   final cs = j['companies'];
   if (j['asof'] is! String || cs is! Map) return false;
@@ -118,7 +97,6 @@ bool validSurprise(J j) {
 }
 
 Future<void> loadLive() async {
-  loadFeed();
   getJson('surprise.json').then((j) {
     if (j != null && validSurprise(j)) {
       surprise = j;
@@ -185,17 +163,6 @@ String won(num m) {
   final jo = m * 1e6 * 1400 / 1e12;
   return jo >= 1 ? '약 ${jo.toStringAsFixed(jo >= 100 ? 0 : 1)}조 원' : '약 ${comma((jo * 10000).round())}억 원';
 }
-// "3시간 전" 같은 표시. now는 테스트에서 넣을 수 있게
-String ago(String iso, [DateTime? now]) {
-  final t = DateTime.tryParse(iso);
-  if (t == null) return '';
-  final d = (now ?? DateTime.now()).toUtc().difference(t.toUtc());
-  if (d.inMinutes < 1) return '방금';
-  if (d.inHours < 1) return '${d.inMinutes}분 전';
-  if (d.inDays < 1) return '${d.inHours}시간 전';
-  return '${d.inDays}일 전';
-}
-
 String nf(num x) => x == x.roundToDouble() ? x.round().toString() : x.toString();
 String opt(num? x, String unit) => x == null ? '-' : '${nf(x)}$unit';
 String period(String label) => label.replaceAll('최근 12개월(TTM)', '최근 12개월');
@@ -251,8 +218,9 @@ ThemeData theme(P p, Brightness b) => ThemeData(
           selectedColor: p.fg,
           side: BorderSide.none,
           shape: const StadiumBorder(),
-          labelStyle: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: p.muted),
-          secondaryLabelStyle: TextStyle(fontSize: 13.5, fontWeight: FontWeight.w600, color: p.surface),
+          // 직접 준 글자 모양은 테마 글꼴을 물려받지 않아서 글꼴을 꼭 적는다
+          labelStyle: TextStyle(fontFamily: 'Pretendard', fontSize: 13.5, fontWeight: FontWeight.w600, color: p.muted),
+          secondaryLabelStyle: TextStyle(fontFamily: 'Pretendard', fontSize: 13.5, fontWeight: FontWeight.w600, color: p.surface),
           padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 2)),
       inputDecorationTheme: InputDecorationTheme(
           filled: true,
@@ -311,26 +279,19 @@ const newsKinds = {'good': ('호재', '좋은 소식'), 'bad': ('악재', '걱�
 
 Widget newsCard(P p, List items) {
   Color colorOf(String t) => t == 'good' ? p.good : t == 'bad' ? p.warn : p.accent;
+  // 상세 화면에서 가장 먼저 눈에 띄어야 하는 칸: 장식 대신 파란 바탕 한 겹으로 구분
   return Container(
     padding: const EdgeInsets.fromLTRB(18, 18, 18, 16),
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(20),
-      border: Border.all(color: p.accent.withValues(alpha: .7), width: 1.5),
-      gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [p.accentSoft, p.surface]),
-      boxShadow: [BoxShadow(color: p.accent.withValues(alpha: .18), blurRadius: 24, offset: const Offset(0, 8))],
-    ),
+    decoration: BoxDecoration(color: p.accentSoft, borderRadius: BorderRadius.circular(16)),
     child: col(14, [
       Row(children: [
-        Container(
-            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-            decoration: BoxDecoration(color: p.accent, borderRadius: BorderRadius.circular(6)),
-            child: const Text('NEW', style: TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w800, letterSpacing: .5))),
+        Icon(Icons.newspaper_rounded, size: 20, color: p.accent),
         const SizedBox(width: 8),
         Expanded(child: Text('최근 뉴스', style: h(19))),
         Text('${news['asof']} 정리', style: sub(p, 11.5)),
       ]),
       for (final (i, n) in items.indexed) ...[
-        if (i > 0) Container(height: 1, color: p.line),
+        if (i > 0) Container(height: 1, color: p.accent.withValues(alpha: .18)),
         col(6, [
           Row(children: [
             Container(
@@ -440,16 +401,11 @@ Widget grid(List<Widget> xs) => col(8, [
         ]))
     ]);
 
-Widget chip(P p, String label, [VoidCallback? onTap]) => Material(
-      color: p.sunken,
-      shape: const StadiumBorder(),
-      child: InkWell(
-          customBorder: const StadiumBorder(),
-          onTap: onTap,
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              child: Text(label, style: const TextStyle(fontSize: 13)))),
-    );
+// 누를 수 있으면 Material ActionChip(누르는 칸 48dp), 아니면 그냥 라벨
+Widget chip(P p, String label, [VoidCallback? onTap]) => onTap == null
+    ? Chip(label: Text(label), backgroundColor: p.sunken, labelStyle: TextStyle(fontFamily: 'Pretendard', fontSize: 13, color: p.fg))
+    : ActionChip(
+        label: Text(label), onPressed: onTap, backgroundColor: p.sunken, labelStyle: TextStyle(fontFamily: 'Pretendard', fontSize: 13, color: p.fg));
 
 Color brandColor(J c) {
   final String tk = c['ticker'];
@@ -475,6 +431,7 @@ Widget logo(J c, [double size = 44, Color? bg]) {
       logoUrl(c),
       width: size,
       height: size,
+      cacheWidth: (size * 3).round(), // 원본 대신 화면 크기에 맞게 풀어서 메모리 절약
       fit: BoxFit.contain,
       // 투명 배경 로고가 어두운 화면에서도 보이게 흰 바탕 위에 그린다
       frameBuilder: (_, child, frame, __) => frame == null
@@ -608,14 +565,14 @@ Widget gauge(P p, double pos) => col(6, [
 Widget riskItem(P p, String r) {
   final i = r.indexOf(':');
   final head = i < 0 ? r : r.substring(0, i), rest = i < 0 ? '' : r.substring(i + 1).trim();
-  return Container(
-    padding: const EdgeInsets.only(left: 12, top: 2, bottom: 2),
-    decoration: BoxDecoration(border: Border(left: BorderSide(color: p.warn, width: 3))),
-    child: col(0, [
+  return Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+    Padding(padding: const EdgeInsets.only(top: 1, right: 10), child: Icon(Icons.error_outline_rounded, size: 18, color: p.warn)),
+    Expanded(
+        child: col(2, [
       txt(head, const TextStyle(fontSize: 14, fontWeight: FontWeight.w700)),
-      if (rest.isNotEmpty) txt(rest, const TextStyle(fontSize: 14)),
-    ]),
-  );
+      if (rest.isNotEmpty) txt(rest, const TextStyle(fontSize: 14, height: 1.5)),
+    ])),
+  ]);
 }
 
 // ---------- 용어 바텀시트 ----------
@@ -745,40 +702,21 @@ class _HomeState extends State<HomePage> {
       if (sector != null && c['group'] != sector) return false;
       return query.isEmpty || '${c['name_ko']} ${c['name_en']} ${c['ticker']}'.toLowerCase().contains(query);
     }).toList();
-    Widget stat(String n, String label) => Expanded(
-        child: col(2, [
-          Text(n, style: const TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.w800, fontFeatures: tabular)),
-          Text(label, style: const TextStyle(color: Colors.white60, fontSize: 12)),
-        ]));
     final header = spaced(12, [
-          Container(
-            padding: const EdgeInsets.fromLTRB(22, 22, 22, 20),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
-                gradient: const LinearGradient(
-                    begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [Color(0xFF2B3A7A), Color(0xFF131A33)])),
-            child: col(14, [
+          // 장식 없는 제목 영역: 질문 한 줄, 설명 한 줄, 범위·기준일 한 줄
+          Padding(
+            padding: const EdgeInsets.fromLTRB(4, 8, 4, 4),
+            child: col(8, [
+              txt(korea ? '한국 상장 기업, 무슨 일을 할까요?' : '미국 대표 기업, 무슨 일을 할까요?',
+                  h(24).copyWith(fontWeight: FontWeight.w800, letterSpacing: -0.6)),
+              txt(korea ? '회사를 누르면 업종·주요 제품과 금융감독원 공시 재무 숫자를 볼 수 있어요. 매출이 큰 회사부터 보여드려요.' : '회사를 누르면 중학생도 읽을 수 있게 풀어 쓴 기업 노트가 열려요.',
+                  sub(p, 14).copyWith(height: 1.5)),
               Text(
                   korea
-                      ? '코스피·코스닥 · ${kr['meta']['asof']} 상장 목록 기준'
-                      : 'S&P 500·나스닥 100 · 시가총액 ${live.value ?? data['meta']['market_cap_asof']}${live.value == null ? '' : ' 종가'} 기준',
-                  style: const TextStyle(color: Colors.white60, fontSize: 12, fontWeight: FontWeight.w600, letterSpacing: .3)),
-              txt(korea ? '한국 상장 기업,\n무슨 일을 할까요?' : '미국 대표 기업,\n무슨 일을 할까요?',
-                  const TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w800, height: 1.25, letterSpacing: -0.6)),
-              txt(korea ? '회사를 누르면 업종·주요 제품과 금융감독원 공시 재무 숫자를 볼 수 있어요. 매출이 큰 회사부터 보여드려요.' : '회사를 누르면 중학생도 읽을 수 있게 풀어 쓴 기업 노트가 열려요.',
-                  const TextStyle(color: Colors.white70, fontSize: 14)),
-              Text(disclaimer, style: const TextStyle(color: Colors.white54, fontSize: 11.5)),
-              Container(height: 1, color: Colors.white12),
-              Row(children: [
-                stat('${src.length}', '회사'),
-                if (korea) ...[
-                  stat('${src.where((c) => c['market'] == '코스피').length}', '코스피'),
-                  stat('${src.where((c) => c['market'] == '코스닥').length}', '코스닥'),
-                ] else ...[
-                  stat('${companies.where((c) => isFull(c)).length}', '자세한 노트'),
-                  stat('${terms.length}', '경제용어'),
-                ],
-              ]),
+                      ? '${src.length}개 회사 (코스피 ${src.where((c) => c['market'] == '코스피').length} · 코스닥 ${src.where((c) => c['market'] == '코스닥').length}) · ${kr['meta']['asof']} 상장 목록 기준'
+                      : '${src.length}개 회사 · 자세한 노트 ${companies.where((c) => isFull(c)).length}곳 · 시가총액 ${live.value ?? data['meta']['market_cap_asof']}${live.value == null ? '' : ' 종가'} 기준',
+                  style: sub(p, 12).copyWith(fontFeatures: tabular)),
+              Text(disclaimer, style: sub(p, 11.5)),
             ]),
           ),
           SegmentedButton<bool>(
@@ -983,9 +921,14 @@ class _DetailState extends State<DetailPage> {
             scrollDirection: Axis.horizontal,
             child: Row(children: [
               for (final e in tabs.entries)
-                InkWell(
+                Semantics(
+                  button: true,
+                  selected: tab == e.key,
+                  child: InkWell(
                   onTap: () => setState(() => tab = e.key),
                   child: Container(
+                    constraints: const BoxConstraints(minHeight: 48),
+                    alignment: Alignment.center,
                     padding: const EdgeInsets.fromLTRB(4, 10, 4, 8),
                     margin: const EdgeInsets.only(right: 18),
                     decoration: BoxDecoration(
@@ -996,7 +939,7 @@ class _DetailState extends State<DetailPage> {
                             fontWeight: tab == e.key ? FontWeight.w700 : FontWeight.w500,
                             color: tab == e.key ? p.fg : p.muted)),
                   ),
-                ),
+                )),
             ]),
           ),
           ],
@@ -1055,26 +998,16 @@ class _DetailState extends State<DetailPage> {
         final money = isKr(c) ? wonEok : eok;
         return [
           h3('실적은 늘고 있나요?'),
-          Container(
-            padding: const EdgeInsets.all(4),
-            decoration: BoxDecoration(color: p.sunken, borderRadius: BorderRadius.circular(12)),
-            child: Row(children: [
+          // 홈의 미국/한국 전환과 같은 Material SegmentedButton
+          SegmentedButton<String>(
+            segments: [
               for (final e in metrics.entries)
                 if (!(isKr(c) && e.key == 'free_cash_flow')) // 한국 DART 요약엔 현금흐름이 없다
-                Expanded(
-                  child: GestureDetector(
-                    behavior: HitTestBehavior.opaque,
-                    onTap: () => setState(() => metric = e.key),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(vertical: 7),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(color: metric == e.key ? p.surface : null, borderRadius: BorderRadius.circular(9)),
-                      child: Text(e.value.$1,
-                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w500, color: metric == e.key ? p.fg : p.muted)),
-                    ),
-                  ),
-                ),
-            ]),
+                  ButtonSegment(value: e.key, label: Text(e.value.$1)),
+            ],
+            selected: {metric},
+            showSelectedIcon: false,
+            onSelectionChanged: (v) => setState(() => metric = v.first),
           ),
           rich([term(ctx, tid, label), s(': $help')], sub(p)),
           col(10, [
@@ -1245,50 +1178,61 @@ class _TermsState extends State<TermsPage> {
   }
 }
 
-// ---------- 뉴스 탭: 회사별 최신 뉴스 제목 (매시간 갱신, 누르면 원문)
+// ---------- 뉴스 탭: AI가 정리한 회사 뉴스 요약 (news.json, 누르면 회사 노트)
 class NewsPage extends StatefulWidget {
   const NewsPage({super.key});
   @override
   State<NewsPage> createState() => _NewsState();
 }
 
+Future<void> reloadNews() async {
+  final raw = await getJson('news.json');
+  final n = raw == null ? null : validNews(raw);
+  if (n != null) {
+    news = n;
+    redraw.value++;
+  }
+}
+
 class _NewsState extends State<NewsPage> {
   String market = '전체';
+  String? kind; // null = 전체, 아니면 good/bad/watch
   String q = '';
-
-  // 뉴스의 회사(티커) → 앱 안의 회사 데이터 (로고·상세 화면용)
-  J? companyOf(String tk) {
-    for (final c in [...companies, ...kr['companies']]) {
-      if (c['ticker'] == tk) return c;
-    }
-    return null;
-  }
 
   @override
   Widget build(BuildContext context) {
     final p = P.of(context);
-    final J? f = feed;
+    Color colorOf(String t) => t == 'good' ? p.good : t == 'bad' ? p.warn : p.accent;
+    // 뉴스의 회사(티커) → 앱 안의 회사 데이터 (로고·상세 화면용)
+    final byTk = <String, J>{for (final c in [...companies, ...kr['companies']]) c['ticker'] as String: c};
     final query = q.trim().toLowerCase();
-    final rows = <(String, J, J)>[]; // (티커, 회사 정보, 뉴스 한 개)
-    if (f != null) {
-      for (final e in (f['companies'] as Map).entries) {
-        final J c = e.value;
-        if (market != '전체' && c['market'] != market) continue;
-        if (query.isNotEmpty && !'${c['name']} ${e.key}'.toLowerCase().contains(query)) continue;
-        for (final x in c['items']) {
-          rows.add((e.key as String, c, x as J));
-        }
+    final rows = <(String, J?, J)>[]; // (티커, 회사, 뉴스 한 개)
+    for (final e in (news['companies'] as Map).entries) {
+      final String tk = e.key;
+      final co = byTk[tk];
+      final m = co != null && isKr(co) ? '한국' : '미국';
+      if (market != '전체' && m != market) continue;
+      if (query.isNotEmpty && !'${co?['name_ko'] ?? ''} ${co?['name_en'] ?? ''} $tk'.toLowerCase().contains(query)) continue;
+      for (final x in e.value as List) {
+        if (kind == null || x['type'] == kind) rows.add((tk, co, x as J));
       }
     }
-    rows.sort((a, b) => (b.$3['date'] as String).compareTo(a.$3['date']));
+    // 지난 뉴스는 최신순, 아직 오지 않은 일정(미래 날짜)은 그 뒤에 가까운 날부터
+    final today = DateTime.now().toIso8601String().substring(0, 10);
+    String d(r) => '${r.$3['date'] ?? ''}';
+    rows.sort((a, b) {
+      final fa = d(a).compareTo(today) > 0, fb = d(b).compareTo(today) > 0;
+      if (fa != fb) return fa ? 1 : -1;
+      return fa ? d(a).compareTo(d(b)) : d(b).compareTo(d(a));
+    });
     return Scaffold(
-      appBar: topBar(context, '실시간 뉴스', f == null ? '' : '${ago(f['asof'])} 업데이트'),
+      appBar: topBar(context, '뉴스', '${news['asof']} 정리'),
       body: RefreshIndicator(
-        onRefresh: loadFeed,
+        onRefresh: reloadNews,
         child: ListView(
           padding: pad,
           children: [
-            txt('회사별 최신 뉴스 제목을 1시간마다 모아요. 누르면 언론사 원문이 열려요. 아래로 당기면 새로고침돼요.', sub(p, 13)),
+            txt("AI(Claude)가 하루 두 번 회사 뉴스를 쉽게 정리해요. 누르면 회사 노트로, '원문 보기'는 언론사 기사로 가요.", sub(p, 13)),
             const SizedBox(height: 12),
             SegmentedButton<String>(
               segments: const [
@@ -1305,33 +1249,59 @@ class _NewsState extends State<NewsPage> {
               onChanged: (v) => setState(() => q = v),
               decoration: const InputDecoration(hintText: '회사 이름으로 찾기 (예: 엔비디아, 삼성)', prefixIcon: Icon(Icons.search)),
             ),
+            const SizedBox(height: 12),
+            Wrap(spacing: 6, children: [
+              for (final k in [null, ...newsKinds.keys])
+                ChoiceChip(
+                  label: Text(k == null ? '전체' : newsKinds[k]!.$1),
+                  selected: kind == k,
+                  showCheckmark: false,
+                  onSelected: (_) => setState(() => kind = k),
+                ),
+            ]),
             const SizedBox(height: 16),
-            if (f == null)
-              explain(p, txt('인터넷에 연결하면 최신 뉴스를 볼 수 있어요. 연결한 뒤 아래로 당겨 새로고침해 주세요.', const TextStyle(fontSize: 14)))
-            else if (rows.isEmpty)
-              Text('찾는 뉴스가 없어요.', style: sub(p)),
-            for (final (i, (tk, c, x)) in rows.indexed)
+            if (rows.isEmpty) Text('찾는 뉴스가 없어요.', style: sub(p)),
+            for (final (i, (tk, co, x)) in rows.indexed)
               groupRow(
                 p,
                 i == 0,
                 i == rows.length - 1,
-                () => launchUrl(Uri.parse(x['url']), mode: LaunchMode.externalApplication),
+                () {
+                  if (co != null) Navigator.push(context, MaterialPageRoute(builder: (_) => DetailPage(co)));
+                },
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 13),
-                  child: Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                    if (companyOf(tk) case final J co) ...[logo(co, 34), const SizedBox(width: 12)],
-                    Expanded(
-                      child: col(4, [
-                        Text('${c['name']} · ${ago(x['date'])}${(x['src'] ?? '') == '' ? '' : ' · ${x['src']}'}',
-                            style: sub(p, 12).copyWith(fontWeight: FontWeight.w600)),
-                        txt(x['t'], const TextStyle(fontSize: 15, fontWeight: FontWeight.w600, height: 1.45)),
-                      ]),
-                    ),
+                  padding: const EdgeInsets.fromLTRB(16, 14, 16, 8),
+                  child: col(6, [
+                    Row(children: [
+                      if (co != null) ...[logo(co, 28), const SizedBox(width: 10)],
+                      Expanded(
+                          child: Text('${co?['name_ko'] ?? tk} · ${x['date'] ?? ''}',
+                              style: sub(p, 12).copyWith(fontWeight: FontWeight.w600))),
+                      Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                          decoration: BoxDecoration(color: colorOf(x['type']).withValues(alpha: .16), borderRadius: BorderRadius.circular(999)),
+                          child: Text(newsKinds[x['type']]?.$1 ?? '',
+                              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w800, color: colorOf(x['type'])))),
+                    ]),
+                    txt(x['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
+                    rich([
+                      TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(x['type']))),
+                      s(x['impact']),
+                    ], const TextStyle(fontSize: 14, height: 1.5)),
+                    Row(children: [
+                      Expanded(child: Text('출처: ${x['source']}', style: sub(p, 11.5))),
+                      if (x['url'] is String && (x['url'] as String).startsWith('http'))
+                        TextButton(
+                          onPressed: () => launchUrl(Uri.parse(x['url']), mode: LaunchMode.externalApplication),
+                          style: TextButton.styleFrom(visualDensity: VisualDensity.compact, textStyle: const TextStyle(fontFamily: 'Pretendard', fontSize: 12.5)),
+                          child: const Text('원문 보기'),
+                        ),
+                    ]),
                   ]),
                 ),
               ),
             const SizedBox(height: 16),
-            txt('뉴스 제목과 내용은 각 언론사의 것이에요. $disclaimer', sub(p, 11.5)),
+            txt('AI 요약은 틀릴 수 있어요. 중요한 내용은 원문으로 확인하세요. $disclaimer', sub(p, 11.5)),
           ],
         ),
       ),
