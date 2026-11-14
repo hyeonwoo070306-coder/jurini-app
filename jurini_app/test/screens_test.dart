@@ -129,7 +129,8 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: LinksPage()));
     final ids = linkedIds();
     expect(find.textContaining('이어진 회사 ${linksOf(ids.first).length}곳'), findsOneWidget);
-    await tester.tap(find.byType(GestureDetector).first);
+    final l0 = linksOf(ids.first).first;
+    await tester.tap(find.widgetWithText(GestureDetector, nodeName(l0['from'] == ids.first ? l0['to'] : l0['from'])).first);
     await tester.pump();
     for (final id in ids.skip(1).take(6)) {
       await tester.enterText(find.byType(TextField), nodeName(id));
