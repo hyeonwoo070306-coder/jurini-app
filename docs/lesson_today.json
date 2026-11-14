@@ -1,62 +1,61 @@
 {
- "id": "ai-2026-11-14",
- "title": "국채금리가 5% 안팎까지 올랐어요",
+ "id": "ai-2026-11-15",
+ "title": "물가가 높으면 달러가 강해져요",
  "terms": [
-  "treasury_yield",
-  "inflation",
+  "cpi",
   "rate_hike",
-  "cpi"
+  "exchange_rate",
+  "inflation"
  ],
  "cards": [
-  "이번 주 미국 10년 국채금리가 5% 안팎까지 올랐어요. 물가가 예상보다 높게 나온 뒤였어요.",
-  "국채금리는 미국 정부에 돈을 빌려줄 때 받는 이자예요. 가장 안전한 투자의 이자로 보면 돼요.",
-  "안전한 이자가 높아지면 위험한 주식에 투자할 이유가 줄어요. 돈이 채권 쪽으로 옮겨 갈 수 있어요.",
-  "금리가 높으면 기업의 대출 이자도 늘어요. 먼 미래에 돈을 벌 성장 기업은 특히 영향을 받기 쉬워요.",
-  "다음에 비슷한 뉴스를 보면 물가 발표와 국채금리가 함께 움직이는지 살펴보세요."
+  "물가가 예상보다 높게 나오자, 미국이 12월에 금리를 올릴 것이라는 예상이 더 커졌어요.",
+  "미국 금리가 오른다고 보이면 달러를 가지려는 사람이 늘어, 달러 값이 강해지기 쉬워요.",
+  "환율은 1달러가 우리 돈으로 얼마인지 보여 줘요. 달러가 강해지면 이 숫자가 커져요.",
+  "달러로 파는 수출 기업은 원화로 바꾼 돈이 늘 수 있어요. 수입 재료가 많은 기업은 비용 부담이 커져요.",
+  "비슷한 뉴스를 보면 금리 전망, 환율, 그리고 그 회사가 수출형인지 수입형인지 함께 살펴보세요."
  ],
  "quiz": [
   {
-   "q": "국채금리는 무엇의 이자일까요?",
+   "q": "물가가 예상보다 높게 나오면 금리 전망은 보통 어떻게 바뀔까요?",
    "options": [
-    "은행 예금",
-    "미국 정부가 빌린 돈",
-    "회사가 낸 배당",
-    "주식 거래 수수료"
-   ],
-   "answer": 1,
-   "explain": "국채는 정부가 돈을 빌리려고 발행하는 채권이고, 그 이자가 국채금리예요."
-  },
-  {
-   "q": "국채금리가 높아지면 주식은 왜 부담을 받을 수 있나요?",
-   "options": [
-    "안전한 이자가 커져 주식의 매력이 상대적으로 줄어서",
-    "회사가 문을 닫아서",
-    "거래소가 쉬어서",
-    "배당이 사라져서"
+    "금리를 올릴 거란 예상이 커져요",
+    "금리 인하 예상만 커져요",
+    "금리와 아무 상관이 없어요",
+    "은행이 문을 닫아요"
    ],
    "answer": 0,
-   "explain": "안전하게 받는 이자가 커지면 위험을 지는 주식의 매력이 상대적으로 줄어들 수 있어요."
+   "explain": "물가가 안 잡히면 중앙은행이 금리를 올려 열을 식힐 수 있다고 보기 때문이에요."
   },
   {
-   "q": "이번 국채금리 상승 앞에 있었던 일은?",
+   "q": "미국 금리 인상 예상이 커질 때 달러는 보통 어떻게 되기 쉬울까요?",
    "options": [
-    "배당 발표",
-    "예상보다 높은 물가 발표",
-    "회사 합병",
-    "공휴일"
+    "약해지기 쉬워요",
+    "강해지기 쉬워요",
+    "값이 사라져요",
+    "항상 그대로예요"
    ],
    "answer": 1,
-   "explain": "물가가 예상보다 높게 나와 금리 인상 걱정이 커졌고 국채금리도 올랐어요."
+   "explain": "금리가 높은 미국 돈을 가지려는 사람이 늘어 달러가 강해지기 쉬워요."
+  },
+  {
+   "q": "달러가 강해지면 보통 누가 환율 덕을 볼 수 있을까요?",
+   "options": [
+    "달러로 물건을 파는 수출 기업",
+    "외국 재료를 많이 사 오는 기업",
+    "달러가 필요한 유학생",
+    "해외여행을 가는 사람"
+   ],
+   "answer": 0,
+   "explain": "수출 기업은 번 달러를 원화로 바꾸면 더 많이 받을 수 있어요. 나머지는 비용이 늘어요."
   }
  ],
- "stage": 4,
- "date": "2026-11-14",
- "news_url": "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
+ "stage": 3,
+ "date": "2026-11-15",
+ "news_url": "https://www.cnbc.com/2026/11/10/market-spooked-because-now-the-fed-may-need-a-supersized-hike-in-december.html",
  "verified": true,
  "sources": [
-  "https://www.morningstar.com/news/marketwatch/20261110148/stocks-fall-as-the-10-year-treasury-yield-nears-5-mark",
-  "https://investinglive.com/news/u-s-treasury-sells-42-billion-of-10-year-notes-at-a-high-yield-of-5-02/",
-  "https://www.etf.com/sections/etf-basics/guide-10-year-treasury-yield",
-  "https://supermoney.com/encyclopedia/treasury-yields"
+  "https://www.kitco.com/news/off-the-wire/2026-11-11/dollar-climbs-traders-raise-december-fed-hike-bets",
+  "https://www.babypips.com/analysis/headline-us-cpi-october-fed-hike-december-2026-11-11",
+  "https://www.koreatimes.co.kr/amp/economy/20251123/weak-won-lifts-exporter-stocks-weighs-on-import-reliant-firms-in-stock-market"
  ]
 }
