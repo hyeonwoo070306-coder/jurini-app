@@ -170,7 +170,7 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: NewsPage()));
     await tester.tap(find.text('일정'));
     await tester.pump();
-    expect(find.textContaining(kt('엔비디아 실적 발표')), findsOneWidget);
+    expect(find.textContaining(kt('엔비디아 실적 발표')), findsNothing); // licensedData=false: 실적 발표일 숨김
     expect(find.text('내일'), findsOneWidget);
     expect(find.textContaining(kt('지난 일정')), findsNothing); // 결과 없는 지난 일정은 숨김
     expect(find.text('오늘의 주요 일정'), findsOneWidget);

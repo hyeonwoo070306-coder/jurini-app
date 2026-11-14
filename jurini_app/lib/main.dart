@@ -13,6 +13,11 @@ part 'learn.dart';
 
 typedef J = Map<String, dynamic>;
 
+const licensedData = false; // 재배포 허락된 유료 데이터 계약 전까지 끔 (매일 PER·증권사 예측·실적 발표일·회사 로고)
+
+// 일정 목록. 실적 발표일은 재배포 허락 전까지 숨긴다.
+List<J> calEvents() => [for (final J e in calendar['events']) if (licensedData || e['type'] != 'earnings') e];
+
 late J data, sp500, news, kr, usMore, surprise, links, calendar, lessons;
 Set<String> ndx = {}; // 나스닥 100 티커
 late List<dynamic> companies, terms;
@@ -133,7 +138,7 @@ Future<void> loadLive() async {
       redraw.value++;
     }
   });
-  getJson('surprise.json').then((j) {
+  if (licensedData) getJson('surprise.json').then((j) {
     if (j != null && validSurprise(j)) {
       surprise = j;
       redraw.value++;
@@ -142,7 +147,7 @@ Future<void> loadLive() async {
   final raw = await getJson('news.json');
   final n = raw == null ? null : validNews(raw);
   if (n != null) news = n;
-  final v = await getJson('valuation.json');
+  final v = licensedData ? null : await getJson('valuation.json');
   if (v != null && validValuation(v)) {
     applyLive(v);
   } else if (n != null) {
@@ -462,6 +467,7 @@ String logoUrl(J c) {
 
 Widget logo(J c, [double size = 44, Color? bg]) {
   final badge = logoBadge(c, size, bg);
+  if (!licensedData) return badge;
   return ClipRRect(
     borderRadius: BorderRadius.circular(size * .3),
     child: Image.network(
@@ -1092,7 +1098,7 @@ class _DetailState extends State<DetailPage> {
                 TextSpan(text: '${b['asof']} 기준', style: sub(p)),
               ], const TextStyle(fontSize: 13.5))),
           if ((c['financial_note'] ?? '') != '') txt('※ ${c['financial_note']}', sub(p)),
-          if ((surprise['companies'][c['ticker']]?['rows'] as List?)?.isNotEmpty ?? false)
+          if (licensedData && ((surprise['companies'][c['ticker']]?['rows'] as List?)?.isNotEmpty ?? false))
             surpriseCard(ctx, p, surprise['companies'][c['ticker']]),
           if (isKr(c) && c['fs'] != null) txt('${c['fs']} 재무제표 기준이에요. 연결은 자회사까지 합친 숫자예요.', sub(p)),
           if (last['revenue'] != null && !isKr(c))
@@ -1899,7 +1905,7 @@ List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(Str
   // 하루 안에서는 이른 시각부터 (아침 ≈ 06시, 밤 ≈ 22시, 미정은 맨 뒤)
   String order(J e) => e['kst']?.substring(11) ?? switch (e['when']) { 'after' => '06:00', 'before' => '22:00', _ => '99' };
   int byTime(J a, J b) => order(a).compareTo(order(b));
-  final all = [for (final J e in calendar['events']) e];
+  final all = calEvents();
   final todays = all.where((e) => e['date'] == today).toList()..sort(byTime);
   final shown = all.where((e) => type == null || e['type'] == type);
   final days = <String, List<J>>{};
@@ -1961,11 +1967,11 @@ List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(Str
           first: i == 0 || past[i - 1]['date'] != e['date'], last: i == past.length - 1 || past[i + 1]['date'] != e['date']),
     ],
     Padding(padding: const EdgeInsets.fromLTRB(4, 24, 4, 4), child: Text('앞으로의 일정', style: h(18))),
-    txt('시장을 움직이는 경제 지표 발표와 회사 실적 발표예요. 실적 발표 날은 회사가 지난 분기 성적표를 내는 날이라, 예상과 차이가 크면 주가가 크게 움직여요. 시각은 모두 한국 시간이고, 누르면 뜻이나 회사 노트가 열려요.',
+    txt(licensedData ? '시장을 움직이는 경제 지표 발표와 회사 실적 발표예요. 실적 발표 날은 회사가 지난 분기 성적표를 내는 날이라, 예상과 차이가 크면 주가가 크게 움직여요. 시각은 모두 한국 시간이고, 누르면 뜻이나 회사 노트가 열려요.' : '시장을 움직이는 경제 지표 발표예요. 시각은 모두 한국 시간이고, 누르면 뜻이 열려요.',
         sub(p, 13)),
     const SizedBox(height: 12),
     Wrap(spacing: 6, children: [
-      for (final (t, label) in [(null, '전체'), ('macro', '경제 지표'), ('earnings', '실적 발표')])
+      for (final (t, label) in [(null, '전체'), ('macro', '경제 지표'), if (licensedData) ('earnings', '실적 발표')])
         ChoiceChip(label: Text(label), selected: type == t, showCheckmark: false, onSelected: (_) => setType(t)),
     ]),
     if (days.isEmpty) Padding(padding: const EdgeInsets.only(top: 16), child: txt('앞으로 정해진 일정이 아직 없어요. 매일 새로 받아와요.', sub(p, 14))),
@@ -1974,7 +1980,7 @@ List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(Str
       for (final (i, e) in list.indexed) calRow(ctx, p, e, byTk, first: i == 0, last: i == list.length - 1),
     ],
     const SizedBox(height: 20),
-    txt('${calendar['note']} 실적 발표 \'아침\'은 미국 장 마감 뒤, \'밤\'은 미국 장 시작 전이에요. 결과 요약은 AI가 정리해서 틀릴 수 있어요. $disclaimer',
+    txt('${calendar['note']} ${licensedData ? '실적 발표 \'아침\'은 미국 장 마감 뒤, \'밤\'은 미국 장 시작 전이에요. ' : ''}결과 요약은 AI가 정리해서 틀릴 수 있어요. $disclaimer',
         sub(p, 11.5)),
   ];
 }

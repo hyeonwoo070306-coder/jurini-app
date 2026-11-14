@@ -221,7 +221,7 @@ class _LearnState extends State<LearnPage> {
     final pr = prog;
     if (pr == null) return const Scaffold(body: Center(child: CircularProgressIndicator()));
     final today = dayKey(DateTime.now());
-    final events = [for (final J e in calendar['events']) if (e['date'] == today) e];
+    final events = [for (final e in calEvents()) if (e['date'] == today) e];
     final market = marketNews();
     final next = nextLesson(lessons, pr);
     final reading = newsToRead(pr);
