@@ -233,8 +233,8 @@ class P {
 }
 
 const brand = {
-  'aapl': Color(0xFF3D4A48), 'nvda': Color(0xFF4F8A1F), 'msft': Color(0xFF2F6DB5), 'googl': Color(0xFFC2463A),
-  'amzn': Color(0xFFD98A14), 'spcx': Color(0xFF1E2A3A), 'meta': Color(0xFF2D5FD3), 'avgo': Color(0xFFB5312A),
+  'aapl': Color(0xFF3D4A48), 'nvda': Color(0xFF3F7A12), 'msft': Color(0xFF2F6DB5), 'googl': Color(0xFFC2463A),
+  'amzn': Color(0xFFA05E00), 'spcx': Color(0xFF1E2A3A), 'meta': Color(0xFF2D5FD3), 'avgo': Color(0xFFB5312A),
   'tsla': Color(0xFF9E2A2A), 'lly': Color(0xFFC21E3A),
 };
 
@@ -564,7 +564,7 @@ Widget mix(P p, List rows) => col(10, [
       ]),
     ]);
 
-Widget barRow(P p, String label, num? x, num mx, bool latest, [String Function(num?) fmt = eok]) => Row(children: [
+Widget barRow(P p, String label, num? x, num mx, bool latest, [String Function(num?) fmt = eok]) => MergeSemantics(child: Row(children: [
       SizedBox(width: 76, child: txt(label, sub(p).copyWith(height: 1.25))),
       const SizedBox(width: 10),
       Expanded(
@@ -591,10 +591,10 @@ Widget barRow(P p, String label, num? x, num mx, bool latest, [String Function(n
                         child: Text(x == null ? '공시 없음' : '${x < 0 ? '−' : ''}${fmt(x.abs())}',
                             style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700)))),
               ]))),
-    ]);
+    ]));
 
 // PER 위치 게이지 (0~60배, 평균선 21배)
-Widget gauge(P p, double pos) => col(6, [
+Widget gauge(P p, double pos) => Semantics(label: 'PER 위치 게이지: 왼쪽일수록 낮고 오른쪽일수록 높아요', child: col(6, [
       SizedBox(
           height: 20,
           child: LayoutBuilder(
@@ -616,7 +616,7 @@ Widget gauge(P p, double pos) => col(6, [
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         for (final t in ['0배', '평균 약 20배', '60배+']) Text(t, style: sub(p, 11.5))
       ]),
-    ]);
+    ]));
 
 Widget riskItem(P p, String r) {
   final i = r.indexOf(':');
@@ -928,7 +928,7 @@ class _DetailState extends State<DetailPage> {
     final List fin = c['financials'] ?? [];
     final J? latest = fin.isEmpty ? null : fin.last;
     final bc = brandColor(c);
-    const w70 = TextStyle(color: Colors.white70, fontSize: 12);
+    const w70 = TextStyle(color: Color(0xDEFFFFFF), fontSize: 12); // 회사색 위 작은 글자도 대비 4.5:1 이상
     // 형광펜 용어는 노란 바탕이라 글자만 어둡게
     final onMark = TextStyle(color: p.fg, fontSize: 12);
     Widget heroFact(Widget label, String value) => Container(
@@ -948,7 +948,7 @@ class _DetailState extends State<DetailPage> {
               padding: const EdgeInsets.only(right: 16),
               child: Center(
                   child: Text(full ? '시가총액 ${c['rank']}위' : c['sector'] ?? '',
-                      style: const TextStyle(color: Colors.white70, fontSize: 12.5, fontWeight: FontWeight.w600)))),
+                      style: const TextStyle(color: Color(0xDEFFFFFF), fontSize: 12.5, fontWeight: FontWeight.w600)))),
         ],
       ),
       body: ListView(
@@ -957,8 +957,7 @@ class _DetailState extends State<DetailPage> {
           Container(
             padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
             decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [bc, Color.lerp(bc, Colors.black, .3)!]),
+                color: bc,
                 borderRadius: const BorderRadius.vertical(bottom: Radius.circular(28))),
             child: col(16, [
               Row(children: [
@@ -1556,7 +1555,7 @@ class _QuizState extends State<QuizPage> {
           const Spacer(),
           Text('맞힌 문제 $score', style: sub(p, 13)),
         ]),
-        LinearProgressIndicator(value: (i + (done ? 1 : 0)) / qs.length, borderRadius: BorderRadius.circular(4)),
+        LinearProgressIndicator(semanticsLabel: "퀴즈 진행", value: (i + (done ? 1 : 0)) / qs.length, borderRadius: BorderRadius.circular(4)),
         box(p, col(8, [
           Text('다음 설명에 맞는 용어는?', style: sub(p, 13).copyWith(fontWeight: FontWeight.w700)),
           txt(q.prompt, const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.5)),
