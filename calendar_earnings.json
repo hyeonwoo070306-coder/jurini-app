@@ -1,4 +1,40 @@
 {
  "note": "회사 IR 보도자료로 확인한 실적 발표일. date는 한국 날짜(미국 장 마감 뒤 발표면 다음 날). 예약 작업이 채운다.",
- "events": []
+ "events": [
+  {
+   "date": "2026-11-17",
+   "ticker": "HD",
+   "when": "before",
+   "source": "Home Depot IR",
+   "url": "https://ir.homedepot.com/news-releases/2026/11-03-2026-130236805"
+  },
+  {
+   "date": "2026-11-18",
+   "ticker": "NVDA",
+   "when": "after",
+   "source": "NVIDIA IR",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873"
+  },
+  {
+   "date": "2026-11-19",
+   "ticker": "WMT",
+   "when": "before",
+   "source": "Walmart IR",
+   "url": "https://corporate.walmart.com/news/2026/11/Walmart-To-Host-Q3-Earnings-Call-Nov-19-2026"
+  },
+  {
+   "date": "2026-12-10",
+   "ticker": "AVGO",
+   "when": "after",
+   "source": "Broadcom IR",
+   "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"
+  },
+  {
+   "date": "2026-12-11",
+   "ticker": "COST",
+   "when": "after",
+   "source": "Costco IR",
+   "url": "https://investor.costco.com/events-and-presentations/events/event-details/2026/Q1-2027-Earnings-Call/default.aspx"
+  }
+ ]
 }

@@ -1,5 +1,5 @@
 {
- "checked": "2026-11-14",
+ "checked": "2026-11-15",
  "events": [
   {
    "date": "2026-11-25",
@@ -16,6 +16,14 @@
    "time": null,
    "source": "한국은행",
    "url": "https://www.bok.or.kr/portal/singl/crncyPolicyDrcMtg/listYear.do?menuNo=200755&mtgSe=A"
+  },
+  {
+   "date": "2026-12-02",
+   "kind": "kr_cpi",
+   "title": "한국 소비자물가동향",
+   "time": "08:00 KST",
+   "source": "국가데이터처",
+   "url": "https://www.mods.go.kr/menu.es?mid=b70203020000"
   },
   {
    "date": "2026-12-04",
@@ -48,6 +56,14 @@
    "time": "08:30 ET",
    "source": "미국 경제분석국(BEA)",
    "url": "https://www.bea.gov/news/schedule"
+  },
+  {
+   "date": "2026-12-31",
+   "kind": "kr_cpi",
+   "title": "한국 소비자물가동향",
+   "time": "08:00 KST",
+   "source": "국가데이터처",
+   "url": "https://www.mods.go.kr/menu.es?mid=b70203020000"
   },
   {
    "date": "2027-01-08",

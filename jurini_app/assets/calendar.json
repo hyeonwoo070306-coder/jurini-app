@@ -3,6 +3,42 @@
  "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 회사가 공식 발표한 날짜예요. 시각은 한국 시간.",
  "events": [
   {
+   "date": "2026-11-17",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "HD",
+   "when": "before",
+   "title": "홈디포 실적 발표",
+   "source": "Home Depot IR",
+   "url": "https://ir.homedepot.com/news-releases/2026/11-03-2026-130236805",
+   "id": "2026-11-17:HD"
+  },
+  {
+   "date": "2026-11-18",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "NVDA",
+   "when": "after",
+   "title": "엔비디아 실적 발표",
+   "source": "NVIDIA IR",
+   "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
+   "id": "2026-11-18:NVDA"
+  },
+  {
+   "date": "2026-11-19",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "WMT",
+   "when": "before",
+   "title": "월마트 실적 발표",
+   "source": "Walmart IR",
+   "url": "https://corporate.walmart.com/news/2026/11/Walmart-To-Host-Q3-Earnings-Call-Nov-19-2026",
+   "id": "2026-11-19:WMT"
+  },
+  {
    "date": "2026-11-25",
    "kst": "2026-11-25 22:30",
    "type": "macro",
@@ -23,6 +59,16 @@
    "id": "2026-11-26:bok_rate"
   },
   {
+   "date": "2026-12-02",
+   "kst": "2026-12-02 08:00",
+   "type": "macro",
+   "kind": "kr_cpi",
+   "title": "한국 소비자물가동향",
+   "source": "국가데이터처",
+   "url": "https://www.mods.go.kr/menu.es?mid=b70203020000",
+   "id": "2026-12-02:kr_cpi"
+  },
+  {
    "date": "2026-12-04",
    "kst": "2026-12-04 22:30",
    "type": "macro",
@@ -31,6 +77,18 @@
    "source": "미국 노동통계국(BLS)",
    "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
    "id": "2026-12-04:us_jobs"
+  },
+  {
+   "date": "2026-12-10",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "AVGO",
+   "when": "after",
+   "title": "브로드컴 실적 발표",
+   "source": "Broadcom IR",
+   "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026",
+   "id": "2026-12-10:AVGO"
   },
   {
    "date": "2026-12-10",
@@ -53,6 +111,18 @@
    "id": "2026-12-10:us_cpi"
   },
   {
+   "date": "2026-12-11",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "COST",
+   "when": "after",
+   "title": "코스트코 실적 발표",
+   "source": "Costco IR",
+   "url": "https://investor.costco.com/events-and-presentations/events/event-details/2026/Q1-2027-Earnings-Call/default.aspx",
+   "id": "2026-12-11:COST"
+  },
+  {
    "date": "2026-12-23",
    "kst": "2026-12-23 22:30",
    "type": "macro",
@@ -61,6 +131,16 @@
    "source": "미국 경제분석국(BEA)",
    "url": "https://www.bea.gov/news/schedule",
    "id": "2026-12-23:us_pce"
+  },
+  {
+   "date": "2026-12-31",
+   "kst": "2026-12-31 08:00",
+   "type": "macro",
+   "kind": "kr_cpi",
+   "title": "한국 소비자물가동향",
+   "source": "국가데이터처",
+   "url": "https://www.mods.go.kr/menu.es?mid=b70203020000",
+   "id": "2026-12-31:kr_cpi"
   },
   {
    "date": "2027-01-08",
