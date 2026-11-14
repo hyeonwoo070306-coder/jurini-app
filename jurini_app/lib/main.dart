@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'learn.dart';
+part 'news_terms.dart';
 
 typedef J = Map<String, dynamic>;
 
@@ -358,7 +359,7 @@ Widget newsCard(BuildContext ctx, P p, List items) {
           txt(n['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
           rich([
             TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(n['type']))),
-            s(n['impact']),
+            ...termSpans(ctx, n['impact']),
           ], const TextStyle(fontSize: 14, height: 1.5)),
           termChips(ctx, p, n),
           Text('출처: ${n['source']}', style: sub(p, 11.5)),
@@ -1354,7 +1355,7 @@ class _NewsState extends State<NewsPage> {
                       txt(x['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
                       rich([
                         TextSpan(text: '왜 움직였나  ', style: TextStyle(fontWeight: FontWeight.w700, color: p.accent)),
-                        s(x['impact']),
+                        ...termSpans(context, x['impact']),
                       ], const TextStyle(fontSize: 14, height: 1.5)),
                       termChips(context, p, x),
                     ]),
@@ -1415,7 +1416,7 @@ class _NewsState extends State<NewsPage> {
                     txt(x['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
                     rich([
                       TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(x['type']))),
-                      s(x['impact']),
+                      ...termSpans(context, x['impact']),
                     ], const TextStyle(fontSize: 14, height: 1.5)),
                     termChips(context, p, x),
                     Row(children: [
