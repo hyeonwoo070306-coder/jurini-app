@@ -320,6 +320,18 @@ class _LearnState extends State<LearnPage> {
             ),
           ]),
         ),
+        // 오늘·내일(한국 시간) 큰 경제 발표가 있으면 추리 퀴즈 한 장
+        if (upcomingPredict(calendar['events'], kstNow(), days: 1).firstOrNull case final J e) ...[
+          const SizedBox(height: 12),
+          Material(
+            color: p.surface,
+            borderRadius: BorderRadius.circular(16),
+            clipBehavior: Clip.antiAlias,
+            child: row(p, '추리 퀴즈 · 3분', '내일을 추리해 보기', '${calDay(e['date'])} ${calTime(e)} ${e['title']}. 이렇게 나오면 시장은 무엇을 걱정할까요?',
+                () => openPredict(context, e),
+                key: const ValueKey('predict-card')),
+          ),
+        ],
         if (aiToday != null && next != null) ...[
           const SizedBox(height: 12),
           Material(

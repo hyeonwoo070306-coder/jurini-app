@@ -11,6 +11,7 @@ from check_news import BANNED, PRICE
 
 KINDS = {"fomc", "us_cpi", "us_jobs", "us_pce", "us_gdp", "bok_rate", "kr_cpi", "other"}
 DAY = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+RATE_KINDS = {"fomc", "bok_rate"}  # 금리 결정: 결과 비교(vs)는 올림/그대로/내림
 ID = re.compile(r"^\d{4}-\d{2}-\d{2}:[A-Za-z0-9._]+$")
 
 
@@ -48,6 +49,10 @@ def result_problems(r):
                 out.append(f"{k}: {f}는 1~{mx}자")
         if not str(v.get("url", "")).startswith("https://"):
             out.append(f"{k}: url은 https://")
+        if "vs" in v:  # 선택: 앱 '내 추리 vs 실제' 비교용
+            ok = {"hike", "hold", "cut"} if k.split(":")[1] in RATE_KINDS else {"above", "inline", "below"}
+            if v["vs"] not in ok:
+                out.append(f"{k}: vs는 {sorted(ok)} 중 하나")
         text = f"{v.get('summary', '')} {v.get('impact', '')}"
         if BANNED.search(text) or PRICE.search(text):
             out.append(f"{k}: 투자 권유·주가 숫자 표현 금지")
@@ -62,6 +67,10 @@ def selfcheck():
     res = {"summary": "물가 3.0% 상승", "impact": "금리 인하 기대가 커질 수 있어요.", "source": "BLS", "url": "https://bls.gov"}
     assert result_problems({"2026-12-10:us_cpi": res}) == []
     assert result_problems({"2026-12-10:us_cpi": {**res, "impact": "주가가 오를 것"}}), "주가 예측을 못 잡음"
+    assert result_problems({"2026-12-10:us_cpi": {**res, "vs": "above"}}) == []
+    assert result_problems({"2026-12-10:fomc": {**res, "vs": "cut"}}) == []
+    assert result_problems({"2026-12-10:fomc": {**res, "vs": "above"}}), "금리 결정에 above를 못 잡음"
+    assert result_problems({"2026-12-10:us_cpi": {**res, "vs": "cut"}}), "물가에 cut을 못 잡음"
 
 
 def main():

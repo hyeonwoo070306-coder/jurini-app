@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'learn.dart';
+part 'predict.dart';
 
 typedef J = Map<String, dynamic>;
 
@@ -32,6 +33,7 @@ Future<void> main() async {
   links = jsonDecode(await rootBundle.loadString('assets/links.json'));
   calendar = jsonDecode(await rootBundle.loadString('assets/calendar.json'));
   lessons = jsonDecode(await rootBundle.loadString('assets/lessons.json'));
+  predictData = jsonDecode(await rootBundle.loadString('assets/predict.json'));
   ndx = {...usMore['meta']['nasdaq100']};
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
@@ -1876,6 +1878,7 @@ Widget calRow(BuildContext ctx, P p, J e, Map byTk, {bool first = true, bool las
               sub(p, 13).copyWith(height: 1.45)),
           Text('출처: ${r['source']}', style: sub(p, 11.5)),
         ],
+        predictEntry(ctx, p, e),
       ])),
       const SizedBox(width: 8),
       Text(calKinds[e['kind']]?.$1 ?? '',
