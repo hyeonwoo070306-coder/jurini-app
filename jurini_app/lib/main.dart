@@ -12,8 +12,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'learn.dart';
 part 'predict.dart';
 part 'domino.dart';
+part 'news_terms.dart';
 
 typedef J = Map<String, dynamic>;
+
+const licensedData = false; // 재배포 허락된 유료 데이터 계약 전까지 끔 (매일 PER·증권사 예측·실적 발표일·회사 로고)
+
+// 일정 목록. 실적 발표일은 재배포 허락 전까지 숨긴다.
+// 실적 발표일은 회사 IR 공식 발표로 확인한 것만 보여준다(나스닥 예상일은 재배포 허락 전까지 숨김).
+List<J> calEvents() => [for (final J e in calendar['events']) if (licensedData || e['type'] != 'earnings' || !'${e['source']}'.contains('나스닥')) e];
+bool hasEarn() => calEvents().any((e) => e['type'] == 'earnings');
 
 late J data, sp500, news, kr, usMore, surprise, links, calendar, lessons;
 Set<String> ndx = {}; // 나스닥 100 티커
@@ -136,7 +144,7 @@ Future<void> loadLive() async {
       redraw.value++;
     }
   });
-  getJson('surprise.json').then((j) {
+  if (licensedData) getJson('surprise.json').then((j) {
     if (j != null && validSurprise(j)) {
       surprise = j;
       redraw.value++;
@@ -145,7 +153,7 @@ Future<void> loadLive() async {
   final raw = await getJson('news.json');
   final n = raw == null ? null : validNews(raw);
   if (n != null) news = n;
-  final v = await getJson('valuation.json');
+  final v = licensedData ? null : await getJson('valuation.json');
   if (v != null && validValuation(v)) {
     applyLive(v);
   } else if (n != null) {
@@ -231,8 +239,8 @@ class P {
 }
 
 const brand = {
-  'aapl': Color(0xFF3D4A48), 'nvda': Color(0xFF4F8A1F), 'msft': Color(0xFF2F6DB5), 'googl': Color(0xFFC2463A),
-  'amzn': Color(0xFFD98A14), 'spcx': Color(0xFF1E2A3A), 'meta': Color(0xFF2D5FD3), 'avgo': Color(0xFFB5312A),
+  'aapl': Color(0xFF3D4A48), 'nvda': Color(0xFF3F7A12), 'msft': Color(0xFF2F6DB5), 'googl': Color(0xFFC2463A),
+  'amzn': Color(0xFFA05E00), 'spcx': Color(0xFF1E2A3A), 'meta': Color(0xFF2D5FD3), 'avgo': Color(0xFFB5312A),
   'tsla': Color(0xFF9E2A2A), 'lly': Color(0xFFC21E3A),
 };
 
@@ -314,6 +322,19 @@ Widget groupRow(P p, bool first, bool last, VoidCallback onTap, Widget child) =>
               decoration: BoxDecoration(border: last ? null : Border(bottom: BorderSide(color: p.line))), child: child)),
     );
 
+const privacyUrl = 'https://hyeonwoo070306-coder.github.io/jurini-app/privacy.html';
+
+Widget legalRow(P p, String label, bool first, bool last, VoidCallback onTap) => groupRow(
+    p,
+    first,
+    last,
+    onTap,
+    ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 48),
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(children: [Expanded(child: Text(label, style: const TextStyle(fontSize: 14))), Icon(Icons.chevron_right, color: p.muted)]))));
+
 const newsKinds = {'good': ('호재', '좋은 소식'), 'bad': ('악재', '걱정되는 소식'), 'watch': ('지켜볼 일', '앞으로 있을 일')};
 
 Widget newsCard(BuildContext ctx, P p, List items) {
@@ -343,7 +364,7 @@ Widget newsCard(BuildContext ctx, P p, List items) {
           txt(n['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
           rich([
             TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(n['type']))),
-            s(n['impact']),
+            ...termSpans(ctx, n['impact']),
           ], const TextStyle(fontSize: 14, height: 1.5)),
           termChips(ctx, p, n),
           Text('출처: ${n['source']}', style: sub(p, 11.5)),
@@ -465,6 +486,7 @@ String logoUrl(J c) {
 
 Widget logo(J c, [double size = 44, Color? bg]) {
   final badge = logoBadge(c, size, bg);
+  if (!licensedData) return badge;
   return ClipRRect(
     borderRadius: BorderRadius.circular(size * .3),
     child: Image.network(
@@ -548,7 +570,7 @@ Widget mix(P p, List rows) => col(10, [
       ]),
     ]);
 
-Widget barRow(P p, String label, num? x, num mx, bool latest, [String Function(num?) fmt = eok]) => Row(children: [
+Widget barRow(P p, String label, num? x, num mx, bool latest, [String Function(num?) fmt = eok]) => MergeSemantics(child: Row(children: [
       SizedBox(width: 76, child: txt(label, sub(p).copyWith(height: 1.25))),
       const SizedBox(width: 10),
       Expanded(
@@ -575,10 +597,10 @@ Widget barRow(P p, String label, num? x, num mx, bool latest, [String Function(n
                         child: Text(x == null ? '공시 없음' : '${x < 0 ? '−' : ''}${fmt(x.abs())}',
                             style: const TextStyle(fontSize: 12.5, fontWeight: FontWeight.w700)))),
               ]))),
-    ]);
+    ]));
 
 // PER 위치 게이지 (0~60배, 평균선 21배)
-Widget gauge(P p, double pos) => col(6, [
+Widget gauge(P p, double pos) => Semantics(label: 'PER 위치 게이지: 왼쪽일수록 낮고 오른쪽일수록 높아요', child: col(6, [
       SizedBox(
           height: 20,
           child: LayoutBuilder(
@@ -600,7 +622,7 @@ Widget gauge(P p, double pos) => col(6, [
       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         for (final t in ['0배', '평균 약 20배', '60배+']) Text(t, style: sub(p, 11.5))
       ]),
-    ]);
+    ]));
 
 Widget riskItem(P p, String r) {
   final i = r.indexOf(':');
@@ -825,7 +847,13 @@ class _HomeState extends State<HomePage> {
           if (i == header.length + list.length) {
             return Padding(
                 padding: const EdgeInsets.only(top: 14),
-                child: Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5)));
+                child: col(12, [
+                  Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5)),
+                  Column(children: [
+                    legalRow(p, '개인정보처리방침', true, false, () => launchUrl(Uri.parse(privacyUrl), mode: LaunchMode.externalApplication)),
+                    legalRow(p, '오픈소스 라이선스', false, true, () => showLicensePage(context: context, applicationName: '주린이 기업 노트')),
+                  ]),
+                ]));
           }
           final k = i - header.length;
           return Padding(
@@ -906,7 +934,7 @@ class _DetailState extends State<DetailPage> {
     final List fin = c['financials'] ?? [];
     final J? latest = fin.isEmpty ? null : fin.last;
     final bc = brandColor(c);
-    const w70 = TextStyle(color: Colors.white70, fontSize: 12);
+    const w70 = TextStyle(color: Color(0xDEFFFFFF), fontSize: 12); // 회사색 위 작은 글자도 대비 4.5:1 이상
     // 형광펜 용어는 노란 바탕이라 글자만 어둡게
     final onMark = TextStyle(color: p.fg, fontSize: 12);
     Widget heroFact(Widget label, String value) => Container(
@@ -926,7 +954,7 @@ class _DetailState extends State<DetailPage> {
               padding: const EdgeInsets.only(right: 16),
               child: Center(
                   child: Text(full ? '시가총액 ${c['rank']}위' : c['sector'] ?? '',
-                      style: const TextStyle(color: Colors.white70, fontSize: 12.5, fontWeight: FontWeight.w600)))),
+                      style: const TextStyle(color: Color(0xDEFFFFFF), fontSize: 12.5, fontWeight: FontWeight.w600)))),
         ],
       ),
       body: ListView(
@@ -935,8 +963,7 @@ class _DetailState extends State<DetailPage> {
           Container(
             padding: const EdgeInsets.fromLTRB(20, 4, 20, 24),
             decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topCenter, end: Alignment.bottomCenter, colors: [bc, Color.lerp(bc, Colors.black, .3)!]),
+                color: bc,
                 borderRadius: const BorderRadius.vertical(bottom: Radius.circular(28))),
             child: col(16, [
               Row(children: [
@@ -1095,7 +1122,7 @@ class _DetailState extends State<DetailPage> {
                 TextSpan(text: '${b['asof']} 기준', style: sub(p)),
               ], const TextStyle(fontSize: 13.5))),
           if ((c['financial_note'] ?? '') != '') txt('※ ${c['financial_note']}', sub(p)),
-          if ((surprise['companies'][c['ticker']]?['rows'] as List?)?.isNotEmpty ?? false)
+          if (licensedData && ((surprise['companies'][c['ticker']]?['rows'] as List?)?.isNotEmpty ?? false))
             surpriseCard(ctx, p, surprise['companies'][c['ticker']]),
           if (isKr(c) && c['fs'] != null) txt('${c['fs']} 재무제표 기준이에요. 연결은 자회사까지 합친 숫자예요.', sub(p)),
           if (last['revenue'] != null && !isKr(c))
@@ -1333,7 +1360,7 @@ class _NewsState extends State<NewsPage> {
                       txt(x['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
                       rich([
                         TextSpan(text: '왜 움직였나  ', style: TextStyle(fontWeight: FontWeight.w700, color: p.accent)),
-                        s(x['impact']),
+                        ...termSpans(context, x['impact']),
                       ], const TextStyle(fontSize: 14, height: 1.5)),
                       termChips(context, p, x),
                     ]),
@@ -1394,7 +1421,7 @@ class _NewsState extends State<NewsPage> {
                     txt(x['title'], const TextStyle(fontSize: 15.5, fontWeight: FontWeight.w700, height: 1.45)),
                     rich([
                       TextSpan(text: '회사에 주는 영향  ', style: TextStyle(fontWeight: FontWeight.w700, color: colorOf(x['type']))),
-                      s(x['impact']),
+                      ...termSpans(context, x['impact']),
                     ], const TextStyle(fontSize: 14, height: 1.5)),
                     termChips(context, p, x),
                     Row(children: [
@@ -1534,7 +1561,7 @@ class _QuizState extends State<QuizPage> {
           const Spacer(),
           Text('맞힌 문제 $score', style: sub(p, 13)),
         ]),
-        LinearProgressIndicator(value: (i + (done ? 1 : 0)) / qs.length, borderRadius: BorderRadius.circular(4)),
+        LinearProgressIndicator(semanticsLabel: "퀴즈 진행", value: (i + (done ? 1 : 0)) / qs.length, borderRadius: BorderRadius.circular(4)),
         box(p, col(8, [
           Text('다음 설명에 맞는 용어는?', style: sub(p, 13).copyWith(fontWeight: FontWeight.w700)),
           txt(q.prompt, const TextStyle(fontSize: 17, fontWeight: FontWeight.w600, height: 1.5)),
@@ -1881,7 +1908,7 @@ List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(Str
   // 하루 안에서는 이른 시각부터 (아침 ≈ 06시, 밤 ≈ 22시, 미정은 맨 뒤)
   String order(J e) => e['kst']?.substring(11) ?? switch (e['when']) { 'after' => '06:00', 'before' => '22:00', _ => '99' };
   int byTime(J a, J b) => order(a).compareTo(order(b));
-  final all = [for (final J e in calendar['events']) e];
+  final all = calEvents();
   final todays = all.where((e) => e['date'] == today).toList()..sort(byTime);
   final shown = all.where((e) => type == null || e['type'] == type);
   final days = <String, List<J>>{};
@@ -1943,11 +1970,11 @@ List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(Str
           first: i == 0 || past[i - 1]['date'] != e['date'], last: i == past.length - 1 || past[i + 1]['date'] != e['date']),
     ],
     Padding(padding: const EdgeInsets.fromLTRB(4, 24, 4, 4), child: Text('앞으로의 일정', style: h(18))),
-    txt('시장을 움직이는 경제 지표 발표와 회사 실적 발표예요. 실적 발표 날은 회사가 지난 분기 성적표를 내는 날이라, 예상과 차이가 크면 주가가 크게 움직여요. 시각은 모두 한국 시간이고, 누르면 뜻이나 회사 노트가 열려요.',
+    txt(hasEarn() ? '시장을 움직이는 경제 지표 발표와 회사 실적 발표예요. 실적 발표 날은 회사가 지난 분기 성적표를 내는 날이라, 예상과 차이가 크면 주가가 크게 움직여요. 시각은 모두 한국 시간이고, 누르면 뜻이나 회사 노트가 열려요.' : '시장을 움직이는 경제 지표 발표예요. 시각은 모두 한국 시간이고, 누르면 뜻이 열려요.',
         sub(p, 13)),
     const SizedBox(height: 12),
     Wrap(spacing: 6, children: [
-      for (final (t, label) in [(null, '전체'), ('macro', '경제 지표'), ('earnings', '실적 발표')])
+      for (final (t, label) in [(null, '전체'), ('macro', '경제 지표'), if (hasEarn()) ('earnings', '실적 발표')])
         ChoiceChip(label: Text(label), selected: type == t, showCheckmark: false, onSelected: (_) => setType(t)),
     ]),
     if (days.isEmpty) Padding(padding: const EdgeInsets.only(top: 16), child: txt('앞으로 정해진 일정이 아직 없어요. 매일 새로 받아와요.', sub(p, 14))),
@@ -1956,7 +1983,7 @@ List<Widget> calendarList(BuildContext ctx, P p, String? type, void Function(Str
       for (final (i, e) in list.indexed) calRow(ctx, p, e, byTk, first: i == 0, last: i == list.length - 1),
     ],
     const SizedBox(height: 20),
-    txt('${calendar['note']} 실적 발표 \'아침\'은 미국 장 마감 뒤, \'밤\'은 미국 장 시작 전이에요. 결과 요약은 AI가 정리해서 틀릴 수 있어요. $disclaimer',
+    txt('${calendar['note']} ${hasEarn() ? '실적 발표 \'아침\'은 미국 장 마감 뒤, \'밤\'은 미국 장 시작 전이에요. ' : ''}결과 요약은 AI가 정리해서 틀릴 수 있어요. $disclaimer',
         sub(p, 11.5)),
   ];
 }

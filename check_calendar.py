@@ -59,7 +59,33 @@ def result_problems(r):
     return out
 
 
+def earn_problems(m):
+    """calendar_earnings.json: 회사 IR 공식 발표로 확인한 실적 발표일만. 나스닥·뉴스 기사 금지."""
+    out, seen = [], set()
+    tickers = {c["ticker"] for c in json.load(open("jurini_app/assets/companies.json", encoding="utf-8"))["companies"]}
+    for i, e in enumerate(m.get("events", [])):
+        w = f"earnings[{i}]"
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", str(e.get("date", ""))):
+            out.append(f"{w}: date는 YYYY-MM-DD")
+        if e.get("ticker") not in tickers:
+            out.append(f"{w}: ticker는 앱의 미국 50개 회사 중 하나")
+        if e.get("when") not in ("before", "after", None):
+            out.append(f"{w}: when은 before/after/null")
+        if not str(e.get("url", "")).startswith("https://") or not e.get("source"):
+            out.append(f"{w}: 회사 IR 출처(source)와 https url 필수")
+        if "nasdaq" in str(e.get("url", "")).lower() or "나스닥" in str(e.get("source", "")):
+            out.append(f"{w}: 나스닥은 출처로 쓸 수 없음(회사 IR만)")
+        if (e.get("date"), e.get("ticker")) in seen:
+            out.append(f"{w}: 중복")
+        seen.add((e.get("date"), e.get("ticker")))
+    return out
+
+
 def selfcheck():
+    ir = {"date": "2026-11-20", "ticker": "NVDA", "when": "after", "source": "NVIDIA IR", "url": "https://investor.nvidia.com/x"}
+    assert earn_problems({"events": [ir]}) == []
+    assert earn_problems({"events": [{**ir, "url": "https://www.nasdaq.com/x"}]}), "나스닥 출처를 못 잡음"
+    assert earn_problems({"events": [{**ir, "ticker": "ZZZZ"}]}), "없는 티커를 못 잡음"
     ok = {"date": "2026-12-10", "kind": "kr_cpi", "title": "한국 소비자물가", "time": "08:00 KST", "source": "국가데이터처", "url": "https://x.kr"}
     assert macro_problems({"events": [ok]}) == []
     assert macro_problems({"events": [ok, ok]}), "중복을 못 잡음"
@@ -76,7 +102,7 @@ def selfcheck():
 def main():
     selfcheck()
     errs = macro_problems(json.load(open("calendar_macro.json", encoding="utf-8"))) + \
-        result_problems(json.load(open("calendar_results.json", encoding="utf-8")))
+        result_problems(json.load(open("calendar_results.json", encoding="utf-8"))) +         earn_problems(json.load(open("calendar_earnings.json", encoding="utf-8")))
     if errs:
         print("\n".join(errs[:50]))
         sys.exit(f"검사 실패 {len(errs)}건 — 커밋하지 말 것")

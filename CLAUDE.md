@@ -5,23 +5,21 @@
 ## 결정된 사항
 - 대상: 주식을 처음 시작하는 사람. 모든 문장은 중학생도 이해할 수 있게 쓴다.
 - 플랫폼: Android 먼저 (Flutter 또는 React Native 예정). 개발자는 처음 앱을 만드는 1인, 예산 약 100만 원 이하.
-- 주가 자체와 52주 최고/최저는 보여주지 않는다. 시가총액·PER·PBR·배당수익률만 매일 종가 기준으로 업데이트한다(아래 `build_valuation.py`). 모든 수치에는 기준일을 붙인다.
+- 주가 자체와 52주 최고/최저는 보여주지 않는다. 모든 수치에는 기준일을 붙인다.
+- 재배포 허락 전 데이터는 앱에서 끈다(`lib/main.dart`의 `licensedData = false`): 매일 PER·시총 갱신(`valuation.json` 받기), 증권사 예측(`surprise.json`), 실적 발표일, FMP 회사 로고(글자 배지로 대체). 코드는 남겨 뒀고 유료 데이터 계약 후 `true`로 켠다. `build_valuation.py` 등은 계속 돌지만 앱이 쓰지 않는다.
 - 데이터는 앱 안에 JSON으로 넣어 배포하고, 매일 바뀌는 지표만 앱이 켜질 때 인터넷에서 받아 덮어쓴다. 못 받으면 앱 안의 숫자를 쓴다.
 - 기업 화면의 경제용어는 탭하면 용어사전 팝업(바텀시트)이 뜬다.
 - 투자 추천처럼 보이는 표현은 쓰지 않고, 화면마다 "투자 공부용 정보이며 매수·매도 추천이 아닙니다" 문구를 둔다.
 
 ## 파일
-- `companies.json`: 미국 시가총액 Top 10 기업 데이터 (시총 2026-11-09, 밸류에이션 2026-11-06 기준). 재무 단위는 백만 달러.
-- `glossary.json`: 경제용어 138개, 10개 분야 (`id`, `category`, `term`, `definition`, `example`, `market_effect`(시장 흐름 용어만), `used_by`). 기업의 `terms` 배열이 이 `id`를 가리킨다.
+- `jurini_app/assets/glossary.json`: 경제용어 138개, 10개 분야 (`id`, `category`, `term`, `definition`, `example`, `market_effect`(시장 흐름 용어만), `used_by`). 기업의 `terms` 배열이 이 `id`를 가리킨다.
 - `glossary_macro.py`: 용어의 분야 묶음(`CATS`)과 금리·물가·경기 용어(`MACRO`, 시장에 주는 영향 포함). 새 용어를 넣으면 여기서 분야를 정해 줘야 `build.py`가 돈다.
-- `build.py`: 시총 Top 50 상세 데이터(`jurini_app/assets/companies.json`, `glossary.json`)와 읽기용 Markdown(`us-top50.md`, `glossary.md`)을 만든다. 1~10위는 이 파일에 직접 쓴 데이터, 11~50위는 아래 두 파일을 합친다. 루트의 `companies.json`·`glossary.json`은 예전 Top 10 버전이다.
+- `build.py`: 시총 Top 50 상세 데이터(`jurini_app/assets/companies.json`, `glossary.json`)와 읽기용 Markdown(`us-top50.md`, `glossary.md`)을 만든다. 1~10위는 이 파일에 직접 쓴 데이터, 11~50위는 아래 두 파일을 합친다.
 - `companies_top50.py`: 11~50위 기업의 글(설명, 투자 포인트, 리스크, 사업 비중 등). 사업 비중(revenue_mix)은 대략치라 출시 전에 10-K와 대조한다.
 - `build_top50_numbers.py` → `top50_numbers.json`: 11~50위 숫자(시총은 나스닥, 재무는 SEC, 배당은 야후)를 받아 PER·PBR·ROE를 계산한다. 숫자를 새로 받을 때 이걸 먼저 돌리고 `build.py`를 돌린다. 선행 PER과 연속 배당 증가 연수는 자동으로 정확히 구할 수 없어 비워 둔다.
-- `jurini-app.html`: 클릭 가능한 앱 예시화면 (데이터 포함, 브라우저에서 바로 열림).
-- `app_template.html`: 데이터를 넣기 전 템플릿 (`__DATA__`, `__GLOSSARY__` 자리표시자).
 - `build_sp500.py`: S&P 500 기본 카드(`jurini_app/assets/sp500.json`)를 만든다. 종목 목록은 위키백과, 재무 숫자는 SEC 공시(XBRL)에서 자동으로 가져온다. 분기마다 다시 실행한다 (약 15분).
 - `sp500_ko.txt`: S&P 500 회사의 한글 이름과 한 줄 설명 (`티커|이름|설명`). 종목이 바뀌면 여기에 추가한다.
-- `build_valuation.py` → `docs/valuation.json`: 매일 나스닥 종가 기준 시가총액으로 50개 회사의 시가총액·PER·PBR·배당수익률을 다시 계산한다(앱 데이터의 지표 × 시가총액 변화 비율). 하루 50% 넘게 바뀐 숫자는 버리고 어제 숫자를 쓴다. `.github/workflows/daily.yml`이 평일 21:30 UTC에 자동 실행해 커밋한다. 앱은 `lib/main.dart`의 `liveUrl`에서 이 파일을 받는다.
+- `build_valuation.py` → `docs/valuation.json`: 매일 나스닥 종가 기준 시가총액으로 50개 회사의 시가총액·PER·PBR·배당수익률을 다시 계산한다(앱 데이터의 지표 × 시가총액 변화 비율). 하루 50% 넘게 바뀐 숫자는 버리고 어제 숫자를 쓴다. `.github/workflows/daily.yml`이 평일 21:30 UTC에 자동 실행해 커밋한다. 앱은 `lib/main.dart`의 `liveUrl`에서 이 파일을 받는다. **지금은 꺼 둠**: 나스닥 약관이 자동 수집·상업 이용을 금지해서 daily.yml에서 빼고 앱도 `licensedData = false`로 받지 않는다. 유료 종가 데이터 계약 뒤 URL을 바꾸고 다시 켠다.
 - 주의: 회사 글(투자 포인트·주의할 점·해설)에 적힌 "PER 약 38배" 같은 숫자는 글을 쓴 날 기준이라 매일 숫자와 조금씩 달라진다. 분기 갱신 때 글도 고친다.
 - 출시 전: 나스닥·야후 데이터는 앱 배포(재배포) 허용 여부를 확인하고, 필요하면 재배포가 허용된 유료 데이터로 `build_valuation.py`의 URL만 바꾼다.
 - `docs/news.json`: 50개 회사의 최근 뉴스(2~3개씩, type: good=호재/bad=악재/watch=지켜볼 일, 회사에 주는 영향, 출처). 앱은 켤 때 깃허브에서 최신본을 받고, 못 받으면 `jurini_app/assets/news.json`(복사본)을 쓴다. 기업 상세에서 회사 소개 바로 아래 가장 눈에 띄는 칸으로 보여준다. 지금은 손으로 정리하므로 주기적으로 새로 써야 한다. 주가 숫자는 뉴스에도 쓰지 않는다.
@@ -31,9 +29,9 @@
 - 로고: 앱이 `logoUrl()`(FMP 공개 로고 주소, 한국은 .KS/.KQ)에서 받고, 없거나 오프라인이면 글자 배지. 로고는 각 회사 상표라 출시 전에 이용 조건을 확인한다.
 - `glossary_more.py`: 회사 조사용 추가 용어(`MORE`: 용어·뜻·예시·분야·주가에 왜 중요할까 한 번에). 새 일반 용어는 여기에 넣으면 `glossary_why.py`가 합친다(기존 id와 겹치면 멈춤).
 - `glossary_why.py`: 용어마다 "주가에 왜 중요할까?" 설명(`WHY`)과 새 용어(`EXTRA`: EPS·컨센서스·어닝 서프라이즈). 새 용어를 넣으면 여기에 설명을 써야 `build.py`가 돈다(금리·물가 용어는 `MACRO`의 '시장에 주는 영향'이 대신함).
-- `build_surprise.py` → `docs/surprise.json`(+ `jurini_app/assets/surprise.json`): 미국 50개 회사의 증권사 예측 평균 EPS vs 실제 EPS(최근 4분기)와 다음 분기 예측(나스닥). 매일 `daily.yml`에서 실행, 앱 실적 탭에 표시. 매출·영업이익 예측은 유료 데이터라 없음.
-- `build_calendar.py` → `docs/calendar.json`(+ 앱 복사본): 뉴스 탭의 '일정' 화면. 경제 지표 일정은 `calendar_macro.json`(FOMC·BLS·BEA·한국은행 공식 일정표에서 옮김, 2026-11-14 확인, 2027년 하반기와 한국 CPI 날짜는 아직 없음 — 기관이 발표하면 추가), 실적 발표일은 나스닥 예상일(매일 갱신, daily.yml). 시각은 한국 시간으로 바꿔 저장(미국 서머타임 반영).
-- `check_calendar.py`: `calendar_macro.json`·`calendar_results.json`(지난 일정 결과 요약, 키 = 일정 id `날짜:kind` 또는 `날짜:티커`) 검사기. Claude Code 예약 작업(클라우드, 매일 08:00 KST)이 공식 일정표에서 새 일정(한국 CPI 등)을 추가하고, 최근 2주 안에 끝난 일정의 결과를 쉽게 요약한 뒤 이 검사를 통과해야 `build_calendar.py`를 돌려 커밋한다. 앱 일정 화면 맨 위 '오늘의 주요 일정', 그 아래 '지난 일정 결과'.
+- `build_surprise.py` → `docs/surprise.json`(+ `jurini_app/assets/surprise.json`): 미국 50개 회사의 증권사 예측 평균 EPS vs 실제 EPS(최근 4분기)와 다음 분기 예측(나스닥). 매일 `daily.yml`에서 실행, 앱 실적 탭에 표시. 매출·영업이익 예측은 유료 데이터라 없음. **지금은 꺼 둠**(Zacks 데이터 재배포 문제, daily.yml에서 뺌, 앱 `licensedData`).
+- `build_calendar.py` → `docs/calendar.json`(+ 앱 복사본): 뉴스 탭의 '일정' 화면. 경제 지표 일정은 `calendar_macro.json`(FOMC·BLS·BEA·한국은행 공식 일정표에서 옮김, 2026-11-14 확인, 2027년 하반기와 한국 CPI 날짜는 아직 없음 — 기관이 발표하면 추가), 실적 발표일은 나스닥 예상일(매일 갱신, daily.yml). 시각은 한국 시간으로 바꿔 저장(미국 서머타임 반영). 실적 발표일은 나스닥 예상일 대신 `calendar_earnings.json`(회사 IR 보도자료로 확인한 날짜, 예약 작업이 채움)만 쓴다(`NASDAQ = False`).
+- `check_calendar.py`: `calendar_macro.json`·`calendar_results.json`(지난 일정 결과 요약, 키 = 일정 id `날짜:kind` 또는 `날짜:티커`) 검사기. Claude Code 예약 작업(클라우드, 매일 08:00 KST)이 공식 일정표에서 새 일정(한국 CPI 등)을 추가하고, 최근 2주 안에 끝난 일정의 결과를 쉽게 요약한 뒤 이 검사를 통과해야 `build_calendar.py`를 돌려 커밋한다. 앱 일정 화면 맨 위 '오늘의 주요 일정', 그 아래 '지난 일정 결과'. `calendar_earnings.json`(나스닥 출처 금지, 회사 IR만)과 결과의 선택 필드 `vs`(above/inline/below, 금리는 hike/hold/cut — 앱 '내일을 추리해 보기'가 비교)도 검사.
 - `jurini_app/assets/lessons.json`: 배우기 5단계 코스 수업 25개(카드 4~5장 + 퀴즈 3문제). `check_lesson.py`가 형식·길이·금지 표현을 검사(AI 수업 `docs/lesson_today.json`·`docs/lessons_ai.json`, AI 추가 용어 `docs/glossary_ai.json`도). 설계: `docs/superpowers/specs/2026-11-14-learning-path-design.md`.
 - 배우기 AI 작업(클라우드, 매일 07:30 KST, trig_01X2skjBLfEous8wWFRgT2KC): 그날 뉴스로 수업 1개 → 공식 자료로 사실 확인(`verified`, `sources`) → `check_lesson.py` 통과 → `docs/lesson_today.json`, `docs/lessons_ai.json`(60일), 새 용어 `docs/glossary_ai.json`(영구, 앱에서 'AI가 추가한 용어' 표시).
 - `build_kr.py` → `jurini_app/assets/kr.json`: 한국 상장회사(코스피·코스닥, 스팩 제외) 기본 카드. 한국거래소 KIND 상장법인목록(회사명·종목코드·업종·주요제품·상장일) + DART 오픈API 최근 3년 연간 재무(연결 우선, 억 원). DART 키는 `dart_key.txt`(깃 제외)에 있다. 시가총액은 아직 없어서 매출 순으로 정렬. 앱 기업 탭의 '미국/한국' 버튼으로 전환.
@@ -57,7 +55,7 @@
 ## 디자인 토큰 (다크 전용, `themeMode: ThemeMode.dark`)
 - 배경 #0B0D10, 카드 #15181D, 눌린 칸 #1E2228, 글자 #F2F4F6, 보조 글자 #8B95A1, 구분선 #23272E
 - 포인트(블루) #7C9CFF, 용어 형광펜 #8A6A00(글자는 흰색), 좋음 #4ADE80, 주의 #FF8A5B
-- 홈 맨 위는 남색 그라데이션 히어로(회사·노트·용어 수), 기업 상세 맨 위는 회사 고유색(`brandColor`)으로 채운다.
+- 기업 상세 맨 위는 회사 고유색(`brandColor`) 단색으로 채운다(흰 글자 대비 4.5:1 이상인 색만). 그라데이션은 쓰지 않는다(PER 위치 게이지 눈금만 예외).
 - 카드에 테두리를 쓰지 않는다. 목록은 카드 묶음 하나에 얇은 선으로 나눈다(`groupRow`). 탭은 밑줄, 선택 칩은 흰색.
 - 글꼴: Pretendard(400~800, `assets/fonts`, SIL OFL 라이선스는 앱 라이선스 화면에 등록). 숫자는 고정폭(`tabular`). 한국어 줄바꿈은 단어 단위(keep-all).
 - 밝은 테마(`P.light`)도 코드에 남아 있지만 지금은 쓰지 않는다.

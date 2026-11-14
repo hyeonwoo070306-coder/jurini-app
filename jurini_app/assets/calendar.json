@@ -1,55 +1,7 @@
 {
  "asof": "2026-11-14",
- "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 예상일(회사 확정 전엔 바뀔 수 있음). 시각은 한국 시간.",
+ "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 회사가 공식 발표한 날짜예요. 시각은 한국 시간.",
  "events": [
-  {
-   "date": "2026-11-17",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "HD",
-   "when": "before",
-   "title": "홈디포 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/hd/earnings",
-   "id": "2026-11-17:HD"
-  },
-  {
-   "date": "2026-11-18",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "NVDA",
-   "when": "after",
-   "title": "엔비디아 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/nvda/earnings",
-   "id": "2026-11-18:NVDA"
-  },
-  {
-   "date": "2026-11-19",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "WMT",
-   "when": "before",
-   "title": "월마트 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/wmt/earnings",
-   "id": "2026-11-19:WMT"
-  },
-  {
-   "date": "2026-11-19",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "PANW",
-   "when": "after",
-   "title": "팔로알토 네트웍스 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/panw/earnings",
-   "id": "2026-11-19:PANW"
-  },
   {
    "date": "2026-11-25",
    "kst": "2026-11-25 22:30",
@@ -71,18 +23,6 @@
    "id": "2026-11-26:bok_rate"
   },
   {
-   "date": "2026-12-02",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "CRWD",
-   "when": "after",
-   "title": "크라우드스트라이크 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/crwd/earnings",
-   "id": "2026-12-02:CRWD"
-  },
-  {
    "date": "2026-12-04",
    "kst": "2026-12-04 22:30",
    "type": "macro",
@@ -91,42 +31,6 @@
    "source": "미국 노동통계국(BLS)",
    "url": "https://www.bls.gov/schedule/news_release/empsit.htm",
    "id": "2026-12-04:us_jobs"
-  },
-  {
-   "date": "2026-12-09",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "ORCL",
-   "when": null,
-   "title": "오라클 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/orcl/earnings",
-   "id": "2026-12-09:ORCL"
-  },
-  {
-   "date": "2026-12-10",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "AVGO",
-   "when": "after",
-   "title": "브로드컴 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/avgo/earnings",
-   "id": "2026-12-10:AVGO"
-  },
-  {
-   "date": "2026-12-10",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "COST",
-   "when": null,
-   "title": "코스트코 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/cost/earnings",
-   "id": "2026-12-10:COST"
   },
   {
    "date": "2026-12-10",
@@ -147,18 +51,6 @@
    "source": "미국 노동통계국(BLS)",
    "url": "https://www.bls.gov/schedule/news_release/cpi.htm",
    "id": "2026-12-10:us_cpi"
-  },
-  {
-   "date": "2026-12-16",
-   "kst": null,
-   "type": "earnings",
-   "kind": "earnings",
-   "ticker": "MU",
-   "when": null,
-   "title": "마이크론 실적 발표",
-   "source": "나스닥(예상일)",
-   "url": "https://www.nasdaq.com/market-activity/stocks/mu/earnings",
-   "id": "2026-12-16:MU"
   },
   {
    "date": "2026-12-23",

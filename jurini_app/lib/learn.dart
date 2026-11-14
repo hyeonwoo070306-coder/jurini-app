@@ -221,7 +221,7 @@ class _LearnState extends State<LearnPage> {
     final pr = prog;
     if (pr == null) return const Scaffold(body: Center(child: CircularProgressIndicator()));
     final today = dayKey(DateTime.now());
-    final events = [for (final J e in calendar['events']) if (e['date'] == today) e];
+    final events = [for (final e in calEvents()) if (e['date'] == today) e];
     final market = marketNews();
     final next = nextLesson(lessons, pr);
     final reading = newsToRead(pr);
@@ -237,7 +237,7 @@ class _LearnState extends State<LearnPage> {
         if (events.isNotEmpty || market.isNotEmpty) ...[
           Container(
             padding: const EdgeInsets.fromLTRB(16, 14, 16, 14),
-            decoration: BoxDecoration(color: p.accentSoft, borderRadius: BorderRadius.circular(16)),
+            decoration: BoxDecoration(color: p.sunken, borderRadius: BorderRadius.circular(16)), // 일정 화면의 파란 칸과 모양을 구분
             child: col(10, [
               Row(children: [
                 Icon(Icons.wb_sunny_outlined, size: 20, color: p.accent),
@@ -511,7 +511,7 @@ class _LessonState extends State<LessonPage> {
     return Scaffold(
       appBar: AppBar(title: txt(l['title'], h(18)), centerTitle: false),
       body: ListView(padding: pad, children: [
-        LinearProgressIndicator(value: min(step, total) / total, borderRadius: BorderRadius.circular(4)),
+        LinearProgressIndicator(semanticsLabel: "수업 진행", value: min(step, total) / total, borderRadius: BorderRadius.circular(4)),
         const SizedBox(height: 16),
         if (widget.ai) ...[
           explain(p, txt('AI가 오늘 뉴스로 만든 수업이에요. 사실 확인을 거쳤지만 틀릴 수 있어요.', sub(p, 12.5))),

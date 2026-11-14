@@ -161,7 +161,8 @@ void main() {
       'note': '테스트',
       'events': [
         {'date': day(1), 'kst': '${day(1)} 04:00', 'type': 'macro', 'kind': 'fomc', 'title': '미국 금리 결정(FOMC)'},
-        {'date': day(3), 'kst': null, 'type': 'earnings', 'kind': 'earnings', 'ticker': 'NVDA', 'when': 'after', 'title': '엔비디아 실적 발표'},
+        {'date': day(3), 'kst': null, 'type': 'earnings', 'kind': 'earnings', 'ticker': 'NVDA', 'when': 'after', 'title': '엔비디아 실적 발표', 'source': '나스닥(예상일)'},
+        {'date': day(4), 'kst': null, 'type': 'earnings', 'kind': 'earnings', 'ticker': 'AAPL', 'when': 'after', 'title': '애플 실적 발표', 'source': 'Apple IR'},
         {'date': day(-2), 'kst': null, 'type': 'macro', 'kind': 'us_cpi', 'title': '지난 일정'},
         {'date': day(-1), 'kst': null, 'type': 'macro', 'kind': 'kr_cpi', 'title': '한국 물가 발표',
          'result': {'summary': '물가 2.1% 상승', 'impact': '예상과 비슷했어요.', 'source': '국가데이터처', 'url': 'https://x.kr'}},
@@ -171,7 +172,8 @@ void main() {
     await tester.pumpWidget(const MaterialApp(home: NewsPage()));
     await tester.tap(find.text('일정'));
     await tester.pump();
-    expect(find.textContaining(kt('엔비디아 실적 발표')), findsOneWidget);
+    expect(find.textContaining(kt('엔비디아 실적 발표')), findsNothing); // 나스닥 예상일은 숨김
+    expect(find.textContaining(kt('애플 실적 발표')), findsOneWidget); // 회사 IR 공식 발표는 보임
     expect(find.text('내일'), findsOneWidget);
     expect(find.textContaining(kt('지난 일정')), findsNothing); // 결과 없는 지난 일정은 숨김
     expect(find.text('오늘의 주요 일정'), findsOneWidget);
@@ -179,7 +181,7 @@ void main() {
     expect(find.textContaining(kt('물가 2.1% 상승')), findsOneWidget); // 지난 일정 결과 요약
     await tester.tap(find.text('경제 지표'));
     await tester.pump();
-    expect(find.textContaining(kt('엔비디아 실적 발표')), findsNothing);
+    expect(find.textContaining(kt('애플 실적 발표')), findsNothing);
     expect(tester.takeException(), isNull);
   });
 

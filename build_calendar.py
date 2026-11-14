@@ -82,12 +82,23 @@ def selfcheck():
     assert event_id({"date": "2026-11-18", "kind": "earnings", "ticker": "NVDA"}) == "2026-11-18:NVDA"
 
 
-def main():
-    selfcheck()
-    today = date.today().isoformat()
-    until = (date.today() + timedelta(days=DAYS_AHEAD)).isoformat()
-    start = (date.today() - timedelta(days=DAYS_PAST)).isoformat()
-    events = macro_events(start, until)
+NASDAQ = False  # 나스닥 예상일: 재배포 허락(유료 계약) 전까지 끔. 대신 회사 IR 공식 발표만 쓴다.
+EARN = "calendar_earnings.json"  # 예약 작업이 회사 IR 보도자료에서 확인한 실적 발표일
+
+
+def ir_earnings(start, until):
+    """calendar_earnings.json(회사 IR 공식 발표) → 실적 일정. date는 한국 날짜."""
+    if not os.path.exists(EARN):
+        return []
+    names = {c["ticker"]: c["name_ko"] for c in json.load(open("jurini_app/assets/companies.json", encoding="utf-8"))["companies"]}
+    return [{"date": e["date"], "kst": None, "type": "earnings", "kind": "earnings", "ticker": e["ticker"],
+             "when": e.get("when"), "title": f"{names.get(e['ticker'], e['ticker'])} 실적 발표",
+             "source": e["source"], "url": e["url"]}
+            for e in json.load(open(EARN, encoding="utf-8"))["events"] if start <= e["date"] <= until]
+
+
+def nasdaq_earnings(today, start, until):
+    events = []
     prev = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else {"events": []}
     prev_earn = {e["ticker"]: e for e in prev["events"] if e["type"] == "earnings"}
     # 이미 지난 실적 발표는 나스닥이 다음 분기 날짜로 바꿔 버리므로, 지난번 파일에서 그대로 가져온다
@@ -114,6 +125,18 @@ def main():
         time.sleep(0.4)
     if failed > 25:
         sys.exit(f"절반 넘게 실패({failed}개) — 저장하지 않음")
+    return events
+
+
+def main():
+    selfcheck()
+    today = date.today().isoformat()
+    until = (date.today() + timedelta(days=DAYS_AHEAD)).isoformat()
+    start = (date.today() - timedelta(days=DAYS_PAST)).isoformat()
+    events = macro_events(start, until)
+    events += ir_earnings(start, until)
+    if NASDAQ:
+        events += nasdaq_earnings(today, start, until)
     results = json.load(open(RESULTS, encoding="utf-8")) if os.path.exists(RESULTS) else {}
     seen, merged = set(), []
     for e in events:
@@ -126,7 +149,7 @@ def main():
             e["result"] = results[e["id"]]
         merged.append(e)
     events = sorted(merged, key=lambda e: (e["date"], e["kst"] or "", e["title"]))
-    data = {"asof": today, "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 예상일(회사 확정 전엔 바뀔 수 있음). 시각은 한국 시간.",
+    data = {"asof": today, "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 회사가 공식 발표한 날짜예요. 시각은 한국 시간.",
             "events": events}
     with open(OUT, "w", encoding="utf-8") as fp:
         json.dump(data, fp, ensure_ascii=False, indent=1)
