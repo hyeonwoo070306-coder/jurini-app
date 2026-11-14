@@ -10,6 +10,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'learn.dart';
+part 'domino.dart';
 
 typedef J = Map<String, dynamic>;
 
@@ -1636,34 +1637,7 @@ class _LinksState extends State<LinksPage> {
   Widget pick(String id) =>
       ChoiceChip(label: Text(nodeName(id)), selected: id == center, showCheckmark: false, onSelected: (_) => go(id));
 
-  Widget node(P p, String id, double size, bool on) {
-    final c = appCompany(id);
-    return Column(mainAxisSize: MainAxisSize.min, children: [
-      Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(size * .3 + 3),
-            border: Border.all(color: on ? Colors.white : Colors.transparent, width: 2)),
-        padding: const EdgeInsets.all(1),
-        child: c != null
-            ? logo(c, size)
-            : Container(
-                width: size,
-                height: size,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(color: p.sunken, borderRadius: BorderRadius.circular(size * .3)),
-                child: Icon(id.startsWith('UNNAMED') ? Icons.help_outline : Icons.apartment_rounded,
-                    color: p.muted, size: size * .5)),
-      ),
-      const SizedBox(height: 3),
-      SizedBox(
-          width: 76,
-          child: Text(nodeName(id),
-              textAlign: TextAlign.center,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: const TextStyle(fontSize: 11.5, fontWeight: FontWeight.w600))),
-    ]);
-  }
+  Widget node(P p, String id, double size, bool on) => linkNode(p, id, size, on);
 
   // 가운데 회사, 둘레에 이어진 회사. 선 색 = 연결 종류
   Widget graph(P p, List<J> ls) => LayoutBuilder(builder: (_, box) {
@@ -1739,6 +1713,8 @@ class _LinksState extends State<LinksPage> {
       appBar: topBar(context, '기업 연결', '${links['asof']} 기준'),
       body: ListView(padding: pad, children: [
         txt('한 회사가 흔들리면 이어진 회사들도 같이 흔들릴 수 있어요. 회사를 고르고, 둘레의 회사를 눌러 보세요.', sub(p, 13)),
+        const SizedBox(height: 8),
+        Wrap(spacing: 6, children: [for (final id in ids.take(3)) chip(p, shakeQ(id), () => openDomino(context, id))]),
         const SizedBox(height: 12),
         TextField(
           onChanged: (v) => setState(() => q = v.trim().toLowerCase()),
@@ -1776,7 +1752,10 @@ class _LinksState extends State<LinksPage> {
               Text(e.key == 'supply' ? '공급(물건·서비스를 대 줌)' : e.value, style: sub(p, 12)),
             ]),
         ]),
-        const SizedBox(height: 16),
+        const SizedBox(height: 8),
+        TextButton.icon(
+            onPressed: () => openDomino(context, center), icon: const Icon(Icons.vibration_rounded), label: const Text('도미노 보기')),
+        const SizedBox(height: 8),
         Row(children: [
           Expanded(child: Text('${c['name_ko']}와 이어진 회사 ${ls.length}곳', style: h(17))),
           TextButton(
