@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-14",
+ "asof": "2026-11-15",
  "note": "회사 관련 뉴스를 AI(Claude)가 쉽게 요약한 것. type: good=호재, bad=악재, watch=지켜볼 일",
  "companies": {
   "AAPL": [
@@ -42,6 +42,19 @@
   ],
   "NVDA": [
    {
+    "date": "2026-11-14",
+    "type": "watch",
+    "title": "트럼프, AI 반도체 수출 규제 풀기 전 엔비디아 주식을 샀다는 보도로 논란",
+    "impact": "규제를 푸는 일과 대통령의 주식 거래가 얽혔다는 논란이에요. 수출 규제가 어떻게 바뀌는지는 엔비디아 중국 판매에 영향을 줄 수 있어 지켜봐야 해요.",
+    "source": "세계일보",
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5uOWd2QWhpdzFHdHlhdW4tU2NYbGhBbkplZW9BQ2pqRjlYMjZVdzZUaFZGb0k0RWZERzkzSDRIaDZKT2h5YVMwTmVxai1rNkZEWGlzZVZEbDbSAVRBVV95cUxORUdGcy13SlhYOFVCMjVOVTBIeHJzVzlNeFVYdDZMalljWVdOYjlzQlRDRFNtQjdlWGFDYjl2Y3oxMVN1RUVvMXVYV2kyeEJMQjhvd3A?oc=5",
+    "terms": [
+     "export_control",
+     "gpu"
+    ],
+    "learn": "수출통제는 나라가 특정 반도체를 다른 나라에 팔지 못하게 막는 제도예요. 풀리면 팔 수 있는 시장이 넓어져요."
+   },
+   {
     "date": "2026-11-17",
     "type": "watch",
     "title": "11월 17일(미국 시간) 3분기 실적 발표",
@@ -64,14 +77,6 @@
     "impact": "AI에 돈을 너무 많이 쓰는 것 아니냐는 걱정이 커지면, 엔비디아 칩 주문이 줄어들까 봐 시장이 불안해해요.",
     "source": "Stock Titan",
     "url": "https://www.stocktitan.net/overview/NVDA/"
-   },
-   {
-    "date": "2026-10-27",
-    "type": "good",
-    "title": "오라클과 차세대 AI 시스템 '베라 루빈' 공급을 대규모로 늘리기로",
-    "impact": "큰 고객이 더 많이 사겠다는 뜻이라 앞으로의 데이터센터 매출에 도움이 돼요.",
-    "source": "NVIDIA 발표",
-    "url": "https://mfn.se/all/a/nvidia/nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-and-bring-nvidia-vera-cpu-to-oracle-cloud-infrastructure-8e9b8932"
    }
   ],
   "MSFT": [
@@ -424,6 +429,18 @@
   ],
   "JPM": [
    {
+    "date": "2026-11-14",
+    "type": "good",
+    "title": "JP모건, 순이자수익 전망을 높여 잡았어요",
+    "impact": "은행은 대출 이자에서 예금 이자를 뺀 만큼을 벌어요. 이 수익 전망이 올라가면 본업 이익이 늘 수 있다는 뜻이에요.",
+    "source": "Simply Wall St",
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdmtwXzBmbFFKcnd5WUlMUmpGVmFvbVdKSm85bDRlZER2UXBBZ3JrVG93QU91bGQyRWdMRWhPVVhQWkJnWnJia1hPYlUzSzFoRWpuaE0tVFkxNHZvZ1RYSHV6WnJuazhLV1k0Q2trVF9KdGVCbExvSjVHM0hjYkFrYlBodjg1VFZhdTZMS1RZONIBlAFBVV95cUxQbWlNNnBoUjVzU1VGX3d4d2w2Zko3Q3NQb19IdkluSjdLUzhwT0Fxd2dmbDN4TmR6NkcwcG9ya3lRVGttZERBSWFOeHdTZm4ySjZOXzYwZ0RrcTJqcVczaGpwVGJaYzFwS2RBNkJJTjVwZkE4U2RuOVdyb2wxYnBBUVk1M1VmeEVZVFlhN3c2MzVJUDVr?oc=5",
+    "terms": [
+     "net_interest_income"
+    ],
+    "learn": "순이자수익은 은행이 이자로 번 돈에서 이자로 준 돈을 뺀 거예요. 은행의 핵심 수입이에요."
+   },
+   {
     "date": "2026-11-13",
     "type": "watch",
     "title": "JP모건, 스트래티지 주식 보유 36% 늘려",
@@ -449,14 +466,6 @@
     "type": "good",
     "title": "3분기 순이익 153억 달러, 매출 8% 증가",
     "impact": "미국 최대 은행이 여전히 돈을 잘 벌고 있어요.",
-    "source": "Pulse 2.0",
-    "url": "https://pulse2.com/jpmorgan-chase-q3-2026-results"
-   },
-   {
-    "date": "2026-10-13",
-    "type": "bad",
-    "title": "비용 12% 증가, 자사주 매입은 줄이기로",
-    "impact": "주주에게 돌려주는 돈이 줄 수 있어요.",
     "source": "Pulse 2.0",
     "url": "https://pulse2.com/jpmorgan-chase-q3-2026-results"
    }
