@@ -316,6 +316,19 @@ Widget groupRow(P p, bool first, bool last, VoidCallback onTap, Widget child) =>
               decoration: BoxDecoration(border: last ? null : Border(bottom: BorderSide(color: p.line))), child: child)),
     );
 
+const privacyUrl = 'https://hyeonwoo070306-coder.github.io/jurini-app/privacy.html';
+
+Widget legalRow(P p, String label, bool first, bool last, VoidCallback onTap) => groupRow(
+    p,
+    first,
+    last,
+    onTap,
+    ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 48),
+        child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(children: [Expanded(child: Text(label, style: const TextStyle(fontSize: 14))), Icon(Icons.chevron_right, color: p.muted)]))));
+
 const newsKinds = {'good': ('호재', '좋은 소식'), 'bad': ('악재', '걱정되는 소식'), 'watch': ('지켜볼 일', '앞으로 있을 일')};
 
 Widget newsCard(BuildContext ctx, P p, List items) {
@@ -828,7 +841,13 @@ class _HomeState extends State<HomePage> {
           if (i == header.length + list.length) {
             return Padding(
                 padding: const EdgeInsets.only(top: 14),
-                child: Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5)));
+                child: col(12, [
+                  Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5)),
+                  Column(children: [
+                    legalRow(p, '개인정보처리방침', true, false, () => launchUrl(Uri.parse(privacyUrl), mode: LaunchMode.externalApplication)),
+                    legalRow(p, '오픈소스 라이선스', false, true, () => showLicensePage(context: context, applicationName: '주린이 기업 노트')),
+                  ]),
+                ]));
           }
           final k = i - header.length;
           return Padding(
