@@ -122,6 +122,65 @@
     "https://www.babypips.com/analysis/headline-us-cpi-october-fed-hike-december-2026-11-11",
     "https://www.koreatimes.co.kr/amp/economy/20251123/weak-won-lifts-exporter-stocks-weighs-on-import-reliant-firms-in-stock-market"
    ]
+  },
+  {
+   "id": "ai-2026-11-16",
+   "title": "같은 날 나스닥은 내리고 다우는 올랐어요",
+   "terms": [
+    "stock_index",
+    "market_cap"
+   ],
+   "cards": [
+    "엔비디아 CEO가 물러난다는 소식이 나온 주, 나스닥은 내렸는데 다우지수는 살짝 올랐어요.",
+    "지수는 여러 회사를 한데 묶어 점수로 보여 주는 판이에요. 지수마다 담은 회사와 계산법이 달라요.",
+    "나스닥 종합지수는 시가총액이 큰 회사일수록 더 크게 반영돼요. 기술 회사가 많이 담겨 있어요.",
+    "다우지수는 큰 회사 30곳을 담고, 주식 1주의 값이 높은 회사의 영향이 커요.",
+    "그래서 한 회사의 소식도 지수마다 다르게 보여요. 지수 뉴스를 볼 땐 무엇을 담았는지 먼저 살펴요."
+   ],
+   "quiz": [
+    {
+     "q": "나스닥 종합지수에서 영향이 더 큰 회사는?",
+     "options": [
+      "시가총액이 큰 회사",
+      "이름이 가나다순으로 앞선 회사",
+      "설립한 지 오래된 회사",
+      "모든 회사가 똑같이 반영돼요"
+     ],
+     "answer": 0,
+     "explain": "나스닥 종합지수는 시가총액이 클수록 더 크게 반영돼요."
+    },
+    {
+     "q": "다우지수에 담긴 회사는 모두 몇 곳일까요?",
+     "options": [
+      "3곳",
+      "30곳",
+      "500곳",
+      "3000곳"
+     ],
+     "answer": 1,
+     "explain": "다우지수는 미국 대형 회사 30곳을 담아요."
+    },
+    {
+     "q": "같은 날 나스닥은 내리고 다우는 거의 안 움직일 수 있는 이유로 알맞은 것은?",
+     "options": [
+      "두 지수는 항상 똑같이 움직여요",
+      "지수마다 담은 회사와 계산법이 달라요",
+      "다우는 뉴스를 보지 않아요",
+      "나스닥은 거래가 멈춰요"
+     ],
+     "answer": 1,
+     "explain": "담은 회사와 계산법이 달라서 같은 소식에도 반응이 달라요."
+    }
+   ],
+   "stage": 2,
+   "date": "2026-11-16",
+   "news_url": "https://www.blockmedia.co.kr/archives/1165790",
+   "verified": true,
+   "sources": [
+    "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
+    "https://www.chase.com/personal/investments/learning-and-insights/article/nasdaq-vs-dow-key-differences-to-know",
+    "https://www.fidelity.com/learning-center/smart-money/what-is-dow-jones"
+   ]
   }
  ]
 }
