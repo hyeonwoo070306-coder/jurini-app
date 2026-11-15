@@ -184,6 +184,19 @@
   ],
   "SPCX": [
    {
+    "date": "2026-11-15",
+    "type": "good",
+    "title": "3분기 매출이 161% 늘었지만 AI 투자 부담이 부각됐어요",
+    "impact": "매출이 크게 늘어 사업이 빠르게 커지고 있다는 뜻이에요. 다만 AI에 쓰는 돈이 많아 이익 부담을 걱정하는 시선도 있어요.",
+    "source": "코인리더스",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE96QlFwaEhnZ1V6NWZXOEV3d085ODV1TUdic0pMa05LdTBqMnYwQldUaEhlclM2cmp1bmwwOFFXRUFzQ0ViX3FueFhn?oc=5",
+    "terms": [
+     "revenue",
+     "capex"
+    ],
+    "learn": "매출은 물건·서비스를 판 돈이에요. 설비투자(capex)는 미래를 위해 쓰는 돈이라, 많이 쓰면 당장 남는 돈은 줄어요."
+   },
+   {
     "date": "2026-11-14",
     "type": "bad",
     "title": "스페이스X 스타십 시험발사, 우주선 1·2단 모두 회수는 실패",
@@ -210,14 +223,6 @@
     "impact": "스페이스X는 나사·국방부 같은 정부 일감이 많아서 정치 변화에 민감해요.",
     "source": "Gotrade",
     "url": "https://www.heygotrade.com/en/news/spacex-spcx-stock-news-november-5-2026/"
-   },
-   {
-    "date": "2026-11",
-    "type": "good",
-    "title": "3분기 흑자 전환, 위성 인터넷 스타링크가 이끌어",
-    "impact": "적자 회사가 이익을 내기 시작했다는 건 큰 변화예요.",
-    "source": "RTTNews",
-    "url": "https://www.rttnews.com/3700949/spacex-shares-climb-as-q3-turns-to-profit-on-connectivity-si-strength.aspx"
    }
   ],
   "META": [
@@ -1570,6 +1575,19 @@
   ],
   "000270": [
    {
+    "date": "2026-11-14",
+    "type": "good",
+    "title": "기아가 전동화 차량 비중이 10대 중 6대, 30만 대를 처음 넘겼어요",
+    "impact": "전기차·하이브리드 같은 전동화 차량이 잘 팔리면 앞으로 바뀌는 자동차 시장에서 경쟁력을 키울 수 있어요.",
+    "source": "파이낸셜포스트",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5RNTBRWmI1bFBNLUg5UXdoOXB4QXF0UVFEV0I3Qm1pWEhiTFUtaXRYblpXOUpKYjdXbmZEOHZUOW5sM2h4d2Y2VWZNOWI3cFdJOVRPa3BFbUpfMl9mT3dIWXNEMVN2aDBMcWM1Y1o4OWpDRTd3?oc=5",
+    "terms": [
+     "ev",
+     "market_share"
+    ],
+    "learn": "점유율은 시장 전체에서 내 회사가 차지하는 몫이에요. 전동화 차량이 늘수록 새 시장에서의 몫이 커져요."
+   },
+   {
     "date": "2026-11-13",
     "type": "good",
     "title": "PV5, 연간 판매 목표 두 달 일찍 달성",
@@ -1610,6 +1628,19 @@
   ],
   "000660": [
    {
+    "date": "2026-11-15",
+    "type": "watch",
+    "title": "삼성전자·SK하이닉스에 빌린 돈으로 사는 신용융자가 크게 몰렸어요",
+    "impact": "빌린 돈으로 산 투자자가 많으면 주가가 흔들릴 때 한꺼번에 처분해야 하는 일이 생겨 변동성이 커질 수 있어요.",
+    "source": "서울경제",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBlSEZJaUxiM21iRmZSdmJTTnhEQlpKaktqNGc4bXFvYzg5b3BwWm5uY2FXRDFYdDRDWG5fZ0Y2Z3hkWTYwbHpwakU2dkMxbndseUHSAVNBVV95cUxQV3lYa0hzWHZISkZlVS1RbERodDEzOHR4ZUl5MkdiRU1OODZsNUxkaWxVZEl4TFBLWmdGTENqQTZseEdwZ3RlWDJlR3FNYWg5anp4bw?oc=5",
+    "terms": [
+     "kospi_kosdaq",
+     "trading_volume"
+    ],
+    "learn": "신용융자는 증권사에서 돈을 빌려 주식을 사는 거예요. 빌린 돈은 갚아야 해서 시장이 흔들릴 때 위험이 커져요."
+   },
+   {
     "date": "2026-11-13",
     "type": "watch",
     "title": "MSCI 11월 리뷰에서 SK하이닉스 ADR 반영으로 비중 확대",
@@ -1631,6 +1662,19 @@
    }
   ],
   "096770": [
+   {
+    "date": "2026-11-15",
+    "type": "watch",
+    "title": "합병가액 자율화가 다음 달 시행돼 일반 주주 보호가 시험대에 올랐어요",
+    "impact": "합병할 때 회사 가치를 매기는 방식이 자유로워져요. SK이노베이션처럼 합병이 잦은 회사의 주주는 가격이 공정한지 지켜봐야 해요.",
+    "source": "서울파이낸스",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5nOERuNjdLUDM4U2c3UTAzR0ZpRHRodGhwT1QtMTQtWDljRUFaTWlHRFUwNWF6R0NyVnEwR3RkQ0hRLVBlaUp1bVQ2THEyaVZydi1leGVsdmtYQWpaemNtdzhDdEJVZ2w4SGc?oc=5",
+    "terms": [
+     "merger",
+     "largest_shareholder"
+    ],
+    "learn": "합병은 두 회사가 하나가 되는 거예요. 가격을 어떻게 매기느냐에 따라 일반 주주가 받는 몫이 달라져요."
+   },
    {
     "date": "2026-11-12",
     "type": "good",
@@ -1745,6 +1789,19 @@
   ],
   "001040": [
    {
+    "date": "2026-11-14",
+    "type": "bad",
+    "title": "CJ대한통운, 물량은 늘었지만 투자 비용 때문에 수익성이 떨어졌어요",
+    "impact": "더 많이 날랐는데도 물류센터 같은 투자 비용이 커서 남는 돈이 줄었어요. 몸집과 이익이 항상 같이 늘지는 않아요.",
+    "source": "청년일보",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE41RVZ2a1pMQmV5aWxUdDluMHhJSjNPYVZEeWhVXzVvNXZYUnBDZ0w4RHpBVHdWSmxiQkZnN3VfYjR3RjNsSEctT2gyUWxDTlB1Y1Mxenh3OWlKVFNncU9lRTcyS3ZtYms?oc=5",
+    "terms": [
+     "operating_margin",
+     "capex"
+    ],
+    "learn": "영업이익률은 매출 중 본업으로 남긴 비율이에요. 비용이 늘면 매출이 늘어도 이 비율은 내려가요."
+   },
+   {
     "date": "2026-11-12",
     "type": "watch",
     "title": "CJ그룹 3분기: 식품·콘텐츠는 호조, 물류·플랫폼은 투자 숨고르기",
@@ -1849,6 +1906,19 @@
   ],
   "009540": [
    {
+    "date": "2026-11-14",
+    "type": "good",
+    "title": "조선 3사가 올해 수주 목표의 90%를 채웠어요",
+    "impact": "일감을 미리 많이 확보하면 앞으로 몇 년간 매출이 안정적이에요. 선박 종류를 넓혀 수익성도 챙기고 있어요.",
+    "source": "머니투데이",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4xLXpfSVZVNC1QX1FZWXBjQ0VnT2VUQWtKQnh3RzY3Q19NUWxmQmlwbWNheGtWcG05bWRvaGU1SmtTTEVWaGFTaHpPcnZ3RWdieGdMZkl1OHdWUXBteC15T1JEVHJKYUFOOFRpRG1acmdzUdIBckFVX3lxTE4xLXpfSVZVNC1QX1FZWXBjQ0VnT2VUQWtKQnh3RzY3Q19NUWxmQmlwbWNheGtWcG05bWRvaGU1SmtTTEVWaGFTaHpPcnZ3RWdieGdMZkl1OHdWUXBteC15T1JEVHJKYUFOOFRpRG1acmdzUQ?oc=5",
+    "terms": [
+     "backlog",
+     "cyclical"
+    ],
+    "learn": "수주 잔고는 이미 계약했지만 아직 못 번 일감이에요. 많을수록 앞으로 팔 것이 정해져 있다는 뜻이에요."
+   },
+   {
     "date": "2026-11-13",
     "type": "good",
     "title": "6,629억 원 규모 LNG선 수주, 그리스 테나마리스 발주",
@@ -1868,6 +1938,19 @@
    }
   ],
   "006800": [
+   {
+    "date": "2026-11-14",
+    "type": "bad",
+    "title": "스페이스X 투자 변동성으로 미래에셋증권이 3년 만에 적자로 돌아섰어요",
+    "impact": "보유한 해외 기업 투자의 가치가 흔들리면 증권사의 이익도 같이 출렁여요. 한 투자에 많이 기대면 실적이 불안해질 수 있어요.",
+    "source": "비즈니스포스트",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE16WXBodHVDTlJZbGFDQXczOHY5V21NUHBDa2c5NjFsNUI0QlRuekVHWElkalVMOVA3WEVhcHdOTGl2ZkVzTlRVd2RyRnl1NmZEQURUbkZrVGpMNlNFMjBlZUMtT1JyN2drWVU2YzBDSHZabmc?oc=5",
+    "terms": [
+     "net_income",
+     "valuation"
+    ],
+    "learn": "순이익은 모든 비용을 빼고 남은 최종 이익이에요. 적자는 이 숫자가 마이너스라는 뜻이에요."
+   },
    {
     "date": "2026-11-13",
     "type": "good",
@@ -1981,6 +2064,19 @@
   ],
   "003490": [
    {
+    "date": "2026-11-14",
+    "type": "watch",
+    "title": "대한항공의 통합 시너지가 실제 실적으로 나오는지가 관건이에요",
+    "impact": "아시아나와 합친 효과가 비용 절감과 이익으로 이어져야 해요. 아직 증명하는 단계라 지켜볼 일이에요.",
+    "source": "이코노미스트",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1vNEsyWEdUQ1liNWk1M1FsRFB4QnNJSkxPSVdSREF6aDRwWmlZODhCZHRqQmdtdm9QcmJVMUZiOEFRd01JdFJSZTdjbm1aOGtEVTBBaXBCSWI5OHVuT2FXR01B?oc=5",
+    "terms": [
+     "merger",
+     "operating_income"
+    ],
+    "learn": "시너지는 합치면 따로일 때보다 더 좋아진다는 뜻이에요. 영업이익이 늘어야 실제로 효과가 있는 거예요."
+   },
+   {
     "date": "2026-11-12",
     "type": "watch",
     "title": "2027년 통합 시너지 본격화, 유가 안정이 이익 회복 관건",
@@ -2016,6 +2112,21 @@
      "disclosure"
     ],
     "learn": "공시는 회사가 중요한 일을 투자자에게 알리는 거예요. 제때 하지 않으면 제재를 받을 수 있어요."
+   }
+  ],
+  "078930": [
+   {
+    "date": "2026-11-14",
+    "type": "watch",
+    "title": "GS건설이 자회사 빚 1,126억 원을 대신 갚아 부도 위기를 넘겼어요",
+    "impact": "자회사의 빚을 대신 갚으면 당장 위기는 막지만 GS건설의 돈은 그만큼 줄어요. 신사업을 정리할지가 지켜볼 일이에요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9paUNmVXBzQmw2d1JNcTNDTEdDTEd0OHBPNU5oR0ZNbE1xZGQ2TU1fN3M2SnFKV3hBVkJiUVpfa2ZiczctTzZvdTEtelJnbVFLTFIwMjc3THkzcXp0T01kT0JyajBfLXh0cXhHUUtDYVVLcVRi?oc=5",
+    "terms": [
+     "debt_ratio",
+     "net_debt"
+    ],
+    "learn": "대신 갚은 빚만큼 회사의 현금이 줄고 부담이 커져요. 빚이 늘면 이자 부담도 커지는 점을 살펴봐요."
    }
   ]
  },
