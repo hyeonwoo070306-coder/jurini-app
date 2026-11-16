@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-14",
+ "asof": "2026-11-16",
  "note": "경제 지표는 각 기관 공식 일정, 실적 발표일은 회사가 공식 발표한 날짜예요. 시각은 한국 시간.",
  "events": [
   {
@@ -37,6 +37,18 @@
    "source": "Walmart IR",
    "url": "https://corporate.walmart.com/news/2026/11/Walmart-To-Host-Q3-Earnings-Call-Nov-19-2026",
    "id": "2026-11-19:WMT"
+  },
+  {
+   "date": "2026-11-19",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "PANW",
+   "when": "after",
+   "title": "팔로알토 네트웍스 실적 발표",
+   "source": "Palo Alto Networks IR",
+   "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-announce-fiscal-first-quarter-2027-financial",
+   "id": "2026-11-19:PANW"
   },
   {
    "date": "2026-11-25",

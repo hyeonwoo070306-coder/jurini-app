@@ -23,6 +23,13 @@
    "url": "https://corporate.walmart.com/news/2026/11/Walmart-To-Host-Q3-Earnings-Call-Nov-19-2026"
   },
   {
+   "date": "2026-11-19",
+   "ticker": "PANW",
+   "when": "after",
+   "source": "Palo Alto Networks IR",
+   "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-announce-fiscal-first-quarter-2027-financial"
+  },
+  {
    "date": "2026-12-10",
    "ticker": "AVGO",
    "when": "after",
