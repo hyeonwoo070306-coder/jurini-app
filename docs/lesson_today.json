@@ -1,59 +1,61 @@
 {
- "id": "ai-2026-11-16",
- "title": "같은 날 나스닥은 내리고 다우는 올랐어요",
+ "id": "ai-2026-11-17",
+ "title": "메모리 반도체 값이 내리면 왜 지수도 눌릴까요",
  "terms": [
-  "stock_index",
-  "market_cap"
+  "memory",
+  "semiconductor",
+  "cyclical",
+  "kospi_kosdaq"
  ],
  "cards": [
-  "엔비디아 CEO가 물러난다는 소식이 나온 주, 나스닥은 내렸는데 다우지수는 살짝 올랐어요.",
-  "지수는 여러 회사를 한데 묶어 점수로 보여 주는 판이에요. 지수마다 담은 회사와 계산법이 달라요.",
-  "나스닥 종합지수는 시가총액이 큰 회사일수록 더 크게 반영돼요. 기술 회사가 많이 담겨 있어요.",
-  "다우지수는 큰 회사 30곳을 담고, 주식 1주의 값이 높은 회사의 영향이 커요.",
-  "그래서 한 회사의 소식도 지수마다 다르게 보여요. 지수 뉴스를 볼 땐 무엇을 담았는지 먼저 살펴요."
+  "낸드 값이 내렸다는 소식에 한국 반도체 회사들이 약했고, 코스피도 같이 눌렸어요.",
+  "낸드는 전원이 꺼져도 데이터가 남는 메모리예요. 일할 때 쓰는 D램은 전원이 꺼지면 데이터가 사라져요.",
+  "메모리 값은 사려는 양과 만드는 양에 따라 크게 오르내려요. 그래서 메모리 회사 이익도 출렁여요.",
+  "코스피에는 삼성전자·SK하이닉스 같은 큰 반도체 회사가 많아서, 이들이 약하면 지수도 눌리기 쉬워요.",
+  "다음에 반도체 뉴스를 볼 땐 D램인지 낸드인지, 값 변화가 일시적인지 먼저 살펴봐요."
  ],
  "quiz": [
   {
-   "q": "나스닥 종합지수에서 영향이 더 큰 회사는?",
+   "q": "전원이 꺼져도 데이터가 남는 메모리는 무엇일까요?",
    "options": [
-    "시가총액이 큰 회사",
-    "이름이 가나다순으로 앞선 회사",
-    "설립한 지 오래된 회사",
-    "모든 회사가 똑같이 반영돼요"
+    "낸드",
+    "D램",
+    "둘 다 아니에요",
+    "둘 다 데이터가 사라져요"
    ],
    "answer": 0,
-   "explain": "나스닥 종합지수는 시가총액이 클수록 더 크게 반영돼요."
+   "explain": "낸드는 전원이 없어도 데이터를 보관해요. D램은 전원이 꺼지면 데이터가 사라져요."
   },
   {
-   "q": "다우지수에 담긴 회사는 모두 몇 곳일까요?",
+   "q": "메모리 반도체 값이 크게 오르내리는 가장 큰 이유는?",
    "options": [
-    "3곳",
-    "30곳",
-    "500곳",
-    "3000곳"
+    "사려는 양과 만드는 양이 달라지기 때문이에요",
+    "정부가 매일 값을 정해서예요",
+    "회사 이름이 바뀌어서예요",
+    "메모리는 값이 절대 변하지 않아요"
    ],
-   "answer": 1,
-   "explain": "다우지수는 미국 대형 회사 30곳을 담아요."
+   "answer": 0,
+   "explain": "수요와 공급이 달라지면 값이 오르내려서 이익도 출렁여요."
   },
   {
-   "q": "같은 날 나스닥은 내리고 다우는 거의 안 움직일 수 있는 이유로 알맞은 것은?",
+   "q": "반도체 회사가 약할 때 코스피도 눌리기 쉬운 이유는?",
    "options": [
-    "두 지수는 항상 똑같이 움직여요",
-    "지수마다 담은 회사와 계산법이 달라요",
-    "다우는 뉴스를 보지 않아요",
-    "나스닥은 거래가 멈춰요"
+    "코스피는 반도체 회사만 담아요",
+    "코스피에 큰 반도체 회사가 많이 담겨 있어요",
+    "코스피는 해외 회사만 담아요",
+    "반도체와 코스피는 관계가 전혀 없어요"
    ],
    "answer": 1,
-   "explain": "담은 회사와 계산법이 달라서 같은 소식에도 반응이 달라요."
+   "explain": "삼성전자·SK하이닉스처럼 덩치 큰 반도체 회사가 코스피에 많이 담겨 있어요."
   }
  ],
  "stage": 2,
- "date": "2026-11-16",
- "news_url": "https://www.blockmedia.co.kr/archives/1165790",
+ "date": "2026-11-17",
+ "news_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBPMTNuT0FHSGNWUXROdm11RV9mSnRWZ1lUTnpDWUJGemVMWjF6NnRmRlVxVkdZcU1ISHNTdXpvWUFkcFFYOURWSXhXT1kxVEN1cGc?oc=5",
  "verified": true,
  "sources": [
-  "https://www.cnbc.com/2026/11/12/stock-market-today-live-updates.html",
-  "https://www.chase.com/personal/investments/learning-and-insights/article/nasdaq-vs-dow-key-differences-to-know",
-  "https://www.fidelity.com/learning-center/smart-money/what-is-dow-jones"
+  "https://www.kingston.com/en/ssd/nand-flash-technology-and-ssd",
+  "https://www.techtarget.com/it-infrastructure/feature/Flash-memory-vs-RAM-Whats-the-difference",
+  "https://www.morningstar.com/stocks/raising-fair-value-estimates-korean-memory-suppliers-industry-remains-cyclical"
  ]
 }
