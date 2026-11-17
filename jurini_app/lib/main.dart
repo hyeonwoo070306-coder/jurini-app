@@ -16,7 +16,7 @@ part 'news_terms.dart';
 
 typedef J = Map<String, dynamic>;
 
-const licensedData = false; // 재배포 허락된 유료 데이터 계약 전까지 끔 (매일 PER·증권사 예측·실적 발표일·회사 로고)
+const licensedData = false; // 재배포 허락된 유료 데이터 계약 전까지 끔 (매일 PER·증권사 예측·나스닥 실적 예상일)
 
 // 일정 목록. 실적 발표일은 재배포 허락 전까지 숨긴다.
 // 실적 발표일은 회사 IR 공식 발표로 확인한 것만 보여준다(나스닥 예상일은 재배포 허락 전까지 숨김).
@@ -476,17 +476,17 @@ Color brandColor(J c) {
 const tabular = [FontFeature.tabularFigures()];
 const ink = Color(0xFF191F28);
 
-// shortcut: 로고 이미지는 FMP(financialmodelingprep.com)의 공개 로고 주소를 쓴다. 로고는 각 회사의 상표라
-//           광고를 붙여 출시하기 전에 이용 조건을 확인하고, 필요하면 로고 사용 허락을 받은 서비스로 바꾼다.
+// 회사 로고: Logo.dev 무료 요금제(앱에 출처 링크 표시 조건). pk_ 키는 원래 공개용이라 앱에 넣어도 된다.
+// 로고는 각 회사의 상표라 회사를 알아보는 용도로만 쓴다. 없는 회사는 404 → 글자 배지.
+const logoToken = 'pk_JIXd6gW7RUGpVboa2Sep_A';
 String logoUrl(J c) {
   final String tk = c['ticker'];
   final code = isKr(c) ? '$tk.${c['market'] == '코스닥' ? 'KQ' : 'KS'}' : tk.replaceAll('.', '-');
-  return 'https://financialmodelingprep.com/image-stock/$code.png';
+  return 'https://img.logo.dev/ticker/$code?token=$logoToken&size=128&format=png&fallback=404';
 }
 
 Widget logo(J c, [double size = 44, Color? bg]) {
   final badge = logoBadge(c, size, bg);
-  if (!licensedData) return badge;
   return ClipRRect(
     borderRadius: BorderRadius.circular(size * .3),
     child: Image.network(
@@ -851,7 +851,8 @@ class _HomeState extends State<HomePage> {
                   Text(disclaimer, textAlign: TextAlign.center, style: sub(p, 11.5)),
                   Column(children: [
                     legalRow(p, '개인정보처리방침', true, false, () => launchUrl(Uri.parse(privacyUrl), mode: LaunchMode.externalApplication)),
-                    legalRow(p, '오픈소스 라이선스', false, true, () => showLicensePage(context: context, applicationName: '주린이 기업 노트')),
+                    legalRow(p, '오픈소스 라이선스', false, false, () => showLicensePage(context: context, applicationName: '주린이 기업 노트')),
+                    legalRow(p, 'Logos provided by Logo.dev', false, true, () => launchUrl(Uri.parse('https://logo.dev'), mode: LaunchMode.externalApplication)),
                   ]),
                 ]));
           }

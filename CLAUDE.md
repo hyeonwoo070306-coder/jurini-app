@@ -6,7 +6,7 @@
 - 대상: 주식을 처음 시작하는 사람. 모든 문장은 중학생도 이해할 수 있게 쓴다.
 - 플랫폼: Android 먼저 (Flutter 또는 React Native 예정). 개발자는 처음 앱을 만드는 1인, 예산 약 100만 원 이하.
 - 주가 자체와 52주 최고/최저는 보여주지 않는다. 모든 수치에는 기준일을 붙인다.
-- 재배포 허락 전 데이터는 앱에서 끈다(`lib/main.dart`의 `licensedData = false`): 매일 PER·시총 갱신(`valuation.json` 받기), 증권사 예측(`surprise.json`), 실적 발표일, FMP 회사 로고(글자 배지로 대체). 코드는 남겨 뒀고 유료 데이터 계약 후 `true`로 켠다. `build_valuation.py` 등은 계속 돌지만 앱이 쓰지 않는다.
+- 재배포 허락 전 데이터는 앱에서 끈다(`lib/main.dart`의 `licensedData = false`): 매일 PER·시총 갱신(`valuation.json` 받기), 증권사 예측(`surprise.json`), 실적 발표일, FMP (글자 배지로 대체). 코드는 남겨 뒀고 유료 데이터 계약 후 `true`로 켠다. `build_valuation.py` 등은 계속 돌지만 앱이 쓰지 않는다.
 - 데이터는 앱 안에 JSON으로 넣어 배포하고, 매일 바뀌는 지표만 앱이 켜질 때 인터넷에서 받아 덮어쓴다. 못 받으면 앱 안의 숫자를 쓴다.
 - 기업 화면의 경제용어는 탭하면 용어사전 팝업(바텀시트)이 뜬다.
 - 투자 추천처럼 보이는 표현은 쓰지 않고, 화면마다 "투자 공부용 정보이며 매수·매도 추천이 아닙니다" 문구를 둔다.
@@ -26,7 +26,7 @@
 - `check_news.py`: `docs/news.json` 검사기(형식, 투자 권유·주가 숫자 금지, 회사 수 급감 차단). 통과하면 앱 복사본도 갱신. Claude Code 예약 작업(클라우드, 하루 2번: 한국 07:00·19:00)이 `docs/feed.json` 제목을 보고 `docs/news.json`을 새로 정리한 뒤 이 검사를 통과해야 커밋한다. 한국 회사도 뉴스 카드가 나온다.
 - `build_more_us.py` → `jurini_app/assets/us_more.json`: 나스닥 100 중 S&P 500에 없는 회사(14개) 기본 카드와 나스닥 100 전체 티커 목록(앱이 '나스닥100' 표시). 목록은 나스닥 API, CIK는 SEC 검색, 재무는 `build_sp500.financials`. 해외 공시(20-F) 회사는 재무가 비어 있다. 새 회사가 들어오면 `KO`에 한글 이름·설명을 추가한다.
 - `build_feed.py` → `docs/feed.json`: 회사별 최신 뉴스 제목(미국 50 + 한국 매출 상위 30, 구글 뉴스 RSS 한국어). `.github/workflows/feed.yml`이 매시간 실행. 주가 숫자·목표가·매수/매도가 들어간 제목은 거른다. 앱은 이제 feed.json을 쓰지 않는다(뉴스 탭은 `docs/news.json`의 AI 요약을 최신순으로 보여줌). 출시 전에 상업 사용이 허용된 뉴스 API(네이버 검색 API 등)로 `fetch_news()`만 바꾼다.
-- 로고: 앱이 `logoUrl()`(FMP 공개 로고 주소, 한국은 .KS/.KQ)에서 받고, 없거나 오프라인이면 글자 배지. 로고는 각 회사 상표라 출시 전에 이용 조건을 확인한다.
+- 로고: 앱이 `logoUrl()`(Logo.dev `img.logo.dev/ticker/…`, 공개용 pk_ 키, 한국은 .KS/.KQ)에서 받고, 없거나(404) 오프라인이면 글자 배지. 무료 요금제 조건으로 홈 맨 아래에 'Logos provided by Logo.dev' 링크를 둔다(지우면 안 됨).
 - `glossary_more.py`: 회사 조사용 추가 용어(`MORE`: 용어·뜻·예시·분야·주가에 왜 중요할까 한 번에). 새 일반 용어는 여기에 넣으면 `glossary_why.py`가 합친다(기존 id와 겹치면 멈춤).
 - `glossary_why.py`: 용어마다 "주가에 왜 중요할까?" 설명(`WHY`)과 새 용어(`EXTRA`: EPS·컨센서스·어닝 서프라이즈). 새 용어를 넣으면 여기에 설명을 써야 `build.py`가 돈다(금리·물가 용어는 `MACRO`의 '시장에 주는 영향'이 대신함).
 - `build_surprise.py` → `docs/surprise.json`(+ `jurini_app/assets/surprise.json`): 미국 50개 회사의 증권사 예측 평균 EPS vs 실제 EPS(최근 4분기)와 다음 분기 예측(나스닥). 매일 `daily.yml`에서 실행, 앱 실적 탭에 표시. 매출·영업이익 예측은 유료 데이터라 없음. **지금은 꺼 둠**(Zacks 데이터 재배포 문제, daily.yml에서 뺌, 앱 `licensedData`).
