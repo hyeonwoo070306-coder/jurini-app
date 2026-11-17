@@ -92,13 +92,16 @@ void main() {
       addTearDown(t.view.reset);
     }
 
-    testWidgets('첫 화면은 배우기 탭, 퀴즈 탭은 없음', (t) async {
+    testWidgets('첫 화면은 기업 탭, 배우기는 셋째, 퀴즈 탭은 없음', (t) async {
       tall(t);
       await t.pumpWidget(const MaterialApp(home: Shell()));
       await t.pumpAndSettle();
-      expect(find.text('오늘의 10분'), findsOneWidget);
+      expect(find.textContaining(kt('미국 대표 기업')), findsOneWidget);
       final labels = t.widget<NavigationBar>(find.byType(NavigationBar)).destinations.map((d) => (d as NavigationDestination).label).toList();
-      expect(labels, ['배우기', '기업', '연결', '용어사전', '뉴스']);
+      expect(labels, ['기업', '연결', '배우기', '용어사전', '뉴스']);
+      await t.tap(find.text('배우기'));
+      await t.pumpAndSettle();
+      expect(find.text('오늘의 10분'), findsOneWidget);
     });
 
     testWidgets('오늘의 시장 한눈에: 일정·시장 뉴스가 있으면 보이고, 없으면 칸이 사라짐', (t) async {

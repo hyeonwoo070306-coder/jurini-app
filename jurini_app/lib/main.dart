@@ -13,6 +13,7 @@ part 'learn.dart';
 part 'predict.dart';
 part 'domino.dart';
 part 'news_terms.dart';
+part 'deep.dart';
 
 typedef J = Map<String, dynamic>;
 
@@ -43,6 +44,10 @@ Future<void> main() async {
   calendar = jsonDecode(await rootBundle.loadString('assets/calendar.json'));
   lessons = jsonDecode(await rootBundle.loadString('assets/lessons.json'));
   predictData = jsonDecode(await rootBundle.loadString('assets/predict.json'));
+  try {
+    final d = jsonDecode(await rootBundle.loadString('assets/deep.json'));
+    if (d is J) deep = d;
+  } catch (_) {} // 깊이 노트가 없거나 깨져도 앱은 뜬다
   ndx = {...usMore['meta']['nasdaq100']};
   terms = jsonDecode(await rootBundle.loadString('assets/glossary.json'))['terms'];
   G = {for (final t in terms) t['id'] as String: t};
@@ -742,14 +747,14 @@ class _ShellState extends State<Shell> {
             listenable: Listenable.merge([live, redraw]),
             builder: (_, __) =>
                 IndexedStack(
-                index: i, children: [const LearnPage(), HomePage(key: homeKey), const LinksPage(), const TermsPage(), const NewsPage()])),
+                index: i, children: [HomePage(key: homeKey), const LinksPage(), const LearnPage(), const TermsPage(), const NewsPage()])),
         bottomNavigationBar: NavigationBar(
           selectedIndex: i,
           onDestinationSelected: (v) => setState(() => i = v),
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.school_outlined), label: '배우기'),
             NavigationDestination(icon: Icon(Icons.bar_chart_rounded), label: '기업'),
             NavigationDestination(icon: Icon(Icons.hub_outlined), label: '연결'),
+            NavigationDestination(icon: Icon(Icons.school_outlined), label: '배우기'),
             NavigationDestination(icon: Icon(Icons.menu_book_outlined), label: '용어사전'),
             NavigationDestination(icon: Icon(Icons.newspaper_rounded), label: '뉴스'),
           ],
@@ -887,6 +892,7 @@ Widget companyRow(BuildContext context, P p, J c, [bool first = true, bool last 
               TextSpan(text: c['name_ko'], style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w700, letterSpacing: -0.2)),
               TextSpan(text: '  ${c['ticker']}', style: sub(p, 12)),
               if (ndx.contains(c['ticker'])) TextSpan(text: '  나스닥100', style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: p.accent)),
+              if (deepOf(c) != null) deepBadge(p),
             ])),
             if ((c['one_liner'] ?? '') != '')
               Text(kt(c['one_liner']), maxLines: 2, overflow: TextOverflow.ellipsis, style: sub(p, 13)),
@@ -926,12 +932,13 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailState extends State<DetailPage> {
-  late String tab = isFull(widget.c) ? 'biz' : 'perf';
+  late String tab = isFull(widget.c) && deepOf(widget.c) == null ? 'biz' : 'perf'; // 깊이 노트가 사업 이야기를 대신하면 숫자부터
   String metric = 'revenue';
 
   @override
   Widget build(BuildContext context) {
-    final c = widget.c, p = P.of(context), full = isFull(c);
+    final c = widget.c, p = P.of(context), full = isFull(c), n = deepOf(c);
+    final ts = {...?(c['terms'] as List?), ...?(n?['terms'] as List?)}.where((t) => G.containsKey(t)).cast<String>();
     final List fin = c['financials'] ?? [];
     final J? latest = fin.isEmpty ? null : fin.last;
     final bc = brandColor(c);
@@ -990,15 +997,19 @@ class _DetailState extends State<DetailPage> {
           Padding(
             padding: pad,
             child: col(14, [
-          if (!full)
+          if (n != null) ...deepNote(context, p, n),
+          if (!full && n == null)
             explain(p, txt(isKr(c)
                 ? '이 회사의 자세한 설명은 준비 중이에요. 지금은 한국거래소에 등록된 업종·주요제품과 금융감독원 DART 사업보고서 숫자만 보여드려요. (${c['market']}, ${c['listed']} 상장)'
                 : '이 회사의 자세한 설명(투자 포인트, 사업, 리스크)은 준비 중이에요. 지금은 미국 SEC 공시에서 가져온 숫자만 보여드려요.',
                 const TextStyle(fontSize: 13.5))),
           if ((news['companies'][c['ticker']] as List?)?.isNotEmpty ?? false) newsCard(context, p, news['companies'][c['ticker']]),
+          if (n != null) deepHeading(p, '숫자로 확인하기', '사업 비중·실적·주가 수준을 숫자로 봐요.'),
           if (full) ...[
-          pointCard(p, Icons.trending_up_rounded, '투자 포인트', p.good, p.goodSoft, c['invest_points']),
-          pointCard(p, Icons.error_outline_rounded, '주의할 점', p.warn, p.warnSoft, c['cautions']),
+          if (n == null) ...[
+            pointCard(p, Icons.trending_up_rounded, '투자 포인트', p.good, p.goodSoft, c['invest_points']),
+            pointCard(p, Icons.error_outline_rounded, '주의할 점', p.warn, p.warnSoft, c['cautions']),
+          ],
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(children: [
@@ -1026,13 +1037,14 @@ class _DetailState extends State<DetailPage> {
           ),
           ],
           box(p, r: 20, col(14, fin.isEmpty ? [h3('실적'), txt('공시에서 찾은 재무 숫자가 없어요.', sub(p))] : panel(context, p, c))),
-          if (full)
+          if (ts.isNotEmpty)
           box(p, r: 20, col(14, [
             h3('이 회사에 나온 용어'),
             Wrap(spacing: 6, runSpacing: 6, children: [
-              for (final String t in c['terms']) chip(p, G[t]['term'], () => openTerm(context, t)),
+              for (final t in ts) chip(p, G[t]['term'], () => openTerm(context, t)),
             ]),
           ])),
+          if (n != null) deepSources(context, p, n),
           txt(
               full
                   ? '출처: ${(c['sources'] as List).join(' · ')}\n시가총액 ${c['market_cap_asof']}, 주가 지표 ${c['valuation']['asof']} 기준. $disclaimer'
@@ -1058,7 +1070,7 @@ class _DetailState extends State<DetailPage> {
           txt(c['business'], body),
           rich([s('왜 강한가요?  '), TextSpan(children: [term(ctx, 'moat', '해자')], style: sub(p))], h(17)),
           txt(c['moat'], body),
-          col(6, [Text('경쟁사', style: sub(p)), Wrap(spacing: 6, runSpacing: 6, children: [for (final x in c['competitors']) chip(p, x)])]),
+          if (deepOf(c) == null) col(6, [Text('경쟁사', style: sub(p)), Wrap(spacing: 6, runSpacing: 6, children: [for (final x in c['competitors']) chip(p, x)])]),
         ];
       case 'money':
         final J rm = c['revenue_mix'];
