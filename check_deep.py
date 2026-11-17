@@ -14,7 +14,7 @@ import sys
 
 OUT = "jurini_app/assets/deep.json"
 BANNED = re.compile(r"매수|매도|추천|목표가|사세요|파세요|오를 것|내릴 것|오를 거|떨어질 거|급등|폭등|대박")
-PRICE = re.compile(r"주가[^.]{0,12}\d|\d+(\.\d+)?\s*달러(에|로)\s*(거래|마감)|PER\s*(은|는|이|가)?\s*약?\s*\d")
+PRICE = re.compile(r"(?<![수])주가[^.]{0,12}\d|\d+(\.\d+)?\s*달러(에|로)\s*(거래|마감)|PER\s*(은|는|이|가)?\s*약?\s*\d")
 URL = re.compile(r"^https://\S+$")
 
 
