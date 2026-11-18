@@ -1,5 +1,5 @@
 {
- "asof": "2026-11-18",
+ "asof": "2026-11-19",
  "note": "회사 관련 뉴스를 AI(Claude)가 쉽게 요약한 것. type: good=호재, bad=악재, watch=지켜볼 일",
  "companies": {
   "AAPL": [
@@ -681,6 +681,19 @@
   ],
   "MU": [
    {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "마이크론이 대규모 자사주 매입을 할 수 있게 됐다는 소식이에요",
+    "impact": "자기 회사 주식을 사들이면 시장에 도는 주식 수가 줄어요. 회사에 돈이 충분하다는 신호로 읽히기도 해요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE8wOVc0cGJmbl9xeEt5VDlmSUVBREcwaEhaN2ZsVTNodjRGell2aEVjanZSTW1ENVFjVTFKOVBHdVBjS1RpUG9pcXNWNlF1REFyMGd4QnNReHBZd0NEZUhCVEU4MDNabjI2Qy1pNlh0R2o0T1R3?oc=5",
+    "terms": [
+     "buyback",
+     "memory"
+    ],
+    "learn": "자사주 매입은 회사가 번 돈으로 자기 주식을 사는 거예요. 주주에게 돈을 돌려주는 방법 중 하나예요."
+   },
+   {
     "date": "2026-11-13",
     "type": "watch",
     "title": "엔비디아 경영 불확실성·데이터센터 규제 우려에 마이크론 하락",
@@ -708,14 +721,6 @@
     "impact": "AI용 메모리(HBM) 수요가 매우 강해서 메모리 값이 오르고 있어요.",
     "source": "Pulse 2.0",
     "url": "https://pulse2.com/micron-reports-record-fiscal-q4-revenue-of-54-23-billion-and-fy2026-revenue-of-133-19-billion/"
-   },
-   {
-    "date": "2026-08-12",
-    "type": "watch",
-    "title": "HBM4E부터 고객 맞춤형 메모리 시대 시작",
-    "impact": "한번 고객을 잡으면 오래 거래할 수 있지만, 삼성·SK하이닉스와의 경쟁도 치열해요.",
-    "source": "TrendForce",
-    "url": "https://www.trendforce.com/news/2026/08/12/news-micron-flags-hbm4e-as-start-of-custom-hbm-era-hbm-market-could-tilt-toward-dual-or-single-suppliers/"
    }
   ],
   "V": [
@@ -974,6 +979,18 @@
   ],
   "KO": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "TD코웬이 코카콜라를 내년 최선호주로 꼽았지만 시장 반응은 엇갈렸어요",
+    "impact": "증권사 의견은 참고 정보일 뿐이에요. 같은 의견에도 투자자들의 반응이 다를 수 있어요.",
+    "source": "이데일리",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQeTF6b3dnMmtuaEZIX29TWE5LdDBCY2djMkptNnR6X2VhSVhPZEpIa256NWNnckZhSUZMN3kxYmFuS3FaRS1fZWFwYml1X1NLWFYxa1A0RHlJbHVhTXJaNVFzZ0p3V0RmaFhDWGhqOTRaMEdWaUN3czJqaVRUUkxDUw?oc=5",
+    "terms": [
+     "consumer_staples"
+    ],
+    "learn": "필수소비재는 경기가 나빠도 꾸준히 팔리는 물건이에요. 그래서 시장이 불안할 때 관심이 모이기도 해요."
+   },
+   {
     "date": "2026-10-27",
     "type": "good",
     "title": "3분기 매출 134억 달러(+7%), 판매량 +5%, 연간 전망 상향",
@@ -1156,6 +1173,19 @@
    }
   ],
   "UNH": [
+   {
+    "date": "2026-11-18",
+    "type": "bad",
+    "title": "메디케어 어드밴티지 감사 계획으로 환수 위험이 커졌어요",
+    "impact": "정부가 보험금 청구를 더 꼼꼼히 검사하면 이미 받은 돈을 돌려줘야 할 수도 있어요. 얼마나 될지는 아직 정해지지 않았어요.",
+    "source": "Simply Wall St",
+    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNb3c0bktsMUlmb2NIb01VYUVhYU90bzJkQXAteFhmRk9LWHVPeG15bnhxVUJvQnpOd2tvUm4xLUd1UnowbUxHWnB0Q1JaVGYtUF9IQ0FYNE04M0VGU2Q2SkhZU3VOZ1ZKX2Y4cEQ3ODdVc2o5c0NqSXhjZnZ3Qk9hcUVnNHpJeWs2NDE3NHJlM2lSZWlHcUJqZl8wbThxQ2Uy0gGgAUFVX3lxTE1vdzRuS2wxSWZvY0hvTVVhRWFhT3RvMmRBcC14WGZGT0tYdU94bXlueHFVQm9Cek53a29SbjEtR3VSejBtTEdacHRDUlpUZi1QX0hDQVg0TTgzRUZTZDZKSFlTdU5nVkpfZjhwRDc4N1VzajlzQ2pJeGNmdndCT2FxRWc0ekl5azY0MTc0cmUzaVJlaUdxQmpmXzBtOHFDZTI?oc=5",
+    "terms": [
+     "medicare",
+     "guidance"
+    ],
+    "learn": "메디케어는 미국 정부의 노인 건강보험이에요. 정부 감사 방식이 바뀌면 보험사가 받는 돈이 달라질 수 있어요."
+   },
    {
     "date": "2026-11-09",
     "type": "watch",
@@ -1521,6 +1551,19 @@
   ],
   "PANW": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "팔로알토가 AI 기업 어플라이드 컴퓨트를 45억 달러에 인수하기로 했어요",
+    "impact": "보안을 넘어 AI 분야로 사업을 넓히려는 움직임이에요. 합쳐서 잘 돌아갈지는 앞으로 지켜봐야 해요.",
+    "source": "데이터투자",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9vSmlhbGhpRDJQZ2VNZkFxMUZtUEFnN0JDU05RSnlDb0h3UmNMR3o0Z3NHZkxKaUtucXE4anRScFdRUU8xRTF3MHd6djc3NjE3aVRVWm1OZXl1VDJGYkJIdDF4UWlkNTZTejBZZzRpd2lmX2M?oc=5",
+    "terms": [
+     "mna",
+     "cybersecurity"
+    ],
+    "learn": "인수합병은 회사를 사서 합치는 거예요. 새 기술을 빨리 얻는 장점이 있지만 비싸게 사면 부담이 될 수 있어요."
+   },
+   {
     "date": "2026-11-15",
     "type": "watch",
     "title": "팔로알토 CEO, 하루 큰 하락 뒤에도 AI는 장기 순풍이라고 말해",
@@ -1556,14 +1599,6 @@
      "cybersecurity"
     ],
     "learn": "사이버 보안은 해킹에서 회사 데이터를 지키는 일이에요. 고객 예산이 늘면 보안 회사 매출 기회도 커져요."
-   },
-   {
-    "date": "2026-11",
-    "type": "watch",
-    "title": "11월 중하순 1분기 실적 발표 예정 (매출 33억 달러 전망)",
-    "impact": "회사가 내놓은 전망을 지켰는지 볼 수 있어요.",
-    "source": "Earnings Whispers",
-    "url": "https://www.earningswhispers.com/d/PANW"
    }
   ],
   "TXN": [
@@ -2243,6 +2278,19 @@
   ],
   "000880": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "한화비전이 한화세미텍 매각설은 사실무근이라고 밝혔어요",
+    "impact": "회사가 공시로 직접 소문을 부인했어요. 소문이 퍼질 때는 회사의 공식 발표를 확인하는 게 중요해요.",
+    "source": "핀포인트뉴스",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBTZGowdDVua0ZsZVRLNlZleFR2NjR0OFZna2d2TDZJZHBwdXVHc3g3WEpGdTFYZkhwRlZfcDl2TlZDNUdLblpYeUdPUUpHblFnWXJNQ2VXdWZNeGE2RkJYTUtqTmxXQWZoMm1FajNVLTR6Q1k?oc=5",
+    "terms": [
+     "disclosure",
+     "holding_company"
+    ],
+    "learn": "공시는 회사가 중요한 사실을 공식적으로 알리는 거예요. 소문과 달리 공시는 책임이 따르는 정보예요."
+   },
+   {
     "date": "2026-11-14",
     "type": "good",
     "title": "한화오션, 거제 설비에 8,619억 원 투자",
@@ -2264,6 +2312,19 @@
    }
   ],
   "267250": [
+   {
+    "date": "2026-11-18",
+    "type": "bad",
+    "title": "HD현대오일뱅크·SK에너지의 가격 담합 의혹이 보도됐어요",
+    "impact": "담합이 사실로 밝혀지면 과징금을 낼 수 있어요. 아직은 의혹 단계라 결과를 지켜봐야 해요.",
+    "source": "시사우리신문",
+    "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTE55V3RVU21FOFp2QW5SQzRjVE9PX3oyYnk4TTNTQjVpTVhHcFBtSG15YzdSUDBKT3pkQWg5dU9pMDRMNlpK?oc=5",
+    "terms": [
+     "antitrust",
+     "refining"
+    ],
+    "learn": "담합은 회사들이 짜고 가격을 정하는 거예요. 공정거래 당국이 조사해 벌금을 매길 수 있어요."
+   },
    {
     "date": "2026-11-16",
     "type": "good",
@@ -2295,14 +2356,6 @@
     "impact": "본업 외 사업이 이익을 깎았다는 평가예요. 비용 구조를 어떻게 고치는지가 관건이에요.",
     "source": "뉴스퀘스트",
     "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFA0cUlxZU1VSUhXaFQzaXB3TURGbFEySDZfS21mV1NVNFBhLWRXbGlxV0IwVk1QYUZTM2o4SElnVmVqeUFiMzJsZGhkZS1qV0NGRWIya29yRUg1bmhaVWIxa0NCZUk5aC1JLTJQUkNRRQ?oc=5"
-   },
-   {
-    "date": "2026-11-12",
-    "type": "good",
-    "title": "HD현대마린엔진, 중국 조선사 주문 몰려 2029년 일감까지 확보 노려",
-    "impact": "배에 들어가는 엔진 주문이 쌓이면 몇 년간 일감 걱정이 줄어요.",
-    "source": "www.ebn.co.kr",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBobDZoMk9SLXNyRS1vSzUxU1JkVi1lWGhyUmJqSFdjUFBoWkZJQTNFQ1pFSmRNYjdlc284b2tIdnVseENMb045cUNMRDNGaFJGc3cwSEtyV1ZRMXUyV2FVRTkxSnB6ZU5u?oc=5"
    }
   ],
   "005490": [
@@ -2987,6 +3040,18 @@
   ],
   "034220": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "LG디스플레이가 8년 멈춘 구미 공장을 1500억 원에 팔기로 했어요",
+    "impact": "놀던 공장을 팔아 현금을 만들고 건물은 반도체 라인으로 바뀐대요. 본업 실적과는 별개로 살림을 정리하는 소식이에요.",
+    "source": "한국신용신문",
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9nSV9nT0pva2tUZDhndkpJc2hDeGRrRFRQbklWZjZLTS1MbFpiRHJWQzR0R0FxcFA5aXpQWnI5NFN6Sl9yMGljd051MkJFNVhZR3BTYlpjQWdKOVg3Sng1MU1XX3Ryemk3Ym9J?oc=5",
+    "terms": [
+     "capex"
+    ],
+    "learn": "설비투자는 공장·장비에 쓰는 돈이에요. 안 쓰는 공장을 파는 건 자원을 효율적으로 쓰려는 움직임이에요."
+   },
+   {
     "date": "2026-11-17",
     "type": "good",
     "title": "한국 OLED 상반기 시장점유율 68.3%로 반등, 출하량도 세계 1위 탈환",
@@ -3174,6 +3239,18 @@
   ],
   "047050": [
    {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "국민성장펀드가 첫 핵심광물 투자를 할 가능성에 포스코인터내셔널이 주목받았어요",
+    "impact": "핵심광물은 배터리 등에 꼭 필요해요. 정부 펀드의 투자가 이어지면 광물 사업에 도움이 될 수 있어요. 아직 확정은 아니에요.",
+    "source": "https://www.moneystorm.kr/",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBmSjFzckJoQ0l6eEFrNkNMa2drMnpzMlhkN0gxRlM5ZVM3QjQ2U3JXVmprdmhHTFhwdHVPRXluUFpOWjNkdXV6cE1CNFJRRE1taUMzeUM4TkRMVE1tckRtV0lFUDlzNjBETlE?oc=5",
+    "terms": [
+     "supply_chain"
+    ],
+    "learn": "공급망은 재료가 만들어져 제품이 되기까지의 연결이에요. 핵심광물을 안정적으로 구하는 게 점점 중요해졌어요."
+   },
+   {
     "date": "2026-11-16",
     "type": "watch",
     "title": "포스코인터내셔널, 블랙록마이닝 계약을 고쳐 의결권을 49.99%로 높였어요",
@@ -3214,19 +3291,6 @@
    "learn": "국채금리가 오르는 건 국채 값이 내린다는 뜻이에요. 투자자가 위험한 자산으로 옮겨 갈 때 자주 일어나요."
   },
   {
-   "date": "2026-11-17",
-   "type": "bad",
-   "title": "엔비디아 실적 발표를 앞두고 경계감에 뉴욕 3대 지수가 일제히 내렸어요",
-   "impact": "큰 실적 발표 전에는 투자자들이 결과를 몰라 몸을 사리는 경우가 많아요. AI 관련 주식이 지수에서 차지하는 비중이 커서 지수도 같이 눌렸어요.",
-   "source": "MTN 머니투데이방송",
-   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAwMFl4cDBhUXlQdFRvaXdORFp5Ym9wUk9ZcElGWnV0STU5OXlpMW5BTjZZd1lvNWM0dDYyRGVkNkxRQVE5Mm9CZ2lMWWcteFZsNHQ0TW4yMmlBa1hXNWxv?oc=5",
-   "terms": [
-    "stock_index",
-    "earnings_surprise"
-   ],
-   "learn": "지수는 여러 회사의 평균적인 움직임이에요. 큰 회사 하나의 발표만으로도 지수 전체가 흔들릴 수 있어요."
-  },
-  {
    "date": "2026-11-18",
    "type": "watch",
    "title": "코스피 기업 3분기 누적 영업이익이 크게 늘었지만 삼성전자·SK하이닉스가 대부분을 차지했어요",
@@ -3240,16 +3304,30 @@
    "learn": "영업이익은 본업으로 번 돈이에요. 몇 회사에 쏠리면 시장 전체가 그 회사에 좌우돼요."
   },
   {
-   "date": "2026-11-17",
-   "type": "good",
-   "title": "모건스탠리, 내년 S&P500 전망치를 올리며 현금 줄이고 주식 늘리라고 제안",
-   "impact": "큰 증권사가 내년을 밝게 본다는 소식이에요. 다만 전망은 의견일 뿐이라 시장이 항상 따라가지는 않아요.",
-   "source": "블록미디어",
-   "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4xMXBZUEQyY1JBR0pTU0dzTlhmNU9idEI1WUljU0U1LTlQc01SemtQdTNvX0ZvZVBvcVR0RVdRZ1hYRmVUNjNBeWd3NlkweGg4NHpXdkdDajQ?oc=5",
+   "date": "2026-11-18",
+   "type": "watch",
+   "title": "엔비디아 실적이 좋았지만 뉴욕 증시는 혼조로 마쳤어요",
+   "impact": "실적이 좋아도 이미 기대가 컸다면 주가가 바로 오르지 않을 수 있어요. 다우는 내리고 나스닥은 올라, 종목마다 분위기가 엇갈렸어요.",
+   "source": "뉴시스",
+   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGc9IBeEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGcw?oc=5",
    "terms": [
+    "earnings_surprise",
     "stock_index"
    ],
-   "learn": "S&P500은 미국 대형주 500개를 묶은 지수예요. 증권사 전망은 틀릴 수 있어서 참고만 해요."
+   "learn": "지수는 여러 종목을 묶어 시장 분위기를 보여줘요. 지수끼리 방향이 다르면 종목별로 평가가 갈렸다는 뜻이에요."
+  },
+  {
+   "date": "2026-11-18",
+   "type": "good",
+   "title": "엔비디아 실적 소식에 삼성전자·SK하이닉스가 함께 반등했어요",
+   "impact": "엔비디아가 AI 반도체를 많이 팔면 여기에 들어가는 메모리 반도체 수요도 늘 거라는 기대가 생겨요. 한국 반도체 대표 회사들이 영향을 받았어요.",
+   "source": "CBC뉴스",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBkTTF5dVJqNjNFZnAyR3FWN0Z0ZmlTNXZ2VkxrRjRBY0loWnlYWE81WDVlSHc5WVNqRmR5MXl1ME40SGxxWW80TndmZ0VIbTFuVkNVTlB5U0ZFbS1TWG1EQWM0UGNMUTBG?oc=5",
+   "terms": [
+    "memory",
+    "semiconductor"
+   ],
+   "learn": "메모리는 데이터를 저장하는 반도체예요. AI 서버가 늘수록 더 많이 필요해서 엔비디아 소식에 같이 움직여요."
   }
  ]
 }
