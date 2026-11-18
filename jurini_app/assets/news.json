@@ -4,6 +4,18 @@
  "companies": {
   "AAPL": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "애플 신제품 기대감에 아이폰 부품을 대는 회사들이 강세를 보였어요",
+    "impact": "애플이 새 제품을 내놓으면 부품 회사들도 일이 늘어요. 아직은 기대감이라 실제 판매가 어떨지는 지켜봐야 해요.",
+    "source": "핀포인트뉴스",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE44R012Z0FybHJSWHZ0OEpjd1lSN1N2cDFJMEV1Sll3cTJoLVFvX3ByYWxndjdaLWpqeXVWYmxIWU5RUGZvbDc3Mm5lZVMyRmtOTF9HZE5OdEt0NkRvMmZSQ2VlSTJSRWpOM2FpbDlrcU90Rk3SAXdBVV95cUxNNFRaRlhlaGNVY3l6TnRxT19wODlXOE5fTVJaRlNhdGdnbzkyS0oxT00zeXBOclNiWVZDRWs3MGpKbUJEWG82cFg2SzRVbHFoWTVTWGYtbnBpQnBmTkJUSHhINE9nRFVsUklxUHF6LTFucG00dWgzQQ?oc=5",
+    "terms": [
+     "supply_chain"
+    ],
+    "learn": "공급망은 부품을 대는 회사들의 연결이에요. 애플이 잘 팔면 부품 회사도 같이 바빠져요."
+   },
+   {
     "date": "2026-11-14",
     "type": "watch",
     "title": "스마트홈 기기 '홈뷰' 7개국 출시, 한국은 초기 판매에서 빠졌어요",
@@ -34,17 +46,34 @@
     "impact": "구독 서비스에 볼거리가 늘면 구독을 유지하는 사람이 많아질 수 있어요. 서비스 매출에 조금씩 도움이 될 수 있어요.",
     "source": "코인리더스",
     "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5ULTl5cWhlcS1iZklHTHd2VUh6V1BIVmFWcnVOVFJzOVRyNHpwcXRfbGhwOGRPc01IcXRUNUVqZG9VNkZSUmtoZlFB?oc=5"
-   },
-   {
-    "date": "2026-11-06",
-    "type": "good",
-    "title": "첫 터치스크린 맥북 프로 등 신제품 출시, 11월 13일 스마트홈 기기 '홈뷰' 출시 예정",
-    "impact": "연말 쇼핑 시즌에 팔 새 제품이 많아져 4분기 매출에 도움이 될 수 있어요.",
-    "source": "MacRumors",
-    "url": "https://macrumors.com/2026/11/02/apple-isnt-done-with-2026-heres-whats-still-coming/"
    }
   ],
   "NVDA": [
+   {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "엔비디아 실적이 기대 이상으로 나와 나스닥100 선물이 반등했어요",
+    "impact": "엔비디아가 AI 반도체를 많이 팔았다는 뜻이라 AI 관련 회사들에 대한 걱정이 조금 줄었어요. 같은 날 미국 국채금리는 올랐어요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBpV3NoZDNiUGhPcnA4SlhBaDVFTXNGcWpaRi1mdGZRdV9ZMk0zSG5neDBpU2hxWTRWcTUtUU5LeGh2SXlnNnl6bnRzelZ6MEdBUXNvMTIyNDJOcDY2M2xTNFpPZGZEQUhIQTdnODNBSzc?oc=5",
+    "terms": [
+     "earnings_surprise",
+     "treasury_yield"
+    ],
+    "learn": "어닝 서프라이즈는 실적이 시장 예상보다 좋게 나온 거예요. 그래서 관련 시장 분위기가 바뀌기도 해요."
+   },
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "젠슨 황 CEO가 떠난 엔비디아, 사상 최대 실적 속에 미국 SEC 조사 소식도",
+    "impact": "실적은 좋지만 대표가 바뀌고 증권당국 조사까지 나왔다는 보도예요. 조사 결과가 나올 때까지는 얼마나 큰 일인지 알 수 없어요.",
+    "source": "동아일보",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1iQmJDZnlmNVd0Y2MwLXk5WEpZRzRUSHhpNmlfZmJQVFRveFhmaWNxNUV5MF9Rb2t4Q1lzeUs3ek1YMEVfMFk2WDhiOXl4b0lZNDNUbnY2STl0MkJqLW1QdVQxazFpRWcxYzhHd1FCYzBSdGPSAWZBVV95cUxQQVVaRmpzR0tTVWtSLWRXcXNjRnNiVE5MY0l2MFdYZDAzbnBxSTFPM1BTTWMyN0txWTg4bzFWNnhTbWdDT0JaY0swaXc1Wlo4SWVjd2FpbEZVdk9odWtJa040TnpEYlE?oc=5",
+    "terms": [
+     "key_person_risk"
+    ],
+    "learn": "핵심 인물이 떠나면 회사의 방향이 흔들릴 수 있어요. 이런 위험을 '키맨 리스크'라고 불러요."
+   },
    {
     "date": "2026-11-17",
     "type": "watch",
@@ -65,25 +94,34 @@
      "gpu"
     ],
     "learn": "수출통제는 나라가 특정 반도체를 다른 나라에 팔지 못하게 막는 제도예요. 풀리면 팔 수 있는 시장이 넓어져요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "bad",
-    "title": "젠슨 황 CEO 사임, 재무책임자 콜레트 크레스가 임시 CEO 맡아",
-    "impact": "33년간 회사를 이끈 창업자가 물러나 경영 불확실성이 생겼어요. 이사회가 새 CEO를 찾는 동안 사업 방향이 바뀌는지 지켜봐야 해요.",
-    "source": "매일경제 마켓",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE14ZXE4ak4tTjhha1ZNWHBtT256RFB4RU5nYTRsS012azhXRFRPVjVXUFpaQjdwcy16Ymo1NGRHS2dMMVJUUVlzelYyX0g4WktpU1E?oc=5"
-   },
-   {
-    "date": "2026-11-05",
-    "type": "bad",
-    "title": "AI 관련 주식이 한꺼번에 크게 흔들림",
-    "impact": "AI에 돈을 너무 많이 쓰는 것 아니냐는 걱정이 커지면, 엔비디아 칩 주문이 줄어들까 봐 시장이 불안해해요.",
-    "source": "Stock Titan",
-    "url": "https://www.stocktitan.net/overview/NVDA/"
    }
   ],
   "MSFT": [
+   {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "소프트웨어 회사들이 약세를 보이고 IT 장애가 잇따라 마이크로소프트에도 부담이 됐어요",
+    "impact": "서비스 장애가 잦으면 기업 고객의 믿음이 흔들릴 수 있어요. 어느 정도로 번질지는 아직 지켜봐야 해요.",
+    "source": "Benzinga",
+    "url": "https://news.google.com/rss/articles/CBMivAJBVV95cUxQakpublNVcWwxSF83TGhUdGdvWVMxb05oSTk3ZE90VlhodXRIYTZsWDdta2xPMUE2b0QwUXpyS1dKVVIwQklZLWk0NmUxSkM1YWZ1OFhvbEktWVR6dV95c1pIV1c5SS14aEJBT1RITmExa3NLbnBfVTd5VzJfa2dDTmdnMFU5LW9TV29kaTdoc1JfSEtrOTRleENXRTBzU2xwTEhvZ0U5MlFaMzBvU1hrUTd6TTFPNjFhWkp5aGNGUEpsTWViYUJrNk5lWl94UGUzaDVXRkFqbkI1Rmw1eVh2c1owakVzZnVobEpVMTkyenc2cFZCUzlkM1c1ZzBZYlBoSUVJQURoY3JkWGdhMTFoclMyVmM4aVVudmcyQjdHeWNTd244WGtmQ0d2bWpjbk1wTnVGZEFUQzhCVXpa?oc=5",
+    "terms": [
+     "cloud"
+    ],
+    "learn": "클라우드는 인터넷으로 빌려 쓰는 컴퓨터예요. 장애가 나면 이용하는 회사들 일이 멈춰서 신뢰가 중요해요."
+   },
+   {
+    "date": "2026-11-17",
+    "type": "good",
+    "title": "마이크로소프트가 Ignite 행사에서 AI 도우미 'Copilot' 업데이트를 발표했어요",
+    "impact": "AI 기능이 좋아지면 기업 고객이 더 많이 쓰고 오래 쓸 이유가 생겨요. 실제 매출로 이어지는지는 앞으로 봐야 해요.",
+    "source": "Traders Union",
+    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMEdsVXRPNm1rTmZnV0RxclFEOFNXR3U3M0ROekdpTVlLaXM5aFl6ZDlpOGxRV1dQWW0yTm9tMFZvRjhORl9sb2hhamFHRFM5SF92b01JSmtSS2NrVDJjZ0dPVXR6Qlk4U0l4T1NpSGZlN1JhdlhIWjFxOWc5MmxqVTFQU0lnelRQREJ5WjFDTEcya2o5Y2ViSg?oc=5",
+    "terms": [
+     "saas",
+     "cloud"
+    ],
+    "learn": "SaaS는 소프트웨어를 구독으로 쓰는 방식이에요. 새 기능이 늘면 고객이 계속 남아 있기 쉬워요."
+   },
    {
     "date": "2026-11-14",
     "type": "bad",
@@ -109,29 +147,22 @@
      "saas"
     ],
     "learn": "클라우드·SaaS는 인터넷으로 빌려 쓰는 프로그램이에요. 안 끊기고 안전한 것이 가장 중요한 품질이에요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "bad",
-    "title": "마이크로소프트 서비스 글로벌 장애 발생",
-    "impact": "클라우드·업무 서비스에 장애가 나면 기업 고객이 불편을 겪어요. 얼마나 오래, 얼마나 큰지에 따라 신뢰에 영향을 줄 수 있어요.",
-    "source": "Traders Union",
-    "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNbEtfU3IwWGp4X1RsbWduRzk2WFF4Z3lXRXh0dU1SVENYRHRqeTlzbE5TVVo2ZElLYXFoWVpNamxrd2ZUMEhWMmFIWlhNYm1mM3ZLRlZrUFNSSnhhdjd5djNCbXdVMTJjTTJGc2FUNmUtUHNPY1BGaVM4blBVNW9IbldmSU9vZDlKZHNMQw?oc=5",
-    "terms": [
-     "cloud"
-    ],
-    "learn": "클라우드는 인터넷으로 빌려 쓰는 컴퓨터예요. 여기서 장애가 나면 많은 회사의 업무가 한꺼번에 멈출 수 있어요."
-   },
-   {
-    "date": "2026-11-12",
-    "type": "bad",
-    "title": "북미서 대규모 서비스 장애, 아웃룩·팀즈 접속 차질",
-    "impact": "회사 업무에 쓰는 서비스가 멈추면 고객 신뢰가 흔들릴 수 있어요. 장애가 얼마나 길었는지, 반복되는지가 중요해요.",
-    "source": "뉴스핌",
-    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9KUldkYjN5LXVzM0FyRmNHSUZZLUVkUlNFNWp1Z1RSc3V5SGJDTXBBM1JxeG9mbk9laUxRQ3l2M3pzN2JaYUFmd2g3QlQ4V1JpcmhWazZtUUkxNnF1?oc=5"
    }
   ],
   "GOOGL": [
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "앤트로픽 상장으로 구글(알파벳)의 지분이 13.7%로 공개됐어요",
+    "impact": "구글이 AI 회사에 큰 지분을 갖고 있다는 게 드러났어요. 그 회사의 가치에 따라 구글이 얻는 이익도 달라질 수 있어요.",
+    "source": "AI 매터스",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0tX0p5QTVMYTliOVNCdjYxSWkwT1FoOTRiY0lOa0VKbGRtS2JTV0ZmQ2t6Q05fakV6LUJ1UmlMX0JqdmJHR29YUlU1TkVHeWd5VUtEMA?oc=5",
+    "terms": [
+     "ipo",
+     "stock"
+    ],
+    "learn": "IPO는 회사가 처음 주식시장에 상장하는 거예요. 상장하면 큰 주주의 지분이 공개돼요."
+   },
    {
     "date": "2026-11-13",
     "type": "watch",
@@ -160,14 +191,6 @@
     "impact": "검색 말고도 클라우드·AI가 새 수입원으로 자리 잡고 있어요.",
     "source": "9to5Google",
     "url": "https://9to5google.com/2026/10/28/alphabet-q3-2"
-   },
-   {
-    "date": "2026-10-28",
-    "type": "bad",
-    "title": "AI 지출이 늘어 순이익 감소, 2026년 투자 계획 1,950~2,050억 달러로 상향",
-    "impact": "버는 돈이 늘어도 쓰는 돈이 더 빨리 늘면 이익이 줄어요.",
-    "source": "NewsBytes",
-    "url": "https://www.newsbytesapp.com/news/business/alphabet-shares-fall-6-amid-search-slowdown-ai-costs-departures/tldr"
    }
   ],
   "AMZN": [
@@ -178,6 +201,19 @@
     "impact": "1년 중 가장 큰 쇼핑 시즌이라 4분기 매출을 좌우해요.",
     "source": "Amazon",
     "url": "https://www.aboutamazon.com/newsfeed"
+   },
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "앤트로픽이 상장하면서 아마존이 14.7%, 구글이 13.7% 지분을 가진 것으로 공개됐어요",
+    "impact": "아마존이 AI 회사에 크게 투자해 둔 사실이 숫자로 드러났어요. 그 회사의 가치에 따라 아마존이 얻는 이익도 달라질 수 있어요.",
+    "source": "AI 매터스",
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE0tX0p5QTVMYTliOVNCdjYxSWkwT1FoOTRiY0lOa0VKbGRtS2JTV0ZmQ2t6Q05fakV6LUJ1UmlMX0JqdmJHR29YUlU1TkVHeWd5VUtEMA?oc=5",
+    "terms": [
+     "ipo",
+     "stock"
+    ],
+    "learn": "IPO는 회사가 처음 주식시장에 상장하는 거예요. 상장하면 큰 주주의 지분이 공개돼요."
    },
    {
     "date": "2026-11-17",
@@ -203,17 +239,21 @@
      "capex"
     ],
     "learn": "데이터센터는 서버를 모아 둔 큰 건물이에요. capex는 이런 설비에 쓰는 투자금이라 늘수록 현금이 줄어요."
-   },
-   {
-    "date": "2026-11-12",
-    "type": "watch",
-    "title": "AWS 대표 \"14초마다 GPU 하나 설치, 그래도 용량 부족 예상\"",
-    "impact": "AI 컴퓨터를 늘려도 고객 수요를 다 못 채운다는 말이에요. 수요는 크지만 설치 속도와 투자 비용이 숙제예요.",
-    "source": "TIKR.com",
-    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPREtOTHNCSGZXOWxjMDlLb3FrUTFsQlZUUXhkM25BOU5aU0lUMU4xNGRsN2cxbG0yU3ZSMmpDZ2xSZGlWTkhoc2ZJOXgxelVqcHJCQTNhVGZlUTlyWHpOTlBfT1NtM3FQU1VGTno1bEhFZnpacFZibDBremRjM3hpU3NNWktBbUdsSGIyaWpqWHFtaTlJdjJCSHd6cXZpU2pkRmxnaW5yR2QxZ0RFVFZrWVZxV0FoeEk?oc=5"
    }
   ],
   "SPCX": [
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "스페이스X, 이르면 2027년 AI 위성 발사를 목표로 제시했어요",
+    "impact": "우주에서 AI 계산을 하는 새 사업 계획이에요. 아직 계획 단계라 실제로 이뤄질지는 지켜봐야 해요.",
+    "source": "토큰포스트",
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wbW5CUEpEelpQTXV6ZWtId1l5Z1I5b0pfNkp4T0haNVlfY0hHbzMwNzE4SWV1anV5eE5ibDZ4dFVOektVUW9wZk4yU1V3OEh40gFWQVVfeXFMTXZhd0xfeUVkam5tM21GaWlnQ2x2UENkVkF3Zk8zVnFoN2hCNENva2dNTlhIX1RKSDZ6ZjY1ZTdTcnJFZ2RmM1phYU4wWWtGRFQwbkE4LUE?oc=5",
+    "terms": [
+     "satellite_internet"
+    ],
+    "learn": "위성 사업은 로켓과 위성을 직접 만들어 돈을 벌어요. 새 계획은 성공해야 매출이 돼요."
+   },
    {
     "date": "2026-11-17",
     "type": "watch",
@@ -250,19 +290,6 @@
      "ipo"
     ],
     "learn": "IPO 뒤 일정 기간은 큰 주주가 주식을 팔지 못하게 묶어 둬요. 이 기간이 끝나는 날을 눈여겨봐요."
-   },
-   {
-    "date": "2026-11-15",
-    "type": "good",
-    "title": "3분기 매출이 161% 늘었지만 AI 투자 부담이 부각됐어요",
-    "impact": "매출이 크게 늘어 사업이 빠르게 커지고 있다는 뜻이에요. 다만 AI에 쓰는 돈이 많아 이익 부담을 걱정하는 시선도 있어요.",
-    "source": "코인리더스",
-    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE96QlFwaEhnZ1V6NWZXOEV3d085ODV1TUdic0pMa05LdTBqMnYwQldUaEhlclM2cmp1bmwwOFFXRUFzQ0ViX3FueFhn?oc=5",
-    "terms": [
-     "revenue",
-     "capex"
-    ],
-    "learn": "매출은 물건·서비스를 판 돈이에요. 설비투자(capex)는 미래를 위해 쓰는 돈이라, 많이 쓰면 당장 남는 돈은 줄어요."
    }
   ],
   "META": [
@@ -314,6 +341,19 @@
     "url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026"
    },
    {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "AI 반도체 판매가 크게 늘었는데도 브로드컴에 대한 시장 반응은 차가웠다는 분석이에요",
+    "impact": "잘 팔려도 시장 기대가 더 높으면 실망할 수 있어요. 기대와 실제의 차이가 중요하다는 걸 보여 줘요.",
+    "source": "초이스스탁US",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5iemQyWEhOZWZfRGdWX1gyUXlBRWIzNjY1Z2xHMEhOLXZ6ejN0cnVydEJiUUdjLVlqbTVpRDRVRHJjSmotNWo4SVhVUFNPTmNuT20xQVJpRktyZlFGQWdHaEx4bE1PMWF4eFZJNU1FV1Y5QQ?oc=5",
+    "terms": [
+     "asic",
+     "earnings_surprise"
+    ],
+    "learn": "ASIC은 한 가지 일에 맞춘 맞춤형 반도체예요. 팔린 양이 늘어도 시장 예상과 비교해 평가해요."
+   },
+   {
     "date": "2026-11-13",
     "type": "watch",
     "title": "엔비디아 CEO 사임 여파에 브로드컴 등 AI 반도체주 동반 흔들",
@@ -336,6 +376,30 @@
    }
   ],
   "TSLA": [
+   {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "테슬라 합병 때 세금을 미뤄 달라는 청원이 5만 명에 가까워졌어요",
+    "impact": "합병 방식에 따라 주주가 파는 게 아닌데도 세금을 낼 수 있다는 이야기예요. 정부가 어떻게 답할지 지켜봐야 해요.",
+    "source": "뉴스톱",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE4ybXA0ajBweEdVbnhlV0JGVDlYT3JfeTZUMmpmM1NjeTdUdEo2QzJGYW94eE94WWotZVpUc3J5UVFUNmI3YXQ2cGJnb1luamhvamxvcm90SWJCbFZidUFYd2M4WGd0QjZoVjFENEVkOA?oc=5",
+    "terms": [
+     "merger"
+    ],
+    "learn": "합병은 두 회사가 하나가 되는 거예요. 방식에 따라 주주에게 세금 문제가 생길 수 있어요."
+   },
+   {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "머스크는 엔비디아 젠슨 황에겐 돌아오라고 했지만 자기 후계자는 밝히지 않았어요",
+    "impact": "테슬라는 머스크 한 사람에게 기대는 부분이 커요. 후계 계획이 불분명하면 이런 위험이 계속 거론돼요.",
+    "source": "뉴시스",
+    "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9NMWNRem1YOUliTUFCRUpVUmI4VXBLb2ZBUVk2c1NQbU10WVhiTGZkV2I3WU1HUGt2bU1HM0Y4TVRYVnpSUGNWYVdnQ0V1MENNeFFacHBaQktEYm1kV0hUWXliQ1JiUmZETWhpcV9iRDc2b19mUzItYdIBeEFVX3lxTE9NMWNRem1YOUliTUFCRUpVUmI4VXBLb2ZBUVk2c1NQbU10WVhiTGZkV2I3WU1HUGt2bU1HM0Y4TVRYVnpSUGNWYVdnQ0V1MENNeFFacHBaQktEYm1kV0hUWXliQ1JiUmZETWhpcV9iRDc2b19mUzItYQ?oc=5",
+    "terms": [
+     "key_person_risk"
+    ],
+    "learn": "핵심 인물에 회사가 많이 기대면 그 사람이 떠날 때 흔들릴 수 있어요. 이걸 키맨 리스크라고 해요."
+   },
    {
     "date": "2026-11-16",
     "type": "watch",
@@ -361,25 +425,21 @@
      "mna"
     ],
     "learn": "합병은 두 회사가 하나가 되는 거예요. 합치는 조건에 따라 기존 주주에게 미치는 영향이 달라져요."
-   },
-   {
-    "date": "2026-11-12",
-    "type": "watch",
-    "title": "스페이스X와 합병 임박설, 이르면 12월 발표 가능성 보도",
-    "impact": "공식 발표가 아닌 보도예요. 합병이 되면 테슬라 주주와 사업 구조가 크게 달라질 수 있어요.",
-    "source": "이투데이",
-    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE4zNDloWVZSYUZiMDkwMW5JQ3RGbUZhNDM0R08tUEhlclBGa0oyNGNyWEMtUUtTMWtkdWxpSEJFZ1hVSXF2WWpjalJxXzZLU3l3b0t5aQ?oc=5"
-   },
-   {
-    "date": "2026-11-09",
-    "type": "good",
-    "title": "운전자 없는 로보택시, 포트워스(11/2)·샌안토니오(11/9)로 확대",
-    "impact": "자율주행 사업이 실제 도시로 넓어지고 있어요. 자리 잡으면 새 수입원이 돼요.",
-    "source": "Drive Tesla",
-    "url": "https://driveteslacanada.ca/news/drive-tesla-download-november-2-8/"
    }
   ],
   "LLY": [
+   {
+    "date": "2026-11-17",
+    "type": "good",
+    "title": "일라이 릴리가 암세포를 골라내는 기술을 위해 스티플과 7.8조 원 규모 계약을 맺었어요",
+    "impact": "당뇨·비만약 말고도 암 치료로 사업을 넓히려는 움직임이에요. 신약 개발은 성공 여부가 늦게 나와 시간이 걸려요.",
+    "source": "글로벌이코노믹",
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOa3V4cjg3Y3l3d1NQSzlfLVZRZnY0VFJCdkxwMU9yYzdoTGc3cklZNFgteVZTX292Ql8yQnppczBSMXBRSGJXMERmS1dwdXhsZWRIQjdHNF9ZVW80ZG5LdURKYU1Da3BPUEJJM0xBbnNDRHdBUFYyYnVsSlgzVVhkMlg2YjZpdG5f?oc=5",
+    "terms": [
+     "pipeline"
+    ],
+    "learn": "파이프라인은 개발 중인 신약 목록이에요. 새 기술을 들이면 앞으로 낼 약의 후보가 늘어나요."
+   },
    {
     "date": "2026-11-15",
     "type": "watch",
@@ -412,17 +472,22 @@
     "impact": "중국에서 알약 비만약을 팔 수 있게 돼 큰 시장이 열려요. 주사가 부담스러운 환자도 쓸 수 있어 판매가 늘 수 있어요.",
     "source": "이데일리",
     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQYnFFeTQ4eUlTbEUwaTdDWjdsLS1OYTU5MkgwV3dPN2Z5MFp1RUtRRW5tQnRzb3VPVWJqZWh1NlFqcVBzR0ctM0J4Z25NVDl6RF91UHY3dXJVckZlQUFiUmpxTDA1Z1VEQnNUTjZzVlhTaHhCSEhPRzNhWkNyMDhSeg?oc=5"
-   },
-   {
-    "date": "2026-11",
-    "type": "bad",
-    "title": "약값 인하 압박으로 성장 속도가 느려질 수 있다고 CEO가 언급",
-    "impact": "많이 팔려도 한 개당 받는 돈이 줄면 매출 증가가 둔해져요.",
-    "source": "Newsquawk",
-    "url": "https://www.newsquawk.com/headlines/eli-lillys-lly-ceo-says-that-the-number-of-people-engaging-with-the-lilly-direct-has-increased-to-over-1mln-patients-in-2025"
    }
   ],
   "BRK.B": [
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "워런 버핏이 버크셔 A주 6150주를 B주로 바꿔 4개 재단에 모두 기부했어요",
+    "impact": "회사 사업이 바뀐 소식이 아니라 개인 기부 소식이에요. 큰 주주의 지분 이동은 시장이 관심 있게 봐요.",
+    "source": "데이터투자",
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE41WFUtLWRiT05yaWRwT0otZGJWUFZweWVxVTdRS1h5ZzY5Yy1VTzdILXUtYzl1UGllaUlGZ1ZzNU53cmQwRjBRLTMtOWw0Yzk4Vng1NWhVczhobmtHVFpKcmw5ck1tRjJtRFBhd01XcFFPdw?oc=5",
+    "terms": [
+     "stock",
+     "largest_shareholder"
+    ],
+    "learn": "A주와 B주는 같은 회사의 다른 종류 주식이에요. 큰 주주가 지분을 옮기면 뉴스가 돼요."
+   },
    {
     "date": "2026-11-17",
     "type": "watch",
@@ -459,22 +524,22 @@
      "holding_company"
     ],
     "learn": "버크셔는 투자 내역을 분기마다 공개해요. 어떤 회사를 늘리고 줄였는지 보면 투자 방향을 알 수 있어요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "good",
-    "title": "버크셔, 자사주 13조 원어치 사들여 사상 최대 규모",
-    "impact": "회사가 자기 주식을 직접 많이 샀어요. 이는 경영진이 지금 주식 값이 합리적이라고 본다는 신호로 읽혀요.",
-    "source": "코인리더스",
-    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5hX19nbWVMX0hqakV0X0lHOEphT0t0UVlFd2NUM1VveHF3VXJzSU5jXzl4blduXzZ5R0lWbnRuMGcySy1lOTdNUWlR?oc=5",
-    "terms": [
-     "buyback",
-     "pbr"
-    ],
-    "learn": "자사주 매입은 회사가 자기 주식을 사들이는 일이에요. 주식 수가 줄어 한 주의 몫이 커질 수 있어요."
    }
   ],
   "WMT": [
+   {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "월마트가 19일 실적을 발표해요, 시장은 주당순이익 0.64달러 안팎을 예상해요",
+    "impact": "발표 결과가 예상보다 좋은지 나쁜지에 따라 시장 반응이 달라져요. 온라인 판매 성장도 눈여겨보는 부분이에요.",
+    "source": "코인리더스",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE45eFZ4M0c5ZE5XdzFlY1ZNTno0bDNfMThtczZ3VkVQZkVPcFAwVnVXU0NVVTczWDFkQkJyS3BpZEVhZGVvMVFHWTN3?oc=5",
+    "terms": [
+     "eps",
+     "consensus"
+    ],
+    "learn": "컨센서스는 증권사들의 예상 평균이에요. 실제 EPS가 이보다 높으면 '서프라이즈'라고 불러요."
+   },
    {
     "date": "2026-11-16",
     "type": "watch",
@@ -507,17 +572,21 @@
     "impact": "물류센터를 자동화하면 사람 손과 시간이 줄어 비용을 아낄 수 있어요. 배송이 빨라져 온라인 판매에도 도움이 될 수 있어요.",
     "source": "Simply Wall St",
     "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQaGJlTjBmUEFKblUwb3A0X2kweUlfdGJ1Y1hTMTQ4U3RLaFZNODhrWHNob0VXajVyeWdBcnFPXzJHX1c1NVd4dHNjRDNIWWQ1UEFNRDdUakxQTmViZURNNXdXaTgycGFnOHBaUXJmQ05RWmU2MW1hWXMySi0tSWFXSVg5MkFRS0Vtc1ZrTVpxSEl4cE1INzlHX2N2VEt0Q2PSAZ8BQVVfeXFMUGhiZU4wZlBBSm5VMG9wNF9pMHlJX3RidWNYUzE0OFN0S2hWTTg4a1hzaG9FV2o1cnlnQXJxT18yR19XNTVXeHRzY0QzSFlkNVBBTUQ3VGpMUE5lYmVETTV3V2k4MnBhZzhwWlFyZkNOUVplNjFtYVlzMkotLUlhV0lYOTJBUUtFbXNWa01acUhJeHBNSDc5R19jdlRLdENj?oc=5"
-   },
-   {
-    "date": "2026-11-12",
-    "type": "watch",
-    "title": "블랙프라이데이 할인 행사 시작(11/12~)",
-    "impact": "연말 쇼핑 대목 매출이 회사의 1년 실적에 크게 영향을 줘요.",
-    "source": "Webull",
-    "url": "https://www.webull.com/news/15814223406682112"
    }
   ],
   "JPM": [
+   {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "JP모건이 차기 최고재무책임자(CFO)로 브레게 드 베스트를 선임했어요",
+    "impact": "CFO는 회사의 돈 관리를 이끄는 자리예요. 큰 방향이 바뀐다는 뜻은 아니지만 경영진 교체 소식이에요.",
+    "source": "Investing.com 한국어",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9ocjFuRGhCNlkzRGFINkxxZ19nMzlscFdkQlFURnFCbTNBSWRwRnBUZlRMRTFEZmE4cU1NNHB5ZlhCcEhNMjB6NzluLWpCMi04d1VUajIyZ0x4eFQ5bERFakFrWU9Cd240M1EtdE5ydG0?oc=5",
+    "terms": [
+     "key_person_risk"
+    ],
+    "learn": "경영진이 바뀌면 회사 운영 방식이 달라질 수 있어요. 사람에 기대는 정도를 함께 봐요."
+   },
    {
     "date": "2026-11-16",
     "type": "bad",
@@ -554,14 +623,6 @@
      "etf"
     ],
     "learn": "기관의 보유 현황은 분기마다 공시돼요. 공시는 이미 지난 일을 알려 주는 자료예요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "watch",
-    "title": "AI 봇의 카드정보 직접 입력 제한 보도",
-    "impact": "AI가 대신 결제하는 시대에 보안을 지키려는 조치예요. 고객 돈을 지키는 데 도움이 되지만 새 결제 방식에는 걸림돌일 수 있어요.",
-    "source": "토큰포스트",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9DRmNVUVAzWWhZV1JNazNwQktGekVNRjVKY3IyYnV4YXpaYnQxRjkzVUV1V1dMaS1FZFZSMDY3bTJNVDQ3clBTT1k3VGVDVUZ0bVlHNThR0gFWQVVfeXFMT0NGY1VRUDNZaFlXUk1rM3BCS0Z6RU1GNUpjcjJidXhhelpidDFGOTNVRXVXV0xpLUVkVlIwNjdtMk1UNDdyUFNPWTdUZUNVRnRtWUc1OFE?oc=5"
    }
   ],
   "AMD": [
@@ -693,6 +754,18 @@
     "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance"
    },
    {
+    "date": "2026-11-17",
+    "type": "bad",
+    "title": "탈크 발암 논란이 100억 달러대 주주 소송으로 번졌다는 보도예요",
+    "impact": "소송에서 지면 큰돈을 물어야 할 수 있어요. 결과가 나오기 전이라 얼마나 부담이 될지는 아직 알 수 없어요.",
+    "source": "메디컬투데이",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4wSFZkUEc3V20xU0VWOTZrUjYxa1R2VmtXeTNQbDBjNW9qTE14dUxQVnJRZmZyOFpKOV90cmJiSFprQnM1SmxFTmp6Q05vOEhtckU1OEcyal9tbWRmRHJjZHFEZ3hxTm1OMXloQg?oc=5",
+    "terms": [
+     "disclosure"
+    ],
+    "learn": "큰 소송은 회사가 공시로 알려요. 결과가 나오기 전엔 부담이 얼마인지 정하기 어려워요."
+   },
+   {
     "date": "2026-11-09",
     "type": "good",
     "title": "건선 신약 후보 아이코타이드 3상 임상 성공",
@@ -707,14 +780,6 @@
     "impact": "1상은 안전성을 먼저 보는 초기 단계예요. 앞으로 더 큰 시험을 통과해야 해요.",
     "source": "이데일리",
     "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNall4cmhoeXFhdExjUVQyMFR3V2l4UTlQai1UUmhiVnhoSXJfWk9fVFU4eXlzcDFTUWs4QkNWcjZ5S3JTUkRfQnFOQkZiS3VUUmpIRFJhREZoLVJDOXdsSElJaXF1eHFTM3dhOUhDaG1FbkwwNjBCWmNtVXB6NlF5eQ?oc=5"
-   },
-   {
-    "date": "2026-10-13",
-    "type": "good",
-    "title": "3분기 매출 254억 달러(+5.9%), 연간 전망 상향, 건선약 트렘피어 +68%",
-    "impact": "특허가 끝난 약(스텔라라)의 빈자리를 새 약이 채우고 있어요.",
-    "source": "J&J 발표",
-    "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance"
    }
   ],
   "XOM": [
@@ -822,6 +887,19 @@
   ],
   "COST": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "미국에서 불안감 때문에 코스트코에서 사재기가 늘었다는 보도예요",
+    "impact": "생필품이 많이 팔리면 단기 매출에는 도움이 돼요. 일시적인 현상일 수 있어서 계속될지는 지켜봐야 해요.",
+    "source": "SeattleN",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE00UEZZeFNTU25BQTBjOE92UjZZV2FsN2V0TWwwOGM3UUoxcW9qYVNVeHB5SWlsMktuOFAxNFlQMEpYRmFOVm9IM3ln?oc=5",
+    "terms": [
+     "consumer_staples",
+     "inventory"
+    ],
+    "learn": "필수소비재는 불안해도 사는 물건이에요. 재고가 빨리 줄면 그만큼 많이 팔렸다는 뜻이에요."
+   },
+   {
     "date": "2026-11-13",
     "type": "good",
     "title": "코스트코, 주당 30달러 특별배당과 자사주 매입 발표",
@@ -853,6 +931,18 @@
   ],
   "CVX": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "셰브론이 에너지 회사 인수 협상에서 앞서 있다는 보도예요",
+    "impact": "인수가 되면 사업 규모가 커질 수 있어요. 아직 협상 중이라 성사될지는 알 수 없어요.",
+    "source": "Investing.com 한국어",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1YSmtIYXVzbXNIQXZqc29RbHR5UHhYU01WTHNKTkFKM2V0cUNhS0tLLUxOS2NtTVdROGFyeUM3dEZ1UWNtVGtEZFFPMVgtZGpxSjFPeG4wb3ZGb0JVZE5xMk1lX0xhNThYLXBuVHNJU3E?oc=5",
+    "terms": [
+     "mna"
+    ],
+    "learn": "M&A는 회사를 사고파는 거예요. 협상 단계의 소식은 무산될 수도 있어요."
+   },
+   {
     "date": "2026-11-13",
     "type": "watch",
     "title": "셰브론 부회장 마크 넬슨, 보유 주식 일부 매각",
@@ -880,14 +970,6 @@
     "impact": "정유 마진과 원유값이 좋아서 크게 벌었어요.",
     "source": "Egypt Oil & Gas",
     "url": "https://egyptoil-gas.com/news/chevron-reports-9-9-bn-profit-in-3q-as-refining-margins-improve/"
-   },
-   {
-    "date": "2026-10-30",
-    "type": "good",
-    "title": "빚 35억 달러 더 갚고, 분기 배당 1.78달러 유지",
-    "impact": "재무가 튼튼해지고 배당도 꾸준해요.",
-    "source": "Finviz",
-    "url": "https://finviz.com/news/412404/chevron-reports-third-quarter-2026-results"
    }
   ],
   "KO": [
@@ -954,6 +1036,18 @@
   ],
   "CSCO": [
    {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "시스코 최고인사책임자가 전략 고문으로 옮기고 후임은 외부에서 데려와요",
+    "impact": "경영진이 바뀌는 소식이에요. 사업이 바뀌는 건 아니지만 회사 운영에 변화가 생길 수 있어요.",
+    "source": "데이터투자",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9PNE0tS3VZamh0QUFkR2YtV19EUlZTZ0o2WFVrc01nSG5vUnZRdkRmUlNTZnh5ZlhGdnNrVHdRTjg4alh5cE9sb3kwdWRnY19PZEdzeTNLMTJyc19raW9aclV2eWItaG1MTWtRSEVHdm43c2c?oc=5",
+    "terms": [
+     "key_person_risk"
+    ],
+    "learn": "경영진이 바뀌면 운영 방식이 달라질 수 있어요. 외부에서 오면 새 바람이 불기도 해요."
+   },
+   {
     "date": "2026-11-13",
     "type": "watch",
     "title": "시스코, 실적과 전망 모두 예상 웃돌았지만 성장 둔화 우려",
@@ -981,14 +1075,6 @@
     "impact": "회사가 AI 관련 사업이 예상보다 크게 자랄 것으로 보고 있어요.",
     "source": "TradingKey",
     "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9fTG12NGRCYlVQTHM0M0ZLNHZYdFhqQnZZd3UydVNxZ3JuOTdvaHVmV3NQSW1PS1NZV28xbkFOX19kN1Z5UlVLLVpJSzBRb3VyR0QzNFpXT0FDVklwQXd2bEc1WHItYnVK?oc=5"
-   },
-   {
-    "date": "2026-11-12",
-    "type": "watch",
-    "title": "11월 12일(미국 시간) 1분기 실적 발표",
-    "impact": "AI 네트워크 장비 주문이 계속 느는지 볼 수 있어요.",
-    "source": "Cisco",
-    "url": "https://investor.cisco.com/news/news-details/2026/Cisco-Schedules-Conference-Call-for-Q1-Fiscal-Year-2027-Financial-Results/default.aspx"
    }
   ],
   "MRK": [
@@ -1026,6 +1112,19 @@
    }
   ],
   "ORCL": [
+   {
+    "date": "2026-11-18",
+    "type": "bad",
+    "title": "마이클 버리가 오라클 데이터센터 사업에 전력·용수 확보 문제를 제기했어요",
+    "impact": "데이터센터는 전기와 물이 많이 필요해요. 이를 구하지 못하면 사업이 늦어지거나 비용이 늘 수 있다는 걱정이에요.",
+    "source": "Benzinga",
+    "url": "https://news.google.com/rss/articles/CBMi1gJBVV95cUxQNHh4b1FuVl9zZ2VwMTZycUkwMWRuNTI3bWVjY0ZJTVkwQm1RSGNfWjVYU250N2ozQnhTeC1KZ0lYMUFDb2t3ZEpMOUdLdElaLXhSMVVJVGJYWDVGRTdoZWMwV19qV2Vuc2xmUnJKWXlLaEdXMExMWDBsQzU3X2hEM3lMX0ptNmVhVnpIOHBDNUc2MDNFSUd5YUtHNGk2OFU2bkd0YmtTQWdDSnkzR2F3eXpkRVpfeXBpZHB1U0pXYVd1OFFQY0wxSWQ0cmNFck1kM3dHdVIyQ2Mtc0lWem9xamZISWxIVndYaGVpYTNYc3FyMmZoUm9TMEF1cDM5U25RQVNRUGlYQWNDTk9UZWJhRmxycGtCUnNxNHBWNF9LMkZNRnZkMm0tcXNMTHhFVnN2SHAxVlV6TnRzRkRYZFl5NXAyYmpmM2tuR0FKMzhIZEg4WUsxb1E?oc=5",
+    "terms": [
+     "data_center",
+     "capex"
+    ],
+    "learn": "설비투자(CAPEX)는 시설을 짓는 데 쓰는 돈이에요. 데이터센터는 큰돈이 먼저 들어가요."
+   },
    {
     "date": "2026-11-14",
     "type": "watch",
@@ -1083,6 +1182,19 @@
    }
   ],
   "HD": [
+   {
+    "date": "2026-11-17",
+    "type": "good",
+    "title": "홈디포 3분기 매출이 4.9% 늘었고 회사가 올해 전망을 높였어요",
+    "impact": "집 고치는 수요가 이어져 매출이 늘었어요. 회사가 스스로 전망을 높인 것도 좋은 신호예요.",
+    "source": "TradingKey",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1EUWxMVEE2YUFJOV9aNnZHMlkzNDVlOHBwQXVJWThrTThmUjVfSE8zbERUbTktcVRTRzgzN2cxN2d4QmxkaUdfbDBrMUlCaDBNV3B2NkVlQzNYa1d0VWNSWFA3ZWF3U3BL?oc=5",
+    "terms": [
+     "revenue",
+     "guidance"
+    ],
+    "learn": "가이던스는 회사가 말하는 앞으로의 실적 전망이에요. 높이면 회사가 자신 있다는 뜻이에요."
+   },
    {
     "date": "2026-11-17",
     "type": "good",
@@ -1219,6 +1331,18 @@
   ],
   "PM": [
    {
+    "date": "2026-11-12",
+    "type": "bad",
+    "title": "필립모리스 신형 '테리아'가 기존 제품보다 포름알데히드를 3.2배 배출했다는 보도예요",
+    "impact": "새 제품이 덜 해롭다는 게 장점인데 반대 결과가 나오면 판매와 규제에 부담이 될 수 있어요.",
+    "source": "https://www.ppss.kr/",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9NeTIyTktyQTkyT21PNk5sbE5DUWdNeXA3YmFFS0tYLVh1b0htQzNEQUVSRGx0UEltWHJIUE5JVFdkVVZBY1k1dVFNdmk2NldmMk9kSl9LSWE4dGFObEpxVk9OWWY?oc=5",
+    "terms": [
+     "smoke_free"
+    ],
+    "learn": "연기 없는 담배는 태우지 않는 새 제품이에요. 안전성 논란이 생기면 규제 걱정이 커져요."
+   },
+   {
     "date": "2026-11-10",
     "type": "good",
     "title": "3분기 연기 없는 제품이 전체 매출의 40% 넘어",
@@ -1351,6 +1475,18 @@
   "CAT": [
    {
     "date": "2026-11-16",
+    "type": "bad",
+    "title": "AI 인프라 관련주 조정 속에 캐터필러의 PER이 50배에서 23배로 내려왔어요",
+    "impact": "시장이 매기는 몸값이 크게 줄었다는 뜻이에요. 사업이 갑자기 나빠졌다기보다 기대가 줄어든 영향일 수 있어요.",
+    "source": "코인리더스",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5YUTd6SVNsX09Fd2YxR25xbnFaYmxNb25fb2JRR09LcFVITFlfWWl4azNMYlRLTDBzcXFEVXRMc2szNy0tRlJ3UzFB?oc=5",
+    "terms": [
+     "per"
+    ],
+    "learn": "PER은 이익에 비해 주식이 얼마나 비싼지 보는 숫자예요. 내려가면 기대가 줄었다는 신호예요."
+   },
+   {
+    "date": "2026-11-16",
     "type": "watch",
     "title": "캐터필러 회장 겸 CEO 조셉 크리드, 월마트 이사로 선임",
     "impact": "캐터필러 CEO가 다른 큰 회사 이사도 맡게 됐어요. 경영 경험이 넓어지지만 캐터필러 사업이 바로 달라지지는 않아요.",
@@ -1381,14 +1517,6 @@
     "impact": "AI 데이터센터에 쓸 전기를 만드는 발전기 주문이 들어왔어요. 건설 장비 말고도 새 매출원이 생기고 있어요.",
     "source": "Traders Union",
     "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONWs5VnppVmRTUG02bHJIWG1hbmpnc0QtNVlEWUhZa0JZVzNTdFJIaWprMU1wbGY5ZS1FME1EOGRld3ZpaHR4clNqNXZXVzVxMkx0eU1OT0xZUUtuYVlxMXV6XzJxMlBNLXYtaXhRLU03RERaN2NSYy1Hek9jQXRoaEluWFdVNncwc1pjRHZZNUxDN2JYN3p2d2dUZm9HUjRS?oc=5"
-   },
-   {
-    "date": "2026-10-29",
-    "type": "good",
-    "title": "3분기 매출 207억 달러(+17%), 주문잔고 사상 최대 781억 달러",
-    "impact": "데이터센터용 발전기 등 앞으로 만들 주문이 많이 쌓였어요.",
-    "source": "Caterpillar 발표",
-    "url": "https://www.sec.gov/Archives/edgar/data/0000018230/000001823026000052/ex991toformcat3q2026earnin.htm"
    }
   ],
   "PANW": [
@@ -1523,6 +1651,18 @@
   ],
   "NFLX": [
    {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "빌 애크먼이 예전에 큰 손실을 본 넷플릭스에 다시 투자했어요",
+    "impact": "유명 투자자의 투자는 관심을 끌지만 그 사람이 샀다고 꼭 좋은 건 아니에요. 회사의 성장 이야기를 함께 봐야 해요.",
+    "source": "Benzinga",
+    "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxNVFNaRlY5WEc3RDBxc1FSUkZURUgzNWtzZk80SlAyZHdTdGtzN3ljMWFid1Q3NnpEcTZHZFRzQkxTRlB3VTVFSmNzU0x2anpRVjdlUThJUzFlZWkwUTRuNTE0U0JKbkZEc2J2YnlLem9xV1JNcmRZMXdVLWZWenIyMXFpdFlqdU9HelFvT2V6S2pXQzFiZm1feEdJMDRXbWJGclltdTNTV09GOVlxRURYZkY1eWJ5ck1YNzlFeVRrSVhBSE1yMzZILThXQmQ4c3FTSlo1aHhQaEpiMXpWY2ZMS0hvWW1wMEc1MURXRUFiSWxHTENOMXhVcmV0ZThZWEU0N21RZGVBcThoQTRuVE5iajc3Q1NDNjdUU2lYLXk4RUJzNURnbWRGMTh0dEkxZU51RWVIN2h5a3FMa1JaRk5GeUo2Q1FtTkN2bFNZTGZkTGNYNXZtMmh0ZQ?oc=5",
+    "terms": [
+     "stock"
+    ],
+    "learn": "유명 투자자의 투자는 분기 보고서로 알려져요. 참고만 하고 회사 실적을 직접 확인해요."
+   },
+   {
     "date": "2026-11-14",
     "type": "watch",
     "title": "CJ ENM 계열 제작사, 넷플릭스 1위 작품에도 적자 이어져",
@@ -1550,17 +1690,21 @@
     "impact": "벌어들인 돈이 늘고, 주주에게 많이 돌려주고 있어요.",
     "source": "Inven Global",
     "url": "https://www.invenglobal.com/articles/27431/netflix-posts-129bn-q3-revenue-points-to-gta-vi-tie-up-with-take-two"
-   },
-   {
-    "date": "2026-10-20",
-    "type": "bad",
-    "title": "미국·캐나다 성장 둔화, 올해 광고 매출 전망 30억→27억 달러로 낮춤",
-    "impact": "가장 큰 시장의 성장이 느려지고, 새 수입원인 광고도 기대보다 약해요.",
-    "source": "24/7 Wall St.",
-    "url": "https://247wallst.com/cards/netflix-q3-2026-earnings-nflx-01m5deq0f119rjb4fjrht5sjde"
    }
   ],
   "GS": [
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "골드만삭스가 이더리움 ETF 보유액을 6배로 늘렸어요",
+    "impact": "큰 금융회사가 가상자산 ETF를 사들이고 있다는 뜻이에요. 본업 실적과는 별개의 투자 소식이에요.",
+    "source": "코인리더스",
+    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE12ZmlKSzZWRnZrbjB5Y0M0bElrbWs1cjRNZ1BQaTJabWszRktIVENaU2JDTUxUWUwxcHQycl9sS1ZUNzMyb29TS0FR?oc=5",
+    "terms": [
+     "etf"
+    ],
+    "learn": "ETF는 여러 자산을 묶어 거래소에서 사고파는 상품이에요. 큰 회사의 보유량 공개는 보고서로 알려져요."
+   },
    {
     "date": "2026-11-17",
     "type": "watch",
@@ -1595,6 +1739,18 @@
    }
   ],
   "WFC": [
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "웰스파고가 블랙록 비트코인 ETF 보유량을 두 배 늘렸어요",
+    "impact": "보도에 따르면 대부분은 고객 몫이에요. 은행 본업 실적과는 거리가 있는 소식이에요.",
+    "source": "디지털투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE00WEpNSFA1X240U3BkSms0THB6Q1ZzZTFGMjFWSmgwNlRoa0ZpUzhoc0huUXhyVW9YT3pOSUp1SFZEeVQteGNSRXkyQkEzby03ODJYUUdDQW9CRWtMNGJzY0xNcGRhMzZHYWR6bjJtX2RHOVE?oc=5",
+    "terms": [
+     "etf"
+    ],
+    "learn": "ETF는 거래소에서 사고파는 묶음 상품이에요. 은행이 들고 있어도 고객 자산일 수 있어요."
+   },
    {
     "date": "2026-11-16",
     "type": "bad",
@@ -1653,18 +1809,22 @@
    {
     "date": "2026-11-11",
     "type": "good",
+    "title": "암젠의 신약 다조달리벱이 쇼그렌증후군 3상 임상에서 질병 활성도를 낮췄어요",
+    "impact": "마지막 단계 시험에서 효과가 나왔다는 좋은 소식이에요. 실제 약으로 나오려면 허가 절차가 남아 있어요.",
+    "source": "메디컬투데이",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4xdDJMNTFUQ1FMMkh1ZjRwQWplM2xfRDhpREwxQVFzUjkwTGVheEVfcFgzRFVlSUN3d1dlZUp1dnFPaGw4a3JJUlQ1bGRqVGR4NTJJaXVOTUVxclRBbGM0OXlYRGkteHNjN0ZLdw?oc=5",
+    "terms": [
+     "pipeline"
+    ],
+    "learn": "3상은 신약의 마지막 큰 시험이에요. 통과해도 정부 허가를 받아야 팔 수 있어요."
+   },
+   {
+    "date": "2026-11-11",
+    "type": "good",
     "title": "쇼그렌병 3상 세부 결과 공개, 다조달리베프 증상 개선",
     "impact": "희귀 자가면역질환 신약 후보가 큰 시험에서 효과를 보였어요. 허가를 받으면 새 매출원이 될 수 있어요.",
     "source": "더파마뉴스",
     "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPTmZXXzFGaVJ5YWFHOFJELVBDTnVhbWM3RHUxN05ZUkljYVlBdmF0anJjMl9hTkQ3TTN4ci1LTkJxWjhKS1ZpSnh0ZWRvbUp6SGpNRndzdTZkRVBIbFZrNklLN0Qtb01LcnRuVlowS2F2cEo0N2hUZ3dJWWd3Q2FqRjZ1NTZrZ0xYQ3FvRzFPYkhXZE9ub056Tjg1WnhweEVOYVR1Q09qYnZuX05jb2Uw?oc=5"
-   },
-   {
-    "date": "2026-11-03",
-    "type": "good",
-    "title": "3분기 매출 104억 달러(+8%), 연간 이익 전망 상향",
-    "impact": "주력 약들이 꾸준히 팔리고 있어요.",
-    "source": "Amgen 발표",
-    "url": "https://www.amgen.com/newsroom/press-releases/2026/11/amgen-reports-third-quarter-2026-financial-results"
    }
   ],
   "LIN": [
@@ -1694,6 +1854,19 @@
    }
   ],
   "ANET": [
+   {
+    "date": "2026-11-14",
+    "type": "good",
+    "title": "아리스타가 지난 분기에 58.5% 성장했다는 보도예요",
+    "impact": "AI 데이터센터에 쓰는 네트워크 장비가 잘 팔렸다는 뜻이에요. 성장 속도가 계속될지는 지켜봐야 해요.",
+    "source": "TIKR.com",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPakpyejdhdXdVcW1WSGlfdkt0WURyMS12SXBQYjVxUjlxWmlhZUpGaHd0LWtpMTlaVklTQ0pIeHF4WF81YjJNbm5WM3FldXF3TENpcTZmWml5ZXliVjJsTXZTWVRRT0JJazRpXzloR3hBZnk1OXB1a0pZQUVpVEZ4Qm1qaExiRkdCOFBSYzN4S213aWtQckRPWUY1VXcxYWhmQ21IaDZqbw?oc=5",
+    "terms": [
+     "yoy_qoq",
+     "data_center"
+    ],
+    "learn": "성장률은 이전과 비교한 증가 비율이에요. 비교 기간이 무엇인지 함께 봐야 해요."
+   },
    {
     "date": "2026-11-12",
     "type": "good",
@@ -1794,6 +1967,19 @@
   ],
   "005930": [
    {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "코스피 상장사 3분기 누적 영업이익이 264% 늘었고 삼성전자와 SK하이닉스가 68%를 차지했어요",
+    "impact": "삼성전자는 반도체로 번 돈이 한국 기업 전체 이익에서 큰 비중을 차지해요. 한두 회사에 쏠린 점은 위험이기도 해요.",
+    "source": "녹색경제신문",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB0eFQ1SUgtemdLZjlqY251b2ZYUndBNGFydDBPeTNqTXhmaEJyZmhoanM1THFmQUdaVnM4RDBpNGhmcnNyR1phTUI2cFZ3ODllVmo4UU90U2hvMk9WbllZMzJOU2ljVTNq?oc=5",
+    "terms": [
+     "operating_income",
+     "semiconductor"
+    ],
+    "learn": "영업이익은 본업으로 번 돈이에요. 몇 개 회사에 쏠리면 그 회사가 흔들릴 때 시장도 흔들려요."
+   },
+   {
     "date": "2026-11-17",
     "type": "watch",
     "title": "삼성전자·애플, D램 장기 공급 계약을 앞두고 있다는 보도",
@@ -1831,21 +2017,21 @@
      "semiconductor"
     ],
     "learn": "메모리 반도체는 가격이 오르내리는 상품이에요. 가격이 내리면 회사가 벌 돈이 줄 수 있다고 걱정해요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "watch",
-    "title": "홍라희 여사, 이재용 회장에 삼성전자 주식 증여 완료",
-    "impact": "이재용 회장의 지분이 늘어 경영권이 더 안정되는 쪽이에요. 증여세는 세금으로 내야 해요.",
-    "source": "블로터",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE50UmdrOTUzaWVoMmlrTUl4RHFsZUk0YVFxM0lwS1U2Z295TG1mWWFrTmlKTi03X1ZOWEpMdDVCdkNXSWxfYVZCb1FIckF2U3lZUUFKYU9pZnRBc0oteDBReFlndlFIRWVZ0gFsQVVfeXFMT2JxVFc4czNMcGJMcm9SQ0dSWlB5Yl96eUVHLU9zcXpUVzZJMVBnczFLQW1CRjJkYjhGRzM1YUFrcTJNanBYemt0Y3BKUmU5UFNJcUZhY1AyT1FBMlYyM2c1VmcxRS1rSUp5dnV4?oc=5",
-    "terms": [
-     "largest_shareholder"
-    ],
-    "learn": "최대주주는 회사 지분을 가장 많이 가진 사람이에요. 지분이 많을수록 경영 결정에 목소리가 커요."
    }
   ],
   "005380": [
+   {
+    "date": "2026-11-18",
+    "type": "bad",
+    "title": "현대차 해외법인 9곳 중 5곳에서 이익이 줄었고 미국 의존도가 더 커졌어요",
+    "impact": "미국에 많이 기대면 미국 시장이나 정책이 바뀔 때 흔들릴 수 있어요. 지역을 넓히는 게 숙제예요.",
+    "source": "nbn 시사경제",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5pbldySVhVWU90YW1XbGY4TElwTG95aTFUbnRaSF9USENnX1pDT3BZcnhSamxmRkhhdWhnLUR1M19fSXlYRmVtdnl1MHlfQWFrSF9TU2RCbmFMUUVONzBLSEFNUkt6czZFdHc?oc=5",
+    "terms": [
+     "net_income"
+    ],
+    "learn": "순이익은 모든 비용을 빼고 남은 돈이에요. 지역별로 나눠 보면 어디서 돈을 버는지 알 수 있어요."
+   },
    {
     "date": "2026-11-17",
     "type": "good",
@@ -1882,14 +2068,6 @@
      "ex_dividend"
     ],
     "learn": "배당 기준일에 주식을 가진 사람이 배당을 받아요. 배당락일은 그 하루 전쯤이에요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "bad",
-    "title": "베트남 10월 신차 판매 3,400여 대, 전월보다 11.6% 감소",
-    "impact": "베트남 시장에서 판매가 줄었어요. 한 달 수치라 앞으로 흐름을 더 봐야 해요.",
-    "source": "인사이드비나",
-    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBwYnQ0VEYzSWx6OTZ4WmZ4dnVoUkgzZFZ4ZEFueWhkVXZ4VnZhT2JOUW9BX1AyMjBxZmdrZExEa2hXd2cwYklhOXRJcDV1eEo1RGxpejVhRkFpSXRWSnlDY3M5TUsxdEVhZ1FCRg?oc=5"
    }
   ],
   "000270": [
@@ -1942,6 +2120,18 @@
   ],
   "015760": [
    {
+    "date": "2026-11-15",
+    "type": "watch",
+    "title": "한국전력이 역대 최대 실적을 냈지만 여러 이해관계 때문에 고민이 깊다는 분석이에요",
+    "impact": "돈은 많이 벌었지만 전기요금 같은 문제는 나라와 소비자도 걸려 있어요. 앞으로 요금 결정이 중요해요.",
+    "source": "쿠키뉴스",
+    "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE94bFpNWDJwTlNVOUQ1UG5OSm51YllrN2hiMC1tUXpUOHRmYk9aVkUzVDN5UTM1R0l2NFBPWkVIZUs4cElEUmZZLXppdndyVDZHQWo4cW0tMnN2eDY4TVozS0FCbw?oc=5",
+    "terms": [
+     "operating_income"
+    ],
+    "learn": "영업이익이 늘어도 요금을 마음대로 못 올리는 회사는 이익이 오래가지 않을 수 있어요."
+   },
+   {
     "date": "2026-11-13",
     "type": "bad",
     "title": "한국전력, 3분기 실적 부진 소식에 장중 급락",
@@ -1963,6 +2153,32 @@
    }
   ],
   "000660": [
+   {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "엔비디아 3분기 매출이 두 배로 뛰면서 SK하이닉스 같은 메모리 회사에 기대가 쏠려요",
+    "impact": "엔비디아가 많이 팔수록 여기에 들어가는 고성능 메모리 수요도 늘어요. 기대가 실제 주문으로 이어지는지 봐야 해요.",
+    "source": "딜사이트",
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBINTBBNjhXNERoRGVIU0JfRWhmcmRkZWhmM3h0TTY3a2VWNk1lM09ldnZNdUt6VTlGN0ZUMjhuWHJFLUxqYlpUMUFENFl6TWM?oc=5",
+    "terms": [
+     "memory",
+     "semiconductor"
+    ],
+    "learn": "HBM 같은 메모리는 AI 반도체 옆에 붙어 쓰여요. AI 반도체가 잘 팔리면 메모리 수요도 늘어요."
+   },
+   {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "코스피 영업이익 증가분의 83%를 삼성전자와 SK하이닉스 두 회사가 차지했어요",
+    "impact": "SK하이닉스가 한국 기업 이익 증가를 크게 이끌었어요. 한편 반도체에 쏠린 구조라 반도체가 흔들리면 시장도 흔들려요.",
+    "source": "녹색경제신문",
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB0eFQ1SUgtemdLZjlqY251b2ZYUndBNGFydDBPeTNqTXhmaEJyZmhoanM1THFmQUdaVnM4RDBpNGhmcnNyR1phTUI2cFZ3ODllVmo4UU90U2hvMk9WbllZMzJOU2ljVTNq?oc=5",
+    "terms": [
+     "operating_income",
+     "kospi_kosdaq"
+    ],
+    "learn": "코스피는 대형 회사의 영향이 커요. 이익이 몇 회사에 몰리면 그 회사 소식이 시장 전체에 영향을 줘요."
+   },
    {
     "date": "2026-11-17",
     "type": "good",
@@ -1988,35 +2204,21 @@
      "memory"
     ],
     "learn": "고객 집중은 한두 고객에게 매출이 몰린 상태예요. 그 고객이 주문을 줄이면 타격이 커요."
-   },
-   {
-    "date": "2026-11-16",
-    "type": "watch",
-    "title": "SK하이닉스, 낸드 가격 하락 우려와 엔비디아 실적 앞두고 약세",
-    "impact": "낸드 가격 걱정과 엔비디아 실적 발표를 앞둔 긴장이 겹쳤어요. HBM 같은 AI 메모리를 파는 회사라 엔비디아 소식에 민감해요.",
-    "source": "서울경제",
-    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBPMTNuT0FHSGNWUXROdm11RV9mSnRWZ1lUTnpDWUJGemVMWjF6NnRmRlVxVkdZcU1ISHNTdXpvWUFkcFFYOURWSXhXT1kxVEN1cGc?oc=5",
-    "terms": [
-     "memory",
-     "gpu"
-    ],
-    "learn": "엔비디아는 SK하이닉스의 큰 고객이에요. 엔비디아 실적이 좋으면 메모리 주문도 늘 거라고 읽어요."
-   },
-   {
-    "date": "2026-11-15",
-    "type": "watch",
-    "title": "SK하이닉스, 이달 말 외국인 패시브 자금 유입 전망",
-    "impact": "지수 비중이 커지면 지수를 그대로 따라 사는 펀드가 이 주식을 더 담아야 해요. 그래서 외국인 자금이 들어올 거라는 전망이에요. 전망일 뿐이에요.",
-    "source": "마켓잉크",
-    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFAzSHZ3Uk12SUJRLVdnczRiWE5YMmg3NGs5cnZ6bTZBY3otTS1wV0tyQ2VmZnNKR3BsbGJhUzBFMlBibEhEeUhXbTBrX28xVHd1ZURtZmFzWWN3dGlJOFEzS2xRdzdGZkNoUEdTMmlhWQ?oc=5",
-    "terms": [
-     "stock_index",
-     "etf"
-    ],
-    "learn": "패시브 펀드는 지수와 똑같이 담아요. 지수 안의 비중이 바뀌면 펀드도 따라서 사고팔아요."
    }
   ],
   "096770": [
+   {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "SK이노베이션이 그린수소를 더 효율적으로 만드는 수전해 촉매를 개발했어요",
+    "impact": "같은 전기로 수소를 더 많이 만들 수 있으면 비용이 줄어요. 상업적으로 쓰이려면 시간이 더 필요해요.",
+    "source": "디일렉",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9SX2dXYk9xMUZaUkhCVFdXSVRDRDBoWVduOTdKbDhiX3k0cHhOaHZLaVhZYzlraFg2QmwzZkl3WU01QnhmbUxHM1BrcjJPUGY5WTg0aTA3M2VtSjA1MFZwejhyaUlrQQ?oc=5",
+    "terms": [
+     "rnd"
+    ],
+    "learn": "R&D는 새 기술을 만드는 연구 활동이에요. 개발에 성공해도 실제 매출까지는 시간이 걸려요."
+   },
    {
     "date": "2026-11-15",
     "type": "watch",
@@ -2135,6 +2337,19 @@
   ],
   "012330": [
    {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "현대모비스가 협력사와 3년간 공동특허 860건을 내고 금융지원도 이어 갔어요",
+    "impact": "협력사가 건강해야 부품이 안정적으로 공급돼요. 장기적으로 기술 경쟁력에 도움이 돼요.",
+    "source": "매일경제",
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9SNUJHZ1F2QlM0Q3hQVEctd0dhcy1wdk1jVnpJNlhtRFlIMDRmZndnVm5BNTdmM3NySGlwM1Iwd3ZKekRqb2x0RlAwU0hKQW1YSkNDTUZ3?oc=5",
+    "terms": [
+     "supply_chain",
+     "patent"
+    ],
+    "learn": "특허는 기술을 보호하는 권리예요. 협력사와 함께 만들면 부품 연결이 더 단단해져요."
+   },
+   {
     "date": "2026-11-16",
     "type": "watch",
     "title": "현대모비스의 램프 사업 매각이 또 늦어질 수 있다는 지적이 나왔어요",
@@ -2168,6 +2383,18 @@
    }
   ],
   "051910": [
+   {
+    "date": "2026-11-17",
+    "type": "bad",
+    "title": "석유화학 불황에 LG화학 신용등급 평가가 엇갈리는 악재가 겹쳤어요",
+    "impact": "경기를 타는 사업이 부진하면 돈 빌리는 비용이 늘 수 있어요. 반도체·전자 소재로 방향을 바꾸는 중이에요.",
+    "source": "이데일리",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQeUR3STdSR1JHYl9EMzdVZEFRc2hkd0hXRllaeExMRy1lZXMzTmF1V1poOXVLMUtranpYVDVNYWRqU3FPaGpKSGZfcDc3M0JLQW5URzJvZGdDOXJqT0pLWmdBd09jWWtfNjdQQl9sSGRMNGFTQVNHRlpJSmxUQnMxRA?oc=5",
+    "terms": [
+     "cyclical"
+    ],
+    "learn": "경기민감 산업은 경기가 나쁘면 크게 부진해요. 신용등급이 낮아지면 돈을 빌리기 어려워져요."
+   },
    {
     "date": "2026-11-16",
     "type": "watch",
@@ -2205,6 +2432,19 @@
   ],
   "001040": [
    {
+    "date": "2026-11-18",
+    "type": "bad",
+    "title": "계열사 부진 속에 CJ는 올리브영이 버팀목이라는 분석이에요",
+    "impact": "지주회사는 계열사 실적에 영향을 받아요. 한 계열사에 기대는 구조는 위험이기도 해요.",
+    "source": "브릿지경제",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9jSmFOa1VWX3FaSlV6N0x1NU42UlhwZHRVY3QyeXFoTm9yVkpZVDgyc2Q4bzNtMHpPa1dCUWgzMThLdmZkcTNJSWd4eUxla2ZTQ2dhU3lkck5XQQ?oc=5",
+    "terms": [
+     "holding_company",
+     "operating_income"
+    ],
+    "learn": "지주회사는 여러 계열사를 거느린 회사예요. 계열사들이 벌어야 지주회사도 벌어요."
+   },
+   {
     "date": "2026-11-16",
     "type": "good",
     "title": "CJ올리브영, 3분기 매출 1조7290억 원으로 11% 늘고 누적 매출 5조를 넘겼어요",
@@ -2240,6 +2480,18 @@
    }
   ],
   "028260": [
+   {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "삼성물산이 내년 영업이익이 두 자릿수로 늘 것이라는 전망이 나왔어요",
+    "impact": "전망이라 실제와 다를 수 있어요. 건설·상사 등 여러 사업의 성적을 함께 봐야 해요.",
+    "source": "알파경제",
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE54Q2FCelFyS2R3eHVRYUhuVTJzLXFhVlNJZjI5MjVmcFJwUnA0R2p3aENPUG5JOW55WWNfNVVQd3A2MGFybjFxWHgyeV9wOXZWNnhUaDVXWVg1NnRubUZaWDhzeEROQWJGdG9Vby1R?oc=5",
+    "terms": [
+     "operating_income"
+    ],
+    "learn": "영업이익은 본업으로 번 돈이에요. 전망은 틀릴 수 있으니 실제 발표를 확인해요."
+   },
    {
     "date": "2026-11-16",
     "type": "good",
@@ -2323,6 +2575,31 @@
   ],
   "010950": [
    {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "정유 4사의 1~3분기 영업이익이 합쳐 16조 원에 가까워졌어요",
+    "impact": "기름값이 높고 정제 마진이 좋고 윤활유도 잘 팔려 이익이 늘었어요. 유가가 바뀌면 달라질 수 있어요.",
+    "source": "뉴시스",
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1YRFRmN04tcVZxVlBCZC1URXRMd0NOSTlXSmt0TDVNNVdmMTRoRVF4cE9oQVM3OUwtdWhYRHBFcDQyWXctTVFXTXBOVFBEZ0Y0WDV3Z3dTd0YzOEwzOHN4aNIBeEFVX3lxTE9WZW5iRGpySHowZWk3bUZzMk1uVnFwclFyenlqcm03LUpYdUNyWWlSQVFfcHhoNk1pcmV5ajAtTkl2WFB0dTZTS2UtM05ad1RFQUpVeWlYUVNnQS1wSTRPMlM4ZTloS3F4cFVET29zNF9ZSmYtLXE2Zg?oc=5",
+    "terms": [
+     "refining",
+     "oil_price"
+    ],
+    "learn": "정제 마진은 원유를 휘발유 등으로 만들어 남는 이익이에요. 유가와 함께 움직여요."
+   },
+   {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "S-Oil이 대형 투자인 샤힌 프로젝트를 완공했어요",
+    "impact": "큰 설비가 완성돼 새로 돈을 벌 준비가 됐어요. 가동 후 실제 이익이 나는지는 앞으로 지켜봐요.",
+    "source": "뉴스드림",
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8tSTJmU215OWJGOG0wTXV6MVA5c3FlcFZ6MFg5a3p0TW9obGNCQ3gxT1l0cU95MldWY21VNkNUaHYwR0pHSEtrQm9zMWxtQWluelZndHhGNDZWNGZudU1KUXpVVUxlZ2g4bENv?oc=5",
+    "terms": [
+     "capex"
+    ],
+    "learn": "설비투자는 공장을 짓는 데 쓰는 돈이에요. 완공 뒤 잘 돌아가야 투자가 보람이 있어요."
+   },
+   {
     "date": "2026-11-13",
     "type": "good",
     "title": "국제유가 조정에도 정제마진 유지",
@@ -2332,6 +2609,19 @@
    }
   ],
   "006260": [
+   {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "LS의 3분기 영업이익이 4883억 원으로 시장 예상과 비슷했어요",
+    "impact": "전력·전선 사업이 제련 부진을 막아 줬어요. 예상과 비슷하면 큰 놀라움은 없었다는 뜻이에요.",
+    "source": "리버티코리아포스트",
+    "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFAtVFptWmZ5TzlaN2ZPNnFyXzJ4V0M4Z3MxcGhGYWlyNnJmZmdLOXRpcUpybXgxUmxRaE5iTnBKNHdUU1lPTjFHUW1FVy12NnNxTlppX0N4OHBPQzNFZ0I2VHU4Z9IBZ0FVX3lxTFBmQnRMUFU4U0F3dWlHWHhGN1RIT1Y1em5YcTNDUlpoek96VGtQaDBEMTE5dldlRXlTN1p4VVhzQXVKYlo1a3JycEp6bmtidjFSRnVNY1htLTNNbW1Yam42Z2lTSjI3LWs?oc=5",
+    "terms": [
+     "operating_income",
+     "consensus"
+    ],
+    "learn": "컨센서스는 증권사 예상 평균이에요. 비슷하게 나오면 '부합'이라고 해요."
+   },
    {
     "date": "2026-11-17",
     "type": "good",
@@ -2368,17 +2658,21 @@
      "backlog"
     ],
     "learn": "수주잔고는 받아 놓았지만 아직 납품 전인 주문이에요. 많을수록 앞으로 매출이 보이는 편이에요."
-   },
-   {
-    "date": "2026-11-11",
-    "type": "watch",
-    "title": "LS전선, 계열사 주식 지속 매입 배경에 해저케이블 성장성",
-    "impact": "해저케이블 시공 사업을 키우려는 움직임이에요.",
-    "source": "헤럴드경제",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1hWkNLVV9GUTNLekhzRDVSdk5TbjgybDdCQUJYVmN6VG96Q2ZCdnI0SkIzd2szWVowNHEycTZWVnVBVm5PblZTRDFYdUpyUVB5Tlo4QTF3?oc=5"
    }
   ],
   "000720": [
+   {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "현대건설이 도시정비 수주 13.3조 원으로 삼성물산과 4800억 원 차 접전을 벌이고 있어요",
+    "impact": "수주가 많으면 앞으로 지을 일이 쌓여요. 순위 다툼이라 마감 때까지 바뀔 수 있어요.",
+    "source": "글로벌이코노믹",
+    "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOR1FDNUVMQVNjYk1md2pJYWlUX0hWTzU2bXdvOHZJWDZGZHZpUzUyMEMxbW02LWplYk9uWmFHb0hWMTEwRGNWUldnd21nRHk4ZFI0dUo0S2dhSHNxZWtaQUl1UUZNTWVpakRta3hjQUR2NDVoSE9WSXJVQTFsbTZRWmMtVFVoaTNvd2c?oc=5",
+    "terms": [
+     "backlog"
+    ],
+    "learn": "수주는 일을 따낸 거예요. 쌓인 수주는 시간이 지나 매출로 바뀌어요."
+   },
    {
     "date": "2026-11-16",
     "type": "watch",
@@ -2414,17 +2708,21 @@
      "debt_ratio"
     ],
     "learn": "부채비율은 빚이 자기 돈에 비해 얼마나 큰지 보는 비율이에요. 보증도 위험을 키울 수 있어요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "watch",
-    "title": "설립 한 달 된 회사에 5,400억 원 채무보증 결정",
-    "impact": "다른 회사의 빚을 대신 갚아 줄 책임을 졌어요. 보증 총액이 14조 원대라 부담이 늘 수 있어요.",
-    "source": "데이터투자",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5zZVdoekI3OFVzSHQ5cF85M3FlaGx5ZElqZVBxUkFFMEJ6ZjlPYl8tc0FjcUFBQzJTQnppMlhmbV9ScFUyVjBDN1hzVkFpdXpKa2czdVZrX0lDQXV6S2xfb1JBLXZZWFFCLTN3cURaS0tFVjg?oc=5"
    }
   ],
   "009540": [
+   {
+    "date": "2026-11-17",
+    "type": "good",
+    "title": "HD한국조선해양이 LPG운반선 4척을 추가로 수주해 연간 목표의 93.9%를 채웠어요",
+    "impact": "주문이 쌓이면 앞으로 몇 년 동안 일감이 안정돼요. 배는 만든 뒤 매출로 잡히기 때문에 시간이 걸려요.",
+    "source": "이코노뉴스",
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE4tR0ZpU3d2cXZQcHZ0c0djYl9JLVU2UW1Ub0pjQ2NRTGNfUnZHT3dUby1SMEZLTm9wZnFLNklxQ3pfaG41U0NWN243UnRPQVh3bHZ4UTZFaWNsWl9EWG5ObFV0TndxTFRaVFJWWHNxRQ?oc=5",
+    "terms": [
+     "backlog"
+    ],
+    "learn": "수주잔고는 받아 놓은 주문이에요. 조선업은 주문을 받고 몇 년 뒤에 매출이 잡혀요."
+   },
    {
     "date": "2026-11-17",
     "type": "good",
@@ -2461,19 +2759,6 @@
      "cyclical"
     ],
     "learn": "조선업은 배 한 척을 짓는 데 몇 년이 걸려요. 쌓아 둔 수주잔고가 앞으로 실적을 보여 줘요."
-   },
-   {
-    "date": "2026-11-14",
-    "type": "good",
-    "title": "조선 3사가 올해 수주 목표의 90%를 채웠어요",
-    "impact": "일감을 미리 많이 확보하면 앞으로 몇 년간 매출이 안정적이에요. 선박 종류를 넓혀 수익성도 챙기고 있어요.",
-    "source": "머니투데이",
-    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE4xLXpfSVZVNC1QX1FZWXBjQ0VnT2VUQWtKQnh3RzY3Q19NUWxmQmlwbWNheGtWcG05bWRvaGU1SmtTTEVWaGFTaHpPcnZ3RWdieGdMZkl1OHdWUXBteC15T1JEVHJKYUFOOFRpRG1acmdzUdIBckFVX3lxTE4xLXpfSVZVNC1QX1FZWXBjQ0VnT2VUQWtKQnh3RzY3Q19NUWxmQmlwbWNheGtWcG05bWRvaGU1SmtTTEVWaGFTaHpPcnZ3RWdieGdMZkl1OHdWUXBteC15T1JEVHJKYUFOOFRpRG1acmdzUQ?oc=5",
-    "terms": [
-     "backlog",
-     "cyclical"
-    ],
-    "learn": "수주 잔고는 이미 계약했지만 아직 못 번 일감이에요. 많을수록 앞으로 팔 것이 정해져 있다는 뜻이에요."
    }
   ],
   "086280": [
@@ -2525,6 +2810,18 @@
   ],
   "006800": [
    {
+    "date": "2026-11-18",
+    "type": "bad",
+    "title": "증권업계 실적 한파 속에 미래에셋도 적자 충격이라는 보도예요",
+    "impact": "증권사는 시장이 좋아야 수수료·투자 수익이 늘어요. 적자는 한 번의 일인지 계속될지 지켜봐야 해요.",
+    "source": "뉴스웨이",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBRUzlTeUdEWXBqZ0h5b3V5dUVLSUV1c2xnS2hVbm1wOXhFajhnWjBtRWJTTE11UzlOR1FreFJTYlJFMzg3LTZWN1JwV0NVVlpKUGdkZzJBVTFxRzJIUmtrd3JZLXlqX2ZaRFE?oc=5",
+    "terms": [
+     "net_income"
+    ],
+    "learn": "적자는 번 돈보다 쓴 돈이 많다는 뜻이에요. 일회성인지 계속인지 따져 봐요."
+   },
+   {
     "date": "2026-11-16",
     "type": "bad",
     "title": "미래에셋증권, 3분기 3941억 원 적자…우주기업 투자 영향",
@@ -2562,17 +2859,21 @@
      "share_cancellation"
     ],
     "learn": "자사주 소각은 회사가 산 자기 주식을 없애는 거예요. 남은 주식의 몫이 커지는 효과가 있어요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "bad",
-    "title": "3분기 3,941억 원 적자 전환, 스페이스X 투자 손실 영향",
-    "impact": "투자한 회사의 가치가 내려가 손실이 났어요. 투자 손익에 따라 실적이 크게 흔들려요.",
-    "source": "뉴스퀘스트",
-    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE83Uk03YW10YkxGYmhkeDdyM1NkbzdUN0NpS3gwMVpIMlZ0eGdyM01yMFplVGVDVTVSN2NLUmhidi1vbjMwaGx1S0ZvQWZhTWNaUXVuRDIwRlJ6cjJrNzJNd0hycWZlaXRWb1RrdXczOA?oc=5"
    }
   ],
   "139480": [
+   {
+    "date": "2026-11-18",
+    "type": "bad",
+    "title": "신세계건설 부진이 이마트 실적을 시장 예상보다 나쁘게 만들었다는 분석이에요",
+    "impact": "본업이 회복돼도 자회사가 부진하면 전체 실적이 나빠져요. 자회사 문제가 풀려야 불확실성이 줄어요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE94Y293Q1pHSkdFa0Y4NVN3OTRhdDVpVElaTnBvNGNiZ3dyOS1iTFpEWXJfVVZfeG5jcjBxSF9SNjlrZ2Q3bWpQaXpTZGZnM0pXOER1Slk0anRCRmM2RFRVdXZoZi1zSktPNWNXdl9PRkdYRjBX?oc=5",
+    "terms": [
+     "earnings_surprise"
+    ],
+    "learn": "어닝쇼크는 실적이 예상보다 훨씬 나쁘게 나온 거예요. 자회사 손실이 영향을 주기도 해요."
+   },
    {
     "date": "2026-11-16",
     "type": "bad",
@@ -2610,14 +2911,6 @@
      "operating_income"
     ],
     "learn": "회사는 여러 자회사 성적을 합쳐 보여 줘요. 자회사가 적자면 전체 이익이 깎여요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "bad",
-    "title": "신세계건설·스타벅스 적자 우려 4분기에도 계속",
-    "impact": "본업이 잘돼도 자회사 적자가 이익을 깎을 수 있어요.",
-    "source": "뉴스퀘스트",
-    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE4xdml6ZVJRT0xYRzdRZjEzaXNodDZDZm9mMm14RTdHV1pMbUJoZ1FxTHZ6aXF1MjlEQW80MTRDSmtxejhZMGU5N1Z4R0VKaTdGdk5oYWRSMUR3cUxJVGxDM2RhQkpISWlfeWdmdVBoaw?oc=5"
    }
   ],
   "097950": [
@@ -2639,6 +2932,19 @@
    }
   ],
   "012450": [
+   {
+    "date": "2026-11-17",
+    "type": "watch",
+    "title": "한화에어로스페이스가 연말 폴란드 K9·천무 인도로 4분기 반등을 기대하고 있어요",
+    "impact": "무기는 납품해야 매출로 잡혀요. 인도가 연말에 몰려 있어서 일정이 밀리면 결과가 달라질 수 있어요.",
+    "source": "인사이트",
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9Vd2k0dW9leGs5cC1lSy1vU1pZOXBZaXlKQ3BuU3FLek5FWmxPeUNONnlHSjNfa09UblFENlVyRzN1QmJZQkVlaDV0eEpSQQ?oc=5",
+    "terms": [
+     "backlog",
+     "revenue"
+    ],
+    "learn": "수주잔고는 받아 둔 주문 중 아직 납품 안 한 양이에요. 납품하면 매출로 바뀌어요."
+   },
    {
     "date": "2026-11-17",
     "type": "watch",
@@ -2677,14 +2983,6 @@
      "defense"
     ],
     "learn": "수주잔고는 계약은 했지만 아직 못 번 돈이에요. 이게 쌓이면 앞으로 매출이 보여요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "good",
-    "title": "수주잔고 35조 원",
-    "impact": "이미 따낸 주문이 많아 앞으로 매출이 든든해요.",
-    "source": "월요신문",
-    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE80dTdZdjltNVBXLXJ0TmI0cnN2YlNIVFJ3eFhCLW9iQ2Noc3JRM3N3MHR5VHV4ZjBvSFhlTEtKNEdka1pibksxMjdhNmZhZ0xPelhfVGMzVV9KenR6bXFrS1Z2b1NVa1R2bGc?oc=5"
    }
   ],
   "034220": [
@@ -2724,6 +3022,18 @@
   ],
   "003490": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "금융투자업계가 대한항공의 합병 효과가 아직 과소평가돼 있고 내년 이익이 회복될 것으로 봤어요",
+    "impact": "합병 뒤 노선과 비용이 정리되면 이익이 늘 수 있어요. 전망이라 실제 결과는 지켜봐요.",
+    "source": "이슈에디코",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE43XzFtb3R1Y2owRTRwR2ttcEh2aHN1STV2MG1IMkZnS0pORXhZZTlHUGlQcGh6cUdjV2hBWlRuTnE4bUlHMld2dVAtckU5M0NjaUltMjRRTHJJa2dsTzgyVmxQcDJwdw?oc=5",
+    "terms": [
+     "merger"
+    ],
+    "learn": "합병 시너지는 합친 뒤 비용이 줄고 매출이 느는 효과예요. 시간이 걸리고 보장되진 않아요."
+   },
+   {
     "date": "2026-11-16",
     "type": "watch",
     "title": "통합 대한항공 출범을 한 달 앞두고 노사·저비용항공사·경영권 문제가 남았어요",
@@ -2760,6 +3070,18 @@
   "066570": [
    {
     "date": "2026-11-17",
+    "type": "watch",
+    "title": "LG전자 미국 법인은 관세 환급이 없어져도 흑자를 유지할 것으로 보인다는 분석이에요",
+    "impact": "관세로 늘어난 비용을 환급받지 못해도 이익이 난다는 거예요. 실제 결과는 실적 발표에서 확인해요.",
+    "source": "PRESS9",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBRYk9EdEdEclNWMnU3TWtZblRZVDhIUEFZNFd5bXZyakNlcHg3b1R4ZWphbkJzU1lQWXJ3T190ZEh4eWZBN2tqSmo1LUZkUDhBMjFkRVpYV2xMU0tYWTk1ak9FRlk?oc=5",
+    "terms": [
+     "operating_margin"
+    ],
+    "learn": "영업이익률은 100원을 팔아 본업으로 남는 돈이에요. 비용이 늘어도 높게 유지되는지 봐요."
+   },
+   {
+    "date": "2026-11-17",
     "type": "good",
     "title": "LG전자, 베어로보틱스에 이어 키니시 인수로 피지컬 AI 역량을 키워요",
     "impact": "로봇과 AI 기술 회사를 사 모아 새 사업을 키우려는 움직임이에요. 아직은 투자 단계라 실제 수익은 시간이 걸려요.",
@@ -2794,19 +3116,6 @@
      "supply_chain"
     ],
     "learn": "공급망은 부품을 모아 제품을 만들어 파는 길이에요. 시장 가까이에서 만들면 이 길이 짧아져요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "watch",
-    "title": "LG전자, 2026년 3분기 실적 공개",
-    "impact": "가전·전장 등 사업별 성적을 확인할 수 있는 자료예요. 작년 같은 때와 비교해 늘었는지 보는 게 좋아요.",
-    "source": "전자신문",
-    "url": "https://news.google.com/rss/articles/CBMisgZBVV95cUxPYWlIVGhXSWlGZ2M5TnRtTGg1UlZ2QXBic3ZQdzJtWE1rd093VlhWMy14a1hhVmVwZXUtYVRfUkFVOExjMGJkUG0tazdxMUt1MkdhcjQ3cG5UVDdQdTlRYnpTTENlbFdremswenhaVy1INFMwZmpZcEEtVWt0QVhBeFJrM2szQ0w5aTMtS2FvN0J5QXE3bEFxckxycmVkclRCaXNSVGxmZ0N5VWRuZU85MXlDU3RJeDdfRVBtSENRUmVIdW5QeGJZdXlCZi1RUUxaV216U0dzeVpqa2pzbzgzZE9CeV9ZRmZlMUVLTHV3QXBXVEQwLVByVUZydEdTXzZoQldaTTNjU19QMC1JZk50a2lHS3ZrNkFpUTB5VTdwZWNJalE2bkVVSE40ZkVjXzBYNEQ0UWE4RWFRcnFWNUZqbWE1aktfQ2k3X3A2UWhZM0EtelEyLWhYV3VVNFM3VDhUQkdKZEhxcmZxRHNYSVhJLTg5emE1bkRsMFJxOVo2RS03b0QxMkg5eWhUeDFqYk1fS2ZDdzQ2LUJKc2gxVTEzV1RMdVpRNGNMRms4SWFzTnZ3T3dyT0NmeFlhUGhxeWd3NWlvUFdkMXpXdmZ6WkZzODlOcWxRSDRQWlVIRlctZWIzeFRsZ3JwUkFUTUZmN1N4eFlPcTR1bWliSjNTVk1uMmdBU1o5QUdNS1RZU25iamVqbjdVeEZpWGhLaVYyN1M0MlhsTjFvYkxrM25Hd0pxNFJUNk9PS29xeFp6emE0R05rbHJEYlZ2SkFTUW5TLUlSdGRWWHR3ZElTZmVaaXFvdUsybUhhR21COURYTzJYX2hKTFNuYWRXRV9OSmthNEVWek8zeVU5WVNBQ3FFOWh6VGRCQWdlRklkX0NIbHdBTVh5aHc0WHIxY3VlX1dfc2lvbTZiOXN0OXlBTl9WanU3SExLZ3JuMGJfWnJJS0x6NFg3WmFXRVc1ZU1JTFk2T3ZtOG1LY0xHMkZIUV9HRlFSWWFUY2lOM1VRQTY0ekRPdnlodW04dHc1c0F2S191WnpiaUZDVm1VUGRwX1NEcHlQcnhWUk1wOHR6QkExODZoTzJEUQ?oc=5",
-    "terms": [
-     "operating_income",
-     "yoy_qoq"
-    ],
-    "learn": "영업이익은 본업으로 번 돈이에요. 전년 같은 분기와 비교(YoY)하면 계절 영향을 줄여 볼 수 있어요."
    }
   ],
   "030200": [
@@ -2892,17 +3201,43 @@
  },
  "market": [
   {
-   "date": "2026-11-17",
-   "type": "watch",
-   "title": "미 국채는 소폭 강세, AI 투자 불안 속에 엔비디아 실적을 기다려요",
-   "impact": "투자자들이 AI 관련 불안 때문에 비교적 안전한 국채를 찾았고, 엔비디아 실적 발표를 앞두고 몸을 사렸어요.",
-   "source": "KB Think",
-   "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9SaGZ2Ni10Z3lQZFVOMXAxQXhkSmZMWHNCWnNhUXZQeG9QT3RJVFkzdm5xeWFxRmNlS3F2ZzFaamFmMWE4SFctaG1fM0RIT2ppSjRUeU9GUkVXUTZ2N3Zadm9TQXpBUUlPXzlkNHU3RGhPQQ?oc=5",
+   "date": "2026-11-18",
+   "type": "good",
+   "title": "엔비디아 호실적에 나스닥100 선물이 반등하고 미국 국채금리는 올랐어요",
+   "impact": "엔비디아가 AI 반도체를 잘 팔았다는 소식에 걱정이 줄어 기술주 선물이 올랐어요. 위험을 덜 걱정하면 안전자산인 국채 인기는 줄어 금리가 오르는 경우가 많아요.",
+   "source": "연합인포맥스",
+   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBpV3NoZDNiUGhPcnA4SlhBaDVFTXNGcWpaRi1mdGZRdV9ZMk0zSG5neDBpU2hxWTRWcTUtUU5LeGh2SXlnNnl6bnRzelZ6MEdBUXNvMTIyNDJOcDY2M2xTNFpPZGZEQUhIQTdnODNBSzc?oc=5",
    "terms": [
-    "treasury_yield",
+    "earnings_surprise",
+    "treasury_yield"
+   ],
+   "learn": "국채금리가 오르는 건 국채 값이 내린다는 뜻이에요. 투자자가 위험한 자산으로 옮겨 갈 때 자주 일어나요."
+  },
+  {
+   "date": "2026-11-17",
+   "type": "bad",
+   "title": "엔비디아 실적 발표를 앞두고 경계감에 뉴욕 3대 지수가 일제히 내렸어요",
+   "impact": "큰 실적 발표 전에는 투자자들이 결과를 몰라 몸을 사리는 경우가 많아요. AI 관련 주식이 지수에서 차지하는 비중이 커서 지수도 같이 눌렸어요.",
+   "source": "MTN 머니투데이방송",
+   "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTFAwMFl4cDBhUXlQdFRvaXdORFp5Ym9wUk9ZcElGWnV0STU5OXlpMW5BTjZZd1lvNWM0dDYyRGVkNkxRQVE5Mm9CZ2lMWWcteFZsNHQ0TW4yMmlBa1hXNWxv?oc=5",
+   "terms": [
+    "stock_index",
     "earnings_surprise"
    ],
-   "learn": "국채는 정부가 발행한 채권이에요. 불안할 때 국채가 인기를 끌면 값이 올라(금리는 내려) 시장 분위기를 알 수 있어요."
+   "learn": "지수는 여러 회사의 평균적인 움직임이에요. 큰 회사 하나의 발표만으로도 지수 전체가 흔들릴 수 있어요."
+  },
+  {
+   "date": "2026-11-18",
+   "type": "watch",
+   "title": "코스피 기업 3분기 누적 영업이익이 크게 늘었지만 삼성전자·SK하이닉스가 대부분을 차지했어요",
+   "impact": "한국 시장의 좋은 실적이 반도체 두 회사에 쏠려 있다는 뜻이에요. 이 두 회사가 흔들리면 코스피도 크게 흔들릴 수 있어요.",
+   "source": "녹색경제신문",
+   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB0eFQ1SUgtemdLZjlqY251b2ZYUndBNGFydDBPeTNqTXhmaEJyZmhoanM1THFmQUdaVnM4RDBpNGhmcnNyR1phTUI2cFZ3ODllVmo4UU90U2hvMk9WbllZMzJOU2ljVTNq?oc=5",
+   "terms": [
+    "operating_income",
+    "kospi_kosdaq"
+   ],
+   "learn": "영업이익은 본업으로 번 돈이에요. 몇 회사에 쏠리면 시장 전체가 그 회사에 좌우돼요."
   },
   {
    "date": "2026-11-17",
@@ -2915,32 +3250,6 @@
     "stock_index"
    ],
    "learn": "S&P500은 미국 대형주 500개를 묶은 지수예요. 증권사 전망은 틀릴 수 있어서 참고만 해요."
-  },
-  {
-   "date": "2026-11-16",
-   "type": "bad",
-   "title": "엔비디아 실적 앞두고 반도체주 급락, 나스닥 크게 내리고 공포지수 급등",
-   "impact": "시장이 17일(미국 시간) 엔비디아 실적 발표를 앞두고 AI 반도체주를 팔았고, 불안을 보여 주는 VIX가 크게 올랐어요.",
-   "source": "부산파이낸셜뉴스",
-   "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBkeHU0MEU2VHhicTM0NFRwdDNkVFRHQkQtanZEX29pdnFvVDM3STRrUjgwOFFxeC15dHpjLWlNUTgtdUNkRjRBekxpUzJWY2pJTUdzVklRb1VLRmtq?oc=5",
-   "terms": [
-    "stock_index",
-    "earnings_surprise"
-   ],
-   "learn": "VIX는 시장의 불안 정도를 보여 주는 공포지수예요. 크게 오르면 투자자들이 불안해한다는 뜻이에요."
-  },
-  {
-   "date": "2026-11-16",
-   "type": "bad",
-   "title": "낸드 가격 하락 소식에 반도체주 약세, 코스피 크게 내렸어요",
-   "impact": "메모리 반도체 값이 내렸다는 소식과 엔비디아 실적 발표를 앞둔 긴장이 겹쳐 한국 대형 반도체주가 약했고 지수도 눌렸어요.",
-   "source": "서울경제",
-   "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBPMTNuT0FHSGNWUXROdm11RV9mSnRWZ1lUTnpDWUJGemVMWjF6NnRmRlVxVkdZcU1ISHNTdXpvWUFkcFFYOURWSXhXT1kxVEN1cGc?oc=5",
-   "terms": [
-    "kospi_kosdaq",
-    "semiconductor"
-   ],
-   "learn": "코스피는 삼성전자·SK하이닉스 비중이 커서, 반도체주가 약하면 지수 전체도 같이 내려가기 쉬워요."
   }
  ]
 }
