@@ -1,61 +1,62 @@
 {
- "id": "ai-2026-11-17",
- "title": "메모리 반도체 값이 내리면 왜 지수도 눌릴까요",
+ "id": "ai-2026-11-18",
+ "title": "실적이 좋아도 주가가 바로 안 오르는 이유",
  "terms": [
-  "memory",
-  "semiconductor",
-  "cyclical",
-  "kospi_kosdaq"
+  "earnings_surprise",
+  "consensus",
+  "guidance",
+  "stock_index"
  ],
  "cards": [
-  "낸드 값이 내렸다는 소식에 한국 반도체 회사들이 약했고, 코스피도 같이 눌렸어요.",
-  "낸드는 전원이 꺼져도 데이터가 남는 메모리예요. 일할 때 쓰는 D램은 전원이 꺼지면 데이터가 사라져요.",
-  "메모리 값은 사려는 양과 만드는 양에 따라 크게 오르내려요. 그래서 메모리 회사 이익도 출렁여요.",
-  "코스피에는 삼성전자·SK하이닉스 같은 큰 반도체 회사가 많아서, 이들이 약하면 지수도 눌리기 쉬워요.",
-  "다음에 반도체 뉴스를 볼 땐 D램인지 낸드인지, 값 변화가 일시적인지 먼저 살펴봐요."
+  "엔비디아가 시장 예상보다 좋은 실적을 냈는데도, 뉴욕 증시는 지수마다 방향이 엇갈려 마쳤어요.",
+  "시장은 미리 '이 정도 벌 것'이라는 증권사 예상 평균(컨센서스)을 세워 두고 실제 실적과 비교해요.",
+  "예상을 넘으면 어닝 서프라이즈예요. 하지만 기대가 이미 컸다면 주가 반응은 작을 수 있어요.",
+  "나스닥은 기술 회사가 많은 3천 개 넘는 종목 지수고, 다우는 30개 대형사만 담아 방향이 갈릴 수 있어요.",
+  "다음엔 '좋았나?'보다 '예상보다 얼마나 좋았나', 회사가 내놓은 앞으로의 전망(가이던스)은 어땠나를 봐요."
  ],
  "quiz": [
   {
-   "q": "전원이 꺼져도 데이터가 남는 메모리는 무엇일까요?",
+   "q": "시장이 실적을 평가할 때 비교하는 기준은 무엇일까요?",
    "options": [
-    "낸드",
-    "D램",
-    "둘 다 아니에요",
-    "둘 다 데이터가 사라져요"
+    "증권사들의 예상 평균(컨센서스)",
+    "회사 직원 수",
+    "작년 광고비",
+    "회사 건물 크기"
    ],
    "answer": 0,
-   "explain": "낸드는 전원이 없어도 데이터를 보관해요. D램은 전원이 꺼지면 데이터가 사라져요."
+   "explain": "실제 실적이 예상 평균보다 좋은지 나쁜지가 시장 반응의 중요한 기준이에요."
   },
   {
-   "q": "메모리 반도체 값이 크게 오르내리는 가장 큰 이유는?",
+   "q": "실적이 좋았는데도 주가가 바로 오르지 않을 수 있는 이유는?",
    "options": [
-    "사려는 양과 만드는 양이 달라지기 때문이에요",
-    "정부가 매일 값을 정해서예요",
-    "회사 이름이 바뀌어서예요",
-    "메모리는 값이 절대 변하지 않아요"
-   ],
-   "answer": 0,
-   "explain": "수요와 공급이 달라지면 값이 오르내려서 이익도 출렁여요."
-  },
-  {
-   "q": "반도체 회사가 약할 때 코스피도 눌리기 쉬운 이유는?",
-   "options": [
-    "코스피는 반도체 회사만 담아요",
-    "코스피에 큰 반도체 회사가 많이 담겨 있어요",
-    "코스피는 해외 회사만 담아요",
-    "반도체와 코스피는 관계가 전혀 없어요"
+    "좋은 실적은 주가와 상관이 없어서",
+    "기대가 이미 커서 예상 안에 반영돼 있어서",
+    "주식시장이 문을 닫아서",
+    "회사가 주식을 모두 사 가서"
    ],
    "answer": 1,
-   "explain": "삼성전자·SK하이닉스처럼 덩치 큰 반도체 회사가 코스피에 많이 담겨 있어요."
+   "explain": "기대가 미리 주가에 반영돼 있으면 좋은 실적이 나와도 반응이 작을 수 있어요."
+  },
+  {
+   "q": "다우지수와 나스닥종합지수가 같은 날 다른 방향으로 움직일 수 있는 이유는?",
+   "options": [
+    "두 지수는 같은 종목을 똑같이 담아서",
+    "두 지수가 담은 종목과 계산 방법이 달라서",
+    "나스닥은 실제 주가를 반영하지 않아서",
+    "다우는 일주일에 한 번만 계산해서"
+   ],
+   "answer": 1,
+   "explain": "다우는 30개 대형사, 나스닥종합은 3천 개 넘는 종목을 담고 계산법도 달라 방향이 갈릴 수 있어요."
   }
  ],
  "stage": 2,
- "date": "2026-11-17",
- "news_url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBPMTNuT0FHSGNWUXROdm11RV9mSnRWZ1lUTnpDWUJGemVMWjF6NnRmRlVxVkdZcU1ISHNTdXpvWUFkcFFYOURWSXhXT1kxVEN1cGc?oc=5",
+ "date": "2026-11-18",
+ "news_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGc9IBeEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGcw?oc=5",
  "verified": true,
  "sources": [
-  "https://www.kingston.com/en/ssd/nand-flash-technology-and-ssd",
-  "https://www.techtarget.com/it-infrastructure/feature/Flash-memory-vs-RAM-Whats-the-difference",
-  "https://www.morningstar.com/stocks/raising-fair-value-estimates-korean-memory-suppliers-industry-remains-cyclical"
+  "https://news.mtn.co.kr/article/2026111906412717812",
+  "https://en.wikipedia.org/wiki/Earnings_surprise",
+  "https://www.chase.com/personal/investments/learning-and-insights/article/nasdaq-vs-dow-key-differences-to-know",
+  "https://www.fidelity.com/learning-center/smart-money/what-is-dow-jones"
  ]
 }

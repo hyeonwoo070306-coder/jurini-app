@@ -242,6 +242,68 @@
     "https://www.techtarget.com/it-infrastructure/feature/Flash-memory-vs-RAM-Whats-the-difference",
     "https://www.morningstar.com/stocks/raising-fair-value-estimates-korean-memory-suppliers-industry-remains-cyclical"
    ]
+  },
+  {
+   "id": "ai-2026-11-18",
+   "title": "실적이 좋아도 주가가 바로 안 오르는 이유",
+   "terms": [
+    "earnings_surprise",
+    "consensus",
+    "guidance",
+    "stock_index"
+   ],
+   "cards": [
+    "엔비디아가 시장 예상보다 좋은 실적을 냈는데도, 뉴욕 증시는 지수마다 방향이 엇갈려 마쳤어요.",
+    "시장은 미리 '이 정도 벌 것'이라는 증권사 예상 평균(컨센서스)을 세워 두고 실제 실적과 비교해요.",
+    "예상을 넘으면 어닝 서프라이즈예요. 하지만 기대가 이미 컸다면 주가 반응은 작을 수 있어요.",
+    "나스닥은 기술 회사가 많은 3천 개 넘는 종목 지수고, 다우는 30개 대형사만 담아 방향이 갈릴 수 있어요.",
+    "다음엔 '좋았나?'보다 '예상보다 얼마나 좋았나', 회사가 내놓은 앞으로의 전망(가이던스)은 어땠나를 봐요."
+   ],
+   "quiz": [
+    {
+     "q": "시장이 실적을 평가할 때 비교하는 기준은 무엇일까요?",
+     "options": [
+      "증권사들의 예상 평균(컨센서스)",
+      "회사 직원 수",
+      "작년 광고비",
+      "회사 건물 크기"
+     ],
+     "answer": 0,
+     "explain": "실제 실적이 예상 평균보다 좋은지 나쁜지가 시장 반응의 중요한 기준이에요."
+    },
+    {
+     "q": "실적이 좋았는데도 주가가 바로 오르지 않을 수 있는 이유는?",
+     "options": [
+      "좋은 실적은 주가와 상관이 없어서",
+      "기대가 이미 커서 예상 안에 반영돼 있어서",
+      "주식시장이 문을 닫아서",
+      "회사가 주식을 모두 사 가서"
+     ],
+     "answer": 1,
+     "explain": "기대가 미리 주가에 반영돼 있으면 좋은 실적이 나와도 반응이 작을 수 있어요."
+    },
+    {
+     "q": "다우지수와 나스닥종합지수가 같은 날 다른 방향으로 움직일 수 있는 이유는?",
+     "options": [
+      "두 지수는 같은 종목을 똑같이 담아서",
+      "두 지수가 담은 종목과 계산 방법이 달라서",
+      "나스닥은 실제 주가를 반영하지 않아서",
+      "다우는 일주일에 한 번만 계산해서"
+     ],
+     "answer": 1,
+     "explain": "다우는 30개 대형사, 나스닥종합은 3천 개 넘는 종목을 담고 계산법도 달라 방향이 갈릴 수 있어요."
+    }
+   ],
+   "stage": 2,
+   "date": "2026-11-18",
+   "news_url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGc9IBeEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGcw?oc=5",
+   "verified": true,
+   "sources": [
+    "https://news.mtn.co.kr/article/2026111906412717812",
+    "https://en.wikipedia.org/wiki/Earnings_surprise",
+    "https://www.chase.com/personal/investments/learning-and-insights/article/nasdaq-vs-dow-key-differences-to-know",
+    "https://www.fidelity.com/learning-center/smart-money/what-is-dow-jones"
+   ]
   }
  ]
 }
