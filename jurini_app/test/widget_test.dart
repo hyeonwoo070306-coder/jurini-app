@@ -12,6 +12,9 @@ void main() {
     expect(wonEok(3336059.4), '333.6조 원'); // 억 원 → 조 원
     expect(wonEok(1234.5), '1,235억 원');
     expect(wonEok(-500), '-500억 원');
+    // 해외 공시 회사는 보고 통화로 (ASML은 유로)
+    expect(moneyOf({'ticker': 'ASML', 'balance': {'currency': 'EUR'}})(32667), '327억 유로');
+    expect(moneyOf({'ticker': 'ARM', 'balance': {}})(4920), '49억 달러');
     expect(won(478834), '약 670조 원');
     expect(won(50), '약 700억 원');
     expect(nf(21.0), '21');

@@ -204,7 +204,13 @@ String comma(int n) => n.toString().replaceAllMapped(RegExp(r'\B(?=(\d{3})+(?!\d
 // 시가총액: 십억 달러 단위
 String krw(num b) => b >= 1000 ? '${(b / 1000).toStringAsFixed(2)}조 달러' : '${comma((b * 10).round())}억 달러';
 // 재무: 백만 달러 단위
-String eok(num? m) => m == null ? '-' : '${comma((m / 100).round())}억 달러';
+String eok(num? m, [String unit = '달러']) => m == null ? '-' : '${comma((m / 100).round())}억 $unit';
+// 회사가 보고한 통화로 (한국은 원, ASML 같은 해외 공시는 유로 등)
+String Function(num?) moneyOf(J c) {
+  if (isKr(c)) return wonEok;
+  final unit = const {'EUR': '유로', 'CNY': '위안', 'GBP': '파운드', 'JPY': '엔'}[c['balance']?['currency']];
+  return unit == null ? eok : (m) => eok(m, unit);
+}
 // 한국 회사: 억 원 단위 숫자 → "33.4조 원" / "1,234억 원"
 String wonEok(num? m) => m == null
     ? '-'
@@ -990,7 +996,7 @@ class _DetailState extends State<DetailPage> {
                   heroFact(rich([term(context, 'market_cap', '시가총액')], onMark), krw(c['market_cap_usd_b'])),
                 if (latest?['revenue'] != null)
                   heroFact(rich([s('1년 ', w70), term(context, 'revenue', '매출'), s(' (${period(latest!['label'])})', w70)], onMark),
-                      (isKr(c) ? wonEok : eok)(latest['revenue'])),
+                      moneyOf(c)(latest['revenue'])),
               ]),
             ]),
           ),
@@ -1089,7 +1095,7 @@ class _DetailState extends State<DetailPage> {
         final mx = fin.map((f) => (f[metric] as num? ?? 0).abs()).fold<num>(1, max);
         final J last = fin.last;
         final num? nc = b['net_cash'];
-        final money = isKr(c) ? wonEok : eok;
+        final money = moneyOf(c);
         return [
           h3('실적은 늘고 있나요?'),
           // 홈의 미국/한국 전환과 같은 Material SegmentedButton
@@ -1109,7 +1115,7 @@ class _DetailState extends State<DetailPage> {
           ]),
           grid([
             fact(p, rich([term(ctx, 'operating_margin', '영업이익률')], sub(p, 12)), opt(last['operating_margin_pct'], '%')),
-            if (!isKr(c)) fact(p, rich([term(ctx, 'capex', '설비투자')], sub(p, 12)), eok(last['capex'])),
+            if (!isKr(c)) fact(p, rich([term(ctx, 'capex', '설비투자')], sub(p, 12)), money(last['capex'])),
             if (b.containsKey('equity')) ...[
               // 한국 DART 카드: 자산·부채·자본 총계
               fact(p, Text('자산총계', style: sub(p, 12)), money(b['total_assets'])),
@@ -1117,8 +1123,8 @@ class _DetailState extends State<DetailPage> {
               fact(p, Text('자본총계', style: sub(p, 12)), money(b['equity'])),
             ] else if (b.containsKey('cash')) ...[
               // SEC 기본 카드: 유가증권이 빠진 현금, 장기부채만 있다
-              fact(p, Text('현금성 자산', style: sub(p, 12)), eok(b['cash'])),
-              fact(p, Text('장기부채', style: sub(p, 12)), eok(b['long_term_debt'])),
+              fact(p, Text('현금성 자산', style: sub(p, 12)), money(b['cash'])),
+              fact(p, Text('장기부채', style: sub(p, 12)), money(b['long_term_debt'])),
             ] else ...[
               fact(p, Text('현금·투자자산', style: sub(p, 12)), eok(b['cash_and_investments'])),
               fact(p, Text('총부채', style: sub(p, 12)), eok(b['total_debt'])),
@@ -1138,7 +1144,7 @@ class _DetailState extends State<DetailPage> {
           if (licensedData && ((surprise['companies'][c['ticker']]?['rows'] as List?)?.isNotEmpty ?? false))
             surpriseCard(ctx, p, surprise['companies'][c['ticker']]),
           if (isKr(c) && c['fs'] != null) txt('${c['fs']} 재무제표 기준이에요. 연결은 자회사까지 합친 숫자예요.', sub(p)),
-          if (last['revenue'] != null && !isKr(c))
+          if (last['revenue'] != null && !isKr(c) && b['currency'] == null)
             txt('1억 달러는 환율 1,400원 기준 약 1,400억 원이에요. 최근 매출 ${eok(last['revenue'])} ≈ ${won(last['revenue'])}.', sub(p)),
         ];
       case 'value':

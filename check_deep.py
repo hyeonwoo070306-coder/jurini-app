@@ -107,7 +107,8 @@ def selfcheck():
 def main():
     selfcheck()
     tickers = {c["ticker"] for c in json.load(open("jurini_app/assets/companies.json", encoding="utf-8"))["companies"]}
-    tickers |= {c["ticker"] for c in json.load(open("jurini_app/assets/kr.json", encoding="utf-8"))["companies"]}
+    for f in ("kr", "sp500", "us_more"):  # 기본 카드 회사도 깊이 노트를 가질 수 있다
+        tickers |= {c["ticker"] for c in json.load(open(f"jurini_app/assets/{f}.json", encoding="utf-8"))["companies"]}
     term_ids = {t["id"] for t in json.load(open("jurini_app/assets/glossary.json", encoding="utf-8"))["terms"]}
     files = sys.argv[1:] or sorted(glob.glob("deep_research/deep_*.json"))
     merged, errs = {}, []

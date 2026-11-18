@@ -114,11 +114,43 @@
    "name_en": "ASML Holding N.V. New York Registry Shares",
    "sector": "정보기술",
    "one_liner": "반도체를 새기는 최첨단 노광 장비(EUV)를 세계에서 유일하게 만드는 네덜란드 회사",
-   "financials": [],
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 27558,
+     "operating_income": 9042,
+     "net_income": 7839,
+     "capex": 2156,
+     "free_cash_flow": 3288,
+     "operating_margin_pct": 32.8
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 28263,
+     "operating_income": 9023,
+     "net_income": 7572,
+     "capex": 2067,
+     "free_cash_flow": 9099,
+     "operating_margin_pct": 31.9
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 32667,
+     "operating_income": 11301,
+     "net_income": 9609,
+     "capex": 1574,
+     "free_cash_flow": 11085,
+     "operating_margin_pct": 34.6
+    }
+   ],
    "balance": {
-    "asof": null,
-    "cash": null,
-    "long_term_debt": null
+    "asof": "2025-12-31",
+    "cash": 12916,
+    "long_term_debt": 2709,
+    "currency": "EUR"
    }
   },
   {
@@ -263,11 +295,42 @@
    "name_en": "Nebius Group N.V. Class A Ordinary Shares",
    "sector": "정보기술",
    "one_liner": "AI 학습용 GPU 클라우드를 빌려주는 네덜란드 회사",
-   "financials": [],
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 10,
+     "operating_income": -286,
+     "net_income": 241,
+     "capex": 83,
+     "free_cash_flow": 747,
+     "operating_margin_pct": -2915.3
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 92,
+     "operating_income": -400,
+     "net_income": -641,
+     "capex": 808,
+     "free_cash_flow": -562,
+     "operating_margin_pct": -436.7
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 530,
+     "operating_income": -612,
+     "net_income": 82,
+     "capex": 4066,
+     "free_cash_flow": -3681,
+     "operating_margin_pct": -115.5
+    }
+   ],
    "balance": {
-    "asof": null,
-    "cash": null,
-    "long_term_debt": null
+    "asof": "2025-12-31",
+    "cash": 3678,
+    "long_term_debt": 4103
    }
   },
   {
@@ -322,11 +385,43 @@
    "name_en": "Coca-Cola Europacific Partners plc Ordinary Shares",
    "sector": "필수소비재",
    "one_liner": "유럽·호주 등에서 코카콜라를 병에 담아 파는 세계 최대 병입 회사",
-   "financials": [],
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 18302,
+     "operating_income": 2339,
+     "net_income": 1669,
+     "capex": 672,
+     "free_cash_flow": 2134,
+     "operating_margin_pct": 12.8
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 20438,
+     "operating_income": 2132,
+     "net_income": 1418,
+     "capex": 791,
+     "free_cash_flow": 2270,
+     "operating_margin_pct": 10.4
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 20901,
+     "operating_income": 2793,
+     "net_income": 1942,
+     "capex": 750,
+     "free_cash_flow": 2203,
+     "operating_margin_pct": 13.4
+    }
+   ],
    "balance": {
-    "asof": null,
-    "cash": null,
-    "long_term_debt": null
+    "asof": "2025-12-31",
+    "cash": 529,
+    "long_term_debt": 10224,
+    "currency": "EUR"
    }
   },
   {
@@ -336,10 +431,41 @@
    "name_en": "PDD Holdings Inc. American Depositary Shares",
    "sector": "임의소비재",
    "one_liner": "중국 쇼핑앱 '핀둬둬'와 해외 쇼핑앱 '테무'를 운영하는 회사",
-   "financials": [],
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 34879,
+     "operating_income": 8268,
+     "net_income": 8455,
+     "capex": null,
+     "free_cash_flow": null,
+     "operating_margin_pct": 23.7
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 53955,
+     "operating_income": 14854,
+     "net_income": 15403,
+     "capex": null,
+     "free_cash_flow": null,
+     "operating_margin_pct": 27.5
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 61753,
+     "operating_income": 13313,
+     "net_income": 13991,
+     "capex": null,
+     "free_cash_flow": null,
+     "operating_margin_pct": 21.6
+    }
+   ],
    "balance": {
-    "asof": null,
-    "cash": null,
+    "asof": "2025-12-31",
+    "cash": 15573,
     "long_term_debt": null
    }
   },
@@ -395,10 +521,41 @@
    "name_en": "Arm Holdings plc American Depositary Shares",
    "sector": "정보기술",
    "one_liner": "스마트폰 칩 대부분에 쓰이는 반도체 설계도를 만들고 사용료를 받는 영국 회사",
-   "financials": [],
+   "financials": [
+    {
+     "label": "FY2024",
+     "end_date": "2024-03-31",
+     "revenue": 3233,
+     "operating_income": 111,
+     "net_income": 306,
+     "capex": 92,
+     "free_cash_flow": 998,
+     "operating_margin_pct": 3.4
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-03-31",
+     "revenue": 4007,
+     "operating_income": 831,
+     "net_income": 792,
+     "capex": 219,
+     "free_cash_flow": 178,
+     "operating_margin_pct": 20.7
+    },
+    {
+     "label": "FY2026",
+     "end_date": "2026-03-31",
+     "revenue": 4920,
+     "operating_income": 900,
+     "net_income": 904,
+     "capex": 545,
+     "free_cash_flow": 979,
+     "operating_margin_pct": 18.3
+    }
+   ],
    "balance": {
-    "asof": null,
-    "cash": null,
+    "asof": "2026-09-30",
+    "cash": 3251,
     "long_term_debt": null
    }
   },
@@ -409,11 +566,42 @@
    "name_en": "Thomson Reuters Corporation Common Shares",
    "sector": "산업재",
    "one_liner": "로이터 통신과 법률·세무 전문가용 정보 서비스를 파는 캐나다 회사",
-   "financials": [],
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 6794,
+     "operating_income": 2332,
+     "net_income": 2695,
+     "capex": 544,
+     "free_cash_flow": 1797,
+     "operating_margin_pct": 34.3
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 7258,
+     "operating_income": 2109,
+     "net_income": 2210,
+     "capex": 607,
+     "free_cash_flow": 1850,
+     "operating_margin_pct": 29.1
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 7476,
+     "operating_income": 2132,
+     "net_income": 1502,
+     "capex": 634,
+     "free_cash_flow": 2017,
+     "operating_margin_pct": 28.5
+    }
+   ],
    "balance": {
-    "asof": null,
-    "cash": null,
-    "long_term_debt": null
+    "asof": "2025-12-31",
+    "cash": 276,
+    "long_term_debt": 1328
    }
   },
   {
@@ -423,11 +611,43 @@
    "name_en": "Ferrovial N.V. Ordinary Shares",
    "sector": "산업재",
    "one_liner": "도로·공항을 짓고 통행료·이용료를 받아 운영하는 스페인 인프라 회사",
-   "financials": [],
+   "financials": [
+    {
+     "label": "FY2023",
+     "end_date": "2023-12-31",
+     "revenue": 8515,
+     "operating_income": 625,
+     "net_income": 341,
+     "capex": null,
+     "free_cash_flow": null,
+     "operating_margin_pct": 7.3
+    },
+    {
+     "label": "FY2024",
+     "end_date": "2024-12-31",
+     "revenue": 9148,
+     "operating_income": 3109,
+     "net_income": 3239,
+     "capex": null,
+     "free_cash_flow": null,
+     "operating_margin_pct": 34.0
+    },
+    {
+     "label": "FY2025",
+     "end_date": "2025-12-31",
+     "revenue": 9627,
+     "operating_income": null,
+     "net_income": 888,
+     "capex": null,
+     "free_cash_flow": null,
+     "operating_margin_pct": null
+    }
+   ],
    "balance": {
-    "asof": null,
-    "cash": null,
-    "long_term_debt": null
+    "asof": "2025-12-31",
+    "cash": 4271,
+    "long_term_debt": null,
+    "currency": "EUR"
    }
   },
   {

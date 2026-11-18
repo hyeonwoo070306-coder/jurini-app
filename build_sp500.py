@@ -29,17 +29,20 @@ SECTOR_KO = {
 
 # 회사마다 같은 숫자를 다른 이름표(태그)로 공시해서, 앞에 있는 태그부터 찾는다.
 TAGS = {
-    "revenue": ["Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax",
+    # 뒤쪽 이름은 해외 회사(20-F·40-F)의 IFRS 태그
+    "revenue": ["Revenue", "Revenues", "RevenueFromContractWithCustomerExcludingAssessedTax",
                 "RevenueFromContractWithCustomerIncludingAssessedTax", "SalesRevenueNet",
                 "RevenuesNetOfInterestExpense"],
-    "operating_income": ["OperatingIncomeLoss"],
-    "net_income": ["NetIncomeLoss", "ProfitLoss"],
+    "operating_income": ["OperatingIncomeLoss", "ProfitLossFromOperatingActivities"],
+    "net_income": ["NetIncomeLoss", "ProfitLossAttributableToOwnersOfParent", "ProfitLoss"],
     "ocf": ["NetCashProvidedByUsedInOperatingActivities",
-            "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations"],
-    "capex": ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets"],
+            "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations", "CashFlowsFromUsedInOperatingActivities"],
+    "capex": ["PaymentsToAcquirePropertyPlantAndEquipment", "PaymentsToAcquireProductiveAssets",
+                "PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities"],
     "cash": ["CashAndCashEquivalentsAtCarryingValue",
-             "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents", "Cash"],
-    "debt": ["LongTermDebt", "LongTermDebtNoncurrent", "LongTermDebtAndCapitalLeaseObligations"],
+             "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents", "Cash", "CashAndCashEquivalents"],
+    "debt": ["LongTermDebt", "LongTermDebtNoncurrent", "LongTermDebtAndCapitalLeaseObligations",
+             "NoncurrentPortionOfNoncurrentBorrowings", "LongtermBorrowings"],
 }
 
 
@@ -50,7 +53,8 @@ OLD_CIKS = {"XOM": ["0000034088"]}
 def company_facts(cik, ticker):
     merged = {}
     for c in [cik, *OLD_CIKS.get(ticker, [])]:
-        for tag, v in json.loads(fetch(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{c}.json"))["facts"].get("us-gaap", {}).items():
+        facts = json.loads(fetch(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{c}.json"))["facts"]
+        for tag, v in {**facts.get("ifrs-full", {}), **facts.get("us-gaap", {})}.items():
             for unit, es in v.get("units", {}).items():
                 merged.setdefault(tag, {"units": {}})["units"].setdefault(unit, []).extend(es)
     return merged
@@ -83,24 +87,34 @@ def days(e):
     return (dt.date.fromisoformat(e["end"]) - dt.date.fromisoformat(e["start"])).days
 
 
-def annual(facts, key):
+ANNUAL = ("10-K", "20-F", "40-F")  # 해외 회사는 20-F·40-F가 연간 보고서
+
+
+def currency(facts):
+    """회사가 보고하는 통화: 가장 최근에 공시된 매출의 단위 (대부분 USD)."""
+    es = [(e["filed"], u) for t in TAGS["revenue"] for u, xs in facts.get(t, {}).get("units", {}).items()
+          for e in xs if e.get("form", "").startswith(ANNUAL)]
+    return max(es)[1] if es else "USD"
+
+
+def annual(facts, key, unit="USD"):
     """연간(10-K, 약 1년짜리) 값들을 {기말일: 값}으로. 같은 기말일은 가장 최근 공시를 쓴다."""
     out = {}
     for tag in TAGS[key]:
-        for e in facts.get(tag, {}).get("units", {}).get("USD", []):
-            if e.get("form", "").startswith("10-K") and "start" in e and 340 <= days(e) <= 390:
+        for e in facts.get(tag, {}).get("units", {}).get(unit, []):
+            if e.get("form", "").startswith(ANNUAL) and "start" in e and 340 <= days(e) <= 390:
                 cur = out.get(e["end"])
                 if cur is None or (cur[0] == tag and e["filed"] > cur[1]):
                     out[e["end"]] = (tag, e["filed"], e["val"])
     return {k: v[2] for k, v in out.items()}
 
 
-def latest_instant(facts, key):
+def latest_instant(facts, key, unit="USD"):
     """여러 태그 중 가장 최근 기말일 값. 1년 반보다 오래된 값은 버린다(예전에만 쓰던 태그)."""
     best = None
     for tag in TAGS[key]:
-        for e in facts.get(tag, {}).get("units", {}).get("USD", []):
-            if e.get("form", "")[:4] in ("10-K", "10-Q") and "start" not in e:
+        for e in facts.get(tag, {}).get("units", {}).get(unit, []):
+            if e.get("form", "").startswith((*ANNUAL, "10-Q", "6-K")) and "start" not in e:
                 if best is None or e["end"] > best["end"]:
                     best = e
     if best and (dt.date.today() - dt.date.fromisoformat(best["end"])).days > 550:
@@ -114,7 +128,8 @@ def m(v):  # 달러 → 백만 달러 (companies.json과 같은 단위)
 
 def financials(cik, ticker=""):
     facts = company_facts(cik, ticker)
-    s = {k: annual(facts, k) for k in ("revenue", "operating_income", "net_income", "ocf", "capex")}
+    cur = currency(facts)
+    s = {k: annual(facts, k, cur) for k in ("revenue", "operating_income", "net_income", "ocf", "capex")}
     ends = sorted(set(s["revenue"]) | set(s["net_income"]), reverse=True)[:3][::-1]
     rows = []
     for end in ends:
@@ -127,10 +142,12 @@ def financials(cik, ticker=""):
             "operating_margin_pct": round(g["operating_income"] / g["revenue"] * 100, 1)
             if g["revenue"] and g["operating_income"] is not None else None,
         })
-    cash, debt = latest_instant(facts, "cash"), latest_instant(facts, "debt")
+    cash, debt = latest_instant(facts, "cash", cur), latest_instant(facts, "debt", cur)
     c, d = (m(cash["val"]) if cash else None), (m(debt["val"]) if debt else None)
     # 투자자산(유가증권)은 빠진 '현금성 자산'이라 순현금은 계산하지 않는다(애플처럼 오해 소지).
     balance = {"asof": max([x["end"] for x in (cash, debt) if x], default=None), "cash": c, "long_term_debt": d}
+    if cur != "USD":  # 앱이 '억 유로'처럼 통화를 바꿔 보여준다
+        balance["currency"] = cur
     return rows, balance
 
 
