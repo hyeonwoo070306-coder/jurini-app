@@ -30,7 +30,13 @@
    "title": "엔비디아 실적 발표",
    "source": "NVIDIA IR",
    "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873",
-   "id": "2026-11-18:NVDA"
+   "id": "2026-11-18:NVDA",
+   "result": {
+    "summary": "엔비디아 3분기 매출 1158억 달러로 작년 같은 분기보다 103% 늘었고, 데이터센터 매출은 110% 늘었어요.",
+    "impact": "AI 반도체를 파는 회사의 매출이 작년의 두 배 넘게 늘었어요. 회사는 앞으로 전망에 중국 데이터센터 매출을 넣지 않았다고 밝혔어요.",
+    "source": "NVIDIA 보도자료",
+    "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
+   }
   },
   {
    "date": "2026-11-19",

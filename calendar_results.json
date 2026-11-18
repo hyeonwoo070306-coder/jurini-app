@@ -4,5 +4,11 @@
   "impact": "집 고치는 물건을 파는 회사의 매출과 이익이 작년보다 늘었어요. 다만 회사는 올해 전망을 조금 고쳤고, 같은 매장 매출 성장은 약 1.4%로 느린 편이에요.",
   "source": "Home Depot IR",
   "url": "https://ir.homedepot.com/news-releases/2026/11-17-2026-110221331"
+ },
+ "2026-11-18:NVDA": {
+  "summary": "엔비디아 3분기 매출 1158억 달러로 작년 같은 분기보다 103% 늘었고, 데이터센터 매출은 110% 늘었어요.",
+  "impact": "AI 반도체를 파는 회사의 매출이 작년의 두 배 넘게 늘었어요. 회사는 앞으로 전망에 중국 데이터센터 매출을 넣지 않았다고 밝혔어요.",
+  "source": "NVIDIA 보도자료",
+  "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
  }
 }
