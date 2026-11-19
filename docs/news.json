@@ -51,6 +51,19 @@
   "NVDA": [
    {
     "date": "2026-11-18",
+    "type": "watch",
+    "title": "엔비디아가 AI 기업 지분 투자에 큰돈을 쓰고 있어 위험이 겹친다는 지적이 나왔어요",
+    "impact": "엔비디아가 투자한 회사들이 엔비디아 제품도 사 주는 구조라, 한쪽이 흔들리면 양쪽이 함께 흔들릴 수 있다는 걱정이에요. 아직은 지적일 뿐 확정된 문제는 아니에요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9MZm10WV8tMDF6ZTc2RDhtaTYyNllUWmFwaGgtRXVtdWZzOFlNOVRfNFNya3N4VWg3OVdPbXBwU1BfdTNiNlVhTTBjQTY0ZGc3ZGVoQS1CbDV3MTF3dHlQMjlKVzAzZ2t0MlJic3V6eG0?oc=5",
+    "terms": [
+     "customer_concentration",
+     "capex"
+    ],
+    "learn": "고객과 투자처가 겹치면 한 곳의 문제가 크게 번질 수 있어요. 이런 걱정이 나오는 이유를 이해하는 데 쓰는 말이에요."
+   },
+   {
+    "date": "2026-11-18",
     "type": "good",
     "title": "엔비디아 실적이 기대 이상으로 나와 나스닥100 선물이 반등했어요",
     "impact": "엔비디아가 AI 반도체를 많이 팔았다는 뜻이라 AI 관련 회사들에 대한 걱정이 조금 줄었어요. 같은 날 미국 국채금리는 올랐어요.",
@@ -81,19 +94,6 @@
     "impact": "AI 칩 수요가 여전히 강한지 확인할 수 있는 날이에요.",
     "source": "NVIDIA",
     "url": "https://nvidianews.nvidia.com/news/nvidia-sets-conference-call-for-third-quarter-financial-results-6928873"
-   },
-   {
-    "date": "2026-11-14",
-    "type": "watch",
-    "title": "트럼프, AI 반도체 수출 규제 풀기 전 엔비디아 주식을 샀다는 보도로 논란",
-    "impact": "규제를 푸는 일과 대통령의 주식 거래가 얽혔다는 논란이에요. 수출 규제가 어떻게 바뀌는지는 엔비디아 중국 판매에 영향을 줄 수 있어 지켜봐야 해요.",
-    "source": "세계일보",
-    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5uOWd2QWhpdzFHdHlhdW4tU2NYbGhBbkplZW9BQ2pqRjlYMjZVdzZUaFZGb0k0RWZERzkzSDRIaDZKT2h5YVMwTmVxai1rNkZEWGlzZVZEbDbSAVRBVV95cUxORUdGcy13SlhYOFVCMjVOVTBIeHJzVzlNeFVYdDZMalljWVdOYjlzQlRDRFNtQjdlWGFDYjl2Y3oxMVN1RUVvMXVYV2kyeEJMQjhvd3A?oc=5",
-    "terms": [
-     "export_control",
-     "gpu"
-    ],
-    "learn": "수출통제는 나라가 특정 반도체를 다른 나라에 팔지 못하게 막는 제도예요. 풀리면 팔 수 있는 시장이 넓어져요."
    }
   ],
   "MSFT": [
@@ -294,6 +294,19 @@
   ],
   "META": [
    {
+    "date": "2026-11-18",
+    "type": "watch",
+    "title": "메타가 저커버그의 의결권을 지키려던 무의결권 주식 발행을 보류했어요",
+    "impact": "주주들이 소송을 낸 영향이라고 해요. 창업자가 회사를 쥐고 흔드는 힘을 두고 주주와 다툼이 있다는 뜻이에요.",
+    "source": "중앙일보",
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFAyUkdEdDhPTExhZnIyeHJQU3RuT2F1WVFsTTQ5cUhiczZGSkZDV0Vob01WbU9tZTRMYUVrUDdXMWtvdldtZzJEZmtLUDdsOFdCSUwzNG9UZ1hGdms?oc=5",
+    "terms": [
+     "largest_shareholder",
+     "dilution"
+    ],
+    "learn": "의결권은 회사 중요한 일을 정할 때 투표하는 권리예요. 새 주식을 내면 기존 주주의 몫이 줄 수 있어요(희석)."
+   },
+   {
     "date": "2026-11-15",
     "type": "bad",
     "title": "이탈리아가 메타에 8억 500만 유로 과징금을 부과했어요",
@@ -321,14 +334,6 @@
     "impact": "확정되면 큰돈이 나가요. 청소년 보호와 관련된 소송이 계속 늘고 있어요.",
     "source": "PPC Land",
     "url": "https://ppc.land/meta-books-reserve-for-25bn-new-mexico-penalty-quarterly-filing-shows/"
-   },
-   {
-    "date": "2026-10",
-    "type": "good",
-    "title": "7~9월 매출 646억 달러(+26%), 사상 최대",
-    "impact": "광고 사업이 여전히 빠르게 크고 있어요.",
-    "source": "MarketBeat",
-    "url": "https://www.marketbeat.com/instant-alerts/transcript-meta-platforms-q3-earnings-call-highlights-2026-10-21/"
    }
   ],
   "AVGO": [
@@ -1551,6 +1556,19 @@
   ],
   "PANW": [
    {
+    "date": "2026-11-19",
+    "type": "good",
+    "title": "팔로알토가 1분기 실적과 앞으로의 전망이 모두 예상보다 좋았다고 밝혔어요",
+    "impact": "본업이 예상보다 잘 풀렸다는 뜻이라 회사에 좋은 소식이에요. 보안 서비스를 찾는 곳이 늘고 있다는 신호예요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE40UC10U1VWeFg5eVRIMkhBMEVwR2dUb01SOUNVNUdMNGU3eTRxOEg3eGhRc05CaldRRVVFWEtaY0M3Y0VCZGxFdDVNcndlbUJ5ck5DOFQ4X0dDUXZ4a09iY2xwV3YyNHVpNDJuMTB3WVPSAXRBVV95cUxOWlo2Rk5LZEk4c3JSTTM5eWlVMEhveVlfaWR3OVFlWk55bHU3U0VWMURSTkpJUWFPMzRaRnNsWGx0U1Q4RzdFTmFzN1pfXzA3dzRRSTlLS2pHWktlbm5tQllFb280NzBWVHVpU2x2U3VBb1JXeQ?oc=5",
+    "terms": [
+     "earnings_surprise",
+     "guidance"
+    ],
+    "learn": "가이던스는 회사가 직접 말하는 앞으로의 실적 전망이에요. 예상보다 좋으면 회사가 자신 있다는 뜻이에요."
+   },
+   {
     "date": "2026-11-18",
     "type": "watch",
     "title": "팔로알토가 AI 기업 어플라이드 컴퓨트를 45억 달러에 인수하기로 했어요",
@@ -1587,18 +1605,6 @@
      "cybersecurity"
     ],
     "learn": "사이버 보안은 해킹으로부터 컴퓨터와 데이터를 지키는 일이에요. 기업의 보안 예산이 늘면 이 회사에 도움이 돼요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "good",
-    "title": "키뱅크, 기업 보안 예산 증가 전망에 팔로알토 평가 상향",
-    "impact": "회사들이 해킹 대비에 쓰는 돈을 늘릴 거라는 전망이에요. 보안 제품을 파는 팔로알토에 유리한 환경이에요.",
-    "source": "이데일리",
-    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPMUVlVjRQTUtqV2MyUVYxLVhaTzVQN1FLUkNrOFNkR2FtQk03U0FidngzX2NSZlQ5SkkzdnQxeDhNMjRBSWZBT3F1SWZsdWNOOHl3ZkVQdU5ZQU5wQXhDSmg0NWlnZHdZZk9qWFdaTUdHZEpXODJuWnBsMVdwOXI2ag?oc=5",
-    "terms": [
-     "cybersecurity"
-    ],
-    "learn": "사이버 보안은 해킹에서 회사 데이터를 지키는 일이에요. 고객 예산이 늘면 보안 회사 매출 기회도 커져요."
    }
   ],
   "TXN": [
@@ -2278,6 +2284,19 @@
   ],
   "000880": [
    {
+    "date": "2026-11-19",
+    "type": "good",
+    "title": "한화오션이 초대형 유조선(VLCC) 2척을 3642억 원에 짓기로 계약했어요",
+    "impact": "배를 짓는 일감이 늘면 앞으로 몇 년간 매출이 쌓이는 효과가 있어요. 한화그룹 안의 조선 회사 소식이에요.",
+    "source": "글로벌이코노믹",
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNN1RGRC1QWkRQVUplRG1LZjlhUjBBRlNBQVBYOEJmdm1yb3ZpeUtUanAwVzJmdF9YVWtySjV2Z3dHOWFGclk5SV9IaGlNVnExZW5DUmg0c29FRVp1ZU80Rk9QS2VUT043V1oxTzRMbEhUYmRHVXBvVGxjSGQ2TmFXT2ZuMllNTHJS?oc=5",
+    "terms": [
+     "backlog",
+     "disclosure"
+    ],
+    "learn": "수주잔고는 계약은 했지만 아직 다 못 번 일감이에요. 조선 회사는 이 일감이 많을수록 앞날이 든든해요."
+   },
+   {
     "date": "2026-11-18",
     "type": "watch",
     "title": "한화비전이 한화세미텍 매각설은 사실무근이라고 밝혔어요",
@@ -2715,6 +2734,19 @@
   ],
   "000720": [
    {
+    "date": "2026-11-19",
+    "type": "watch",
+    "title": "끝난 줄 알았던 현대건설의 인도 교량 붕괴 사고 재판이 이어지고 있다고 전해졌어요",
+    "impact": "재판 결과에 따라 비용이 생길 수 있지만 아직 결과가 정해지지 않았어요. 어떻게 마무리되는지 지켜봐야 해요.",
+    "source": "자본시장뉴스",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ZRGpWREdXcjAzVDIydTZoU1NhUmt6THZRSFBreDJyZGY4WDJJenNTSWJSMHJVOFoyOXVXdk1ZOTB3LXhSYkZVSU1fRHJtdkhrWUtvWVVEdmZuSEtRNmVKazBkZlY2VEU?oc=5",
+    "terms": [
+     "disclosure",
+     "one_time_cost"
+    ],
+    "learn": "일회성 비용은 한 번만 나가는 큰 돈이에요. 재판 결과에 따라 생길 수도 있는 비용이라 지켜보는 거예요."
+   },
+   {
     "date": "2026-11-18",
     "type": "good",
     "title": "현대건설이 도시정비 수주 13.3조 원으로 삼성물산과 4800억 원 차 접전을 벌이고 있어요",
@@ -2749,18 +2781,6 @@
      "backlog"
     ],
     "learn": "수주잔고는 따 놓았지만 아직 못 번 일감이에요. 많을수록 앞으로의 매출이 어느 정도 보인다는 뜻이에요."
-   },
-   {
-    "date": "2026-11-13",
-    "type": "watch",
-    "title": "현대건설, 설립 한 달 된 회사에 5,400억 원 보증",
-    "impact": "보증은 그 회사가 빚을 못 갚으면 대신 갚아 주겠다는 약속이에요. 총 보증 규모가 커서 부담이 될 수 있는지 지켜봐야 해요.",
-    "source": "센트럴경제",
-    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9TeGVLV3lWYUlnR2VvQXFLMEh0MGk2V1JEWWhFaEd2WFRPcE11cXJJNDVSRjhsSEVqd3otRWowS3RpbkU3TnlPbGpJdFB1VW9fcnljd2JyVzF3YUx3NG5zYUs3WXBJcnfSAWpBVV95cUxPSEY5NjFnandqUjdUeGVSRDRHMFYwN2czN0NPeW1mY040aXEtWFZuR25fbGUxaGowejJwRTZpMEJqQUs2a2tHSEotclgtMG1ET1Noc1RHcUI3WUhnT3QzdXRfeVpyQnBEZDdB?oc=5",
-    "terms": [
-     "debt_ratio"
-    ],
-    "learn": "부채비율은 빚이 자기 돈에 비해 얼마나 큰지 보는 비율이에요. 보증도 위험을 키울 수 있어요."
    }
   ],
   "009540": [
@@ -2816,6 +2836,19 @@
   ],
   "086280": [
    {
+    "date": "2026-11-18",
+    "type": "good",
+    "title": "중국 자동차 수출이 늘면서 현대글로비스의 자동차 운반선 사업이 바빠질 것이라는 분석이 나왔어요",
+    "impact": "자동차를 배로 실어 나르는 회사라 자동차 수출이 늘면 일감이 늘어요. 다만 아직 증권사의 전망이에요.",
+    "source": "매일경제 마켓",
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE4zSHh6OGdtdVhTN1VITUxaRmR3Y2VFYVI2aV9VOHdyeGpmaVdqMWhpWjg3alNsajF3NHRLdWNWQzFNVmxoRWVBYVRZdUN6RE5NUWc?oc=5",
+    "terms": [
+     "supply_chain",
+     "cyclical"
+    ],
+    "learn": "운송 회사는 물건이 많이 오갈수록 돈을 벌어요. 경기에 따라 일감이 달라지는 경기민감 사업이에요."
+   },
+   {
     "date": "2026-11-16",
     "type": "good",
     "title": "현대글로비스, 중국 수출 늘어 연 매출 30조 원 눈앞",
@@ -2851,14 +2884,6 @@
      "customer_concentration"
     ],
     "learn": "매출이 한 고객에 몰려 있으면 그 고객이 흔들릴 때 위험해요. 고객이 다양할수록 안정적이에요."
-   },
-   {
-    "date": "2026-11-12",
-    "type": "watch",
-    "title": "연 매출 30조 원 돌파 눈앞이라는 분석",
-    "impact": "자동차를 실어 나르는 물류가 늘고 있어요.",
-    "source": "헤럴드경제",
-    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE10aUNLQjlyS1FBTi12cVpzREtVX1pZRFVjNTJSRXVNbkZPRmJOeTdJVTNjc1lFTjJZVHNVWnlDX1d0d3JsZ0RZbkxxdXd2UmR1RS1sLUtn?oc=5"
    }
   ],
   "006800": [
@@ -3279,55 +3304,42 @@
  "market": [
   {
    "date": "2026-11-18",
-   "type": "good",
-   "title": "엔비디아 호실적에 나스닥100 선물이 반등하고 미국 국채금리는 올랐어요",
-   "impact": "엔비디아가 AI 반도체를 잘 팔았다는 소식에 걱정이 줄어 기술주 선물이 올랐어요. 위험을 덜 걱정하면 안전자산인 국채 인기는 줄어 금리가 오르는 경우가 많아요.",
-   "source": "연합인포맥스",
-   "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBpV3NoZDNiUGhPcnA4SlhBaDVFTXNGcWpaRi1mdGZRdV9ZMk0zSG5neDBpU2hxWTRWcTUtUU5LeGh2SXlnNnl6bnRzelZ6MEdBUXNvMTIyNDJOcDY2M2xTNFpPZGZEQUhIQTdnODNBSzc?oc=5",
-   "terms": [
-    "earnings_surprise",
-    "treasury_yield"
-   ],
-   "learn": "국채금리가 오르는 건 국채 값이 내린다는 뜻이에요. 투자자가 위험한 자산으로 옮겨 갈 때 자주 일어나요."
-  },
-  {
-   "date": "2026-11-18",
    "type": "watch",
-   "title": "코스피 기업 3분기 누적 영업이익이 크게 늘었지만 삼성전자·SK하이닉스가 대부분을 차지했어요",
-   "impact": "한국 시장의 좋은 실적이 반도체 두 회사에 쏠려 있다는 뜻이에요. 이 두 회사가 흔들리면 코스피도 크게 흔들릴 수 있어요.",
-   "source": "녹색경제신문",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFB0eFQ1SUgtemdLZjlqY251b2ZYUndBNGFydDBPeTNqTXhmaEJyZmhoanM1THFmQUdaVnM4RDBpNGhmcnNyR1phTUI2cFZ3ODllVmo4UU90U2hvMk9WbllZMzJOU2ljVTNq?oc=5",
-   "terms": [
-    "operating_income",
-    "kospi_kosdaq"
-   ],
-   "learn": "영업이익은 본업으로 번 돈이에요. 몇 회사에 쏠리면 시장 전체가 그 회사에 좌우돼요."
-  },
-  {
-   "date": "2026-11-18",
-   "type": "watch",
-   "title": "엔비디아 실적이 좋았지만 뉴욕 증시는 혼조로 마쳤어요",
-   "impact": "실적이 좋아도 이미 기대가 컸다면 주가가 바로 오르지 않을 수 있어요. 다우는 내리고 나스닥은 올라, 종목마다 분위기가 엇갈렸어요.",
-   "source": "뉴시스",
-   "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGc9IBeEFVX3lxTE5oN3BxdWFZaWFEVzh3d2RGZzBoU1RkMnp6V0FqOFVOaVdWWC1WN1NlMHIwX2RBSHk4ejhueHBfWVNRMjRTR0Utd25lQTd2LUt4RVNaR3g1enFlTnFUYXMxdi1VT29GZkEwcDdZbnI4MVBKNnVKRnhGcw?oc=5",
+   "title": "엔비디아 실적이 좋았지만 뉴욕 증시는 다우는 내리고 나스닥은 오르며 엇갈렸어요",
+   "impact": "실적이 좋아도 AI에 쓰는 돈 걱정과 금리 부담이 더 크게 보였어요. 의료보험사 유나이티드헬스가 크게 내린 것도 다우를 눌렀어요.",
+   "source": "이투데이",
+   "url": "https://www.etoday.co.kr/news/view/2650050",
    "terms": [
     "earnings_surprise",
     "stock_index"
    ],
-   "learn": "지수는 여러 종목을 묶어 시장 분위기를 보여줘요. 지수끼리 방향이 다르면 종목별로 평가가 갈렸다는 뜻이에요."
+   "learn": "지수끼리 방향이 다르면 종목마다 평가가 갈렸다는 뜻이에요. 다우는 30개 큰 회사만 담아서 한 회사 영향이 커요."
   },
   {
    "date": "2026-11-18",
-   "type": "good",
-   "title": "엔비디아 실적 소식에 삼성전자·SK하이닉스가 함께 반등했어요",
-   "impact": "엔비디아가 AI 반도체를 많이 팔면 여기에 들어가는 메모리 반도체 수요도 늘 거라는 기대가 생겨요. 한국 반도체 대표 회사들이 영향을 받았어요.",
-   "source": "CBC뉴스",
-   "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBkTTF5dVJqNjNFZnAyR3FWN0Z0ZmlTNXZ2VkxrRjRBY0loWnlYWE81WDVlSHc5WVNqRmR5MXl1ME40SGxxWW80TndmZ0VIbTFuVkNVTlB5U0ZFbS1TWG1EQWM0UGNMUTBG?oc=5",
+   "type": "bad",
+   "title": "엔비디아 호실적에도 금리 인상 우려가 커져 투자 분위기가 무거웠어요",
+   "impact": "금리가 오를 수 있다는 걱정이 커지면 기업의 빚 부담이 늘고 주식보다 안전한 채권이 매력적으로 보여요. 그래서 좋은 실적 소식도 힘을 못 썼어요.",
+   "source": "신아일보",
+   "url": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5085111",
    "terms": [
-    "memory",
-    "semiconductor"
+    "rate_hike",
+    "treasury_yield"
    ],
-   "learn": "메모리는 데이터를 저장하는 반도체예요. AI 서버가 늘수록 더 많이 필요해서 엔비디아 소식에 같이 움직여요."
+   "learn": "금리 인상은 돈을 빌리는 값이 오르는 거예요. 기업 이자 부담이 늘어 주식 시장에는 부담이 되는 경우가 많아요."
+  },
+  {
+   "date": "2026-11-19",
+   "type": "bad",
+   "title": "코스피가 외국인이 주식을 많이 파는 가운데 큰 기준선 근처에서 흔들렸어요",
+   "impact": "전날 미국 반도체 회사들이 내린 데다 금리 인상 걱정이 겹쳤어요. 외국인이 많이 팔면 삼성전자·SK하이닉스 같은 큰 회사가 많이 흔들려요.",
+   "source": "뉴스핌",
+   "url": "https://www.newspim.com/news/view/20261119000340",
+   "terms": [
+    "kospi_kosdaq",
+    "rate_hike"
+   ],
+   "learn": "코스피는 한국 큰 회사들의 평균 같은 지수예요. 외국인이 많이 파는지 사는지가 방향에 큰 영향을 줘요."
   }
  ]
 }
