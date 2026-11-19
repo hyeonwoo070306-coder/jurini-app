@@ -1,0 +1,17 @@
+{
+ "terms": [
+  {
+   "id": "lockup",
+   "term": "보호예수(락업)",
+   "definition": "회사가 상장한 뒤 일정 기간 동안 회사 관계자와 큰 주주가 자기 주식을 팔지 못하게 묶어 두는 약속이에요.",
+   "example": "상장 후 몇 달 동안은 기존 주주가 주식을 팔 수 없어요.",
+   "why": "묶였던 주식이 풀리는 날에는 팔 수 있는 주식이 한꺼번에 늘어 가격이 흔들릴 수 있어요.",
+   "category": "주식 기본",
+   "verified": true,
+   "sources": [
+    "https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offerings-lockup-agreements",
+    "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-17"
+   ]
+  }
+ ]
+}

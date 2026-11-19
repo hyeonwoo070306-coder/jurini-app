@@ -304,6 +304,66 @@
     "https://www.chase.com/personal/investments/learning-and-insights/article/nasdaq-vs-dow-key-differences-to-know",
     "https://www.fidelity.com/learning-center/smart-money/what-is-dow-jones"
    ]
+  },
+  {
+   "id": "ai-2026-11-19",
+   "title": "AI 회사의 상장 소식, IPO가 뭘까요",
+   "terms": [
+    "ipo",
+    "lockup"
+   ],
+   "cards": [
+    "AI 회사 앤트로픽이 주식시장 상장을 준비한다는 소식에 반도체 관련 주식이 강했다는 보도가 있었어요.",
+    "IPO(기업공개)는 회사가 처음으로 자기 주식을 일반 투자자에게 파는 일이에요.",
+    "상장 전에 회사는 사업과 재무 내용을 담은 서류를 미국 증권거래위원회(SEC)에 내야 해요.",
+    "상장한 뒤 시장 가격은 처음 정한 공모 가격보다 높아질 수도, 낮아질 수도 있어요.",
+    "다음엔 '이 회사 소식인가, 같은 업종 기대감인가'를 나눠 보고, 기존 주주가 못 파는 기간(보호예수)도 살펴봐요."
+   ],
+   "quiz": [
+    {
+     "q": "IPO(기업공개)는 어떤 일일까요?",
+     "options": [
+      "회사가 처음으로 주식을 일반 투자자에게 파는 일",
+      "회사가 이익을 주주에게 나눠 주는 일",
+      "회사 이름을 바꾸는 일",
+      "회사가 다른 회사를 사는 일"
+     ],
+     "answer": 0,
+     "explain": "IPO는 회사가 처음으로 자기 주식을 일반 투자자에게 파는 일이에요."
+    },
+    {
+     "q": "상장한 뒤 시장 가격과 처음 정한 공모 가격의 관계로 알맞은 것은?",
+     "options": [
+      "항상 똑같아요",
+      "항상 더 높아요",
+      "높아질 수도 낮아질 수도 있어요",
+      "항상 더 낮아요"
+     ],
+     "answer": 2,
+     "explain": "상장 뒤에는 시장에서 가격이 정해져서 공모 가격보다 오를 수도 내릴 수도 있어요."
+    },
+    {
+     "q": "상장 직후 회사 관계자와 큰 주주가 일정 기간 주식을 팔지 못하게 하는 약속은?",
+     "options": [
+      "액면분할",
+      "배당",
+      "보호예수(락업)",
+      "자사주 매입"
+     ],
+     "answer": 2,
+     "explain": "보호예수(락업)는 상장 뒤 정해진 기간 동안 기존 주주가 주식을 팔지 못하게 하는 약속이에요."
+    }
+   ],
+   "stage": 2,
+   "date": "2026-11-19",
+   "news_url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1veEFKd2lVUmxRMEE5SXRScUJwNHdaLUVDN3BBdEgwNV9XM2hheEY3RlotU1hTN1A3OU5falphU3ZfYS1qd21MRUNvczJXV3FiNVZaYllLTzVlc1pJYUlwVC0wNFJ6Q0ZLeGx2aDN1bHE0UQ?oc=5",
+   "verified": true,
+   "sources": [
+    "https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offering-ipo",
+    "https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offerings-lockup-agreements",
+    "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-17",
+    "https://finimize.com/content/anthropics-ipo-buzz-put-ai-stocks-back-in-charge"
+   ]
   }
  ]
 }
