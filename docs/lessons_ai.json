@@ -364,6 +364,68 @@
     "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-17",
     "https://finimize.com/content/anthropics-ipo-buzz-put-ai-stocks-back-in-charge"
    ]
+  },
+  {
+   "id": "ai-2026-11-20",
+   "title": "유가가 내리면 정유회사는 왜 힘들까요",
+   "terms": [
+    "oil_price",
+    "refining",
+    "inflation",
+    "inventory"
+   ],
+   "cards": [
+    "국제 유가가 크게 내리자 한국 정유회사 주식이 함께 약했다는 보도가 있었어요.",
+    "유가는 원유 1배럴(약 159리터)의 가격이에요. 휘발유·경유 값과 물가에 영향을 줘요.",
+    "유가가 내리면 기름값 부담이 줄어 소비자와 물가에는 도움이 될 수 있어요.",
+    "정유회사는 원유를 사서 휘발유 등으로 만들어 팔아요. 비싸게 사 둔 원유 재고의 가치가 줄 수 있어요.",
+    "다음엔 '누구에게 좋은 소식인가'를 업종별로 나눠 보고, 재고 평가와 판매 가격도 함께 살펴봐요."
+   ],
+   "quiz": [
+    {
+     "q": "유가는 무엇의 가격일까요?",
+     "options": [
+      "원유 1배럴의 가격",
+      "휘발유 1개 주유소의 가격",
+      "자동차 1대의 가격",
+      "전기 1kWh의 가격"
+     ],
+     "answer": 0,
+     "explain": "유가는 원유를 담는 단위인 1배럴(약 159리터)의 가격이에요."
+    },
+    {
+     "q": "유가가 내릴 때 소비자에게 생길 수 있는 일은?",
+     "options": [
+      "기름값 부담이 줄 수 있어요",
+      "세금이 없어져요",
+      "월급이 바로 늘어요",
+      "물건이 모두 공짜가 돼요"
+     ],
+     "answer": 0,
+     "explain": "원유는 휘발유·경유의 큰 재료라서 유가가 내리면 기름값 부담이 줄 수 있어요."
+    },
+    {
+     "q": "유가가 갑자기 내릴 때 정유회사가 걱정하는 것은?",
+     "options": [
+      "비싸게 사 둔 원유 재고의 가치가 줄어드는 것",
+      "원유를 더 이상 못 사는 것",
+      "직원이 모두 퇴사하는 것",
+      "휘발유를 만들 수 없게 되는 것"
+     ],
+     "answer": 0,
+     "explain": "정유회사는 원유를 사 두었다가 제품으로 팔아서, 유가가 빨리 내리면 재고 가치가 줄 수 있어요."
+    }
+   ],
+   "stage": 3,
+   "date": "2026-11-20",
+   "news_url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE11aDc5RlZURmxFbVBWTjBwLTRiOWVtaFVELXN4UGw2NnVjWDFsRVZBRW4zN29rMEV0amVxbnRuWUZDWkI2bGlSdkh3Y1JjdWRGMG94d05ycjFPdkZWWUY4X2NweGptVElZTzhN0gFvQVVfeXFMUEJkSkctUzVHQS1jdU42akxmM3NFMTFaU3N1b21iVUZEWWtxRHJrOTZWakx5OU03RkFYcVJPUlRaOTdZNExRd0tTamg1b3NPaUQzRDZHTXZ3YWkySmpXZjhJOXBpSUcyUVhnVGtqOVF3?oc=5",
+   "verified": true,
+   "sources": [
+    "https://www.eia.gov/todayinenergy/detail.php?id=67024",
+    "https://newspim.com/news/view/20261119000556",
+    "https://www.ajunews.com/view/20261119133349922",
+    "https://worldoilmonitor.com/barrel-of-oil"
+   ]
   }
  ]
 }
