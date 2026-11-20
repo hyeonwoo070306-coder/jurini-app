@@ -48,7 +48,13 @@
    "title": "월마트 실적 발표",
    "source": "Walmart IR",
    "url": "https://corporate.walmart.com/news/2026/11/Walmart-To-Host-Q3-Earnings-Call-Nov-19-2026",
-   "id": "2026-11-19:WMT"
+   "id": "2026-11-19:WMT",
+   "result": {
+    "summary": "월마트 3분기 전체 매출이 환율 영향을 뺀 기준으로 4.4% 늘어, 회사가 말한 전망(3.0~3.75%)보다 높았어요.",
+    "impact": "전 세계 매장과 온라인 판매가 회사 예상보다 잘 늘었다는 뜻이에요. 광고와 온라인 장터 사업도 크게 커졌고, 관세 환급금으로 가격 인하에 쓴 점도 밝혔어요.",
+    "source": "Walmart IR",
+    "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings"
+   }
   },
   {
    "date": "2026-11-19",
@@ -60,7 +66,13 @@
    "title": "팔로알토 네트웍스 실적 발표",
    "source": "Palo Alto Networks IR",
    "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-announce-fiscal-first-quarter-2027-financial",
-   "id": "2026-11-19:PANW"
+   "id": "2026-11-19:PANW",
+   "result": {
+    "summary": "팔로알토 회계연도 1분기 매출 34.4억 달러로 작년 같은 분기보다 39% 늘었어요.",
+    "impact": "보안 소프트웨어를 파는 회사의 매출이 크게 늘었어요. 사이버아크 인수가 끝나 작년과 단순 비교는 어렵고, 회계 기준 영업이익은 작년보다 줄었어요.",
+    "source": "Palo Alto Networks IR",
+    "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-reports-fiscal-first-quarter-2027-financial"
+   }
   },
   {
    "date": "2026-11-25",
@@ -147,6 +159,18 @@
    "id": "2026-12-11:COST"
   },
   {
+   "date": "2026-12-18",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "MU",
+   "when": "after",
+   "title": "마이크론 실적 발표",
+   "source": "Micron IR",
+   "url": "https://investors.micron.com/events-and-presentations/",
+   "id": "2026-12-18:MU"
+  },
+  {
    "date": "2026-12-23",
    "kst": "2026-12-23 22:30",
    "type": "macro",
@@ -189,12 +213,72 @@
   {
    "date": "2027-01-14",
    "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "JPM",
+   "when": "before",
+   "title": "JP모건 체이스 실적 발표",
+   "source": "JPMorganChase IR",
+   "url": "https://www.jpmorganchase.com/ir/news/2025/jpmc-announces-conference-calls-to-review-first-quarter-second-quarter-third-quarter-and-fourth-quarter-2026-earnings",
+   "id": "2027-01-14:JPM"
+  },
+  {
+   "date": "2027-01-14",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "MS",
+   "when": "before",
+   "title": "모건스탠리 실적 발표",
+   "source": "Morgan Stanley IR",
+   "url": "https://www.morganstanley.com/press-releases/morgan-stanley-schedules-4q-and-fy-2026-investor-call",
+   "id": "2027-01-14:MS"
+  },
+  {
+   "date": "2027-01-14",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "WFC",
+   "when": "before",
+   "title": "웰스파고 실적 발표",
+   "source": "Wells Fargo IR",
+   "url": "https://www.wellsfargo.com/about/investor-relations/quarterly-earnings/",
+   "id": "2027-01-14:WFC"
+  },
+  {
+   "date": "2027-01-14",
+   "kst": null,
    "type": "macro",
    "kind": "bok_rate",
    "title": "한국 기준금리 결정(금통위)",
    "source": "한국은행",
    "url": "https://www.bok.or.kr/portal/bbs/B0000502/view.do?nttId=11066075&menuNo=201265",
    "id": "2027-01-14:bok_rate"
+  },
+  {
+   "date": "2027-01-15",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "BAC",
+   "when": "before",
+   "title": "뱅크오브아메리카 실적 발표",
+   "source": "Bank of America IR",
+   "url": "https://investor.bankofamerica.com/quarterly-earnings",
+   "id": "2027-01-15:BAC"
+  },
+  {
+   "date": "2027-01-19",
+   "kst": null,
+   "type": "earnings",
+   "kind": "earnings",
+   "ticker": "GS",
+   "when": "before",
+   "title": "골드만삭스 실적 발표",
+   "source": "Goldman Sachs IR",
+   "url": "https://www.goldmansachs.com/pressroom/press-releases/2025/conference-call-dates-to-announce-4q25-and-2026-earnings-results",
+   "id": "2027-01-19:GS"
   },
   {
    "date": "2027-01-28",

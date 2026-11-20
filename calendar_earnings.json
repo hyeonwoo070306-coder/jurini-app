@@ -42,6 +42,48 @@
    "when": "after",
    "source": "Costco IR",
    "url": "https://investor.costco.com/events-and-presentations/events/event-details/2026/Q1-2027-Earnings-Call/default.aspx"
+  },
+  {
+   "date": "2026-12-18",
+   "ticker": "MU",
+   "when": "after",
+   "source": "Micron IR",
+   "url": "https://investors.micron.com/events-and-presentations/"
+  },
+  {
+   "date": "2027-01-14",
+   "ticker": "JPM",
+   "when": "before",
+   "source": "JPMorganChase IR",
+   "url": "https://www.jpmorganchase.com/ir/news/2025/jpmc-announces-conference-calls-to-review-first-quarter-second-quarter-third-quarter-and-fourth-quarter-2026-earnings"
+  },
+  {
+   "date": "2027-01-14",
+   "ticker": "WFC",
+   "when": "before",
+   "source": "Wells Fargo IR",
+   "url": "https://www.wellsfargo.com/about/investor-relations/quarterly-earnings/"
+  },
+  {
+   "date": "2027-01-14",
+   "ticker": "MS",
+   "when": "before",
+   "source": "Morgan Stanley IR",
+   "url": "https://www.morganstanley.com/press-releases/morgan-stanley-schedules-4q-and-fy-2026-investor-call"
+  },
+  {
+   "date": "2027-01-15",
+   "ticker": "BAC",
+   "when": "before",
+   "source": "Bank of America IR",
+   "url": "https://investor.bankofamerica.com/quarterly-earnings"
+  },
+  {
+   "date": "2027-01-19",
+   "ticker": "GS",
+   "when": "before",
+   "source": "Goldman Sachs IR",
+   "url": "https://www.goldmansachs.com/pressroom/press-releases/2025/conference-call-dates-to-announce-4q25-and-2026-earnings-results"
   }
  ]
 }

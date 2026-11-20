@@ -10,5 +10,17 @@
   "impact": "AI 반도체를 파는 회사의 매출이 작년의 두 배 넘게 늘었어요. 회사는 앞으로 전망에 중국 데이터센터 매출을 넣지 않았다고 밝혔어요.",
   "source": "NVIDIA 보도자료",
   "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027"
+ },
+ "2026-11-19:WMT": {
+  "summary": "월마트 3분기 전체 매출이 환율 영향을 뺀 기준으로 4.4% 늘어, 회사가 말한 전망(3.0~3.75%)보다 높았어요.",
+  "impact": "전 세계 매장과 온라인 판매가 회사 예상보다 잘 늘었다는 뜻이에요. 광고와 온라인 장터 사업도 크게 커졌고, 관세 환급금으로 가격 인하에 쓴 점도 밝혔어요.",
+  "source": "Walmart IR",
+  "url": "https://corporate.walmart.com/news/2026/11/walmart-releases-q3-fy27-earnings"
+ },
+ "2026-11-19:PANW": {
+  "summary": "팔로알토 회계연도 1분기 매출 34.4억 달러로 작년 같은 분기보다 39% 늘었어요.",
+  "impact": "보안 소프트웨어를 파는 회사의 매출이 크게 늘었어요. 사이버아크 인수가 끝나 작년과 단순 비교는 어렵고, 회계 기준 영업이익은 작년보다 줄었어요.",
+  "source": "Palo Alto Networks IR",
+  "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-reports-fiscal-first-quarter-2027-financial"
  }
 }
