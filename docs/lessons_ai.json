@@ -426,6 +426,67 @@
     "https://www.ajunews.com/view/20261119133349922",
     "https://worldoilmonitor.com/barrel-of-oil"
    ]
+  },
+  {
+   "id": "ai-2026-11-21",
+   "title": "AI에 큰돈을 쓰면 왜 걱정이 될까요",
+   "terms": [
+    "capex",
+    "fcf",
+    "data_center",
+    "valuation"
+   ],
+   "cards": [
+    "이번 주 AI 회사 주식이 크게 흔들렸어요. 큰 기술회사들이 쓴 돈만큼 벌 수 있을지 걱정이 커졌기 때문이에요.",
+    "설비투자(CapEx)는 건물·장비처럼 오래 쓰는 것을 사거나 고치는 데 쓰는 돈이에요. 데이터센터를 짓는 돈도 여기에 들어가요.",
+    "잉여현금흐름(FCF)은 영업으로 번 현금에서 설비투자를 뺀 돈이에요. 투자를 크게 늘리면 흑자여도 FCF가 줄 수 있어요.",
+    "투자한 만큼 매출이 늘면 좋지만, 늦어지면 '돈을 회수할 수 있을까?' 하는 걱정이 생기고 주식을 파는 사람이 늘 수 있어요.",
+    "다음에 비슷한 뉴스를 보면 회사의 설비투자 규모와 FCF, 그리고 실제 매출 증가를 함께 확인해 봐요."
+   ],
+   "quiz": [
+    {
+     "q": "설비투자(CapEx)에 가장 가까운 것은?",
+     "options": [
+      "데이터센터를 짓는 데 쓰는 돈",
+      "직원 점심값",
+      "한 달 전기요금 영수증 정리",
+      "주주에게 주는 배당"
+     ],
+     "answer": 0,
+     "explain": "CapEx는 건물·장비처럼 오래 쓰는 자산을 사거나 고치는 데 쓰는 돈이에요."
+    },
+    {
+     "q": "잉여현금흐름(FCF)을 구하는 식은?",
+     "options": [
+      "영업현금흐름 − 설비투자",
+      "매출 + 설비투자",
+      "순이익 × 주식 수",
+      "시가총액 − 부채"
+     ],
+     "answer": 0,
+     "explain": "영업으로 번 현금에서 설비투자를 빼면 회사가 자유롭게 쓸 수 있는 현금이 남아요."
+    },
+    {
+     "q": "AI 투자가 너무 크다는 걱정이 나오는 가장 큰 이유는?",
+     "options": [
+      "쓴 돈만큼 벌 수 있을지 확실하지 않아서",
+      "주식 시장이 문을 닫아서",
+      "회사 이름이 바뀌어서",
+      "데이터센터가 필요 없어져서"
+     ],
+     "answer": 0,
+     "explain": "큰돈을 먼저 쓰고 나중에 벌기 때문에, 회수가 늦어질까 걱정하는 거예요."
+    }
+   ],
+   "stage": 4,
+   "date": "2026-11-21",
+   "news_url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9MUzFhVDF3MnVjLXVwdmpHdHo2c1VrZlk1UV9DT21LaVJQbGJ3RjR3a3VmYmFocmJpZG91Um1Fd2taUElIY2lfZVgxQUw0eTV4NEVuZ2VIZnFqRFZVOXh3bDYyNHFNbjg?oc=5",
+   "verified": true,
+   "sources": [
+    "https://www.ajc.com/news/2026/11/wall-street-shakes-again-as-nvidia-and-other-jittery-ai-stocks-swing-lower/",
+    "https://investing.com/academy/analysis/capital-expenditures-definition",
+    "https://corporatefinanceinstitute.com/resources/valuation/capital-expenditure-capex/"
+   ]
   }
  ]
 }
