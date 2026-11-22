@@ -12,6 +12,18 @@
     "https://www.investor.gov/introduction-investing/investing-basics/glossary/initial-public-offerings-lockup-agreements",
     "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-17"
    ]
+  },
+  {
+   "id": "circular_financing",
+   "term": "순환 투자",
+   "definition": "칩 회사가 고객에게 돈을 대고, 고객이 그 돈으로 그 회사의 칩을 사는 구조예요. 지분 투자나 보증 형태도 있어요.",
+   "example": "칩 회사가 데이터센터 회사에 투자하면, 그 회사가 받은 돈으로 다시 칩을 사는 경우예요.",
+   "why": "돈이 한 바퀴 돌면 매출이 진짜 수요인지 가려져, 회사의 숫자를 볼 때 조심해서 봐야 해요.",
+   "category": "실적·재무",
+   "verified": true,
+   "sources": [
+    "https://theconversation.com/whos-paying-whom-the-circular-money-machine-behind-the-ai-boom-or-bubble-293938"
+   ]
   }
  ]
 }

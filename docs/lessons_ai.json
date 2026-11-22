@@ -487,6 +487,66 @@
     "https://investing.com/academy/analysis/capital-expenditures-definition",
     "https://corporatefinanceinstitute.com/resources/valuation/capital-expenditure-capex/"
    ]
+  },
+  {
+   "id": "ai-2026-11-23",
+   "title": "기업이 SEC 조사를 받는다는 뉴스, 어떻게 읽을까요",
+   "terms": [
+    "disclosure",
+    "revenue",
+    "circular_financing"
+   ],
+   "cards": [
+    "언론이 미국 증권거래위원회(SEC)가 엔비디아의 회계를 살펴보고 있다고 전했어요. SEC가 공식 확인한 건 아니에요.",
+    "SEC는 미국 증권시장의 규칙을 감독하는 기관이에요. 조사는 '잘못했다'는 결론이 아니라 사실을 확인하는 단계예요.",
+    "언론은 지역별 매출 공시 방식이 바뀐 점과 '순환 투자' 구조를 함께 거론했어요. 무엇이 조사 대상인지는 아직 확실하지 않아요.",
+    "순환 투자는 칩 회사가 고객에게 돈을 대고, 고객이 그 돈으로 칩을 사는 구조예요. 비판하는 쪽은 진짜 수요가 가려질 수 있다고 봐요.",
+    "다음에 비슷한 뉴스를 보면 '조사 중'인지 '잘못이 확인'됐는지 먼저 나누고, 회사의 공시와 공식 발표를 확인해 봐요."
+   ],
+   "quiz": [
+    {
+     "q": "'SEC가 회사를 조사한다'는 보도의 뜻으로 알맞은 것은?",
+     "options": [
+      "잘못이 있는지 사실을 확인하는 단계일 수 있다",
+      "법을 어겼다는 최종 판결이 났다",
+      "회사가 바로 문을 닫는다",
+      "주식 거래가 자동으로 멈춘다"
+     ],
+     "answer": 0,
+     "explain": "조사는 사실을 확인하는 과정이에요. 잘못이 없다고 끝날 수도 있어요."
+    },
+    {
+     "q": "'순환 투자'에 가장 가까운 설명은?",
+     "options": [
+      "은행이 예금에 이자를 주는 것",
+      "칩 회사가 고객에게 돈을 대고, 고객이 그 돈으로 그 회사 칩을 사는 것",
+      "회사가 자기 주식을 다시 사들이는 것",
+      "두 회사가 같은 건물을 함께 쓰는 것"
+     ],
+     "answer": 1,
+     "explain": "돈이 한 바퀴 도는 구조라서 순환 투자라고 불러요."
+    },
+    {
+     "q": "비슷한 뉴스를 볼 때 가장 먼저 나눠 봐야 할 것은?",
+     "options": [
+      "뉴스가 올라온 시간대",
+      "조사 중인지, 잘못이 확인됐는지",
+      "회사 이름의 글자 수",
+      "친구들의 의견 개수"
+     ],
+     "answer": 1,
+     "explain": "'조사 중'과 '잘못 확인'은 전혀 다른 단계라서 구분해서 읽어야 해요."
+    }
+   ],
+   "stage": 4,
+   "date": "2026-11-23",
+   "news_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5NRGs2N3Q5N2tvY2U3bVFWWGk5TnlDTldReGRMUTRLN3lnZmJmZ090R3pfNWZCc0tBdlc5YkRNUi1EbnE3UjNFTS1zNkNFV0FneFBCZkdnTzZZUQ?oc=5",
+   "verified": true,
+   "sources": [
+    "https://www.brecorder.com/news/40450203/nvidias-accounting-is-a-focus-of-us-sec-investigation-sources-say",
+    "https://www.sec.gov/divisions/enforce/enforcementmanual.pdf",
+    "https://theconversation.com/whos-paying-whom-the-circular-money-machine-behind-the-ai-boom-or-bubble-293938"
+   ]
   }
  ]
 }
