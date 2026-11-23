@@ -547,6 +547,66 @@
     "https://www.sec.gov/divisions/enforce/enforcementmanual.pdf",
     "https://theconversation.com/whos-paying-whom-the-circular-money-machine-behind-the-ai-boom-or-bubble-293938"
    ]
+  },
+  {
+   "id": "ai-2026-11-24",
+   "title": "이번 주 PCE 물가 발표, 왜 중요할까요",
+   "terms": [
+    "pce",
+    "inflation",
+    "fed_fomc"
+   ],
+   "cards": [
+    "AI 관련 주식이 크게 팔려 월가가 불안했어요. 이번 주는 PCE 물가 발표가 분수령으로 꼽혀요.",
+    "PCE는 미국 경제분석국(BEA)이 내는 물가 지표예요. 사람들이 쓰는 돈의 물가 변화를 보여줘요.",
+    "연준은 물가가 해마다 2% 오르는 걸 목표로 하고, 이 목표를 PCE로 재요. 그래서 PCE를 눈여겨봐요.",
+    "10월 PCE는 미국 시간 25일 아침에 나와요. 결과에 따라 금리 걱정이 커지거나 줄 수 있어요.",
+    "다음에 물가 뉴스를 보면 전체 물가와, 식품·에너지를 뺀 '근원' 물가를 나눠 보고 발표일을 확인해요."
+   ],
+   "quiz": [
+    {
+     "q": "PCE 물가 지표를 발표하는 곳은?",
+     "options": [
+      "나스닥 거래소",
+      "한국은행",
+      "미국 경제분석국(BEA)",
+      "각 회사의 IR팀"
+     ],
+     "answer": 2,
+     "explain": "PCE는 미국 상무부 산하 경제분석국이 발표해요."
+    },
+    {
+     "q": "연준이 '물가 2% 목표'를 잴 때 쓰는 지표는?",
+     "options": [
+      "주식 거래량",
+      "PCE 물가지수",
+      "회사 매출액",
+      "환율"
+     ],
+     "answer": 1,
+     "explain": "연준의 2% 목표는 PCE 물가의 연간 변화로 정해져 있어요."
+    },
+    {
+     "q": "'근원' PCE는 어떤 물가일까요?",
+     "options": [
+      "모든 물가를 두 배로 센 것",
+      "수입품 물가만 모은 것",
+      "지난해 물가를 평균한 것",
+      "식품·에너지를 뺀 물가"
+     ],
+     "answer": 3,
+     "explain": "식품·에너지는 값이 자주 출렁여서 뺀 뒤 큰 흐름을 봐요."
+    }
+   ],
+   "stage": 3,
+   "date": "2026-11-24",
+   "news_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA5N3FOOUJkd2NtRWNBbThCYS1zZUtweFA4LWc3NlJrUHZqOGQyTnV2ZjRNSTF5eV9abU9MTnBFMUNrbWlwc3QwWVFJaHlWT3hjSG5PcVBYRHBPY1VpWkFJd9IBYEFVX3lxTFA5N3FOOUJkd2NtRWNBbThCYS1zZUtweFA4LWc3NlJrUHZqOGQyTnV2ZjRNSTF5eV9abU9MTnBFMUNrbWlwc3QwWVFJaHlWT3hjSG5PcVBYRHBPY1VpWkFJdw?oc=5",
+   "verified": true,
+   "sources": [
+    "https://www.bea.gov/news/schedule",
+    "https://www.clevelandfed.org/center-for-inflation-research/inflation-101/why-does-the-fed-care-technical",
+    "https://www.clevelandfed.org/center-for-inflation-research/consumer-price-data"
+   ]
   }
  ]
 }

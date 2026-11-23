@@ -1,60 +1,60 @@
 {
- "id": "ai-2026-11-23",
- "title": "기업이 SEC 조사를 받는다는 뉴스, 어떻게 읽을까요",
+ "id": "ai-2026-11-24",
+ "title": "이번 주 PCE 물가 발표, 왜 중요할까요",
  "terms": [
-  "disclosure",
-  "revenue",
-  "circular_financing"
+  "pce",
+  "inflation",
+  "fed_fomc"
  ],
  "cards": [
-  "언론이 미국 증권거래위원회(SEC)가 엔비디아의 회계를 살펴보고 있다고 전했어요. SEC가 공식 확인한 건 아니에요.",
-  "SEC는 미국 증권시장의 규칙을 감독하는 기관이에요. 조사는 '잘못했다'는 결론이 아니라 사실을 확인하는 단계예요.",
-  "언론은 지역별 매출 공시 방식이 바뀐 점과 '순환 투자' 구조를 함께 거론했어요. 무엇이 조사 대상인지는 아직 확실하지 않아요.",
-  "순환 투자는 칩 회사가 고객에게 돈을 대고, 고객이 그 돈으로 칩을 사는 구조예요. 비판하는 쪽은 진짜 수요가 가려질 수 있다고 봐요.",
-  "다음에 비슷한 뉴스를 보면 '조사 중'인지 '잘못이 확인'됐는지 먼저 나누고, 회사의 공시와 공식 발표를 확인해 봐요."
+  "AI 관련 주식이 크게 팔려 월가가 불안했어요. 이번 주는 PCE 물가 발표가 분수령으로 꼽혀요.",
+  "PCE는 미국 경제분석국(BEA)이 내는 물가 지표예요. 사람들이 쓰는 돈의 물가 변화를 보여줘요.",
+  "연준은 물가가 해마다 2% 오르는 걸 목표로 하고, 이 목표를 PCE로 재요. 그래서 PCE를 눈여겨봐요.",
+  "10월 PCE는 미국 시간 25일 아침에 나와요. 결과에 따라 금리 걱정이 커지거나 줄 수 있어요.",
+  "다음에 물가 뉴스를 보면 전체 물가와, 식품·에너지를 뺀 '근원' 물가를 나눠 보고 발표일을 확인해요."
  ],
  "quiz": [
   {
-   "q": "'SEC가 회사를 조사한다'는 보도의 뜻으로 알맞은 것은?",
+   "q": "PCE 물가 지표를 발표하는 곳은?",
    "options": [
-    "잘못이 있는지 사실을 확인하는 단계일 수 있다",
-    "법을 어겼다는 최종 판결이 났다",
-    "회사가 바로 문을 닫는다",
-    "주식 거래가 자동으로 멈춘다"
+    "나스닥 거래소",
+    "한국은행",
+    "미국 경제분석국(BEA)",
+    "각 회사의 IR팀"
    ],
-   "answer": 0,
-   "explain": "조사는 사실을 확인하는 과정이에요. 잘못이 없다고 끝날 수도 있어요."
+   "answer": 2,
+   "explain": "PCE는 미국 상무부 산하 경제분석국이 발표해요."
   },
   {
-   "q": "'순환 투자'에 가장 가까운 설명은?",
+   "q": "연준이 '물가 2% 목표'를 잴 때 쓰는 지표는?",
    "options": [
-    "은행이 예금에 이자를 주는 것",
-    "칩 회사가 고객에게 돈을 대고, 고객이 그 돈으로 그 회사 칩을 사는 것",
-    "회사가 자기 주식을 다시 사들이는 것",
-    "두 회사가 같은 건물을 함께 쓰는 것"
+    "주식 거래량",
+    "PCE 물가지수",
+    "회사 매출액",
+    "환율"
    ],
    "answer": 1,
-   "explain": "돈이 한 바퀴 도는 구조라서 순환 투자라고 불러요."
+   "explain": "연준의 2% 목표는 PCE 물가의 연간 변화로 정해져 있어요."
   },
   {
-   "q": "비슷한 뉴스를 볼 때 가장 먼저 나눠 봐야 할 것은?",
+   "q": "'근원' PCE는 어떤 물가일까요?",
    "options": [
-    "뉴스가 올라온 시간대",
-    "조사 중인지, 잘못이 확인됐는지",
-    "회사 이름의 글자 수",
-    "친구들의 의견 개수"
+    "모든 물가를 두 배로 센 것",
+    "수입품 물가만 모은 것",
+    "지난해 물가를 평균한 것",
+    "식품·에너지를 뺀 물가"
    ],
-   "answer": 1,
-   "explain": "'조사 중'과 '잘못 확인'은 전혀 다른 단계라서 구분해서 읽어야 해요."
+   "answer": 3,
+   "explain": "식품·에너지는 값이 자주 출렁여서 뺀 뒤 큰 흐름을 봐요."
   }
  ],
- "stage": 4,
- "date": "2026-11-23",
- "news_url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5NRGs2N3Q5N2tvY2U3bVFWWGk5TnlDTldReGRMUTRLN3lnZmJmZ090R3pfNWZCc0tBdlc5YkRNUi1EbnE3UjNFTS1zNkNFV0FneFBCZkdnTzZZUQ?oc=5",
+ "stage": 3,
+ "date": "2026-11-24",
+ "news_url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA5N3FOOUJkd2NtRWNBbThCYS1zZUtweFA4LWc3NlJrUHZqOGQyTnV2ZjRNSTF5eV9abU9MTnBFMUNrbWlwc3QwWVFJaHlWT3hjSG5PcVBYRHBPY1VpWkFJd9IBYEFVX3lxTFA5N3FOOUJkd2NtRWNBbThCYS1zZUtweFA4LWc3NlJrUHZqOGQyTnV2ZjRNSTF5eV9abU9MTnBFMUNrbWlwc3QwWVFJaHlWT3hjSG5PcVBYRHBPY1VpWkFJdw?oc=5",
  "verified": true,
  "sources": [
-  "https://www.brecorder.com/news/40450203/nvidias-accounting-is-a-focus-of-us-sec-investigation-sources-say",
-  "https://www.sec.gov/divisions/enforce/enforcementmanual.pdf",
-  "https://theconversation.com/whos-paying-whom-the-circular-money-machine-behind-the-ai-boom-or-bubble-293938"
+  "https://www.bea.gov/news/schedule",
+  "https://www.clevelandfed.org/center-for-inflation-research/inflation-101/why-does-the-fed-care-technical",
+  "https://www.clevelandfed.org/center-for-inflation-research/consumer-price-data"
  ]
 }
