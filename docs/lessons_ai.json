@@ -607,6 +607,68 @@
     "https://www.clevelandfed.org/center-for-inflation-research/inflation-101/why-does-the-fed-care-technical",
     "https://www.clevelandfed.org/center-for-inflation-research/consumer-price-data"
    ]
+  },
+  {
+   "id": "ai-2026-11-25",
+   "title": "12월 9일 금리 결정, 왜 미리 챙길까요",
+   "terms": [
+    "fed_fomc",
+    "interest_rate",
+    "rate_hike"
+   ],
+   "cards": [
+    "12월 9일에 미국 연준이 금리를 정하는 회의 결과가 나와요. 반도체 큰 일정도 같은 날이래요.",
+    "FOMC는 연준이 기준금리를 정하는 회의예요. 1년에 8번 열리고, 12월 회의는 8~9일이에요.",
+    "금리는 돈의 값이에요. 금리가 오르면 기업과 사람이 돈을 빌리기 힘들어져 시장에 부담이 돼요.",
+    "12월 회의에서는 연준의 새 경제 전망도 함께 나와요. 앞으로의 금리 생각을 읽는 단서가 돼요.",
+    "다음에 비슷한 뉴스를 보면 '금리를 올렸나, 그대로인가, 내렸나'를 먼저 확인해 보세요."
+   ],
+   "quiz": [
+    {
+     "q": "FOMC는 무엇을 하는 회의일까요?",
+     "options": [
+      "기업의 주식 가격을 정한다",
+      "기준금리를 정한다",
+      "세금 비율을 정한다",
+      "환율을 직접 정한다"
+     ],
+     "answer": 1,
+     "explain": "FOMC는 미국 연준이 기준금리를 정하는 회의예요."
+    },
+    {
+     "q": "연준은 FOMC를 1년에 몇 번 열까요?",
+     "options": [
+      "2번",
+      "4번",
+      "8번",
+      "12번"
+     ],
+     "answer": 2,
+     "explain": "연준은 1년에 8번 정해진 회의를 열어요."
+    },
+    {
+     "q": "금리가 오르면 기업에는 어떤 일이 생기기 쉬울까요?",
+     "options": [
+      "돈을 빌리는 비용이 늘어난다",
+      "빌린 돈의 이자가 사라진다",
+      "세금이 줄어든다",
+      "물건이 더 잘 팔린다"
+     ],
+     "answer": 0,
+     "explain": "금리가 오르면 빌린 돈의 이자 부담이 커져 기업에 부담이 돼요."
+    }
+   ],
+   "stage": 3,
+   "date": "2026-11-25",
+   "news_url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5YakpOa0NkRDJGXzMzYm1fZzVLWkRMa0RoTVNrUE5MYkFIRWlXQ1BzclliT1JTR2pqMFkxaDZQVlpRbEVxaGlWRm1MSG4tTHVjN2hpLUlhVWxHWkFQejdrTThYbjNvbUZKSU5xR2Z1UmpkSXc5?oc=5",
+   "verified": true,
+   "sources": [
+    "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm",
+    "https://www.federalreserve.gov/monetarypolicy/fomcminutes20261028.htm",
+    "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+    "https://tickward.com/en/timers/fomc-meeting-dates-2026",
+    "https://ceoeconomy.com/article/how-to-read-fed-decision-dot-plot"
+   ]
   }
  ]
 }
