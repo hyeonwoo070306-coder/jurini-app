@@ -1,27 +1,27 @@
 {
- "asof": "2026-11-25",
+ "asof": "2026-11-26",
  "note": "회사 관련 뉴스를 AI(Claude)가 쉽게 요약한 것. type: good=호재, bad=악재, watch=지켜볼 일",
  "market": [
   {
-   "date": "2026-11-24",
+   "date": "2026-11-25",
    "type": "bad",
-   "title": "미국 반도체주가 크게 내려 나스닥이 하락했어요",
-   "impact": "CEO 복귀 소식에 오른 반도체주를 팔고 이익을 챙기는 사람이 늘었어요. 반면 다우지수는 올라 업종마다 분위기가 달랐어요.",
-   "source": "코리아타임스",
-   "url": "https://www.koreatimes.com/article/11632739",
+   "title": "미국 증시가 장중 크게 흔들렸다가 낙폭을 줄여 마감했어요",
+   "impact": "AI 투자 수익이 기대만큼 안 나올 수 있다는 걱정이 이어져 반도체주가 크게 내렸어요. 오후엔 싼 값에 사려는 사람이 늘어 낙폭이 줄었고, 다우지수만 소폭 올랐어요.",
+   "source": "머니투데이방송",
+   "url": "https://news.mtn.co.kr/article/2026112606370361719",
    "terms": [
-    "semiconductor",
-    "stock_index"
+    "stock_index",
+    "semiconductor"
    ],
-   "learn": "지수는 여러 회사 주가를 묶은 점수예요. 반도체가 크게 내리면 기술주 중심 지수가 더 많이 빠져요."
+   "learn": "지수는 여러 회사 주가를 묶은 점수예요. 기술주 비중이 큰 나스닥이 더 크게 흔들렸어요."
   },
   {
    "date": "2026-11-25",
    "type": "bad",
-   "title": "코스피가 하루 만에 크게 내려 삼성전자·SK하이닉스가 흔들렸어요",
-   "impact": "미국 반도체주 하락과 외국인이 주식을 많이 팔아 치운 일이 겹쳤어요. 어제 오른 부분을 되돌리며 AI 투자 걱정이 다시 드러났어요.",
-   "source": "뉴스핌",
-   "url": "https://www.newspim.com/news/view/20261125001078",
+   "title": "코스피가 반도체주 급락에 크게 내렸어요",
+   "impact": "삼성전자와 SK하이닉스가 크게 내리며 코스피를 끌어내렸어요. 전날 오른 부분을 되돌리며 AI 투자 걱정이 다시 드러났어요.",
+   "source": "CNews",
+   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE52M3lkNUZtM3RSeFlmajhRaHBFV2pGMHJSMG53eEtkWWlBazFCdGdKdnlpQkxWRW9MWjBBTzZVcmFNQnZ3a3l6SmQzbDNOZTBPSnFhSHVaS3N6OTEyYkR0VnFaLVBBNGgyZmRkMTNzOGtKWjlLNFNN?oc=5",
    "terms": [
     "kospi_kosdaq",
     "semiconductor"
@@ -2759,6 +2759,19 @@
   "000660": [
    {
     "date": "2026-11-25",
+    "type": "good",
+    "title": "SK하이닉스가 100조 원 규모 주주환원 계획을 그대로 유지한다고 공시했어요",
+    "impact": "번 돈의 일부를 배당과 자사주 매입·소각으로 주주에게 돌려주겠다는 약속이에요. 반도체주가 흔들리는 날에도 계획을 바꾸지 않았어요. 시장 상황에 따라 바뀔 수도 있다고 밝혔어요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBwNHlMT3BfTEdJRFJNOEF3dGN2VTdMZDRhVzl0dXRTV2V6Z29hVEpvSzJLS25qNXY2LTBhV19zN3NtTHZseFhHT0FFeF9pbFA4S3FWZFkzRFFLLW5ETFBqMVJ4N0tuek9sUlZYUURhX3JfZm9z?oc=5",
+    "terms": [
+     "buyback",
+     "dividend_yield"
+    ],
+    "learn": "자사주 매입은 회사가 자기 주식을 사들이는 거예요. 주식 수가 줄면 남은 주식의 몫이 커져요."
+   },
+   {
+    "date": "2026-11-25",
     "type": "bad",
     "title": "SK하이닉스가 CEO 복귀 소식에 오른 다음 날 크게 내렸어요",
     "impact": "전날 오른 부분을 되돌렸어요. AI용 메모리를 많이 파는 회사라 AI 투자 걱정에 크게 흔들려요.",
@@ -2795,19 +2808,6 @@
      "data_center"
     ],
     "learn": "메모리는 데이터를 저장하는 반도체예요. AI 서버가 늘면 메모리 수요도 늘 수 있어요."
-   },
-   {
-    "date": "2026-11-23",
-    "type": "good",
-    "title": "엔비디아 소식에 SK하이닉스가 미국 시장에서 크게 반등했어요",
-    "impact": "AI용 메모리를 엔비디아에 공급하는 회사라 같이 움직여요. 앞서 AI 거품 걱정으로 크게 떨어진 뒤의 반등이라 변동이 커요.",
-    "source": "한국경제",
-    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5tQU5nS1lwbG53bTFXbGplN3lKT3ZPRmc3VVRkajd6amNKUHlITUgweFpMQ3NWVHRIODUzYWVaSkF0TVZNSlg0ZEFSZHBYWC0tYmJmSXJwSUkxQQ?oc=5",
-    "terms": [
-     "memory",
-     "semiconductor"
-    ],
-    "learn": "AI 반도체 수요가 늘면 메모리 회사 실적이 좋아져요. 반대로 걱정이 커지면 함께 흔들려요."
    }
   ],
   "066570": [
@@ -3921,6 +3921,19 @@
    {
     "date": "2026-11-25",
     "type": "watch",
+    "title": "대한항공이 통합 진에어 출범에 맞춰 리스비 절감과 배당 정책을 설명했어요",
+    "impact": "대한항공이 비행기를 빌리는 비용을 줄일 수 있다고 밝혔고, 내년 통합사 배당 정책도 새로 만들겠다고 했어요. 실제 효과는 앞으로 지켜봐야 해요.",
+    "source": "에너지경제신문",
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5iMmRrSWVsSndMT0ZlXy00Q2hYeWJFcm83U3o4QUxBM2N2VjUwckpVbjV3d1FjVHRyOWtBWW9iQXk5aEN5QXdjU09Tc0F5ZUJUc29wTXdtQ0EzMHg3cjdNMzVR?oc=5",
+    "terms": [
+     "merger",
+     "dividend_yield"
+    ],
+    "learn": "합병은 회사 둘이 하나가 되는 거예요. 비용이 줄지, 배당이 어떻게 바뀔지를 같이 봐요."
+   },
+   {
+    "date": "2026-11-25",
+    "type": "watch",
     "title": "통합 대한항공 출범을 앞두고 한진 배임 의혹이 쟁점이에요",
     "impact": "합병 과정의 법적 문제를 짚는 보도예요. 결과에 따라 일정이나 비용이 달라질 수 있어요.",
     "source": "스마트투데이",
@@ -3954,22 +3967,21 @@
      "operating_income"
     ],
     "learn": "합병 시너지는 합쳐서 비용을 아끼거나 매출을 늘리는 효과예요. 예상만큼 나오지 않을 때도 있어요."
-   },
-   {
-    "date": "2026-11-23",
-    "type": "watch",
-    "title": "대한항공이 아시아나 통합 효과로 내년 이익이 늘 수 있다는 전망이 나왔어요",
-    "impact": "두 항공사를 합치면 비용을 줄일 수 있어요. 항공 운임이 내려가면 효과가 줄 수 있어요.",
-    "source": "메가경제",
-    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBRTWlVUF9oaWxFaVZ3OVpnSTNXeXNtY3VVRW1lSmRzaXRiaUlzTU84d1NpQms1RS1oVmFqUHE4c0JqRkpNSW1hYldvV0RXOUw5bXYwbXJvNi1Cd3NvbkNTUDYtcHRRZzZ3R2lGOGhJTDQ5QdIBckFVX3lxTFBRTWlVUF9oaWxFaVZ3OVpnSTNXeXNtY3VVRW1lSmRzaXRiaUlzTU84d1NpQms1RS1oVmFqUHE4c0JqRkpNSW1hYldvV0RXOUw5bXYwbXJvNi1Cd3NvbkNTUDYtcHRRZzZ3R2lGOGhJTDQ5QQ?oc=5",
-    "terms": [
-     "mna",
-     "operating_income"
-    ],
-    "learn": "영업이익은 본업으로 번 돈이에요. 합병 효과는 주로 비용 절감으로 영업이익에 나타나요."
    }
   ],
   "078930": [
+   {
+    "date": "2026-11-25",
+    "type": "watch",
+    "title": "GS그룹이 허서홍 GS리테일 대표를 사장으로 승진시키는 등 오너 4세 인사를 냈어요",
+    "impact": "실적이 오른 점이 반영된 인사로 전해졌어요. 경영진이 바뀌면 회사 운영 방향이 달라질 수 있어 지켜볼 일이에요.",
+    "source": "퍼블릭뉴스통신",
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFA3eVUyUFZpaEJmMWYyRllrV2R6c1VXM1ZZSFlHWGxBT1JWTGVibFZ3cUQtalk5Z3BHWV9IbTFmaTNBY3ZQY3ljMUhFdWN0VGZNa3VIc2o4TzktajEwVVRsVUQ2NlhHWHhieHdR?oc=5",
+    "terms": [
+     "largest_shareholder"
+    ],
+    "learn": "최대주주 가문이 경영에 더 나서면 결정이 빨라질 수 있어요. 대신 소액 주주 의견이 덜 반영될 수도 있어요."
+   },
    {
     "date": "2026-11-24",
     "type": "watch",
@@ -4006,18 +4018,6 @@
      "holding_company"
     ],
     "learn": "영업이익 전망은 바뀔 수 있어요. 전망은 정답이 아니라 참고 자료예요."
-   },
-   {
-    "date": "2026-11-17",
-    "type": "good",
-    "title": "GS건설, 올해 정비사업 수주 10조 원 달성 기대, 창사 이래 최대 실적 전망",
-    "impact": "재건축·재개발 수주가 늘면 몇 년에 걸쳐 매출이 들어와요. 전망이라 실제 결과는 발표를 봐야 해요.",
-    "source": "더팩트",
-    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1mekp3YUZ0Z1lKdmh6ekNVWWttNndwc05IZGRMelBTU3RvY0I5dVdTbXZSOEt5ZTNSamswTmNOMGZDLVdBbnNucmFuUjQxaEY1Z3JIUNIBVEFVX3lxTE1mekp3YUZ0Z1lKdmh6ekNVWWttNndwc05IZGRMelBTU3RvY0I5dVdTbXZSOEt5ZTNSamswTmNOMGZDLVdBbnNucmFuUjQxaEY1Z3JIUA?oc=5",
-    "terms": [
-     "backlog"
-    ],
-    "learn": "정비사업은 낡은 동네를 새로 짓는 일이에요. 수주는 일을 따냈다는 뜻이고 매출은 공사하며 나눠 들어와요."
    }
   ]
  }
