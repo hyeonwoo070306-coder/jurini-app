@@ -1,32 +1,45 @@
 {
- "asof": "2026-11-26",
+ "asof": "2026-11-27",
  "note": "회사 관련 뉴스를 AI(Claude)가 쉽게 요약한 것. type: good=호재, bad=악재, watch=지켜볼 일",
  "market": [
   {
-   "date": "2026-11-25",
+   "date": "2026-11-26",
    "type": "bad",
-   "title": "미국 증시가 장중 크게 흔들렸다가 낙폭을 줄여 마감했어요",
-   "impact": "AI 투자 수익이 기대만큼 안 나올 수 있다는 걱정이 이어져 반도체주가 크게 내렸어요. 오후엔 싼 값에 사려는 사람이 늘어 낙폭이 줄었고, 다우지수만 소폭 올랐어요.",
-   "source": "머니투데이방송",
-   "url": "https://news.mtn.co.kr/article/2026112606370361719",
+   "title": "한국은행이 기준금리를 연 3.00%에서 3.25%로 올렸어요",
+   "impact": "기준금리가 오르면 대출 이자 부담이 커지고, 주식보다 예금이 나아 보여서 증시에 눌림 요인이 돼요. 이날 코스피가 오르다 말았던 이유로 꼽혔어요.",
+   "source": "파이낸셜뉴스",
+   "url": "https://www.fnnews.com/news/202611261548115574",
    "terms": [
-    "stock_index",
-    "semiconductor"
+    "rate_hike",
+    "interest_rate"
    ],
-   "learn": "지수는 여러 회사 주가를 묶은 점수예요. 기술주 비중이 큰 나스닥이 더 크게 흔들렸어요."
+   "learn": "기준금리는 나라의 기본 이자율이에요. 올리면 돈을 빌리기 어려워져서 기업과 주식시장에 부담이 될 수 있어요."
+  },
+  {
+   "date": "2026-11-26",
+   "type": "watch",
+   "title": "코스피가 전날 급락 뒤 반등을 시도했지만 상승분을 대부분 반납했어요",
+   "impact": "장중에는 크게 올랐다가 금리 인상 소식에 뒷심이 부족해 소폭 오른 채 마감했어요. 개인은 많이 팔고 기관이 사들였어요. 전날 큰 하락을 다 메우진 못했어요.",
+   "source": "파이낸셜뉴스",
+   "url": "https://www.fnnews.com/news/202611261548115574",
+   "terms": [
+    "kospi_kosdaq",
+    "trading_volume"
+   ],
+   "learn": "코스피는 한국 대표 기업들을 묶은 점수예요. 오르다 말고 되돌아오면 사려는 힘이 약하다는 뜻이에요."
   },
   {
    "date": "2026-11-25",
    "type": "bad",
-   "title": "코스피가 반도체주 급락에 크게 내렸어요",
-   "impact": "삼성전자와 SK하이닉스가 크게 내리며 코스피를 끌어내렸어요. 전날 오른 부분을 되돌리며 AI 투자 걱정이 다시 드러났어요.",
-   "source": "CNews",
-   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE52M3lkNUZtM3RSeFlmajhRaHBFV2pGMHJSMG53eEtkWWlBazFCdGdKdnlpQkxWRW9MWjBBTzZVcmFNQnZ3a3l6SmQzbDNOZTBPSnFhSHVaS3N6OTEyYkR0VnFaLVBBNGgyZmRkMTNzOGtKWjlLNFNN?oc=5",
+   "title": "미국 증시는 AI 관련주가 내려 엇갈리게 마감했고, 26일은 추수감사절로 쉬었어요",
+   "impact": "엔비디아 같은 AI 반도체주가 내렸고 나스닥은 내렸지만 다우는 올랐어요. 26일은 휴장이라 새 가격이 없고, 27일은 오후 1시에 일찍 끝나요.",
+   "source": "네이트 뉴스",
+   "url": "https://m.news.nate.com/view/20261126n03814",
    "terms": [
-    "kospi_kosdaq",
+    "stock_index",
     "semiconductor"
    ],
-   "learn": "코스피는 한국 대표 지수예요. 삼성전자·SK하이닉스 비중이 커서 두 회사가 흔들리면 지수도 크게 움직여요."
+   "learn": "지수마다 담긴 회사가 달라서 같은 날에도 다르게 움직여요. 나스닥은 기술주가 많고 다우는 전통 대기업이 많아요."
   },
   {
    "date": "2026-11-24",
@@ -40,19 +53,6 @@
     "fed_fomc"
    ],
    "learn": "금리 인상은 돈의 값이 비싸진다는 뜻이에요. 그래서 성장 기대가 큰 주식에는 부담이 돼요."
-  },
-  {
-   "date": "2026-11-23",
-   "type": "watch",
-   "title": "12월 9일에 금리 결정과 반도체 큰 일정이 겹쳐요",
-   "impact": "금리 결정은 돈의 값을 바꾸고, 반도체 실적은 AI 열기를 보여줘요. 두 가지가 한날 나와서 시장이 크게 움직일 수 있어요.",
-   "source": "연합인포맥스",
-   "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5YakpOa0NkRDJGXzMzYm1fZzVLWkRMa0RoTVNrUE5MYkFIRWlXQ1BzclliT1JTR2pqMFkxaDZQVlpRbEVxaGlWRm1MSG4tTHVjN2hpLUlhVWxHWkFQejdrTThYbjNvbUZKSU5xR2Z1UmpkSXc5?oc=5",
-   "terms": [
-    "fed_fomc",
-    "interest_rate"
-   ],
-   "learn": "연준이 금리를 정하면 대출 이자와 투자 분위기가 달라져요. 그래서 발표 날을 미리 챙겨 봐요."
   }
  ],
  "companies": {
