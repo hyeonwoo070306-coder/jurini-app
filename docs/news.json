@@ -315,6 +315,19 @@
   ],
   "SPCX": [
    {
+    "date": "2026-11-26",
+    "type": "watch",
+    "title": "머스크가 미국 어린이들에게 스페이스X 주식을 2주씩 나눠 주겠다고 밝혔다는 보도가 나왔어요",
+    "impact": "회사 지분이 어린이 계좌로 넓게 퍼질 수 있다는 소식이에요. 구체적인 방식은 아직 알려진 게 적어 지켜봐야 해요.",
+    "source": "이코노미블록",
+    "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE9VekdIcXZiNFBhQklvNmNkVldabGQ3V2NocTRiSjFsdHBvNzFFU0VxYW5YTDRVX1RsZjR0SG9ka2NnUHhrZVhJMEZNZUY?oc=5",
+    "terms": [
+     "ipo",
+     "stock"
+    ],
+    "learn": "주식 1주는 회사의 아주 작은 주인이 된다는 뜻이에요. 이 뉴스는 그 주식을 선물로 준다는 약속이에요."
+   },
+   {
     "date": "2026-11-25",
     "type": "watch",
     "title": "테슬라와 스페이스X가 합병을 논의한다는 보도가 나왔어요",
@@ -350,19 +363,6 @@
      "mna"
     ],
     "learn": "M&A는 회사끼리 합치거나 사는 일이에요. 논의 중이라는 말은 아직 확정이 아니라는 뜻이에요."
-   },
-   {
-    "date": "2026-11-20",
-    "type": "watch",
-    "title": "스페이스X가 매출은 크게 늘었지만, 보호예수 해제를 앞두고 주식 물량 부담이 거론돼요",
-    "impact": "매출이 빠르게 늘어난 건 좋은 신호예요. 다만 묶여 있던 주식이 풀리면 팔 수 있는 주식이 늘어 시장이 흔들릴 수 있어요.",
-    "source": "코인리더스",
-    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFAwU0NaM2FYcmp6YkpYWXQzRlFRMzhwbkkzZlYxQ1k1OFdpemlQV0oxWElfZ0R6b1Z2U0Z6ZnJKV2J5TVBxNDB0SGtR?oc=5",
-    "terms": [
-     "lockup",
-     "revenue"
-    ],
-    "learn": "보호예수는 주식을 일정 기간 못 팔게 묶는 약속이에요. 풀리는 날이 가까우면 물량 걱정이 나와요."
    }
   ],
   "META": [
@@ -464,6 +464,18 @@
   ],
   "TSLA": [
    {
+    "date": "2026-11-26",
+    "type": "bad",
+    "title": "테슬라의 유럽 자율주행 승인이 또 늦어졌고 일부 허가가 무효가 될 수 있다는 보도가 나왔어요",
+    "impact": "유럽에서 자율주행 기능을 파는 일정이 늦어질 수 있어요. 규제 결과를 더 지켜봐야 해요.",
+    "source": "디지털투데이",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9QMHlfY1pvWV9kTUt4dE5SS2pYOVl0QzRKUnNBTDNuaUxLaHgybDJ6OE55cnlicE85M3ZBV3poWXQwcmxBandKLU9Bc3V6UU1neEtRNGJhY0tmc3YwNzdmLUhXTENLMGRYWm1oNXFCYmd1Tms?oc=5",
+    "terms": [
+     "ev"
+    ],
+    "learn": "규제 승인은 새 기능을 팔 수 있는 허락이에요. 승인이 늦으면 매출 계획도 늦어질 수 있어요."
+   },
+   {
     "date": "2026-11-25",
     "type": "watch",
     "title": "테슬라와 스페이스X가 합병을 논의한다는 보도가 나왔어요",
@@ -500,18 +512,6 @@
      "recurring_revenue"
     ],
     "learn": "소프트웨어 구독은 한 번 팔고 끝나지 않고 계속 돈이 들어와요. 회사에는 안정적인 수입이 돼요."
-   },
-   {
-    "date": "2026-11-23",
-    "type": "watch",
-    "title": "스페이스X와 테슬라의 합병 논의 소식에 두 회사가 함께 움직였어요",
-    "impact": "합병 이야기가 나오면서 투자자들의 관심이 커졌어요. 확정된 일이 아니라서 발표를 지켜봐야 해요.",
-    "source": "코인리더스",
-    "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE1Ed0ZRdkJfcGZPZ2thcFBKRDdBNFRobWFnOGY4MVVzQ2JDVTdaNl9oUVd5T1IwU1R3NjEzQzlzd2dNMmJ2MjgtdGlR?oc=5",
-    "terms": [
-     "mna"
-    ],
-    "learn": "합병 논의는 아직 결정이 아니에요. 공식 발표가 나와야 사실로 볼 수 있어요."
    }
   ],
   "LLY": [
@@ -1937,6 +1937,19 @@
   ],
   "PANW": [
    {
+    "date": "2026-11-26",
+    "type": "bad",
+    "title": "팔로알토 네트웍스가 전직 임원에게 회계 부정 관련 소송을 당했다는 보도가 나왔어요",
+    "impact": "소송 내용이 사실인지는 아직 가려지지 않았어요. 결과에 따라 회사 신뢰에 영향을 줄 수 있어 지켜봐야 해요.",
+    "source": "연합인포맥스",
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBNUTBaQS1VNDFyWDJScElFSnFWLUlxOHpQbnAtSzdFNmZzSjdXRENRbnZfM0Y2MVBoUEZ3VElXUnRIODE1ZzBYUmJ6YnBvN2xFV1ZXeFRqeTZWdktuVzcza0dVMEV4VUpab2o0Q19PSmViZzBX?oc=5",
+    "terms": [
+     "cybersecurity",
+     "disclosure"
+    ],
+    "learn": "소송은 주장 단계예요. 법원 판단이 나오기 전에는 사실로 단정할 수 없어요."
+   },
+   {
     "date": "2026-11-24",
     "type": "watch",
     "title": "팔로알토가 사이버보안 대형 인수 바람 속에서 인수 전략을 키우고 있어요",
@@ -1974,19 +1987,6 @@
      "cybersecurity"
     ],
     "learn": "인수는 다른 회사를 사 오는 일이에요. 기술을 빨리 얻지만 비싸게 샀다면 부담이 될 수 있어요."
-   },
-   {
-    "date": "2026-11-20",
-    "type": "good",
-    "title": "팔로알토 네트웍스가 분기 실적이 시장 예상을 웃돌았고 높은 성장이 이어진다고 밝혔어요",
-    "impact": "예상보다 잘 벌었다는 건 보안 서비스를 찾는 고객이 많다는 뜻이에요. 다음 분기 성장세도 지켜봐야 해요.",
-    "source": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1wZDdGVUNDTlNRdXlsZk0zbWJNRXlPR0VmcVVveDFPYmhTZnkzQW1CQXRhSVhSempGcUF5UkYwbTgtMHJocEhKVkRBUmg3VThWU0liTkdvdG5PSjZRRks2WnFJMlhGZ3V5S3lxLXJkaUk?oc=5",
-    "terms": [
-     "earnings_surprise",
-     "cybersecurity"
-    ],
-    "learn": "어닝 서프라이즈는 실적이 시장 예상보다 좋게 나온 일이에요. 예상이 기준이라는 점을 기억해요."
    }
   ],
   "TXN": [
@@ -2121,6 +2121,19 @@
   ],
   "NFLX": [
    {
+    "date": "2026-11-26",
+    "type": "bad",
+    "title": "미국에서 스트리밍 구독료가 비싸 가입자 성장이 정체되고 있다는 보도가 나왔어요",
+    "impact": "넷플릭스 등 스트리밍 회사가 새 가입자를 늘리기 어려워질 수 있어요. 요금과 광고 요금제 전략이 중요해져요.",
+    "source": "한국경제",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5yRFpmeS1jVjBOYlNOdDVVbGhLWkltTWxMcUdKUFE3QldCZFFQcVl4WW1wVG0zMEtUYUZENzNsdXdZeEdEYmU0dll5emhnNDdMUENPNFVJU0NEdw?oc=5",
+    "terms": [
+     "subscription",
+     "streaming"
+    ],
+    "learn": "구독 서비스는 매달 받는 돈이 핵심이에요. 가입자가 안 늘면 매출 성장이 느려질 수 있어요."
+   },
+   {
     "date": "2026-11-24",
     "type": "bad",
     "title": "넷플릭스가 직원 약 1,000명과 콘텐츠 총괄을 내보냈어요",
@@ -2157,19 +2170,6 @@
      "stock"
     ],
     "learn": "유명 투자자의 투자는 분기 보고서로 알려져요. 참고만 하고 회사 실적을 직접 확인해요."
-   },
-   {
-    "date": "2026-11-14",
-    "type": "watch",
-    "title": "CJ ENM 계열 제작사, 넷플릭스 1위 작품에도 적자 이어져",
-    "impact": "넷플릭스에서 인기를 끌어도 제작사가 수익을 크게 못 거둘 수 있다는 이야기예요. 콘텐츠를 만드는 쪽과 유통하는 쪽의 수익 구조가 달라요.",
-    "source": "비즈니스포스트",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9rRmV0WHhnZTJ0NDdMZXpaN3l5MlZEZzFPMzlBc3Z0VmtQWWg1NzBOYzh0UUp0V1UxNmxZWDFnaHp4WXc3b3RmeDgtaXlnVklFRDBkRGVFWklVc0h4QXg4bFpVQ1ZyRVAzM0JXVWJ1X3dYbHc?oc=5",
-    "terms": [
-     "streaming",
-     "subscription"
-    ],
-    "learn": "넷플릭스는 구독료로 돈을 벌어요. 작품을 많이 보게 만들어 구독자를 붙잡는 게 중요해요."
    }
   ],
   "GS": [
@@ -2553,6 +2553,18 @@
   ],
   "005380": [
    {
+    "date": "2026-11-26",
+    "type": "watch",
+    "title": "현대차그룹이 인사에서 현대차 무뇨스 사장은 유임하고 현대모비스 등 부품 계열사 수장은 교체했어요",
+    "impact": "실적이 부진한 가운데 완성차 대표는 그대로 두고 부품사를 바꿨어요. 새 경영진이 성과를 낼지 지켜봐야 해요.",
+    "source": "재경일보",
+    "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE5EWC1PdUpwd1RxV0R0c2xaazhBTnBHdVZsblJfVWw0NHUyaGNKNXNkcmlxcVFhUmlBdnRSMUJWWnYyR1I2cjcxSnBXMA?oc=5",
+    "terms": [
+     "key_person_risk"
+    ],
+    "learn": "경영진 교체는 회사 방향이 바뀔 수 있다는 신호예요. 실제 성과는 몇 분기 뒤 실적으로 확인해요."
+   },
+   {
     "date": "2026-11-24",
     "type": "watch",
     "title": "현대차그룹이 26일 사장단 인사를 하고 현대차·기아 대표는 그대로 둔다는 보도가 나왔어요",
@@ -2588,19 +2600,6 @@
      "holding_company"
     ],
     "learn": "분할은 회사의 한 사업을 따로 떼어내는 거예요. 사업을 나눠 각자 집중하게 해요."
-   },
-   {
-    "date": "2026-11-19",
-    "type": "watch",
-    "title": "현대차그룹이 보스턴다이나믹스 지분 100%를 확보했어요",
-    "impact": "로봇 회사를 완전히 자기 것으로 만들었다는 뜻이에요. 로봇이 앞으로 돈이 될지는 시간이 더 필요해요.",
-    "source": "데이터투자",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE42ZjdnWnJ6Q1dXaUdsbFExSmppS2p1T2p4Nk91OVRDUWtvNkRVUnJfV25ybmN4SjJuSlZSS1g4bngyMWJXbWctLUVldE0yTEdTY0syVTVIZ1pvUnNEb1FxZ01fU3B3ZzYwa2ZvMEZ1REhNb2c?oc=5",
-    "terms": [
-     "mna",
-     "rnd"
-    ],
-    "learn": "지분 100%는 회사를 완전히 가진다는 뜻이에요. 연구 비용도 함께 떠안아요."
    }
   ],
   "034730": [
@@ -2758,6 +2757,19 @@
   ],
   "000660": [
    {
+    "date": "2026-11-26",
+    "type": "good",
+    "title": "SK하이닉스가 100조 원 규모 주주환원을 이행한다고 공시했다는 보도가 나왔어요",
+    "impact": "번 돈의 일부를 주주에게 돌려주는 계획이에요. 자사주 매입·소각이나 배당이 포함될 수 있어요.",
+    "source": "한스경제",
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5MT2xfVTlmZnVDY1otbmgyd0ItNU9BTjNrTjVQeEI0VnVRSDFTUVpJY1dCMTR6bF9LbXJ1UXFsdkt1SzE0LVFUMVY5ZzloTXh1dUdzZ2cwcE5qem1YR2R0dnl1Y005LVNDZzlz0gFvQVVfeXFMTnJqSFBJYjNGaWFnQUlmNEl0bjRZLTBGdG5keHdTWTN6NFlTTmRCSXVVd0o5NktNT090RnVCTG8wOXh1aEd5TW1UMldfdFpudUVwVzM2bUF0T3NZY1pqTWJFRUlOVkdFdzczNFBpc3Rn?oc=5",
+    "terms": [
+     "buyback",
+     "disclosure"
+    ],
+    "learn": "자사주 매입은 회사가 자기 주식을 사들이는 거예요. 시장에 도는 주식이 줄어 주주 몫이 커지는 효과가 있어요."
+   },
+   {
     "date": "2026-11-25",
     "type": "good",
     "title": "SK하이닉스가 100조 원 규모 주주환원 계획을 그대로 유지한다고 공시했어요",
@@ -2795,19 +2807,6 @@
      "memory"
     ],
     "learn": "시가총액은 회사 전체의 시장 가치예요."
-   },
-   {
-    "date": "2026-11-24",
-    "type": "watch",
-    "title": "델 실적 발표를 앞두고 메모리 수요가 삼성전자와 SK하이닉스의 관전 포인트로 꼽혀요",
-    "impact": "서버를 만드는 델의 실적은 AI 서버 수요를 가늠할 단서가 돼요. 결과는 발표를 봐야 알 수 있어요.",
-    "source": "Investing.com 한국어",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE1ZMkQ2a1VIdlgyZ2FhQzE1RTM2SU5HTmRfeUlWZnV4Z016NHFjNHNpd2txZWhSdTFiV2w2VUtVcnktcjBpdkM5WDNxNzlnVTI2OFh1TnpXUC1WYWY1QU15bHc2aHNoS0lnRW5WX05aTjc?oc=5",
-    "terms": [
-     "memory",
-     "data_center"
-    ],
-    "learn": "메모리는 데이터를 저장하는 반도체예요. AI 서버가 늘면 메모리 수요도 늘 수 있어요."
    }
   ],
   "066570": [
@@ -3061,6 +3060,19 @@
   ],
   "012330": [
    {
+    "date": "2026-11-26",
+    "type": "watch",
+    "title": "현대모비스가 새 사장을 선임하고 램프 사업 매각을 둘러싼 절차도 남아 있다는 보도가 나왔어요",
+    "impact": "돈이 덜 되는 사업을 정리해 본업에 집중하려는 흐름이에요. 매각이 실제로 끝나야 효과를 알 수 있어요.",
+    "source": "모터매거진",
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9DUGhKWms5b1hVMkJWYS1sV05VT0hsZ1VFMHZEUktoSWR4VEs3T0VqWVRGZHpqa2hrQ1NRQTJ5WUczVk9fUWhpd2xHdnFDX0hZOHl3NlFGZUV1eV9maGxOc3JqN2p4allJV2g3YQ?oc=5",
+    "terms": [
+     "mna",
+     "operating_margin"
+    ],
+    "learn": "사업을 팔면 당장 현금이 들어오고 이익률이 좋아질 수 있어요. 다만 매각이 끝나기 전엔 확정이 아니에요."
+   },
+   {
     "date": "2026-11-25",
     "type": "good",
     "title": "현대모비스가 북미·유럽 완성차에서 1조 원대 부품 수주를 따냈어요",
@@ -3096,18 +3108,6 @@
      "largest_shareholder"
     ],
     "learn": "분할은 회사의 한 사업을 따로 떼어 새 회사로 만드는 거예요. 주주 찬성이 있어야 해요."
-   },
-   {
-    "date": "2026-11-23",
-    "type": "watch",
-    "title": "현대모비스 램프 사업 매각을 두고 주주총회가 열려요",
-    "impact": "사업을 팔면 돈이 생기지만 기술 유출 우려 심사가 변수예요. 주총 결과를 지켜봐야 해요.",
-    "source": "아시아타임즈",
-    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1jUHdkLTAya0h6VVpSV0FxWGV1M2tfbWRQTVV6czlISnJYZUtjWkZlUF9IWVpwNjdodW9wenRxQVAyRTlfQUV0Z3IzSlJERW9fVG9MLXVvbmxyMktWUWc?oc=5",
-    "terms": [
-     "mna"
-    ],
-    "learn": "사업 매각은 한 부문을 다른 회사에 파는 일이에요. 주주 동의와 정부 심사가 필요할 수 있어요."
    }
   ],
   "051910": [
@@ -3867,6 +3867,18 @@
   ],
   "034220": [
    {
+    "date": "2026-11-26",
+    "type": "watch",
+    "title": "LG디스플레이가 3조 원대 10.5세대 라인을 정리하고 생산 효율을 높이는 쪽으로 가닥을 잡았다는 보도가 나왔어요",
+    "impact": "투자를 줄이고 있는 라인을 효율적으로 쓰려는 선택이에요. 장기적으로 비용 부담은 줄 수 있지만 성장 계획은 달라질 수 있어요.",
+    "source": "디지털데일리",
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBPUG04YXBmR050RURzRm5Ga3lSVFIxUGlLd0dvaVhoS2ZHRHJ4SFVyRnlCRUxhZFVxM3BlREp6ckg3NFVGSHJjNXNQdW9FYkFNYnE0WGZBQW9XdlJKY2h2X1BZZS0?oc=5",
+    "terms": [
+     "capex"
+    ],
+    "learn": "설비투자는 공장에 쓰는 큰돈이에요. 투자를 줄이면 현금은 아끼지만 키울 기회는 줄어들 수 있어요."
+   },
+   {
     "date": "2026-11-24",
     "type": "watch",
     "title": "LG디스플레이가 3조 원짜리 10.5세대 OLED 투자를 접었다고 해요",
@@ -3903,21 +3915,22 @@
      "capex"
     ],
     "learn": "설비투자(capex)는 공장을 짓는 데 쓰는 돈이에요. 접으면 현금 부담이 줄어요."
-   },
-   {
-    "date": "2026-11-20",
-    "type": "watch",
-    "title": "LG디스플레이가 파주 OLED 3조 원 투자를 7년 만에 접었다고 해요",
-    "impact": "큰 투자를 접으면 당장 쓸 돈은 아끼지만 생산을 늘릴 기회는 줄어요. 대신 어디에 투자할지가 중요해져요.",
-    "source": "포인트데일리",
-    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9Pa3NnNlIwYWRMTlRNZ3psMkVkVGp5TEJ1TUNsRE9MQTMwaGFWT1NrcVQ4bVNDZDBxNTc4QXQtaHg2N2Jwc0Nmakp3ZzI4RWc2MG1FUDMtUndUMnZ3RlNpODlTYVRiMU1lVEdQd0VJd23SAXRBVV95cUxPcE9XQ1pycng5aWtPSjIwYjlIR2xZYk9GRVpVYWVMWXJoTG5TNC0yZWkyQ2xmSEdOMWQ2WEp1amx3NVUwaks3MEFDUlZoNnhHNG5DNzhKZXJlRTRKNF9NTjBTMUk3a3hhdVlpYjN1Z0t0WnoyYg?oc=5",
-    "terms": [
-     "capex"
-    ],
-    "learn": "설비투자는 공장과 장비에 쓰는 돈이에요. 늘리면 성장 기회가 생기지만 부담도 커져요."
    }
   ],
   "003490": [
+   {
+    "date": "2026-11-26",
+    "type": "bad",
+    "title": "국제유가가 오르며 대한항공 등 항공주가 약세를 보였다는 보도가 나왔어요",
+    "impact": "항공사는 비용에서 기름값 비중이 커서 유가가 오르면 이익이 줄 수 있어요. 유가 흐름을 지켜봐야 해요.",
+    "source": "아주경제",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5RdnhwNmFldHRVLWh0RG5fS1YxRGExX3NNR1RIY2N1Wk9NMVVudndxTnQxRjEyMUpwUVk5ckZ2bTAtZ1dfQnc1RFljRWtUa0JWdUMwY2U3dnB2UdIBWEFVX3lxTE1RdmVGUWRpa1VDZURlRmZPYVU1dEZRRWloc1RMYnFTeHYza3NpM2I3S2VzazBlR2h3NVJsRjdNWURBQVJlXzloYTdUdm9rLUl0a0ZlMFdnLTI?oc=5",
+    "terms": [
+     "oil_price",
+     "cyclical"
+    ],
+    "learn": "유가는 항공사의 가장 큰 비용 중 하나예요. 기름값이 오르면 같은 매출에서도 남는 돈이 줄어요."
+   },
    {
     "date": "2026-11-25",
     "type": "watch",
@@ -3954,19 +3967,6 @@
      "merger"
     ],
     "learn": "합병 시너지는 합친 뒤 비용이 줄거나 매출이 늘어나는 효과예요."
-   },
-   {
-    "date": "2026-11-24",
-    "type": "good",
-    "title": "대한항공과 아시아나 통합 시너지로 내년 이익이 7,500억 원 늘 거라는 전망이 나왔어요",
-    "impact": "두 회사가 노선과 비용을 합치면 이익이 늘 수 있어요. 전망이라 실제와 다를 수 있어요.",
-    "source": "블로터",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9rc1VjdF9NUnBiUmp4QXdxY3FrNGJvRHp0dHNSdjl0czY3Zmx2Sjg2UkdSbUdidEQwSzVLLXZLcXBoLWlCRDJTVEhHSEE3RXRaX21MWGtEdDFILWxIODRSQjdPbk1KUmF30gFsQVVfeXFMTmZmdFVkRmdhaFZoX01XRkZMR0U1LVNpS05WMWJYZ2VUZF85dmlDNWI4WENhVlZMZzluMnBtNFlXTUIwMndpQ0dfSUJ1Z0ZpbUZYajFTZ2w0OF9jMkNta3dQMlNiOUJlQ1F2dHVK?oc=5",
-    "terms": [
-     "merger",
-     "operating_income"
-    ],
-    "learn": "합병 시너지는 합쳐서 비용을 아끼거나 매출을 늘리는 효과예요. 예상만큼 나오지 않을 때도 있어요."
    }
   ],
   "078930": [
