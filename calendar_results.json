@@ -22,5 +22,11 @@
   "impact": "보안 소프트웨어를 파는 회사의 매출이 크게 늘었어요. 사이버아크 인수가 끝나 작년과 단순 비교는 어렵고, 회계 기준 영업이익은 작년보다 줄었어요.",
   "source": "Palo Alto Networks IR",
   "url": "https://investors.paloaltonetworks.com/news-releases/news-release-details/palo-alto-networks-reports-fiscal-first-quarter-2027-financial"
+ },
+ "2026-11-25:us_pce": {
+  "summary": "10월 PCE 물가지수가 1년 전보다 3.8% 올랐고, 식품·에너지를 뺀 근원 지수는 3.3% 올랐어요.",
+  "impact": "미국 중앙은행이 물가 지표로 즐겨 보는 숫자예요. 물가 오름세가 9월(3.7%)보다 조금 더 커져서, 금리를 내리기 어렵게 만들 수 있다는 점을 지켜봐요.",
+  "source": "미국 경제분석국(BEA)",
+  "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026"
  }
 }
