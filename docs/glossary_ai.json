@@ -24,6 +24,19 @@
    "sources": [
     "https://theconversation.com/whos-paying-whom-the-circular-money-machine-behind-the-ai-boom-or-bubble-293938"
    ]
+  },
+  {
+   "id": "supply_demand",
+   "term": "수급",
+   "definition": "주식을 사려는 힘과 팔려는 힘의 균형이에요. 누가 더 많이 샀는지, 더 많이 팔았는지로 살펴봐요.",
+   "example": "외국인이 판 돈보다 산 돈이 많으면 그날은 사려는 힘이 센 날이에요.",
+   "why": "기업 실적이 그대로여도 사려는 힘이 크면 지수가 오르고, 파는 힘이 크면 내릴 수 있어요.",
+   "category": "주식 기본",
+   "verified": true,
+   "sources": [
+    "https://kbthink.com/stock/trading.html",
+    "https://www.3o3campus.co.kr/hub/supply-demand"
+   ]
   }
  ]
 }

@@ -729,6 +729,68 @@
     "https://www.bok.or.kr/portal/main/contents.do?menuNo=200293",
     "https://www.bok.or.kr/portal/main/contents.do?menuNo=200289"
    ]
+  },
+  {
+   "id": "ai-2026-11-27",
+   "title": "외국인이 사들이자 코스피가 반등했어요",
+   "terms": [
+    "supply_demand",
+    "kospi_kosdaq",
+    "trading_volume"
+   ],
+   "cards": [
+    "11월 27일 코스피와 코스닥이 하루 만에 크게 올랐어요. 코스닥은 8% 넘게 올랐어요.",
+    "이날 외국인과 기관이 산 금액이 판 금액보다 컸어요. 사려는 힘이 센 날이었어요.",
+    "반대로 개인은 판 금액이 더 컸어요. 이렇게 누가 사고 팔았는지 보는 걸 '수급'을 본다고 해요.",
+    "미국 AI 기술주 불안이 조금 풀린 영향으로 풀이됐어요. 큰돈을 쓰는 투자자의 움직임은 지수에 크게 닿아요.",
+    "다음에 큰 상승·하락 뉴스를 보면 '누가 샀고 누가 팔았나'를 확인해요. 하루 수급만으론 앞날을 단정할 수 없어요."
+   ],
+   "quiz": [
+    {
+     "q": "'수급'은 무엇을 살펴보는 말일까요?",
+     "options": [
+      "사려는 힘과 팔려는 힘의 균형",
+      "회사의 직원 수",
+      "나라의 기준금리",
+      "회사의 사업 종류"
+     ],
+     "answer": 0,
+     "explain": "수급은 주식을 사려는 힘과 팔려는 힘이 어떻게 맞서는지 보는 말이에요."
+    },
+    {
+     "q": "11월 27일 코스피에서 판 금액이 산 금액보다 컸던 투자자는 누구였을까요?",
+     "options": [
+      "개인",
+      "외국인",
+      "기관",
+      "모두 산 금액이 더 컸다"
+     ],
+     "answer": 0,
+     "explain": "외국인과 기관은 산 금액이 더 컸고, 개인은 판 금액이 더 컸어요."
+    },
+    {
+     "q": "외국인이 많이 산 날의 숫자만 보면 다음 날 시장 방향을 알 수 있을까요?",
+     "options": [
+      "항상 알 수 있다",
+      "단정하기 어렵다",
+      "항상 반대로 움직인다",
+      "계속 오르기로 정해져 있다"
+     ],
+     "answer": 1,
+     "explain": "수급은 그날의 힘을 보여 줄 뿐, 다음 날 방향까지 알려 주진 않아요."
+    }
+   ],
+   "stage": 2,
+   "date": "2026-11-27",
+   "news_url": "https://www.newspim.com/news/view/20261127001148",
+   "verified": true,
+   "sources": [
+    "https://www.fnnews.com/news/202611271602252863",
+    "https://www.polinews.co.kr/news/articleView.html?idxno=749449",
+    "https://www.mydaily.co.kr/page/view/2026112716030866974",
+    "https://www.ddaily.co.kr/page/view/2026112715584873716",
+    "https://kbthink.com/stock/trading.html"
+   ]
   }
  ]
 }
