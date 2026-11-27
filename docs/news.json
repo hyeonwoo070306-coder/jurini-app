@@ -1,7 +1,20 @@
 {
- "asof": "2026-11-27",
+ "asof": "2026-11-28",
  "note": "회사 관련 뉴스를 AI(Claude)가 쉽게 요약한 것. type: good=호재, bad=악재, watch=지켜볼 일",
  "market": [
+  {
+   "date": "2026-11-27",
+   "type": "good",
+   "title": "미국 증시가 조기 폐장일에 3대 지수 모두 올랐고, 나스닥은 한 주 동안 크게 올랐어요",
+   "impact": "추수감사절 다음 날 일찍 닫은 날이었어요. 최근 크게 내렸던 AI·반도체 관련 기술주가 반등하며 시장을 끌어올렸어요. 한 주로 보면 나스닥이 올해 4월 이후 가장 크게 올랐어요.",
+   "source": "뉴시스",
+   "url": "https://www.newsis.com/view/NISX20261128_0003886952",
+   "terms": [
+    "stock_index",
+    "trading_volume"
+   ],
+   "learn": "지수는 여러 회사 값을 묶은 숫자예요. 기술주가 많이 담긴 나스닥은 기술주가 움직일 때 더 크게 흔들려요."
+  },
   {
    "date": "2026-11-27",
    "type": "good",
@@ -14,19 +27,6 @@
     "trading_volume"
    ],
    "learn": "외국인이 산 돈이 판 돈보다 많으면 시장을 끌어올리는 힘이 돼요. 크게 떨어진 뒤의 반등이 이어질지는 지켜봐야 해요."
-  },
-  {
-   "date": "2026-11-27",
-   "type": "watch",
-   "title": "미국 증시는 추수감사절로 쉬었고 27일은 일찍 문을 닫아요",
-   "impact": "26일 휴장했고 27일은 한국 시간 28일 새벽 3시에 일찍 끝나요. 거래하는 사람이 적어 지수가 크게 흔들릴 수 있어요. 지수 선물은 AI 악재가 가라앉으며 강세를 보였어요.",
-   "source": "시사저널e",
-   "url": "https://www.sisajournal-e.com/news/articleView.html?idxno=425356",
-   "terms": [
-    "stock_index",
-    "trading_volume"
-   ],
-   "learn": "거래하는 사람이 적은 날은 작은 소식에도 값이 크게 움직일 수 있어요."
   },
   {
    "date": "2026-11-26",
@@ -623,6 +623,19 @@
   ],
   "WMT": [
    {
+    "date": "2026-11-27",
+    "type": "watch",
+    "title": "AI 관련 기업을 향한 불안이 커지자 월마트·코스트코가 안전한 선택지로 주목받았어요",
+    "impact": "생필품을 파는 회사는 경기가 흔들려도 매출이 꾸준한 편이에요. 그래서 불안한 시기에 투자자들이 찾는 경향이 있어요. 시장 분위기가 바뀌면 달라질 수 있어요.",
+    "source": "이데일리",
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOVmZDTmxrU0ZKQXZEbjk5SHpBWDljdW9jRlIwQkhDMzJYSU1LbFAtcUgxV0NwU0hxeUZXZkl0ZFlPMHgtRjE1cWlYRkpRdjh3Tkl5VDgybzgzenRteGhoYXJUbGR1dGJpSW96VkdiRm40enU5UXpNSzRjNEJtY080RA?oc=5",
+    "terms": [
+     "consumer_staples",
+     "cyclical"
+    ],
+    "learn": "경기를 덜 타는 회사를 방어주라고 해요. 사람들이 불황에도 장을 보기 때문이에요."
+   },
+   {
     "date": "2026-11-26",
     "type": "good",
     "title": "경기가 어려울수록 값싼 장보기를 찾는 사람이 늘어 월마트가 버틴다는 분석이 나왔어요",
@@ -660,18 +673,6 @@
      "earnings_surprise"
     ],
     "learn": "컨센서스는 증권사 예상 평균이에요. 비슷하게 나오면 \"부합\"이라고 해요."
-   },
-   {
-    "date": "2026-11-21",
-    "type": "good",
-    "title": "월마트 재무책임자가 앞으로 5년이 지난 5년보다 더 나을 것이라고 말했어요",
-    "impact": "온라인과 광고 같은 새 사업이 커지고 있다는 자신감을 보인 거예요. 다만 회사 전망이라 실제 결과는 지켜봐야 해요.",
-    "source": "TIKR.com",
-    "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNNUZKY3E5REswTDBaR0VxaHRPZjdiekttdXNmSlZPZ0pyTkhMOTA2dHYxZWF2cDFjT3Jvd0MxNUJKMmhMOFFOWl9EVlVQV215cjcyMm9UV3pOaXhLR0lleVhrYUhFY0RLVjJxTlRkSHZaREFLQVV0YVF3ZWg3dTkySWhsNm84alJNeUhzSFRnc25UY3M2cHJENFhSOHNnOEdMX1FrTUVmWHZTdmhNMVRnMEJNcFVLcUFmYUt6QTNHLUFiOFdJcFB3bUt3YVY5VDdXZWc?oc=5",
-    "terms": [
-     "guidance"
-    ],
-    "learn": "가이던스는 회사가 직접 내놓는 앞으로의 전망이에요. 회사 말이라 실제 숫자와 비교해 봐야 해요."
    }
   ],
   "JPM": [
@@ -781,6 +782,19 @@
   ],
   "MU": [
    {
+    "date": "2026-11-27",
+    "type": "watch",
+    "title": "마이크론 대만 공장의 노사 갈등으로 투자 확대에 불확실성이 생겼다는 보도가 나왔어요",
+    "impact": "노조와 의견이 안 맞으면 공장 확장이나 생산이 늦어질 수 있어요. 아직 결과가 나오지 않아 지켜봐야 해요.",
+    "source": "마켓인",
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5wRTA5M3k0Zjl3bS1QNThyRVZpcWJWZnFuRV8ydTRzU0xUMnhCZUQyQ05EU0E1azlxRWVlMFNVdW8wQzR3Nm5MYURvRlpCNndGWjdNQUxUb1NEZlotSnhzOXR3WjUyd0NxWU9GMWs1WjR4eFk?oc=5",
+    "terms": [
+     "memory",
+     "supply_chain"
+    ],
+    "learn": "공급망은 부품을 만들어 제품으로 보내는 과정이에요. 공장에 문제가 생기면 제품 공급이 흔들릴 수 있어요."
+   },
+   {
     "date": "2026-11-26",
     "type": "bad",
     "title": "마이크론이 메모리 반도체 공급과잉 우려로 크게 흔들렸어요",
@@ -818,19 +832,6 @@
      "cyclical"
     ],
     "learn": "메모리 업종은 경기 따라 오르내림이 커요."
-   },
-   {
-    "date": "2026-11-21",
-    "type": "bad",
-    "title": "마이크론에서 노조 파업이 임박했다는 보도가 나왔어요",
-    "impact": "파업이 생기면 공장 가동이 늦어질 수 있어요. 메모리 공급에 영향을 줄지는 아직 몰라 지켜봐야 해요.",
-    "source": "TradingKey",
-    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNS2VqbXM3T2FQMzdoNmxRY2IzckQzN3o2eGUtc1R4Ykl3Wk5WUnhoWThpTzlJT3FOcVNkV2E4SG1XcXdrZHBMNEwydkEzc1ZUOXBPTWVpSTUzRmRwZTAxRDVxWjhvbEN1MlFvbnFXR0dxak8ycmdVb2s1Tk9CYVR1a3Q2WmZ4UTNOZzlJeWJuLWdkR1FCSzJBNWZOVWg3VTA0UTctdXZrTEZUTk9EMFJVYzdFM2ZITGd6VlRadHlKM0RZcXRqZlJZUkJLN3dXMmM?oc=5",
-    "terms": [
-     "supply_chain",
-     "memory"
-    ],
-    "learn": "공급망은 부품을 만들어 고객에게 전달하는 흐름이에요. 한 곳이 멈추면 전체에 영향을 줘요."
    }
   ],
   "V": [
@@ -1159,6 +1160,19 @@
   ],
   "KO": [
    {
+    "date": "2026-11-27",
+    "type": "watch",
+    "title": "코카콜라HBC가 코카콜라 아프리카 병입사(CCBA) 지분 75% 인수를 마쳤다는 보도가 나왔어요",
+    "impact": "코카콜라 음료를 병에 담아 파는 큰 협력사가 아프리카로 영역을 넓혔어요. 코카콜라 본사가 직접 산 것은 아니라서 본사에 주는 영향은 간접적이에요.",
+    "source": "비건뉴스",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBkZHpJTUQ0NGFQS2tpbVV4VGEzQnJWaG44ejNoaVFwTVBpSHhQUVMzN3B0b3ZYdjZ3UUxMRUxiZTdUZ3dRM1pRclZVLUlRNG5JOGtMeGJVclJWSzR2aGxVNlB5a3JVUQ?oc=5",
+    "terms": [
+     "mna",
+     "consumer_staples"
+    ],
+    "learn": "인수합병(M&A)은 회사가 다른 회사를 사서 커지는 거예요. 누가 샀는지 확인하면 영향의 크기를 가늠할 수 있어요."
+   },
+   {
     "date": "2026-11-26",
     "type": "good",
     "title": "버크셔 해서웨이가 코카콜라 등 보유 종목에서 배당을 많이 받을 전망이에요",
@@ -1193,22 +1207,22 @@
      "guidance"
     ],
     "learn": "CFO는 회사 돈을 책임지는 임원이에요."
-   },
-   {
-    "date": "2026-11-20",
-    "type": "good",
-    "title": "코카콜라가 펩시코로부터 KFC 매장 3,700곳을 따냈다고 해요",
-    "impact": "KFC 매장이 코카콜라 음료를 팔면 팔리는 양이 늘 수 있어요. 경쟁사 자리를 뺏은 거라 시장 점유율에도 도움이 돼요.",
-    "source": "TIKR.com",
-    "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPWU93TVFJM3Uwc1F2N3VlVmlIaDJMRDRPQ1B0anFZdkYycXJoM3JwVXdnNVJNRTJJU1N5TlRuTnlPZkVqU3QtNmtXZjVhcXV1clhCdWFEMmk0Z1ZTR0FzRktwSVJSZDV1YXBtazBQTHpjZXJoUTJtcmhQZU54bHlrd2VjZjdtY3ZmQkNPZzVRS2Job09SekMyeExCcFZsYnJOVDR2MlRHY2IxU0NpYzdPVUl5SXAwUVpCUE44QUpjbXJ6STVaWG9sWGtJUGRwZw?oc=5",
-    "terms": [
-     "market_share",
-     "supply_chain"
-    ],
-    "learn": "점유율은 시장에서 회사가 차지하는 몫이에요. 경쟁사 자리를 뺏으면 내 몫이 커져요."
    }
   ],
   "PLTR": [
+   {
+    "date": "2026-11-27",
+    "type": "good",
+    "title": "팔란티어가 폴란드와 AI 방위 분야 3억 달러 규모 계약을 맺었다는 보도가 나왔어요",
+    "impact": "큰 정부 계약은 몇 년 동안 꾸준한 매출이 될 수 있어요. 국방 분야로 사업이 더 넓어진다는 뜻이에요. 실제 계약 조건은 공식 발표로 확인이 필요해요.",
+    "source": "BeInCrypto",
+    "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE0xenhObk55and1Wmc3NFk3Q1Z3SWp3Z2pfY1hKNGVYd053Z3NWWlMxSGxPNTEtTHBRVE9nZE1pSjhlV2Z2UFh4ZENkU2Ryb1A1NWV3SUJqYmxTcFVQdnlqSkd4WDFpTkxIZHdzRkJ2ZTRjdzlHUTY0Mi1n?oc=5",
+    "terms": [
+     "backlog",
+     "defense"
+    ],
+    "learn": "수주잔고는 이미 따냈지만 아직 매출로 잡히지 않은 일감이에요. 계약이 늘면 앞으로 매출 근거가 커져요."
+   },
    {
     "date": "2026-11-25",
     "type": "watch",
@@ -1244,19 +1258,6 @@
      "recurring_revenue"
     ],
     "learn": "반복 매출은 고객이 계속 쓰면서 꾸준히 들어오는 돈이에요. 계약이 길수록 안정적이에요."
-   },
-   {
-    "date": "2026-11-19",
-    "type": "good",
-    "title": "팔란티어가 영국 국민보건서비스(NHS)와 계약을 늘렸다고 해요",
-    "impact": "정부 기관과 오래 계약하면 꾸준히 돈이 들어와요. 다만 개인 정보를 다루는 일이라 논란이 생길 수도 있어요.",
-    "source": "Simply Wall St",
-    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQX3Vhdi1OTGwxNlpoY3JKVm81YW1md2RDT21TUEh4UUNiSDNxTkxMTXZDRFd5dkYtVWY3REtySm9vVkNFUUZoTkhBTEtCc0FGXzd2WFBkNTEtXzQwYU5MQTh6YlJXdzFHYUF6RmhpOGlOQW9VU0JNamZQMFZsQnJqbUJsenhPaUd2RWd3VXMzbFNmdDNVektEOHZwVnZ5RkY1R2I5RlJ30gGmAUFVX3lxTFBfdWF2LU5MbDE2WmhjckpWbzVhbWZ3ZENPbVNQSHhRQ2JIM3FOTExNdkNEV3l2Ri1VZjdES3JKb29WQ0VRRmhOSEFMS0JzQUZfN3ZYUGQ1MS1fNDBhTkxBOHpiUld3MUdhQXpGaGk4aU5Bb1VTQk1qZlAwVmxCcmptQmx6eE9pR3ZFZ3dVczNsU2Z0M1V6S0Q4dnBWdnlGRjVHYjlGUnc?oc=5",
-    "terms": [
-     "recurring_revenue",
-     "backlog"
-    ],
-    "learn": "정부 계약은 기간이 길고 안정적인 편이에요. 계약이 연장되면 앞으로 받을 돈이 늘어요."
    }
   ],
   "PG": [
@@ -2777,6 +2778,19 @@
   "000660": [
    {
     "date": "2026-11-27",
+    "type": "watch",
+    "title": "SK하이닉스가 자사주 매입 주문을 하루 70만 주로 두 배 늘렸다는 보도가 나왔어요",
+    "impact": "회사가 자기 주식을 사들이면 시장에 도는 주식이 줄어 주주에게 이로울 수 있어요. 최근 크게 내린 흐름에 대응하는 조치로 해석돼요.",
+    "source": "파이낸셜뉴스",
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBqVHdCVGlPc0RCR3ZkYUY2VEM1OEsteVNZVjFGOFJuc1hnS2VNcjNfLUlrUFNLTVZwTXhXNmREVk4yNDBGT29NVUFFYXZEMTNCdXp0TmtwWnhoQQ?oc=5",
+    "terms": [
+     "buyback",
+     "share_cancellation"
+    ],
+    "learn": "자사주 매입은 회사가 번 돈으로 자기 주식을 사는 거예요. 나중에 없애면(소각) 주주 몫이 커져요."
+   },
+   {
+    "date": "2026-11-27",
     "type": "good",
     "title": "엔비디아·키옥시아의 GPU 메모리 확장 기술 시연 소식에 SK하이닉스 등 메모리 대형주가 크게 올랐어요",
     "impact": "AI 칩에 메모리가 더 필요해질 수 있다는 기대가 퍼졌어요. 하루 반등이라 흐름이 이어질지는 지켜봐야 해요.",
@@ -2813,19 +2827,6 @@
      "dividend_yield"
     ],
     "learn": "자사주 매입은 회사가 자기 주식을 사들이는 거예요. 주식 수가 줄면 남은 주식의 몫이 커져요."
-   },
-   {
-    "date": "2026-11-25",
-    "type": "bad",
-    "title": "SK하이닉스가 CEO 복귀 소식에 오른 다음 날 크게 내렸어요",
-    "impact": "전날 오른 부분을 되돌렸어요. AI용 메모리를 많이 파는 회사라 AI 투자 걱정에 크게 흔들려요.",
-    "source": "글로벌이코노믹",
-    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNNjU1V0d3SGI5ZGIwSHJ0Y1pmMy1qR2lOTnBEYng0STh4alltNzFsUTAwbU5NYWIzN0ZnYXBlT2J4R3gxYTA2bmkxS1ZuLWhqcHg0M1FJTDFYR0Jzd0pPQzRuUVNtVkhiV2NhMmFZLTV5T0ZZNnh6MkhuWHRteE1EQ2tqRUhDUFZy?oc=5",
-    "terms": [
-     "memory",
-     "semiconductor"
-    ],
-    "learn": "메모리는 많이 만들어 남으면 값이 떨어져요. 그래서 공급 과잉 걱정이 나오면 크게 흔들려요."
    }
   ],
   "066570": [
@@ -3240,6 +3241,19 @@
    {
     "date": "2026-11-27",
     "type": "watch",
+    "title": "삼성물산이 대만 가오슝 개발 계약 금액을 1조 1,195억 원으로 바꿨어요",
+    "impact": "계약 금액이 바뀌면 앞으로 받을 공사 매출의 크기도 달라져요. 공시로 알린 내용이라 정확한 변경 이유는 공시에서 확인해야 해요.",
+    "source": "비건뉴스",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE0wZXNVbGlBRjNjempMWDFBNEtidDhzRjBuOS1NOHBCOElhQUFwb1JLb0NkeGJuaFU1bS03OGxHei01aGVFNGEtZWpaVnViWmNpd2ZjU1pMbEtfcHZGMkJVRUNjLVNvdw?oc=5",
+    "terms": [
+     "backlog",
+     "disclosure"
+    ],
+    "learn": "수주는 공사를 따낸 것이고, 금액이 바뀌면 일감의 크기도 바뀌어요."
+   },
+   {
+    "date": "2026-11-27",
+    "type": "watch",
     "title": "삼성물산 합병 손해배상 소송이 소액주주 항소로 2심에 가요",
     "impact": "6년 넘게 이어진 소송이에요. 결과에 따라 회사가 물어줄 돈이 달라질 수 있어요.",
     "source": "블로터",
@@ -3272,18 +3286,6 @@
      "backlog"
     ],
     "learn": "수주잔고는 계약했지만 아직 못 번 일감이에요. 많을수록 앞으로 매출이 든든해요."
-   },
-   {
-    "date": "2026-11-23",
-    "type": "watch",
-    "title": "삼성물산이 건설 수장을 6년 만에 바꿨어요",
-    "impact": "새 대표가 들어와 수익성을 더 따지는 경영을 할 거라는 해석이에요. 실제 변화는 지켜봐야 해요.",
-    "source": "데일리팝",
-    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBfNHFOVlBqT0pLanpLYktWXzRoODNBRnBMVzdvUnJBRHV0ZjlEVEV5YVQ2TTJJRThuMkNISlo3Ty16bUlpX2NOdU9sWFdsODYtQW4xekFZTC1lRUV6S1J3VFZkYzdKRFUt?oc=5",
-    "terms": [
-     "key_person_risk"
-    ],
-    "learn": "대표가 바뀌면 사업 방향도 바뀔 수 있어요. 숫자로 확인해야 해요."
    }
   ],
   "036460": [
@@ -3852,6 +3854,19 @@
   ],
   "012450": [
    {
+    "date": "2026-11-27",
+    "type": "watch",
+    "title": "한화에어로스페이스가 스페인 K9 자주포 계약 금액 공개를 내년 2월까지 미뤘어요",
+    "impact": "계약은 맺었지만 금액을 숨기고 싶다는 뜻이에요. 금액이 공개되면 매출에 얼마나 도움이 될지 더 정확히 알 수 있어요.",
+    "source": "비건뉴스",
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE1BOU9QeGZRbFhUbHY5S183X1ZQQ08xZm94SjJWdEtCNnA5SEZxSm10Qk1uZXhMZWFlOS1DcTlXVDhxMUJQMG9TLUtMeVZYVmd0RnNaamxCN3pZa2g1WHBvUXd3SDRwUQ?oc=5",
+    "terms": [
+     "backlog",
+     "disclosure"
+    ],
+    "learn": "공시는 회사가 중요한 일을 투자자에게 알리는 제도예요. 금액 공개를 미루면 규모는 그때까지 알 수 없어요."
+   },
+   {
     "date": "2026-11-25",
     "type": "good",
     "title": "한화에어로스페이스가 자주도하장비 수룡의 해외 수출권을 확보했어요",
@@ -3887,18 +3902,6 @@
      "buyback"
     ],
     "learn": "자사주 취득은 회사가 자기 주식을 사는 일이에요. 보상용이면 직원에게 나눠 줘요."
-   },
-   {
-    "date": "2026-11-20",
-    "type": "good",
-    "title": "한화에어로스페이스가 약 1,496억 원어치 자기 주식 취득을 끝냈어요",
-    "impact": "회사가 자기 주식을 사면 시장에 도는 주식이 줄어요. 주주를 챙기겠다는 신호로 읽는 사람이 많아요.",
-    "source": "디지털투데이",
-    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1yeGtha3FYX01lSWthcEZFaXNfV0NpSXB6Tm1Yd3VWaFlPMlU3aS1oVzZsNWRxWnZDSndnR2Z0eE9SdVFFTWlvbnp4T2Y0a1ZkUlVRcmFhVWwwWFB3ZHJCMFJ3d2g5eVpTa2JrVjBZQ0QtbFU?oc=5",
-    "terms": [
-     "buyback"
-    ],
-    "learn": "자사주 매입은 회사가 자기 주식을 사들이는 거예요. 주주에게 돌려주는 방법 중 하나예요."
    }
   ],
   "034220": [
