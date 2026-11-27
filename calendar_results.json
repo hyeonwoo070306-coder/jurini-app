@@ -28,5 +28,12 @@
   "impact": "미국 중앙은행이 물가 지표로 즐겨 보는 숫자예요. 물가 오름세가 9월(3.7%)보다 조금 더 커져서, 금리를 내리기 어렵게 만들 수 있다는 점을 지켜봐요.",
   "source": "미국 경제분석국(BEA)",
   "url": "https://www.bea.gov/news/2026/personal-income-and-outlays-october-2026"
+ },
+ "2026-11-26:bok_rate": {
+  "summary": "한국은행이 기준금리를 3.00%에서 3.25%로 0.25%p 올렸어요. 위원 5명이 찬성, 2명은 유지를 주장했어요.",
+  "impact": "한국은행이 물가 오름세가 한동안 목표보다 높고 성장세도 강하다고 보고 금리를 올렸어요. 금리가 오르면 대출 이자 부담이 커지고, 예금 이자는 늘 수 있어요.",
+  "source": "한국은행 통화정책방향",
+  "url": "https://www.bok.or.kr/portal/bbs/P0000559/view.do?depth=200690&menuNo=200690&nttId=11067084&programType=newsData&relate=Y",
+  "vs": "hike"
  }
 }
