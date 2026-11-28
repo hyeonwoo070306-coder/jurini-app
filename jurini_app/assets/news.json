@@ -315,6 +315,19 @@
   ],
   "SPCX": [
    {
+    "date": "2026-11-28",
+    "type": "watch",
+    "title": "스페이스X와 테슬라가 합병을 협상 중이라는 보도가 이어지고 있어요",
+    "impact": "두 회사가 합쳐지면 사업 구조가 크게 바뀔 수 있어요. 아직 공식 발표가 없고 조건도 정해지지 않아서 결과는 지켜봐야 해요.",
+    "source": "서울파이낸스",
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5fbTdfcUllazM4aUhNeEQ1SXBkbUJpZjNKZVU2WDkzaE5KbXNoOXFfSFd2ZGlzYW1GVTBJOEtoTkJDY2VNTXdLZWtYZmY0X19paUNKYVZVODQ0UE9DUl9jai0teElOLWs1VUE?oc=5",
+    "terms": [
+     "merger",
+     "mna"
+    ],
+    "learn": "합병은 두 회사가 하나로 합쳐지는 거예요. 주주 찬성 같은 절차가 남아 있어서 실제로 될지는 아직 몰라요."
+   },
+   {
     "date": "2026-11-26",
     "type": "watch",
     "title": "머스크가 미국 어린이들에게 스페이스X 주식을 2주씩 나눠 주겠다고 밝혔다는 보도가 나왔어요",
@@ -352,18 +365,6 @@
      "mna"
     ],
     "learn": "합병은 두 회사가 하나로 합치는 일이에요. 보도 단계에서는 결정된 게 아니에요."
-   },
-   {
-    "date": "2026-11-24",
-    "type": "watch",
-    "title": "머스크가 스페이스X와 테슬라 합병을 위해 5인 협상팀을 꾸렸다는 보도가 나왔어요",
-    "impact": "합병이 이뤄지면 두 회사 주주와 사업이 크게 바뀔 수 있어요. 풀어야 할 난관이 많다고 해요.",
-    "source": "Benzinga",
-    "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxQRGxJNXl2Sl9VaXlvZldWWjdEeFh1RWpScEhmcm5QTkE4Ri1fM0MtQm9nMWRLYmNUcnI4d1JmWlRyZVZucng0UEtVdEpxRGVaTG9UTzRmam5BaHVCVFN5Y0tsWlZpSmE1N2xZOUwySF83U1U1c2dXTk9xT0YybG5xaWpQcWJVWmlaVXBpN3ZXTXFqNFRXTXdHa3RyTGt5M05aNkpRYnFqMEh6S19hcnFhNWt6T05TU2Z3eEhuT3ltRzh2a0pKMUxkLXJvUklPWlhnTTJiYVJyS1FZVlhkNG1faW1IX0xHN1d3eWN6YlpSYTJxeHNVV1U3b2Y0SE5mdTFvbkgxNlVzY0pQZmJCc2tpdU9ueGdiSzNkLVIxOS1pOEhvSkhkdVNlRHBzOTdhOG1PU3MxQ09iZUVENTFCV1lqOGNYNm11OW1TSEJWTXplUQ?oc=5",
-    "terms": [
-     "merger"
-    ],
-    "learn": "합병은 두 회사가 하나로 합쳐지는 거예요. 주주가 받는 몫이 어떻게 정해지는지가 중요해요."
    }
   ],
   "META": [
@@ -2521,6 +2522,19 @@
   ],
   "005930": [
    {
+    "date": "2026-11-28",
+    "type": "watch",
+    "title": "삼성전자가 메모리 개발 조직을 사업부장 직속으로 바꿨어요",
+    "impact": "중간 단계를 줄여 결정을 빠르게 하려는 개편으로 보여요. 실제로 개발 속도가 빨라질지는 앞으로 지켜봐야 해요.",
+    "source": "자본시장뉴스",
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9tVnUwd0RDYjdnallMOGVKcnV2c2ljSHdybjU3clNQbThoNXUzdUJValNFa1g3TFJZY1RLMDVhakstV3E1RnhnMTRSRDNTVF90NTgxZzVadUNzeHgwWk5jQjVackVQaUU?oc=5",
+    "terms": [
+     "memory",
+     "semiconductor"
+    ],
+    "learn": "메모리는 데이터를 저장하는 반도체예요. 개발 조직이 바뀌면 신제품 개발 방식도 달라질 수 있어요."
+   },
+   {
     "date": "2026-11-26",
     "type": "good",
     "title": "삼성전자가 이번에 약 30조 원 규모의 배당을 지급해요",
@@ -2558,18 +2572,6 @@
      "memory"
     ],
     "learn": "HBM은 AI 칩에 쓰는 고성능 메모리예요."
-   },
-   {
-    "date": "2026-11-23",
-    "type": "watch",
-    "title": "삼성전자가 중국 가전 사업의 체질 개선을 서두르고 있어요",
-    "impact": "돈이 덜 드는 구조로 바꾸는 중이에요. 효과가 실적에 나타나는지는 지켜봐야 해요.",
-    "source": "아시아투데이",
-    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9JREd6d1BGSzdfMzBuT3VTR3cwMTJyLUFKOFZrOF9LQVhtNjE0OGdfdGhWbm5aMzRyb05iYnUxd1JDQVRkeVoyUzJoZEp2YkZKYmRwQklnOFdFTFc0ejhNdlZFMFQ3Y1dQMFZ3MVRB?oc=5",
-    "terms": [
-     "operating_margin"
-    ],
-    "learn": "영업이익률은 비용을 줄이거나 제품 값을 높이면 좋아져요."
    }
   ],
   "005380": [
